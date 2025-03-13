@@ -13,13 +13,13 @@ import line from "../../../assets/images/Line.svg"
 function HomePage() {
   return (
     <div className=''>
-        <div className='flex flex-row lg:mx-40 2xl:mx-80 justify-between gap-4 mt-20 '>
+        <div className='flex flex-row lg:mx-40 2xl:mx-80 justify-between gap-4 lg:mt-20 2xl:mt-30 '>
           <div className='flex w-1/2 flex-col  gap-10 ' >
           <div className='text-5xl font-bold '>A Full-stack technology development partner</div>
           <p className='text-[#647185] text-[20px]'>A leading Philippine tech firm specializing in IC Design,
             embedded systems, rapid prototyping, and ASIC conversion. </p>
             <p className='text-[#040404] font-semibold text-[20px]'>Trusted for years in providing reliable digital solutions.</p>
-            <hr className='text-[#CCCCCC] w-2/3'></hr>
+            <hr className='text-gray-200 w-2/3'></hr>
 
             <div className='flex flex-row w-3/4 justify-between '>
 
@@ -52,7 +52,7 @@ function HomePage() {
           
 
 
-          <div className="relative w-1/2 h-64   ">
+          <div className="relative w-1/2 h-64">
             <img src={image1} alt="ic" className="absolute top-0 left-0 w-full h-full object-cover opacity-80 z-10 rounded-lg shadow-black shadow" />
             <img src={image2} alt="ic" className="absolute top-10 left-6 w-full h-full object-cover opacity-85 z-20 rounded-lg shadow-black shadow-sm" />
             <img src={image3} alt="ic" className="absolute top-20 left-12 w-full h-full object-cover opacity-95 z-30 rounded-lg shadow-black shadow-2xl" />
@@ -76,20 +76,20 @@ function HomePage() {
               <div className='flex flex-row w-2/5 '>
               <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon1} alt="" className='h-10 w-10'></img>
+              <img src={icon1} alt="icon1" className='h-10 w-10'></img>
               </div>
               <div className=''>
                 <img src={line} alt="line"/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon2} alt="" className='h-10 w-10'></img>
+              <img src={icon2} alt="icon2" className='h-10 w-10'></img>
               
               </div>
               <div className=''>
                 <img src={line} alt="line"/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon3} alt="" className='h-10 w-10'></img>
+              <img src={icon3} alt="icon3" className='h-10 w-10'></img>
               
               </div>
               </div>
@@ -112,7 +112,7 @@ function HomePage() {
                 </span>
               </div>
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
-                <span className='text-[#647185] text-base'>
+                <span className='text-[#647185] text-base '>
                 We don’t just meet industry standards—we
                 surpass them, delivering high-performance, 
                 future-ready solutions.
