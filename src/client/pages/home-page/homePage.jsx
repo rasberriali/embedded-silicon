@@ -108,7 +108,7 @@ function HomePage() {
                 <span className='text-[#647185] text-base'>
                 Our agile development approach<br/>
                 ensures rapid prototyping and efficient
-                execution to meet deadlines.
+                execution to meet tight deadlines.
                 </span>
               </div>
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
