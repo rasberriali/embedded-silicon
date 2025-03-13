@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../../navbar-footer/navbar'
+// import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
 import work from "../../../assets/images/work.png"
-import icon1 from "../../../assets/images/icon1.svg"
-import icon2 from "../../../assets/images/icon2.svg"
-import icon3 from "../../../assets/images/icon3.svg"
+import icon1 from "../../assets/images/icon1.svg"
+import icon2 from "../../assets/images/icon2.svg"
+import icon3 from "../../assets/images/icon3.svg"
 import line from "../../../assets/images/Line.svg"
 
 
@@ -76,7 +76,7 @@ function HomePage() {
               <div className='flex flex-row w-2/5 '>
               <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon1} alt="icons1" className='h-10 w-10'></img>
+               <img src={icon1} alt="icons1" className='h-10 w-10'/>
               </div>
               <div className=''>
                 <img src={line} alt="line"/>
