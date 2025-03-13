@@ -5,8 +5,8 @@ import dropdown from "../../assets/images/dropdown.svg"
 function Navbar() {
   return (
     <div className='flex flex-row justify-between items-center border-b-[0.1px] border-gray-200 '>
-        <div className='flex flex-row lg:mx-40 2xl:mx-80 w-full justify-between gap-4 py-1 '>
-        <div className='flex flex-row  items-center justify-center w-1/3  gap-2 cursor-pointer '>
+        <div className='flex flex-row lg:mx-40 2xl:mx-80 w-full justify-between gap-4 py-1  '>
+        <div className='flex flex-row  items-center  w-1/3  gap-2 cursor-pointer '>
             <img src={embedded} alt="logo" className='h-20 w-20'/>
             <div className='text-[#2D7BFD] text-3xl font-semibold'>
                 Embedded Silicon </div>
