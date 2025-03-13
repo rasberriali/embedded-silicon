@@ -3,6 +3,12 @@ import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
+import work from "../../../assets/images/work.png"
+import icon1 from "../../../assets/images/icon1.svg"
+import icon2 from "../../../assets/images/icon2.svg"
+import icon3 from "../../../assets/images/icon3.svg"
+import line from "../../../assets/images/Line.svg"
+
 
 function HomePage() {
   return (
@@ -62,14 +68,67 @@ function HomePage() {
             <p className='mt-8 w-full text-[#647185] text-xl'>We specialize in delivering cutting-edge technology with seamless execution, keeping you involved every step of the way.</p>
             </div>
 
-            <div className='flex flex-row'>
+           
+          
+          </div>
+
+          <div className='flex flex-row lg:mx-40 2xl:mx-80 justify-between gap-4 mt-20'>
+              <div className='flex flex-row w-2/5 '>
+              <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
+              <div className='bg-[#1A57C2] p-6 rounded-full'>
+              <img src={icon1} alt="" className='h-10 w-10'></img>
+              </div>
               <div className=''>
+                <img src={line} alt="line"/>
+              </div>
+              <div className='bg-[#1A57C2] p-6 rounded-full'>
+              <img src={icon2} alt="" className='h-10 w-10'></img>
+              
+              </div>
+              <div className=''>
+                <img src={line} alt="line"/>
+              </div>
+              <div className='bg-[#1A57C2] p-6 rounded-full'>
+              <img src={icon3} alt="" className='h-10 w-10'></img>
+              
+              </div>
+              </div>
+
+              <div className='flex flex-col w-full  gap-36 p-2 py-6'>
+
+              <div className='flex flex-col text-[#040404] text-xl font-medium gap-2 '> Innovative 
+                <span className='text-[#647185] text-base'>
+                          We push the boundaries of IC<br/>
+                          design and embedded systems<br/>
+                          to create forward-thinking solutions.
+                </span>
+              </div>
+
+              <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Fast Delivery 
+                <span className='text-[#647185] text-base'>
+                Our agile development approach<br/>
+                ensures rapid prototyping and efficient
+                execution to meet tight deadlines.
+                </span>
+              </div>
+              <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
+                <span className='text-[#647185] text-base'>
+                We don’t just meet industry standards—we
+                surpass them, delivering high-performance, 
+                future-ready solutions.
+                </span>
+              </div>
+
+              </div>
+
+
+              </div>
+              <div className='flex flex-col w-3/5 items-center justify-center '>
+              <img src={work} alt="work" className='rounded-3xl'/>
 
               </div>
 
             </div>
-          
-          </div>
     </div>
   )
 }
