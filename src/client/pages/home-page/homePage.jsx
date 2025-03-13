@@ -76,20 +76,20 @@ function HomePage() {
               <div className='flex flex-row w-2/5 '>
               <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon1} alt="icon1" className='h-10 w-10'></img>
+              <img src={icon1} alt="icons1" className='h-10 w-10'></img>
               </div>
               <div className=''>
                 <img src={line} alt="line"/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon2} alt="icon2" className='h-10 w-10'></img>
+              <img src={icon2} alt="icons2" className='h-10 w-10'></img>
               
               </div>
               <div className=''>
                 <img src={line} alt="line"/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-              <img src={icon3} alt="icon3" className='h-10 w-10'></img>
+              <img src={icon3} alt="icons3" className='h-10 w-10'></img>
               
               </div>
               </div>
