@@ -1,12 +1,12 @@
 import React from 'react'
-// import Navbar from '../../navbar-footer/navbar'
+import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
 import work from "../../../assets/images/work.png"
-import icon1 from "../../assets/images/icon1.svg"
-import icon2 from "../../assets/images/icon2.svg"
-import icon3 from "../../assets/images/icon3.svg"
+import Icon1 from "../../../assets/images/Icon1.svg"
+import icon2 from "../../../assets/images/icon2.svg"
+import icon3 from "../../../assets/images/icon3.svg"
 import line from "../../../assets/images/Line.svg"
 
 
@@ -76,17 +76,17 @@ function HomePage() {
               <div className='flex flex-row w-2/5 '>
               <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
-               <img src={icon1} alt="icons1" className='h-10 w-10'/>
+              <img src={Icon1} alt="icons1" className='h-10 w-10'></img>
               </div>
               <div className=''>
-                <img src={line} alt="line"/>
+                <img src={line} alt="line" className='h-25'/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
               <img src={icon2} alt="icons2" className='h-10 w-10'></img>
               
               </div>
               <div className=''>
-                <img src={line} alt="line"/>
+                <img src={line} alt="line" className='h-25'/>
               </div>
               <div className='bg-[#1A57C2] p-6 rounded-full'>
               <img src={icon3} alt="icons3" className='h-10 w-10'></img>
@@ -94,10 +94,10 @@ function HomePage() {
               </div>
               </div>
 
-              <div className='flex flex-col w-full  gap-36 p-2 py-6'>
+              <div className='flex flex-col w-full  gap-32 p-2 py-6'>
 
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2 '> Innovative 
-                <span className='text-[#647185] text-base'>
+                <span className='text-[#647185] text-base font-normal'>
                           We push the boundaries of IC<br/>
                           design and embedded systems<br/>
                           to create forward-thinking solutions.
@@ -105,14 +105,14 @@ function HomePage() {
               </div>
 
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Fast Delivery 
-                <span className='text-[#647185] text-base'>
+                <span className='text-[#647185] text-base font-normal'>
                 Our agile development approach<br/>
                 ensures rapid prototyping and efficient
-                execution to meet tight deadlines.
+                execution to meet deadlines.
                 </span>
               </div>
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
-                <span className='text-[#647185] text-base '>
+                <span className='text-[#647185] text-base font-normal'>
                 We don’t just meet industry standards—we
                 surpass them, delivering high-performance, 
                 future-ready solutions.
@@ -123,8 +123,12 @@ function HomePage() {
 
 
               </div>
-              <div className='flex flex-col w-3/5 items-center justify-center '>
-              <img src={work} alt="work" className='rounded-3xl'/>
+              <div className='flex flex-col w-3/5 items-center  mt-5 justify-start '>
+                  <img src={work} alt="work" className='rounded-3xl'/>
+                  <div className='flex flex-row w-1/2  justify-between items-center text-white bg-[#1A57C2] h-26 rounded-[20px] -mt-14 opacity-95 shadow-xl'>
+                    <div className='flex flex-col w-1/2 items-center font-bold text-2xl'>99% <span className='text-sm font-semibold'>Client satisfaction</span></div>
+                    <div className='flex flex-col w-1/2 items-center font-bold text-2xl'>100++<span className='text-sm font-semibold'>Projects delivered</span></div>
+                  </div>
 
               </div>
 
