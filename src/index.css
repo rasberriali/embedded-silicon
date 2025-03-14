@@ -1,1 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif; 
+}
+
+html, body {
+    height: 8000px; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+/* Custom Scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px; /* Thin scrollbar */
+  width: 3px; /* Width is 1/3 of the container */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #2d2d2d; /* Darker track */
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #8888888c; /* Gray thumb */
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Lighter on hover */
+}
+
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #1D1D1D, #162447, #1D1D1D);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
