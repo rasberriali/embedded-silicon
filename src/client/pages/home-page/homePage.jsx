@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
@@ -20,6 +21,7 @@ import arrow from "../../../assets/images/arrow.svg"
 
 
 function HomePage() {
+  const navigate = useNavigate();
   return (
     <div className=''>
     <div className='container mx-auto 2xl:p-0 p-6 font-inter '>
@@ -161,7 +163,7 @@ function HomePage() {
     <div className="mt-20">
   <div className="flex flex-row bg-gradient-to-b from-[#1D1D1D] via-[#162447] to-[#1D1D1D] font-inter animated-bg">
     <div className="container mx-auto mt-10 mb-10 p-6">
-      <div className="p-2 bg-[#2D7BFD] px-14 rounded-full w-fit text-white">Service</div>
+      <div className="p-2 bg-[#2D7BFD] hover:bg-[#0453D8] cursor-pointer px-14 rounded-full w-fit text-white"onClick={() => navigate('/aboutusPage')}>Services</div>
       <div className="w-fit text-5xl font-semibold text-white mt-6">What we do</div>
 
       {/* Scrollable Container */}
