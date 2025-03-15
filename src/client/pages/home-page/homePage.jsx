@@ -18,10 +18,12 @@ import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
 import small_icons from "../../../assets/images/small-icons.svg"
 import arrow from "../../../assets/images/arrow.svg"
+import icImage from "../../../assets/images/ic-bg.svg"
 
 
 function HomePage() {
   const navigate = useNavigate();
+ 
   return (
     <div className=''>
     <div className='container mx-auto 2xl:p-0 p-6 font-inter '>
@@ -59,7 +61,7 @@ function HomePage() {
             </div>
           
                                                       {/* rightside */}
-                                                        <div className='w-1/2   '>
+                                                        <div className='w-1/2 animate-floating   '>
                                                           <div className="relative mt-2 ">
                                                             <img src={image1} alt="ic" className="absolute top-0 left-0 2xl:w-[680px]  3xl:h-[350px] md:w-[560px]  md:h-[350px]   object-cover opacity-80 z-10 rounded-lg shadow-black shadow" />
                                                             <img src={image2} alt="ic" className="absolute top-8 left-6  2xl:w-[690px] 3xl:h-[360px] md:w-[570px] md:h-[360px] object-cover opacity-85 z-20 rounded-lg shadow-black " />
@@ -160,18 +162,18 @@ function HomePage() {
                                                       <div className=' justify-center flex'><img src={total} alt=""className='h-40 w-48'/></div>
                                                     </div>
     </div>
-    <div className="mt-20">
-  <div className="flex flex-row bg-gradient-to-b from-[#1D1D1D] via-[#162447] to-[#1D1D1D] font-inter animated-bg">
+    <div className="mt-20 font-inter ">
+  <div className="flex flex-row bg-white animated-bg">
     <div className="container mx-auto mt-10 mb-10 p-6">
-      <div className="p-2 bg-[#2D7BFD] hover:bg-[#0453D8] cursor-pointer px-14 rounded-full w-fit text-white"onClick={() => navigate('/aboutusPage')}>Services</div>
+      <div className="p-2  ring-1 ring-blue-500 cursor-pointer px-14 rounded-full w-fit text-white "onClick={() => navigate('/aboutusPage')}>Services</div>
       <div className="w-fit text-5xl font-semibold text-white mt-6">What we do</div>
 
       {/* Scrollable Container */}
       <div className="relative mt-14">
         <div className="overflow-x-auto scrollbar-custom cursor-pointer">
-          <div className="grid grid-flow-col auto-cols-max gap-10 mb-4 cursor-grab">
+          <div className="grid grid-flow-col auto-cols-max gap-10 mb-4 cursor-grab ">
             {/* Service Card 1 */}
-            <div className="border-[#1C18FF] border py-12 px-8 rounded-lg drop-shadow-lg text-white text-xl w-80 ">
+            <div className="border-[#1C18FF] border p-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72  ">
               <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
                 <img src={small_icons} alt="small" />
               </div>
@@ -180,14 +182,14 @@ function HomePage() {
                 <div className="font-extralight text-sm">
                   Proven processes, advanced technologies, and deep expertise ensure reliable projects.
                 </div>
-                <div className="text-xs font-normal flex justify-end gap-1 mt-6 hover:text-gray-400">
-                  Learn more <img src={arrow} alt="arrow" />
+                <div className="text-xs font-normal flex justify-end gap-1 mt-6 cursor-pointer hover:text-gray-400">
+                  Learn more <img src={arrow} alt="arrow" className='cursor-pointer' />
                 </div>
               </div>
             </div>
 
             {/* Service Card 2 */}
-            <div className="border-[#1C18FF] border py-12 px-8 rounded-lg drop-shadow-lg text-white text-xl w-80">
+            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
               <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
                 <img src={small_icons} alt="small" />
               </div>
@@ -203,7 +205,7 @@ function HomePage() {
             </div>
 
             {/* Service Card 3 */}
-            <div className="border-[#1C18FF] border py-12 px-8 rounded-lg drop-shadow-lg text-white text-xl w-80">
+            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
               <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
                 <img src={small_icons} alt="small" />
               </div>
@@ -219,7 +221,7 @@ function HomePage() {
             </div>
 
             {/* Service Card 4 */}
-            <div className="border-[#1C18FF] border py-12 px-8 rounded-lg drop-shadow-lg text-white text-xl w-80">
+            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
               <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
                 <img src={small_icons} alt="small" />
               </div>
@@ -235,7 +237,7 @@ function HomePage() {
             </div>
 
             {/* Service Card 5 */}
-            <div className="border-[#1C18FF] border py-12 px-8 rounded-lg drop-shadow-lg text-white text-xl w-80">
+            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
               <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
                 <img src={small_icons} alt="small" />
               </div>
@@ -255,6 +257,78 @@ function HomePage() {
     </div>
   </div>
 </div>
+
+
+{/* Latest New */}
+
+<div className="container mx-auto p-6 mt-20 font-inter">
+      <h2 className="flex flex-col text-[50px] font-semibold  text-center mb-12 ">Latest News <span className='text-xl text-[#647185] font-normal'>Some of the businesses and startups we have worked with</span></h2>
+
+
+      <div className="grid xl:grid-cols-3 xl:grid-rows-[auto_auto] grid-cols-1 grid-rows-1  border-[#1C18FF] border-2">
+        
+        {/* Large Feature Card (Spanning Two Rows) */}
+        <div className="col-span-2 row-span-1 relative">
+          <img
+            src={icImage}
+            alt="Featured News"
+            className="w-full h-full object-cover opacity-95 border-b-2 border-r-2 border-[#1C18FF]  "
+          />
+          <div className="absolute bottom-0 left-0 w-full bg-white">
+           
+          </div>
+        </div>
+
+        {/* Small Card (Top Right) */}
+        <div className="bg-gray-100 p-6 border-b-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+  <h3 className="text-lg font-semibold">
+    From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
+  </h3>
+ 
+  <button className="mt-4 bg-[#1C18FF] text-xs  text-white px-4 py-1  w-fit">
+    Expert blog
+  </button>
+</div>
+
+        {/* Three Smaller Cards Below */}
+        <div className="bg-gray-100 p-6 border-r-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+  <h3 className="text-lg font-semibold">
+    From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
+  </h3>
+ 
+  <button className="mt-4 bg-[#1C18FF] text-xs  text-white px-4 py-1 w-fit">
+    Expert blog
+  </button>
+</div>
+
+
+
+<div className="bg-gray-100 p-6 border-r-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+  <h3 className="text-lg font-semibold">
+    From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
+  </h3>
+ 
+  <button className="mt-4 bg-[#1C18FF] text-xs  text-white px-4 py-1   w-fit">
+    Expert blog
+  </button>
+</div>
+
+          <div className="bg-gray-100 p-6 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+  <h3 className="text-lg font-semibold">
+    From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
+  </h3>
+ 
+  <button className="mt-4 bg-[#1C18FF] text-xs  text-white px-4 py-1   w-fit">
+    Expert blog
+  </button>
+</div>
+
+
+      </div>
+    </div>
+
+
+
 
 
 </div>
