@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 8000px; /* Full viewport height */
+    /* height: 8000px; Full viewport height */
     margin: 0;
     padding: 0;
   }
@@ -35,7 +35,7 @@ html, body {
 
 
 .scrollbar-custom::-webkit-scrollbar-track {
-  background: #2d2d2d; /* Darker track */
+ width:2px;
   border-radius: 10px;
 }
 

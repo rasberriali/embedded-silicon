@@ -18,7 +18,16 @@ import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
 import small_icons from "../../../assets/images/small-icons.svg"
 import arrow from "../../../assets/images/arrow.svg"
-import icImage from "../../../assets/images/ic-bg.svg"
+// import icImage from "../../../assets/images/ic-bg.svg"
+import icImagee from "../../../assets/images/ic-bgg.svg"
+import custom from "../../../assets/images/custom.svg"
+import custom1 from "../../../assets/images/custom1.svg"
+import analog from "../../../assets/images/analog.svg"
+import cpu from "../../../assets/images/cpu.png"
+import linebg from "../../../assets/images/linebg.svg"
+import backdrop2 from "../../../assets/images/backdrop2.jpg";
+
+
 
 
 function HomePage() {
@@ -163,101 +172,54 @@ function HomePage() {
                                                     </div>
     </div>
     <div className="mt-20 font-inter ">
-  <div className="flex flex-row bg-white animated-bg">
+  <div className="flex flex-row relative animated-bg">
+    <img 
+        src={backdrop2}
+        alt="Footer Background" 
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-5"
+      />
     <div className="container mx-auto mt-10 mb-10 p-6">
-      <div className="p-2  ring-1 ring-blue-500 cursor-pointer px-14 rounded-full w-fit text-white "onClick={() => navigate('/aboutusPage')}>Services</div>
-      <div className="w-fit text-5xl font-semibold text-white mt-6">What we do</div>
+      <div className="p-2  ring-1 ring-[#1C18FF] hover:bg-blue-600 cursor-pointer px-14 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/aboutusPage')}>Services</div>
+      <div className="w-fit text-5xl font-semibold text-white mt-18">What we do</div>
 
       {/* Scrollable Container */}
       <div className="relative mt-14">
-        <div className="overflow-x-auto scrollbar-custom cursor-pointer">
-          <div className="grid grid-flow-col auto-cols-max gap-10 mb-4 cursor-grab ">
-            {/* Service Card 1 */}
-            <div className="border-[#1C18FF] border p-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72  ">
-              <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
-                <img src={small_icons} alt="small" />
-              </div>
-              <div className="flex flex-col gap-4 mt-4">
-                <div className="font-bold">Integrated Chip Design</div>
-                <div className="font-extralight text-sm">
-                  Proven processes, advanced technologies, and deep expertise ensure reliable projects.
-                </div>
-                <div className="text-xs font-normal flex justify-end gap-1 mt-6 cursor-pointer hover:text-gray-400">
-                  Learn more <img src={arrow} alt="arrow" className='cursor-pointer' />
-                </div>
-              </div>
+  <div className="overflow-x-auto scrollbar-custom cursor-pointer mb-5">
+    <div className="grid grid-flow-col auto-cols-max gap-6 py-6 mb-6 cursor-grab ">
+      
+      {/* Service Cards */}
+      {[
+        { title: "Integrated Chip Design", desc: "Proven processes, advanced technologies, and deep expertise ensure reliable projects.", icon: cpu },
+        { title: "Application-Specific IC Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: analog },
+        { title: "Physical Design and Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: custom },
+        { title: "FPGA Development", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: analog },
+        { title: "Custom ASIC Solutions", desc: "We provide high-performance ASIC design solutions tailored to your needs.", icon: custom }
+      ].map((service, index) => (
+        <div 
+          key={index} 
+          className="group border-[#1C18FF] border py-6 px-8 rounded-2xl shadow-lg text-white text-xl w-72 bg-gray-900 transition-all duration-300 hover:shadow-xl hover:-translate-y-4 flex flex-col justify-between"
+        >
+          <div className="p-3 bg-white w-16 flex justify-center rounded-xl shadow-md">
+            <img src={service.icon} alt="icon" className="w-10 h-10" />
+          </div>
+          <div className="flex flex-col gap-3 mt-5">
+            <div className="font-bold text-lg">{service.title}</div>
+            <div className="font-light text-sm text-gray-300">
+              {service.desc}
             </div>
-
-            {/* Service Card 2 */}
-            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
-              <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
-                <img src={small_icons} alt="small" />
-              </div>
-              <div className="flex flex-col gap-4 mt-4">
-                <div className="font-bold">Application-Specific IC Verification</div>
-                <div className="font-extralight text-sm">
-                  From concept to launch, we create stunning, user-centric websites that elevate your brand.
-                </div>
-                <div className="text-xs font-normal flex justify-end gap-1">
-                  Learn more <img src={arrow} alt="arrow" />
-                </div>
-              </div>
-            </div>
-
-            {/* Service Card 3 */}
-            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
-              <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
-                <img src={small_icons} alt="small" />
-              </div>
-              <div className="flex flex-col gap-4 mt-4">
-                <div className="font-bold">Physical Design and Verification</div>
-                <div className="font-extralight text-sm">
-                  From concept to launch, we create stunning, user-centric websites that elevate your brand.
-                </div>
-                <div className="text-xs font-normal flex justify-end gap-1">
-                  Learn more <img src={arrow} alt="arrow" />
-                </div>
-              </div>
-            </div>
-
-            {/* Service Card 4 */}
-            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
-              <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
-                <img src={small_icons} alt="small" />
-              </div>
-              <div className="flex flex-col gap-4 mt-4">
-                <div className="font-bold">FPGA Development</div>
-                <div className="font-extralight text-sm">
-                  From concept to launch, we create stunning, user-centric websites that elevate your brand.
-                </div>
-                <div className="text-xs font-normal flex justify-end gap-1 mt-6">
-                  Learn more <img src={arrow} alt="arrow" />
-                </div>
-              </div>
-            </div>
-
-            {/* Service Card 5 */}
-            <div className="border-[#1C18FF] border py-6 px-8 rounded-lg drop-shadow-lg text-white text-xl w-72">
-              <div className="p-4 bg-white w-14 flex justify-center rounded-lg">
-                <img src={small_icons} alt="small" />
-              </div>
-              <div className="flex flex-col gap-4 mt-4">
-                <div className="font-bold">Custom ASIC Solutions</div>
-                <div className="font-extralight text-sm">
-                  We provide high-performance ASIC design solutions tailored to your needs.
-                </div>
-                <div className="text-xs font-normal flex justify-end gap-1 mt-6">
-                  Learn more <img src={arrow} alt="arrow" />
-                </div>
-              </div>
+            <div className="text-xs font-normal flex justify-end gap-1 mt-4 text-blue-400 hover:text-blue-300 transition-all cursor-pointer">
+              Learn more <img src={arrow} alt="arrow" className="w-4" />
             </div>
           </div>
         </div>
-      </div>
+      ))}
+
     </div>
   </div>
 </div>
-
+</div>
+</div>
+</div>
 
 {/* Latest New */}
 
@@ -265,14 +227,14 @@ function HomePage() {
       <h2 className="flex flex-col text-[50px] font-semibold  text-center mb-12 ">Latest News <span className='text-xl text-[#647185] font-normal'>Some of the businesses and startups we have worked with</span></h2>
 
 
-      <div className="grid xl:grid-cols-3 xl:grid-rows-[auto_auto] grid-cols-1 grid-rows-1  border-[#1C18FF] border-2">
+      <div className="grid xl:grid-cols-3 xl:grid-rows-[auto_auto] grid-cols-1 grid-rows-1  border-[#1A57C2] border-2">
         
         {/* Large Feature Card (Spanning Two Rows) */}
         <div className="col-span-2 row-span-1 relative">
           <img
-            src={icImage}
+            src={icImagee}
             alt="Featured News"
-            className="w-full h-full object-cover opacity-95 border-b-2 border-r-2 border-[#1C18FF]  "
+            className="w-full h-full object-cover opacity-95 border-b-2 border-r-2 border-[#1A57C2]  "
           />
           <div className="absolute bottom-0 left-0 w-full bg-white">
            
@@ -280,7 +242,7 @@ function HomePage() {
         </div>
 
         {/* Small Card (Top Right) */}
-        <div className="bg-gray-100 p-6 border-b-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+        <div className="bg-gray-100 p-6 border-b-2 border-[#1A57C2] min-h-[300px] w-full flex flex-col justify-between">
   <h3 className="text-lg font-semibold">
     From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
   </h3>
@@ -291,7 +253,7 @@ function HomePage() {
 </div>
 
         {/* Three Smaller Cards Below */}
-        <div className="bg-gray-100 p-6 border-r-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+        <div className="bg-gray-100 p-6 border-r-2 border-[#1A57C2] min-h-[300px] w-full flex flex-col justify-between">
   <h3 className="text-lg font-semibold">
     From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
   </h3>
@@ -303,7 +265,7 @@ function HomePage() {
 
 
 
-<div className="bg-gray-100 p-6 border-r-2 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+<div className="bg-gray-100 p-6 border-r-2 border-[#1A57C2] min-h-[300px] w-full flex flex-col justify-between">
   <h3 className="text-lg font-semibold">
     From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
   </h3>
@@ -313,7 +275,7 @@ function HomePage() {
   </button>
 </div>
 
-          <div className="bg-gray-100 p-6 border-[#1C18FF] min-h-[300px] w-full flex flex-col justify-between">
+          <div className="bg-gray-100 p-6 border-[#1A57C2] min-h-[300px] w-full flex flex-col justify-between">
   <h3 className="text-lg font-semibold">
     From concept to launch, we create stunning, user-centric websites that elevate your brand <span> <p className="text-sm text-gray-500">Embedded and IoT • 07 March 2025</p></span>
   </h3>
@@ -326,6 +288,7 @@ function HomePage() {
 
       </div>
     </div>
+
 
 
 
