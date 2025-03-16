@@ -36,11 +36,11 @@ function HomePage() {
  
   return (
     <div className=''>
-    <div className='container mx-auto 2xl:p-0 p-6 font-inter '>
-        <div className='container mx-auto flex flex-col md:flex-col xl:flex-row md-flex-row  gap-4 lg:mt-10 2xl:mt-30 '>
+    <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter '>
+        <div className=' flex flex-col md:flex-col xl:flex-row md-flex-row  gap-4 lg:mt-10 2xl:mt-20 '>
              {/* leftside */}
             <div className='relative flex xl:w-1/2 flex-col xl:gap-10 gap-6  2xl:justify-start 2xl:items-start  lg:justify-start lg:items-start justify-center items-center' >
-            <img src={logobackdrop} alt="" className='absolute inset-0 opacity-85 w-full h-full object-cover -z-10 -mt-16'></img>
+            <img src={logobackdrop} alt="" className='absolute inset-0 opacity-85 w-full h-full object-cover -z-10 lg-mt-16 xl:-mt-30'></img>
               <div className='2xl:text-5xl text-3xl md:text-5xl xl:text-5xl text-center 2xl:text-start  xl:text-start font-bold'>A Full-stack technology development partner</div>
                 <p className='text-[#4A5565] text-[14px] xl:text-[20px] xl:text-start text-center xl:p-0 p-2'>
                   A leading Philippine tech firm specializing in IC Design,<br/>
@@ -86,8 +86,12 @@ function HomePage() {
         
                                                           </div>
 
+                                                       
+                                                       
+                                                       
+                                                       
                                                           <div className="gap-4 mt-12 w-full flex flex-col xl:items-start items-center xl:justify-start justify-center text-center xl:text-start">
-                                                        <div className="w-full px-3 xl:px-0">
+                                                        <div className="w-full px-3 xl:px-0 mt-20">
                                                           <h1 className="text-[#040404] xl:text-4xl text-xl font-semibold">
                                                             Your <span className="text-[#2D7BFD] font-semibold">all-in-one</span> IC and embedded <br />
                                                             solutions expert
@@ -99,10 +103,11 @@ function HomePage() {
                                                       </div>
 
 
-
+                                                      
           
-                                                      <div className='flex flex-row justify-between gap-4 mt-20'>
-                                                          <div className='flex flex-row w-2/5 '>
+                                                      <div className='flex xl:flex-row flex-col justify-between gap-4 mt-20'>
+                                                        
+                                                          <div className='flex flex-row xl:w-2/5 w-full  '>
                                                           <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
                                                           <div className='bg-[#2D7BFD] p-6 rounded-full'>
                                                           <img src={Icon1} alt="icons1" className='h-10 w-10'></img>
@@ -123,10 +128,10 @@ function HomePage() {
                                                           </div>
                                                           </div>
 
-                                                          <div className='flex flex-col w-full  gap-32 p-2 py-6'>
+                                                          <div className='flex flex-col w-full   gap-32 px-2 xl:py-6 p-6'>
 
                                                           <div className='flex flex-col text-[#040404] text-xl font-medium gap-2 '> Innovative 
-                                                            <span className='text-[#647185] text-base font-normal'>
+                                                            <span className='text-[#647185] xl:text-base text-sm font-normal'>
                                                                       We push the boundaries of IC<br/>
                                                                       design and embedded systems<br/>
                                                                       to create forward-thinking solutions.
@@ -134,14 +139,14 @@ function HomePage() {
                                                           </div>
 
                                                           <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Fast Delivery 
-                                                            <span className='text-[#647185] text-base font-normal'>
+                                                            <span className='text-[#647185] xl:text-base text-sm font-normal'>
                                                             Our agile development approach<br/>
                                                             ensures rapid prototyping and efficient
                                                             execution to meet deadlines.
                                                             </span>
                                                           </div>
                                                           <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
-                                                            <span className='text-[#647185] text-base font-normal'>
+                                                            <span className='text-[#647185] xl:text-base text-sm font-normal'>
                                                             We don’t just meet industry standards—we
                                                             surpass them, delivering high-performance, 
                                                             future-ready solutions.
@@ -149,17 +154,29 @@ function HomePage() {
                                                           </div>
 
                                                           </div>
-
-
                                                           </div>
-                                                          <div className='flex flex-col w-3/5 items-center  mt-5 justify-start '>
-                                                              <img src={work} alt="work" className='rounded-3xl'/>
-                                                              <div className='flex flex-row w-1/2  justify-between items-center text-white bg-[#2D7BFD] h-26 rounded-[20px] -mt-14 opacity-95 shadow-xl'>
-                                                                <div className='flex flex-col w-1/2 items-center font-bold text-2xl'>99% <span className='text-sm font-semibold'>Client satisfaction</span></div>
-                                                                <div className='flex flex-col w-1/2 items-center font-bold text-2xl'>100++<span className='text-sm font-semibold'>Projects delivered</span></div>
-                                                              </div>
+
+                                                          
+                                                          <div className='flex flex-col w-full sm:w-3/5 items-center mt-5 justify-start'>
+                                                        {/* Work Image */}
+                                                        <img src={work} alt="work" className='rounded-3xl w-full' />
+
+                                                        {/* Stats Container */}
+                                                        <div className='flex flex-row w-4/5 sm:w-3/5 justify-between items-center text-white bg-[#2D7BFD] h-auto xl:p-8 p-6 rounded-[20px] -mt-14 opacity-95 shadow-xl text-center'>
+                                                          <div className='flex flex-col w-full sm:w-1/2 items-center font-bold text-2xl'>
+                                                            99% <span className='text-sm font-semibold'>Client satisfaction</span>
+                                                          </div>
+                                                          <div className='flex flex-col w-full sm:w-1/2 items-center font-bold text-2xl '>
+                                                            100++ <span className='text-sm font-semibold'>Projects delivered</span>
                                                           </div>
                                                         </div>
+                                                        </div>
+                                                        </div>
+
+
+                                                        
+
+                                                        {/* Our Clients */}
 
             
                                                         <div className='flex flex-row mt-40 justify-center'>
@@ -236,8 +253,8 @@ function HomePage() {
 
 {/* Latest New */}
 
-<div className="container mx-auto p-6 mt-20 font-inter">
-  <h2 className="flex flex-col text-[50px] font-semibold text-center mb-12">
+<div className="max-w-screen-xl mx-auto p-6 mt-20 font-inter">
+  <h2 className="flex flex-col text-[50px]  font-semibold text-center mb-12 gap-2">
     Latest News 
     <span className="text-xl text-[#647185] font-normal">
       Some of the businesses and startups we have worked with
@@ -245,69 +262,71 @@ function HomePage() {
   </h2>
 
   {/* News Grid */}
-  <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 border-[#2D7BFD] border-2 ">
-    
-    {/* Large Feature Card (Spanning Two Rows) */}
-    <div className="xl:col-span-2 xl:row-span-1 relative">
-      <img
-        src={icImagee}
-        alt="Featured News"
-        className="w-full h-full object-cover opacity-95 border-b-2 border-r-2 border-[#2D7BFD]"
-      />
-    </div>
-
-    {/* Small Card (Top Right) */}
-    <div className="bg-gray-100 p-6 border-b-2 border-[#1A57C2] min-h-[300px] w-full flex flex-col justify-between">
-      <h3 className="text-base font-semibold">
-      Optimizing costs with data migration to the cloud for a leading stock photography platform
-        <span>
-          <p className="text-xs text-gray-500 font-medium mt-4">AI & ML • 15 March 2025</p>
-        </span>
-      </h3>
-      <button className="mt-4 bg-[#1C18FF] text-xs text-white px-4 py-1 w-fit">
-        Read More
-      </button>
-    </div>
-
-    {/* Additional News Cards */}
-    <div className="bg-gray-100 p-6 border-r-2 border-[#2D7BFD] min-h-[300px] w-full flex flex-col justify-between">
-      <h3 className="text-base font-semibold">
-      From concept to launch, we create stunning, user-centric websites that elevate your brand 
-        <span>
-          <p className="text-xs text-gray-500 font-medium mt-4">Web Development • 18 March 2025</p>
-        </span>
-      </h3>
-      <button className="mt-4 bg-[#1C18FF] text-xs text-white px-4 py-1 w-fit">
-        Read More
-      </button>
-    </div>
-
-    <div className="bg-gray-100 p-6 border-r-2 border-[#2D7BFD] min-h-[300px] w-full flex flex-col justify-between">
-      <h3 className="text-base font-semibold">
-      From concept to launch, we create stunning, user-centric websites that elevate your brand 
-        <span>
-          <p className="text-xs text-gray-500 font-medium mt-4">IoT • 21 March 2025</p>
-        </span>
-      </h3>
-      <button className="mt-4 bg-[#1C18FF] text-xs text-white px-4 py-1 w-fit">
-        Read More
-      </button>
-    </div>
-
-    <div className="bg-gray-100 p-6 border-[#2D7BFD] min-h-[300px] w-full flex flex-col justify-between">
-      <h3 className="text-base font-semibold">
-      From concept to launch, we create stunning, user-centric websites that elevate your brand 
-        <span>
-          <p className="text-xs text-gray-500 font-medium mt-4">Security • 25 March 2025</p>
-        </span>
-      </h3>
-      <button className="mt-4 bg-[#1C18FF] text-xs text-white px-4 py-1 w-fit">
-        Read More
-      </button>
-    </div>
-
-   
+  <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 border-[#2D7BFD] border-1">
+  <div className="xl:col-span-2 xl:row-span-1 relative border-[#2D7BFD] border overflow-hidden">
+  <div className="w-full h-full relative">
+    <img
+      src={icImagee}
+      alt="Featured News"
+      className="w-full h-full object-cover opacity-95 transition-transform duration-1000 ease-in-out hover:scale-120  hover:blur-sm"
+    />
   </div>
+</div>
+
+
+
+  {/* Small Card (Top Right) */}
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+    <h3 className="text-2xl font-bold">
+      Optimizing costs with data migration to the cloud for a leading stock photography platform
+      <span>
+        <p className="text-xs text-gray-500 font-medium mt-4">AI & ML • 15 March 2025</p>
+      </span>
+    </h3>
+    <button className="mt-4 bg-gradient-to-r from-[#5c720d] to-[#b9eb08] text-xs text-white px-4 py-1 w-fit">
+      Read More
+    </button>
+  </div>
+
+  {/* Additional News Cards */}
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+    <h3 className="text-xl font-bold">
+      From concept to launch, we create stunning, user-centric websites that elevate your brand 
+      <span>
+        <p className="text-xs text-gray-500 font-medium mt-4">Web Development • 18 March 2025</p>
+      </span>
+    </h3>
+    <button className="mt-4 bg-gradient-to-r from-[#1C18FF] to-[#2915ac] text-xs text-white px-4 py-1 w-fit">
+      Read More
+    </button>
+  </div>
+
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+    <h3 className="text-xl font-bold">
+      From concept to launch, we create stunning, user-centric websites that elevate your brand 
+      <span>
+        <p className="text-xs text-gray-500 font-medium mt-4">IoT • 21 March 2025</p>
+      </span>
+    </h3>
+    <button className="mt-4 bg-gradient-to-r from-[#03ce46] to-[#026830] text-xs text-white px-4 py-1 w-fit">
+      Read More
+    </button>
+  </div>
+
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+    <h3 className="text-xl font-bold">
+      From concept to launch, we create stunning, user-centric websites that elevate your brand 
+      <span>
+        <p className="text-xs text-gray-500 font-medium mt-4">Security • 25 March 2025</p>
+      </span>
+    </h3>
+    <button className="mt-4 bg-gradient-to-r from-[#e7045b] to-[#5e0066] text-xs text-white px-4 py-1 w-fit">
+      Read More
+    </button>
+  </div>
+
+</div>
+
 </div>
 </div>
    

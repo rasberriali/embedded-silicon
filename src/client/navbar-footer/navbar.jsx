@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className='border-b-[0.1px] border-gray-200 font-inter sticky top-0 z-50 bg-white'>
-      <div className='container mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6  '>
+      <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6  '>
         <div className='flex items-center gap-2 cursor-pointer'>
           <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
           <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold font-inter leading-5'>embedded<br/> silicon</div>

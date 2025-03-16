@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="relative bg-gray-900 text-white py-12 font-inter mt-80">
-      <div className="container mx-auto px-6">
+      <div className="max-w-screen-xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           {/* Logo Section */}
           <div className="md:col-span-2 flex flex-col gap-4">
