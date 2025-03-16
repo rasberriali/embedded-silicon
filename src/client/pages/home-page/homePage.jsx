@@ -211,14 +211,16 @@ function HomePage() {
     <img 
         src={backdrop2}
         alt="Footer Background" 
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-5"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
       />
-    <div className="container mx-auto mt-10 mb-10 p-6">
-      <div className="xl:p-2 p-1  ring-1 ring-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-14 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/aboutusPage')}>Services</div>
-      <div className="w-fit xl:text-5xl text-4xl font-semibold text-white mt-18">What we do</div>
+    <div className="container mx-auto mt-10 mb-10 p-6 lg:p-6 2xl:p-32 z-10">
+      <div className="xl:p-2 p-1   bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-14 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/aboutusPage')}>Services</div>
+      <div className="w-fit xl:text-5xl text-4xl font-semibold text-white mt-18 flex flex-col gap-3">What we do
+      <span className='xl:text-xl  text-sm text-[#b0b8c4] font-normal'>Some of the businesses and startups we have worked with</span>
+      </div>
 
       {/* Scrollable Container */}
-      <div className="relative mt-10">
+      <div className="relative mt-8">
   <div className="overflow-x-auto scrollbar-custom cursor-pointer mb-5">
     <div className="grid grid-flow-col auto-cols-max gap-6 py-6 mb-6 cursor-grab ">
       
@@ -259,7 +261,7 @@ function HomePage() {
 {/* Latest New */}
 
 <div className="max-w-screen-xl mx-auto mt-20 font-inter lg:px-6 2xl:px-0 px-6">
-  <h2 className="flex flex-col text-[50px]  font-semibold text-center mb-12 gap-2">
+  <h2 className="flex flex-col text-[50px]  font-semibold text-center mb-12 gap-2 text-[#040404]">
     Latest News 
     <span className="text-xl text-[#647185] font-normal">
       Some of the businesses and startups we have worked with
@@ -270,7 +272,7 @@ function HomePage() {
   <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 border-[#2D7BFD] border-1">
   <div className="xl:col-span-2 xl:row-span-1 relative border-[#2D7BFD] border overflow-hidden">
   <div className="w-full h-full relative group">
-    <div className='absolute z-1 xl:text-5xl text-base xl:w-2/3 font-bold text-white p-6  '>Full-stack technology development <br></br>partner</div>
+    <div className='absolute z-1 xl:text-4xl text-xl xl:w-2/3 font-bold text-white p-6  '>Full-stack technology development <br></br>partner</div>
     <img
       src={backdropimage}
       alt="Featured News"
@@ -295,7 +297,7 @@ function HomePage() {
 
   {/* Content (Ensures text stays on top) */}
   <div className="relative z-10  min-h-[300px] w-full flex flex-col justify-between">
-    <h3 className="text-2xl font-bold group group-hover:text-white ">
+    <h3 className="text-xl font-bold group group-hover:text-white  text-[#040404]">
       Optimizing costs with data migration to the cloud for a leading stock photography platform
       <span>
         <p className="text-xs text-gray-500 font-medium mt-4">AI & ML • 15 March 2025</p>
@@ -316,7 +318,7 @@ function HomePage() {
 
   {/* Additional News Cards */}
   <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
-    <h3 className="text-xl font-bold">
+    <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
         <p className="text-xs text-gray-500 font-medium mt-4">Web Development • 18 March 2025</p>
@@ -328,7 +330,7 @@ function HomePage() {
   </div>
 
   <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
-    <h3 className="text-xl font-bold">
+    <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
         <p className="text-xs text-gray-500 font-medium mt-4">IoT • 21 March 2025</p>
@@ -340,7 +342,7 @@ function HomePage() {
   </div>
 
   <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
-    <h3 className="text-xl font-bold">
+    <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
         <p className="text-xs text-gray-500 font-medium mt-4">Security • 25 March 2025</p>
