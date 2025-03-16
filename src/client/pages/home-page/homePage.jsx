@@ -26,6 +26,7 @@ import analog from "../../../assets/images/analog.svg"
 import cpu from "../../../assets/images/cpu.png"
 import linebg from "../../../assets/images/linebg.svg"
 import backdrop2 from "../../../assets/images/backdrop2.jpg";
+import logobackdrop from "../../../assets/images/logobackdrop.svg"
 
 
 
@@ -38,39 +39,44 @@ function HomePage() {
     <div className='container mx-auto 2xl:p-0 p-6 font-inter '>
         <div className='container mx-auto flex flex-col md:flex-col xl:flex-row md-flex-row  gap-4 lg:mt-10 2xl:mt-30 '>
              {/* leftside */}
-            <div className='flex xl:w-1/2 flex-col gap-10  2xl:justify-start 2xl:items-start  lg:justify-start lg:items-start justify-center items-center' >
-              <div className='2xl:text-5xl  text-2xl xl:text-5xl text-center 2xl:text-start  xl:text-start font-bold'>A Full-stack technology development partner</div>
-                <p className='text-[#4A5565] text-[20px]'>
+            <div className='relative flex xl:w-1/2 flex-col xl:gap-10 gap-6  2xl:justify-start 2xl:items-start  lg:justify-start lg:items-start justify-center items-center' >
+            <img src={logobackdrop} alt="" className='absolute inset-0 w-full h-full object-cover -z-10 -mt-16'></img>
+              <div className='2xl:text-5xl  text-3xl xl:text-5xl text-center 2xl:text-start  xl:text-start font-bold'>A Full-stack technology development partner</div>
+                <p className='text-[#4A5565] text-[14px] xl:text-[20px] xl:text-start text-center xl:p-0 p-2'>
                   A leading Philippine tech firm specializing in IC Design,<br/>
                   embedded systems, rapid prototyping, and ASIC conversion. </p>
-                  <p className='text-[#040404] font-semibold text-[20px]'>
+
+                  <p className='text-[#040404] font-semibold text-[20px] xl:text-start text-center'>
                     Trusted for years in providing reliable digital solutions.</p>
                     <hr className='text-gray-200 w-2/3'></hr>
-                      <div className='flex flex-row w-3/4 justify-between '>
                       
-                       <div className='flex flex-col w-1/2'>
-                        <div className='flex flex-row  items-center text-[#1A57C2]  font-bold '>
-                          <div className='text-2xl '>200+ </div>
-                            <div className='text-xs mt-2 '>yrs</div> </div>
-                               <div className='text-[#647185] font-medium text-base'>of years of combined
-                                </div>
-                                  </div>
+                    <div className="flex flex-wrap xl:w-3/4 w-full xl:justify-start justify-center items-center xl:gap-12 gap-6">
+                        {/* First Column */}
+                        <div className="flex flex-col xl:items-start items-center text-center w-auto">
+                          <div className="flex flex-row items-center text-[#1A57C2] font-bold">
+                            <div className="xl:text-2xl text-xl">50+</div>
+                            <div className="text-xs mt-2">yrs</div>
+                          </div>
+                          <div className="text-[#647185] font-medium xl:text-base text-sm">engineers and growing</div>
+                        </div>
 
-                                    <div className='flex flex-col  w-1/2'>
-                                      <div className='flex flex-row  items-center text-[#1A57C2]  font-bold '>
-                                        <div className='text-2xl '>50+ </div>
-                                        <div className='text-xs mt-2 '>yrs</div> </div>
-                                          <div className='text-[#647185] font-medium text-base'>engineers and growing
-                                            </div>
-                                              </div>
-                                                  </div>
+                        {/* Second Column */}
+                        <div className="flex flex-col xl:items-start items-center text-center w-auto">
+                          <div className="flex flex-row items-center text-[#1A57C2] font-bold">
+                            <div className="xl:text-2xl text-xl">50+</div>
+                            <div className="text-xs mt-2">yrs</div>
+                          </div>
+                          <div className="text-[#647185] font-medium xl:text-base text-sm">engineers and growing</div>
+                        </div>
+                      </div>
 
-                                                    <div className='flex flex-row items-center justify-center w-3/5  -mt-4 bg-[#2D7BFD] hover:bg-[#1A57C2] cursor-pointer rounded-full text-white text-base'>
+
+                                                    <div className='flex flex-row items-center justify-center w-3/5  xl:-mt-4 mt-4 bg-[#2D7BFD] hover:bg-[#1A57C2] cursor-pointer rounded-full text-white text-base'>
                                                       <div className='p-2 font-medium'>Learn more</div></div>
             </div>
           
                                                       {/* rightside */}
-                                                        <div className='w-1/2 animate-floating   '>
+                                                        <div className='w-1/2 animate-floating hidden lg:block '>
                                                           <div className="relative mt-7 ">
                                                             <img src={image1} alt="ic" className="absolute top-0 left-0 2xl:w-[680px]  2xl:h-[350px] md:w-[540px]  md:h-[300px]   object-cover opacity-85 z-10 rounded-lg shadow-black " />
                                                             <img src={image2} alt="ic" className="absolute top-8 left-6  2xl:w-[690px] 2xl:h-[360px] md:w-[550px] md:h-[300px] object-cover opacity-90 z-20 rounded-lg shadow-black " />
@@ -78,14 +84,21 @@ function HomePage() {
                                                            </div>
                                                         </div>
         
-        </div>
-                                                      <div className='gap-4 mt-50'>
-                                                        <div className='flex flex-col'>
-                                                        <h1 className='text-[#040404] text-4xl font-semibold w-3/5'>Your <span className='text-[#2D7BFD] font-semibold'>all-in-one</span> IC and embedded <br/>
-                                                        solutions expert</h1>
-                                                        <p className='mt-8 w-full text-[#647185] text-xl'>We specialize in delivering cutting-edge technology with seamless execution, keeping you involved every step of the way.</p>
+                                                          </div>
+
+                                                          <div className="gap-4 mt-12 w-full flex flex-col xl:items-start items-center xl:justify-start justify-center text-center xl:text-start">
+                                                        <div className="w-full px-3 xl:px-0">
+                                                          <h1 className="text-[#040404] xl:text-4xl text-xl font-semibold">
+                                                            Your <span className="text-[#2D7BFD] font-semibold">all-in-one</span> IC and embedded <br />
+                                                            solutions expert
+                                                          </h1>
+                                                          <p className="mt-8 text-[#647185] xl:text-xl text-base">
+                                                            We specialize in delivering cutting-edge technology with seamless execution, keeping you involved every step of the way.
+                                                          </p>
                                                         </div>
                                                       </div>
+
+
 
           
                                                       <div className='flex flex-row justify-between gap-4 mt-20'>
