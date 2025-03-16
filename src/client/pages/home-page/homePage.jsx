@@ -41,7 +41,7 @@ function HomePage() {
              {/* leftside */}
             <div className='relative flex xl:w-1/2 flex-col xl:gap-10 gap-6  2xl:justify-start 2xl:items-start  lg:justify-start lg:items-start justify-center items-center' >
             <img src={logobackdrop} alt="" className='absolute inset-0 opacity-85 w-full h-full object-cover -z-10 -mt-16'></img>
-              <div className='2xl:text-5xl  text-3xl xl:text-5xl text-center 2xl:text-start  xl:text-start font-bold'>A Full-stack technology development partner</div>
+              <div className='2xl:text-5xl text-3xl md:text-5xl xl:text-5xl text-center 2xl:text-start  xl:text-start font-bold'>A Full-stack technology development partner</div>
                 <p className='text-[#4A5565] text-[14px] xl:text-[20px] xl:text-start text-center xl:p-0 p-2'>
                   A leading Philippine tech firm specializing in IC Design,<br/>
                   embedded systems, rapid prototyping, and ASIC conversion. </p>
