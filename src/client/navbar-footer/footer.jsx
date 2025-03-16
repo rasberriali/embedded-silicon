@@ -46,10 +46,10 @@ function Footer() {
           <div>
             <h2 className="text-lg font-semibold">Products</h2>
             <ul className="mt-4 space-y-2 text-gray-400 text-sm">
-              <li className="hover:text-white cursor-pointer">Semiconductor IP</li>
-              <li className="hover:text-white cursor-pointer">Verification</li>
-              <li className="hover:text-white cursor-pointer">Design</li>
-              <li className="hover:text-white cursor-pointer">Manufacturing</li>
+              <li className="hover:text-white cursor-pointer">Integrated Chip Design</li>
+              <li className="hover:text-white cursor-pointer">Application-Specific IC Verification</li>
+              <li className="hover:text-white cursor-pointer">FPGA Development</li>
+              <li className="hover:text-white cursor-pointer">Custom ASIC Solutions</li>
             </ul>
           </div>
 
