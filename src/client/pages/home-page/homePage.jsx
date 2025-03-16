@@ -27,6 +27,11 @@ import cpu from "../../../assets/images/cpu.png"
 import linebg from "../../../assets/images/linebg.svg"
 import backdrop2 from "../../../assets/images/backdrop2.jpg";
 import logobackdrop from "../../../assets/images/logobackdrop.svg"
+import backdropimage from "../../../assets/images/backdropimage.png"
+import backdropimage2 from "../../../assets/images/backdropimage2.svg"
+import backdropimage3 from "../../../assets/images/backdropimage3.svg"
+// import { LuArrowRight } from "react-icons/lu";
+import { GoArrowRight } from "react-icons/go";
 
 
 
@@ -201,7 +206,7 @@ function HomePage() {
                                                       <div className=' justify-center flex'><img src={total} alt=""className=''/></div>
                                                     </div>
     </div>
-    <div className="mt-20 font-inter ">
+    <div className="mt-20 font-inter  ">
   <div className="flex flex-row relative animated-bg">
     <img 
         src={backdrop2}
@@ -253,7 +258,7 @@ function HomePage() {
 
 {/* Latest New */}
 
-<div className="max-w-screen-xl mx-auto p-6 mt-20 font-inter">
+<div className="max-w-screen-xl mx-auto mt-20 font-inter lg:px-6 2xl:px-0 px-6">
   <h2 className="flex flex-col text-[50px]  font-semibold text-center mb-12 gap-2">
     Latest News 
     <span className="text-xl text-[#647185] font-normal">
@@ -264,20 +269,33 @@ function HomePage() {
   {/* News Grid */}
   <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 border-[#2D7BFD] border-1">
   <div className="xl:col-span-2 xl:row-span-1 relative border-[#2D7BFD] border overflow-hidden">
-  <div className="w-full h-full relative">
+  <div className="w-full h-full relative group">
+    <div className='absolute z-1 xl:text-5xl text-base xl:w-2/3 font-bold text-white p-6  '>Full-stack technology development <br></br>partner</div>
     <img
-      src={icImagee}
+      src={backdropimage}
       alt="Featured News"
-      className="w-full h-full object-cover opacity-95 transition-transform duration-1000 ease-in-out hover:scale-120  hover:blur-sm"
-    />
+      className="w-full h-full object-cover opacity-95 transition-transform duration-1000 ease-in-out hover:scale-120  hover:blur-sm "/>
+       <span className="absolute right-6 bottom-6 text-white text-4xl opacity-0 transition-all duration-500 group-hover:opacity-100">
+  <GoArrowRight className=" w-10 h-14 transition-all duration-500 group-hover:w-20 text-sky-50 "/>
+</span>
+
   </div>
 </div>
 
 
 
   {/* Small Card (Top Right) */}
-  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
-    <h3 className="text-2xl font-bold">
+  <div className="relative group bg-gray-100 p-6 border-[#2D7BFD] border min-h-[300px] w-full flex flex-col justify-between overflow-hidden">
+  {/* Backdrop Image (Initially Hidden) */}
+  <img 
+    src={backdropimage2} 
+    alt="Backdrop" 
+    className="absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-1000 ease-in-out group-hover:opacity-100 group-hover:scale-110 group-hover:blur-sm"
+  />
+
+  {/* Content (Ensures text stays on top) */}
+  <div className="relative z-10  min-h-[300px] w-full flex flex-col justify-between">
+    <h3 className="text-2xl font-bold group group-hover:text-white ">
       Optimizing costs with data migration to the cloud for a leading stock photography platform
       <span>
         <p className="text-xs text-gray-500 font-medium mt-4">AI & ML • 15 March 2025</p>
@@ -287,6 +305,14 @@ function HomePage() {
       Read More
     </button>
   </div>
+
+  {/* Overlay to Improve Readability */}
+  <div className="absolute inset-0 bg-orange-200 opacity-0 transition-opacity duration-500 group-hover:opacity-1q0"></div>
+  <span className="absolute right-6 bottom-6 text-white text-4xl opacity-0 transition-all duration-500 group-hover:opacity-100">
+  <GoArrowRight className=" w-10 h-14 transition-all duration-500 group-hover:w-20 text-sky-50 "/>
+</span>
+</div>
+
 
   {/* Additional News Cards */}
   <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
