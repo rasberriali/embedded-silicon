@@ -5,6 +5,7 @@ import HomePage from "./client/pages/home-page/homePage";
 import "./index.css";
 import Map from "./client/modal/Map"
 import Footer from "./client/navbar-footer/footer";
+import ContactPage from "./client/pages/contact-page/contactPage";
 
 
 
@@ -16,7 +17,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        {/* <Route path="/Map" element={<Map/>}/> */}
+        <Route path="/contactPage" element={<ContactPage />}/>
+       
       </Routes>
       <Footer/>
     </Router>
