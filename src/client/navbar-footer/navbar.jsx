@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <nav className='border-b-[0.1px] border-gray-200 font-inter sticky top-0 z-50 bg-white'>
       <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6  '>
-        <div className='flex items-center gap-2 cursor-pointer'>
+        <div className='flex items-center gap-2 cursor-pointer 'onClick={() => navigate('/')}>
           <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
           <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold font-inter leading-5'>embedded<br/> silicon</div>
         </div>
@@ -36,12 +36,13 @@ function Navbar() {
             </div>
             <div className='cursor-pointer py-3 md:py-0'>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Sucess stories</div>
+            <div className='cursor-pointer py-3 md:py-0'  onClick={() => navigate('/contactPage')}>Contact</div>
           </div>
         </div>
 
         {/* Contact Button */}
         <div className='hidden md:flex'>
-          <div className='bg-[#EDEEF0] py-2 px-6 rounded-full cursor-pointer'>Contact</div>
+          <div className='bg-[#EDEEF0] py-2 px-6 rounded-full cursor-pointer' onClick={() => navigate('/contactPage')}>Contact</div>
         </div>
       </div>
     </nav>
