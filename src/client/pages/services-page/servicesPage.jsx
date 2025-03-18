@@ -18,12 +18,12 @@ function ServicesPage() {
        
       
     </div>
-    <div className='absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 p-6 '>
+    <div className='absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10 '>
       <div className='flex flex-col h-full justify-center'>
       <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-17 2xl:leading-28 lg:w-1/2 2xl:w-3/4 ">
          Emebedded Silicon Tech Expertise
         
-        <div className="text-white  text-lg lg:text-xl 2xl:text-2xl  font-normal xl:mt-8 mt-6">
+        <div className="text-white text-lg lg:text-xl 2xl:text-2xl  font-normal xl:mt-8 mt-6">
           We specialize in crafting tailored solutions that drive efficiency and accelerate growth.
         </div>
         </div>
@@ -35,7 +35,7 @@ function ServicesPage() {
 
   </div>
   <div className='flex flex-row w-full justify-between max-w-screen-xl mx-auto mt-16 font-inter'>
-    <div className='grid xl:grid-cols-3 grid-cols-1 xl:grid-rows-2 grid-rows-1 gap-8'>
+    <div className='grid xl:grid-cols-3 grid-cols-1 xl:grid-rows-2 grid-rows-1 gap-8 xl:p-0 p-8'>
 
     <div className="flex flex-col p-6 gap-6 relative">
   <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
@@ -52,6 +52,8 @@ function ServicesPage() {
       Application - Specific IC<br/> Verification
     </div>
   </div>
+
+  
   <div className=' flex flex-col gap-4'>
   <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
   <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
