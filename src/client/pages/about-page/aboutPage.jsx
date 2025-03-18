@@ -38,8 +38,8 @@ import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
 
 // map
 import { useEffect } from "react";
-import svgMap from "svgmap";
-import "svgmap/dist/svgMap.css"; // Import styles
+// import svgMap from "svgmap";
+// import "svgmap/dist/svgMap.css"; // Import styles
 
 
 import { GoArrowRight } from "react-icons/go";

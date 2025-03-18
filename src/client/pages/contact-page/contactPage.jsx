@@ -4,6 +4,7 @@ import dropdown from "../../../assets/images/dropdown.svg"
 import email from "../../../assets/images/email-icon.svg"
 import location from "../../../assets/images/location-icon.svg"
 import phone from "../../../assets/images/phone-icon.svg"
+import building from "../../../assets/images/building.svg"
 
 function ContactPage() {
   return (
@@ -13,7 +14,7 @@ function ContactPage() {
             <div className='text-5xl font-semibold text-[#040404]'>
                 Let's get in touch!
             </div>
-            <img src={madrigal} alt="" className='rounded-4xl'/>
+            <img src={building} alt="" className='rounded-4xl h-1/ '/>
 
             <div className='grid grid-cols-2 grid-rows-2 -space-y-10'>
               <div className='flex flex-row '>
