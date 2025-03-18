@@ -7,6 +7,8 @@ import "./index.css";
 import Map from "./client/modal/Map"
 import Footer from "./client/navbar-footer/footer";
 import ContactPage from "./client/pages/contact-page/contactPage";
+import ServicesPage from "./client/pages/services-page/servicesPage";
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/aboutPage" element={<AboutPage />}/>
+        <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
       </Routes>
       <Footer/>
@@ -28,7 +31,3 @@ function App() {
 }
 
 export default App;
-
-
-//map
-

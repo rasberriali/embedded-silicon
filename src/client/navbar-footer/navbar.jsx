@@ -28,21 +28,21 @@ function Navbar() {
         <div className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 ${isOpen ? 'block' : 'hidden'}`}>
           <div className='md:flex md:gap-10 text-center md:text-left text-[#162447] text-base'>
             <div className='cursor-pointer py-3 md:py-0' onClick={() => navigate('/')}>Home</div>
-            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0'onClick={() => navigate('/aboutusPage')} >
+            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0'onClick={() => navigate('/aboutPage')} >
               About us <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
             </div>
-            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0'>
+            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0'onClick={() => navigate('/servicesPage')}>
               Services <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
             </div>
             <div className='cursor-pointer py-3 md:py-0'>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Sucess stories</div>
-            <div className='cursor-pointer py-3 md:py-0'  onClick={() => navigate('/contactPage')}>Contact</div>
+            <div className='cursor-pointer py-3 md:py-0 h xl:hidden 'onClick={() => navigate('/contactPage')}>Contact</div>
           </div>
         </div>
 
         {/* Contact Button */}
         <div className='hidden md:flex'>
-          <div className='bg-[#EDEEF0] py-2 px-6 rounded-full cursor-pointer' onClick={() => navigate('/contactPage')}>Contact</div>
+          <div className='bg-[#2E7CFD] hover:bg-blue-600  text-[#FFFFFF] py-2 px-6 rounded-lg cursor-pointer' onClick={() => navigate('/contactPage')}>Contact</div>
         </div>
       </div>
     </nav>

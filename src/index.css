@@ -62,6 +62,12 @@ html, body {
   animation: gradientShift 10s ease infinite;
 }
 
+.gradient {
+  background: linear-gradient(180deg, #6F2DBD 0%, #452A72 40%, #2D7BFD 100%);
+}
+
+
+
 /* about us - key industries  */
 @keyframes marquee {
   from {

@@ -214,7 +214,7 @@ function HomePage() {
         className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
       />
     <div className="container mx-auto mt-10 mb-10 p-6 lg:p-6 2xl:p-32 z-10">
-      <div className="xl:p-2 p-1   bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-14 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/aboutusPage')}>Services</div>
+      <div className="xl:p-2 p-1   bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-14 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/ServicesPage')}>Services</div>
       <div className="w-fit xl:text-5xl text-4xl font-semibold text-white mt-18 flex flex-col gap-3">What we do
       <span className='xl:text-xl  text-sm text-[#b0b8c4] font-normal'>Some of the businesses and startups we have worked with</span>
       </div>
