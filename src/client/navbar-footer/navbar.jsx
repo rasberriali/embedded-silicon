@@ -36,7 +36,7 @@ function Navbar() {
             </div>
             <div className='cursor-pointer py-3 md:py-0'>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Sucess stories</div>
-            <div className='cursor-pointer py-3 md:py-0'  onClick={() => navigate('/contactPage')}>Contact</div>
+            <div className='cursor-pointer py-3 md:py-0 h xl:hidden 'onClick={() => navigate('/contactPage')}>Contact</div>
           </div>
         </div>
 
