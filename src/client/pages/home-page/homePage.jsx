@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
@@ -37,6 +37,9 @@ import { GoArrowRight } from "react-icons/go";
 
 
 function HomePage() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const navigate = useNavigate();
  
   return (
@@ -194,16 +197,19 @@ function HomePage() {
 
 
                                                     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5  grid-rows-2  items-center mt-10 ">
-                                                      <div className='justify-center flex'><img src={bosch} alt="" className=''/></div>
-                                                      <div className='justify-center flex'><img src={innovation} alt="" className=''/></div>
-                                                      <div className=' justify-center flex'><img src={credit} alt=""className=''/></div>
-                                                      <div className=' justify-center flex'><img src={ebay} alt=""className=''/></div>
-                                                      <div className='justify-center flex'><img src={total} alt=""className=''/></div>
-                                                      <div className='justify-center flex'><img src={inditex} alt=""className=''/></div>
-                                                      <div className=' justify-center flex'><img src={siemens} alt=""className=''/></div>
-                                                      <div className='justify-center flex'><img src={bosch} alt=""className=''/></div>
-                                                      <div className=' justify-center flex'><img src={ebay} alt=""className=''/></div>
-                                                      <div className=' justify-center flex'><img src={total} alt=""className=''/></div>
+                                                      <div className='justify-center flex'><img src={bosch} alt="" className='h-30'/></div>
+                                                      
+                                                      <div className='justify-center flex'><img src={innovation} alt="" className='h-30'/></div>
+                                                      <div className=' justify-center flex'><img src={credit} alt=""className='h-30'/></div>
+                                                      <div className=' justify-center flex'><img src={total} alt=""className='h-30'/></div>
+                                                      <div className=' justify-center flex'><img src={ebay} alt=""className='h-30'/></div>
+                                                      <div className='justify-center flex'><img src={total} alt=""className='h-30'/></div>
+                                                      <div className='justify-center flex'><img src={inditex} alt=""className='h-30'/></div>
+                                                      <div className=' justify-center flex'><img src={ebay} alt=""className='h-30'/></div>
+                                                      <div className=' justify-center flex'><img src={siemens} alt=""className='h-30'/></div>
+                                                      <div className='justify-center flex'><img src={bosch} alt=""className='h-30'/></div>
+                                                    
+                                                     
                                                     </div>
     </div>
     <div className="mt-20 font-inter  ">

@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 import companyOverview from "../../../assets/images/companyOverview.svg";
 import companyBuilding from "../../../assets/images/companyBuilding.svg";
 import missionIcon from "../../../assets/images/missionIcon.svg";
@@ -44,7 +44,19 @@ import svgMap from "svgmap";
 
 import { GoArrowRight } from "react-icons/go";
 function AboutPage() {
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  // const acronym = [
+  //   { letter: "E", word: "Embedded", definition: "Specializing in IC design and firmware development." },
+  //   { letter: "S", word: "Systems", definition: "Delivering seamless integration in hardware and software." },
+  //   { letter: "I", word: "Innovation", definition: "Pioneering advancements in embedded technology." },
+  //   { letter: "L", word: "Logic", definition: "Building smart solutions with cutting-edge design." },
+  //   { letter: "I", word: "Integration", definition: "Ensuring efficiency across digital and analog systems." },
+  //   { letter: "C", word: "Connectivity", definition: "Enhancing communication between devices." },
+  //   { letter: "O", word: "Optimization", definition: "Maximizing performance in embedded applications." },
+  //   { letter: "N", word: "Networks", definition: "Expanding possibilities with connected solutions." }
+  // ];
   return (
     <>
 {/* Company Overview Section */}

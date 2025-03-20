@@ -1,12 +1,17 @@
-import React from 'react'
+import {useEffect} from 'react'
 import madrigal from "../../../assets/images/madrigal.jpg"
 import dropdown from "../../../assets/images/dropdown.svg"
 import email from "../../../assets/images/email-icon.svg"
 import location from "../../../assets/images/location-icon.svg"
 import phone from "../../../assets/images/phone-icon.svg"
-import building from "../../../assets/images/building.svg"
+import building from "../../../assets/images/building.jpg"
 
 function ContactPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter mt-6 lg:mt-10 2xl:mt-20'>
         <div className='flex xl:flex-row flex-col'>
