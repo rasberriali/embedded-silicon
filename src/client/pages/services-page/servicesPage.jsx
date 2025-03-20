@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import servicesbg3 from "../../../assets/images/services-bg-3.jpg"
 import dot from "../../../assets/images/dotgrid.svg"
 import icon3 from "../../../assets/images/icon3.svg"
@@ -8,6 +8,9 @@ import iconservices2 from "../../../assets/images/icon-services2.svg"
 
 
 function ServicesPage() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div>
     <div className="relative font-inter">
@@ -169,6 +172,268 @@ function ServicesPage() {
   <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
 </div>
 </div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+    <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex  ">
+      <img src={iconservices2} alt="" className='' />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br/> Verification
+    </div>
+  </div>
+  <div className=' flex flex-col gap-4'>
+  <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+  <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+</div>
+</div>
+
+<div className="flex flex-col p-6 gap-6 relative group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70 transition-all duration-300 group-hover:w-full"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300 opacity-80">
+    <span className="absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900 opacity-80 transition-all duration-300 group-hover:h-[60%]"></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex">
+      <img src={iconservices2} alt="" className="transition-transform duration-300 group-hover:scale-110" />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br /> Verification
+    </div>
+  </div>  
+  
+  <div className="flex flex-col gap-4">
+    <div className="text-[#1E1E1E] text-base font-normal">Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+    <div className="flex flex-row justify-end items-end px-4">
+      <img src={arrow} alt="" className="h-6 text-end transition-transform duration-300 group-hover:translate-x-2" />
+    </div>
+  </div>
+</div>
+
+
+<div className="flex flex-col p-6 gap-6 relative group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70 transition-all duration-300 group-hover:w-full"></div>
+  <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300 opacity-80">
+    <span className="absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900 opacity-80 transition-all duration-300 group-hover:h-[60%]"></span>
+  </div>
+
+  <div className="flex flex-row gap-6">
+    <div className="w-1/6 rounded-sm flex">
+      <img src={iconservices2} alt="" className="transition-transform duration-300 group-hover:scale-110" />
+    </div>
+    <div className="w-full text-xl font-semibold">
+      Application - Specific IC<br /> Verification
+    </div>
+  </div>
+  
+  <div className="flex flex-col gap-4">
+    <div className="text-[#1E1E1E] text-base font-normal">Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+    <div className="flex flex-row justify-end items-end px-4">
+      <img src={arrow} alt="" className="h-6 text-end transition-transform duration-300 group-hover:translate-x-2" />
+    </div>
+  </div>
+</div>
+
+
 
 
 
