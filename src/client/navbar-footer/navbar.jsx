@@ -53,7 +53,7 @@ function Navbar() {
   </div>
 
   {/* Dropdown inside navbar */}
-  <div className={`transition-all duration-300 overflow-hidden w-full flex justify-center ${isDropdownOpen ? 'max-h-[500px]' : 'max-h-0'} md:max-h-none`}>
+  <div className={`transition-all duration-300 overflow-hidden w-full flex justify-center ${isDropdownOpen ? 'max-h-[800px]' : 'max-h-0'} md:max-h-none`}>
     <div className="md:hidden w-full flex justify-center">
       <ServicesDropdown />
     </div>

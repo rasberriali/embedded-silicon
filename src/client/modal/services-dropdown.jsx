@@ -14,7 +14,7 @@ function ServicesDropdown() {
       <img 
   src={triangle} 
   alt="" 
-  className="absolute top-[-12px] left-1/2 -translate-x-1/2 z-50 h-3"
+  className="absolute top-[-12px] left-1/2 -translate-x-1/2 z-50 h-3  hidden md:block"
 />
 
     <div className='flex xl:flex-row flex-col p-6 max-w-screen-xl mx-auto '>
