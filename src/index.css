@@ -148,4 +148,5 @@ html, body {
 .delay-200 { animation-delay: 0.2s; }
 .delay-400 { animation-delay: 0.4s; }
 
-
+/* index.css */
+@import url("https://cdn.jsdelivr.net/npm/svgmap@latest/dist/svgMap.min.css");

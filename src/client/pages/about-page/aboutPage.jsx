@@ -38,25 +38,15 @@ import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
 
 // map
 import { useEffect } from "react";
-// import svgMap from "svgmap";
+import svgMap from "svgmap";
 // import "svgmap/dist/svgMap.css"; // Import styles
 
 
 import { GoArrowRight } from "react-icons/go";
 function AboutPage() {
-  // const acronym = [
-  //   { letter: "E", word: "Embedded", definition: "Specializing in IC design and firmware development." },
-  //   { letter: "S", word: "Systems", definition: "Delivering seamless integration in hardware and software." },
-  //   { letter: "I", word: "Innovation", definition: "Pioneering advancements in embedded technology." },
-  //   { letter: "L", word: "Logic", definition: "Building smart solutions with cutting-edge design." },
-  //   { letter: "I", word: "Integration", definition: "Ensuring efficiency across digital and analog systems." },
-  //   { letter: "C", word: "Connectivity", definition: "Enhancing communication between devices." },
-  //   { letter: "O", word: "Optimization", definition: "Maximizing performance in embedded applications." },
-  //   { letter: "N", word: "Networks", definition: "Expanding possibilities with connected solutions." }
-  // ];
+
   return (
     <>
-      {/* Navbar Component */}
 {/* Company Overview Section */}
 <div className="relative w-full min-h-[780px] flex items-center justify-start">
   {/* Background Image */}
@@ -67,7 +57,7 @@ function AboutPage() {
   />
 
   {/* Text Content */}
-  <div className="relative z-20 text-white max-w-3xl px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 ml-0 mr-auto mb-20">
+  <div className="relative z-20 text-white max-w-3xl px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20 ml-20 mr-auto mb-20">
     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
       Company Overview
     </h1>
@@ -110,7 +100,7 @@ function AboutPage() {
 <div className="flex justify-center items-center w-full py-10 px-4">
   <div className="w-full max-w-6xl flex flex-col-reverse md:flex-row">
 
-    {/* Left: Company History (Displays Below Image on Mobile) */}
+ 
     <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-6 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
       <h2 className="text-3xl sm:text-4xl font-bold text-white">Company History</h2>
       <p className="text-lg sm:text-xl text-[#b0b8c4] font-normal mt-4"></p>
@@ -135,7 +125,7 @@ function AboutPage() {
       </p>
     </div>
 
-    {/* Right: Company Building Image (Appears First on Mobile) */}
+    {/* Right: Company Building Image */}
     <div className="w-full md:w-2/3">
       <img
         src={companyBuilding}
@@ -166,59 +156,90 @@ function AboutPage() {
 
 
 
-
-{/* Company Values Section */}
-<div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16">
-  {/* Heading and Intro Text */}
-  <div className="mb-8 sm:mb-12 lg:mb-16 max-w-3xl text-center sm:text-left">
-    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-      Company Values
-    </h2>
-    <p className="text-base sm:text-lg lg:text-xl font-semibold text-blue-700 mt-2">
-      Innovate. Build. Transform.
-    </p>
-    <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4 leading-relaxed">
-      At Embedded Silicon, we are dedicated to advancing technology and creating a world-class R&D hub in the Philippines. Through innovation, learning, and problem-solving, we develop next-generation embedded solutions that shape the future.
-    </p>
-  </div>
-
-  {/* Mission, Vision, and Values Cards */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-    {/* Reusable Card Component */}
-    {[
-      { title: "Mission", text: "To be the preferred technology development partner, fostering world-class research and innovation in IC design and embedded systems. We drive progress through collaboration, continuous learning, and problem-solving.", icon: missionIcon },
-      { title: "Vision", text: "To be the preferred technology development partner and solutions provider in the ASEAN region, delivering smart and reliable solutions for the future.", icon: visionIcon },
-      { title: "Values", text: "", icon: valuesIcon, values: ["Teamwork – We collaborate to achieve great results.", "Excellence – We strive for high-quality work.", "Service – We focus on delivering real value to our customers."] }
-    ].map((item, index) => (
-      <div key={index} className="relative bg-gradient-to-r from-[#033F75] to-[#063241] text-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg text-center h-auto flex flex-col">
-        {/* Icon */}
-        <div className="absolute -top-10 sm:-top-12 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center">
-          <img src={item.icon} alt={`${item.title} Icon`} className="w-10 sm:w-12 lg:w-14 h-10 sm:h-12 lg:h-14" />
+     {/* Company Values Section */}
+     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16">
+        {/* Heading and Intro Text */}
+        <div className="mb-8 sm:mb-12 lg:mb-16 max-w-3xl text-center sm:text-left">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+            Company Values
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl font-semibold text-blue-700 mt-2">
+            Innovate. Build. Transform.
+          </p>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4 leading-relaxed">
+            At Embedded Silicon, we are dedicated to advancing technology and
+            creating a world-class R&D hub in the Philippines. Through innovation,
+            learning, and problem-solving, we develop next-generation embedded
+            solutions that shape the future.
+          </p>
         </div>
 
-        {/* Text Content */}
-        <div className="flex-1 flex flex-col justify-center mt-14 sm:mt-16 lg:mt-20 px-4">
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold uppercase">
-            {item.title}
-          </h3>
-          {item.text ? (
-            <p className="text-xs sm:text-sm lg:text-base mt-4 leading-relaxed">
-              {item.text}
-            </p>
-          ) : (
-            <div className="mt-4 space-y-2 text-left">
-              {item.values?.map((value, idx) => (
-                <p key={idx} className="text-xs sm:text-sm lg:text-base">
-                  <span className="font-bold">{value.split(" – ")[0]}</span> – {value.split(" – ")[1]}
-                </p>
-              ))}
+        {/* Mission, Vision, and Values Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {[
+            {
+              title: "Mission",
+              text: "To be the preferred technology development partner, fostering world-class research and innovation in IC design and embedded systems. We drive progress through collaboration, continuous learning, and problem-solving.",
+              icon: missionIcon,
+            },
+            {
+              title: "Vision",
+              text: "To be the preferred technology development partner and solutions provider in the ASEAN region, delivering smart and reliable solutions for the future.",
+              icon: visionIcon,
+            },
+            {
+              title: "Values",
+              icon: valuesIcon,
+              values: [
+                "Teamwork – We collaborate to achieve great results.",
+                "Excellence – We strive for high-quality work.",
+                "Service – We focus on delivering real value to our customers.",
+              ],
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="relative bg-gradient-to-r from-[#033F75] to-[#063241] text-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg flex flex-col h-full"
+            >
+              {/* Icon */}
+              <div className="absolute -top-10 sm:-top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center">
+                <img
+                  src={item.icon}
+                  alt={`${item.title} Icon`}
+                  className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16"
+                />
+              </div>
+
+              {/* Text Content */}
+              <div className="flex flex-col flex-grow justify-between mt-14 sm:mt-16 lg:mt-16 px-4 text-center">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold uppercase">
+                  {item.title}
+                </h3>
+
+                <div className="flex-grow flex flex-col justify-center">
+                  {item.text ? (
+                    <p className="text-xs sm:text-sm lg:text-base mt-4 leading-relaxed text-justify">
+                      {item.text}
+                    </p>
+                  ) : (
+                    <div className="mt-4 space-y-2 text-left">
+                      {item.values?.map((value, idx) => (
+                        <p
+                          key={idx}
+                          className="text-xs sm:text-sm lg:text-base leading-relaxed"
+                        >
+                          <span className="font-bold">{value.split(" – ")[0]}</span> –{" "}
+                          {value.split(" – ")[1]}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
-          )}
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
 
 
@@ -332,9 +353,6 @@ function AboutPage() {
 
 
 {/* Map */}
-
-
-
 
 
 
