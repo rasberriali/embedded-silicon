@@ -60,7 +60,7 @@ function ServicesDropdown() {
       </div>
 
 
-      <div className='flex flex-col xl:w-2/5 p-6 gap-4 bg-blue-100 -my-6 '>
+      <div className='flex flex-col xl:w-2/5 p-6 gap-4 bg-blue-100 -my-6 xl:text-start text-center '>
     
          <h1 className='font-bold '>
         WHY EMBBEDDED SILICON?
@@ -73,7 +73,7 @@ function ServicesDropdown() {
 </div>
 
 <div className='flex flex-row xl:full'>
-      <div className='flex flex-col xl:p-6 p-4 xl:gap-6 gap-2 bg-blue-100  -my-6  '>
+      <div className='flex flex-col xl:p-6 p-4 xl:gap-6 gap-2 bg-blue-100  -my-6 xl:text-start text-center  '>
         <h2 className='font-semibold leading-5   '>Embedded Silicon achieves emerging semiconductor company</h2>
         <img src={dropdownimage} alt="" className='w-full'/>
 

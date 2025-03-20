@@ -44,7 +44,7 @@ function Navbar() {
               About us <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
             </div>
             <div 
-  className='flex flex-col items-center gap-2 cursor-pointer py-3 md:py-0 relative text-center' 
+  className='flex flex-col items-center gap-2 cursor-pointer py-3 md:py-0 relative text-start' 
   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
 >
   <div className="flex items-center gap-2">
@@ -52,7 +52,7 @@ function Navbar() {
     <img src={dropdown} alt="dropdownIcon" className={`h-3 w-3 mt-1 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
   </div>
 
-  {/* Dropdown inside navbar */}
+
   <div className={`transition-all duration-300 overflow-y-scroll w-full flex justify-center ${isDropdownOpen ? 'max-h-[800px]' : 'max-h-0'} md:max-h-none`}>
     <div className="md:hidden w-full flex justify-center">
       <ServicesDropdown />
