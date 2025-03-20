@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
 import dropdown from "../../assets/images/dropdown.svg";
 import { Menu, X } from 'lucide-react';
-import Dropdown from '../modal/dropdown';
+import ServicesDropdown from '../modal/services-dropdown';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,9 +43,24 @@ function Navbar() {
             <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0' onClick={() => navigate('/aboutPage')}>
               About us <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
             </div>
-            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0 relative' onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              Services <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
-            </div>
+            <div 
+  className='flex flex-col items-center gap-2 cursor-pointer py-3 md:py-0 relative text-center' 
+  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+>
+  <div className="flex items-center gap-2">
+    Services 
+    <img src={dropdown} alt="dropdownIcon" className={`h-3 w-3 mt-1 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+  </div>
+
+  {/* Dropdown inside navbar */}
+  <div className={`transition-all duration-300 overflow-hidden w-full flex justify-center ${isDropdownOpen ? 'max-h-[500px]' : 'max-h-0'} md:max-h-none`}>
+    <div className="md:hidden w-full flex justify-center">
+      <ServicesDropdown />
+    </div>
+  </div>
+</div>
+
+            
             <div className='cursor-pointer py-3 md:py-0'>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Success stories</div>
             <div className='cursor-pointer py-3 md:py-0 xl:hidden' onClick={() => navigate('/contactPage')}>Contact</div>
@@ -58,8 +73,8 @@ function Navbar() {
       </div>
 
       {isDropdownOpen && (
-        <div className="absolute w-full left-0 top-16 z-40">
-          <Dropdown />
+        <div className="hidden md:block absolute w-full left-0 top-16 z-40">
+          <ServicesDropdown />
         </div>
       )}
     </nav>

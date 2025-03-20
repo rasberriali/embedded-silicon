@@ -8,7 +8,7 @@ import Map from "./client/modal/Map"
 import Footer from "./client/navbar-footer/footer";
 import ContactPage from "./client/pages/contact-page/contactPage";
 import ServicesPage from "./client/pages/services-page/servicesPage";
-import Dropdown from "./client/modal/dropdown";
+import ServicesDropdown from "./client/modal/services-dropdown";
 import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
 
