@@ -37,7 +37,7 @@ function Navbar() {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll max-h-[500px] bg-white md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden max-h-[500px] bg-white md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 ${isOpen ? 'block' : 'hidden'}`}>
           <div className='md:flex md:gap-10 text-center md:text-left text-[#162447] text-base'>
             <div className='cursor-pointer py-3 md:py-0' onClick={() => navigate('/')}>Home</div>
             <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0' onClick={() => navigate('/aboutPage')}>
