@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 import companyOverview from "../../../assets/images/companyOverview.svg";
 import companyBuilding from "../../../assets/images/companyBuilding.svg";
 import missionIcon from "../../../assets/images/missionIcon.svg";
@@ -44,6 +44,9 @@ import { useEffect } from "react";
 
 import { GoArrowRight } from "react-icons/go";
 function AboutPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // const acronym = [
   //   { letter: "E", word: "Embedded", definition: "Specializing in IC design and firmware development." },
   //   { letter: "S", word: "Systems", definition: "Delivering seamless integration in hardware and software." },

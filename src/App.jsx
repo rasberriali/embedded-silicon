@@ -25,7 +25,6 @@ function App() {
         <Route path="/aboutPage" element={<AboutPage />}/>
         <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
-        <Route path="/dropdown" element={<Dropdown />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
       </Routes>
