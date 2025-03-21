@@ -11,7 +11,6 @@ import ServicesPage from "./client/pages/services-page/servicesPage";
 import ServicesDropdown from "./client/modal/services-dropdown";
 import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
-import Marquee from "./client/modal/Marquee";
 
 
 
@@ -28,7 +27,6 @@ function App() {
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
-        <Route path="/marquee" element={<Marquee />}/>
       </Routes>
       <Footer/>
     </Router>
