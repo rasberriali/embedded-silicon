@@ -25,7 +25,7 @@ function App() {
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
-        <Route path="/marquee" element={<Marquee />}/>
+        <Route path="/Marquee" element={<Marquee />}/>
       </Routes>
       <Footer/>
     </Router>
