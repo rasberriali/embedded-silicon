@@ -8,7 +8,7 @@ import total from "../../assets/images/total.png"
 import ebay from "../../assets/images/ebay.png"
 import inditex from "../../assets/images/inditex.png"
 
-function Marquee() {
+function MarqueeAnimation() {
   const upperMarquee = [
     <img src={bosch} alt="bosch" className='h-30' />,
     <img src={innovation} alt="innovation" className='h-30' />,
@@ -43,4 +43,4 @@ function Marquee() {
   );
 }
 
-export default Marquee;
+export default MarqueeAnimation;

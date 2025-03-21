@@ -20,7 +20,7 @@ import post from "../../../assets/images/post.svg"
 import pnr from "../../../assets/images/pnr.svg"
 import microsat from "../../../assets/images/microsat.svg"
 import pcb from "../../../assets/images/pcb.svg"
-import Marquee from '../../modal/Marquee';
+import MarqueeAnimation from '../../modal/marqueeAnimation';
 
 
 
@@ -185,7 +185,7 @@ function HomePage() {
 
 
                                                         <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-start  mt-20 overflow-hidden">
-                                                         <Marquee/>
+                                                         <MarqueeAnimation/>
                                                         </div>
    
     <div className="xl:mt-50 mt-30 font-inter  ">
