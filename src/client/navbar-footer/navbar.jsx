@@ -1,15 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect} from 'react';
+import { useNavigate, useLocation  } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
 import dropdown from "../../assets/images/dropdown.svg";
 import { Menu, X } from 'lucide-react';
 import ServicesDropdown from '../modal/services-dropdown';
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const navRef = useRef(null);
+  const location = useLocation();
 
   // Close both dropdown and hamburger menu when clicking outside
   useEffect(() => {
@@ -39,18 +41,16 @@ function Navbar() {
 
         <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden max-h-[500px] bg-white md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 ${isOpen ? 'block' : 'hidden'}`}>
           <div className='md:flex md:gap-10 text-center md:text-left text-[#162447] text-base'>
-            <div className='cursor-pointer py-3 md:py-0' onClick={() => navigate('/')}>Home</div>
-            <div className='flex justify-center md:justify-start items-center gap-2 cursor-pointer py-3 md:py-0' onClick={() => navigate('/aboutPage')}>
-              About us <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-1' />
-            </div>
-            <div 
-  className='flex flex-col items-center gap-2 cursor-pointer py-3 md:py-0 relative text-start' 
-  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
->
-  <div className="flex items-center gap-2">
-    Services 
-    <img src={dropdown} alt="dropdownIcon" className={`h-3 w-3 mt-1 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-  </div>
+          <div className="cursor-pointer py-3 md:py-0">Home</div>
+         
+
+
+        <div className='flex flex-col items-center gap-2 cursor-pointer py-3 md:py-0 relative text-start' 
+        onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+        <div className="flex flex-row items-center gap-2 ">
+          About us 
+          <img src={dropdown} alt="dropdownIcon" className={`h-3 w-3 mt-1 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+        </div>
 
 
   <div className={`transition-all duration-300 overflow-y-scroll w-full flex justify-center ${isDropdownOpen ? 'max-h-[800px]' : 'max-h-0'} md:max-h-none`}>
@@ -59,7 +59,9 @@ function Navbar() {
     </div>
   </div>
 </div>
-
+        <div className='cursor-pointer py-3 md:py-0 flex flex-row gap-2 justify-center'onClick={() => navigate('/servicesPage')}>Services
+          <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-2' />
+                      </div>
             
             <div className='cursor-pointer py-3 md:py-0'>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Success stories</div>
