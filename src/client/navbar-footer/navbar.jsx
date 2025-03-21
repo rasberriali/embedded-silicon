@@ -28,8 +28,9 @@ function Navbar() {
   }, []);
 
   return (
-    <nav ref={navRef} className='border-b-[0.1px] border-gray-200 font-inter sticky top-0 z-50 bg-white'>
-      <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6'>
+    <nav ref={navRef} className="sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-300">
+
+  <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6'>
         <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}> 
           <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
           <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold leading-5'>embedded<br/> silicon</div>
@@ -39,7 +40,7 @@ function Navbar() {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden max-h-[500px] bg-white md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden max-h-[500px]  md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 bg-white md:bg-transparent ${isOpen ? 'block' : 'hidden'}`}>
           <div className='md:flex md:gap-10 text-center md:text-left text-[#162447] text-base'>
           <div className="cursor-pointer py-3 md:py-0">Home</div>
          
