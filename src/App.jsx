@@ -12,9 +12,6 @@ import ServicesDropdown from "./client/modal/services-dropdown";
 import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
 
-
-
-
 function App() {
   return (
     <Router>
