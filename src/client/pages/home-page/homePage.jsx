@@ -9,31 +9,18 @@ import Icon1 from "../../../assets/images/Icon1.svg"
 import icon2 from "../../../assets/images/icon2.svg"
 import icon3 from "../../../assets/images/icon3.svg"
 import line from "../../../assets/images/Line.svg"
-import bosch from "../../../assets/images/bosch.png"
-import innovation from "../../../assets/images/innovation.png"
-import credit from "../../../assets/images/credit.png"
-import ebay from "../../../assets/images/ebay.png"
-import total from "../../../assets/images/total.png"
-import inditex from "../../../assets/images/inditex.png"
-import siemens from "../../../assets/images/siemens.png"
-import small_icons from "../../../assets/images/small-icons.svg"
 import arrow from "../../../assets/images/arrow.svg"
-// import icImage from "../../../assets/images/ic-bg.svg"
-import icImagee from "../../../assets/images/ic-bgg.svg"
-import custom from "../../../assets/images/custom.svg"
-import custom1 from "../../../assets/images/custom1.svg"
-import analog from "../../../assets/images/analog.svg"
-import cpu from "../../../assets/images/cpu.png"
-import linebg from "../../../assets/images/linebg.svg"
 import backdrop2 from "../../../assets/images/backdrop2.jpg";
 import logobackdrop from "../../../assets/images/logobackdrop.svg"
 import backdropimage from "../../../assets/images/backdropimage.png"
 import backdropimage2 from "../../../assets/images/backdropimage2.svg"
-import backdropimage3 from "../../../assets/images/backdropimage3.svg"
-// import { LuArrowRight } from "react-icons/lu";
 import { GoArrowRight } from "react-icons/go";
-
-
+import fullvlsi from "../../../assets/images/fullvlsi.svg"
+import post from "../../../assets/images/post.svg"
+import pnr from "../../../assets/images/pnr.svg"
+import microsat from "../../../assets/images/microsat.svg"
+import pcb from "../../../assets/images/pcb.svg"
+import Marquee from '../../modal/Marquee';
 
 
 function HomePage() {
@@ -182,45 +169,33 @@ function HomePage() {
                                                         </div>
 
 
-                                                        
+                                                        </div>                                                  
 
                                                         {/* Our Clients */}
 
             
-                                                        <div className='flex flex-row mt-40 justify-center'>
+                                                        <div className='flex flex-row xl:mt-30 mt-40 justify-center p-4  '>
                                                           <div className='flex flex-col'>
-                                                            <div className='text-[#040404] text-[50px] flex flex-col items-center gap-2 font-semibold'>
-                                                              Our clients <span className='text-xl text-[#647185] font-normal'>Some of the businesses and startups we have worked with</span>
+                                                            <div className='text-[#040404] text-[50px] flex flex-col  justify-center items-center gap-2 font-semibold'>
+                                                              Our clients <span className='text-xl text-[#647185] font-normal text-center'>Some of the businesses and startups we have worked with</span>
                                                             </div>
                                                           </div>
                                                         </div>
 
 
-                                                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5  grid-rows-2  items-center mt-10 ">
-                                                      <div className='justify-center flex'><img src={bosch} alt="" className='h-30'/></div>
-                                                      
-                                                      <div className='justify-center flex'><img src={innovation} alt="" className='h-30'/></div>
-                                                      <div className=' justify-center flex'><img src={credit} alt=""className='h-30'/></div>
-                                                      <div className=' justify-center flex'><img src={total} alt=""className='h-30'/></div>
-                                                      <div className=' justify-center flex'><img src={ebay} alt=""className='h-30'/></div>
-                                                      <div className='justify-center flex'><img src={total} alt=""className='h-30'/></div>
-                                                      <div className='justify-center flex'><img src={inditex} alt=""className='h-30'/></div>
-                                                      <div className=' justify-center flex'><img src={ebay} alt=""className='h-30'/></div>
-                                                      <div className=' justify-center flex'><img src={siemens} alt=""className='h-30'/></div>
-                                                      <div className='justify-center flex'><img src={bosch} alt=""className='h-30'/></div>
-                                                    
-                                                     
-                                                    </div>
-    </div>
-    <div className="mt-20 font-inter  ">
+                                                        <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-start  mt-20 overflow-hidden">
+                                                          <Marquee />
+                                                        </div>
+   
+    <div className="xl:mt-50 mt-30 font-inter  ">
   <div className="flex flex-row relative animated-bg">
     <img 
         src={backdrop2}
         alt="Footer Background" 
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
       />
     <div className="container mx-auto mt-10 mb-10 p-6 lg:p-6 2xl:p-32 z-10">
-      <div className="xl:p-2 p-1   bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-14 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/ServicesPage')}>Services</div>
+      <div className="xl:p-2 p-1 bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-12 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/ServicesPage')}>Services</div>
       <div className="w-fit xl:text-5xl text-4xl font-semibold text-white mt-18 flex flex-col gap-3">What we do
       <span className='xl:text-xl  text-sm text-[#b0b8c4] font-normal'>Some of the businesses and startups we have worked with</span>
       </div>
@@ -232,11 +207,11 @@ function HomePage() {
       
       {/* Service Cards */}
       {[
-        { title: "Integrated Chip Design", desc: "Proven processes, advanced technologies, and deep expertise ensure reliable projects.", icon: cpu },
-        { title: "Application-Specific IC Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: analog },
-        { title: "Physical Design and Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: custom },
-        { title: "FPGA Development", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: analog },
-        { title: "Custom ASIC Solutions", desc: "We provide high-performance ASIC design solutions tailored to your needs.", icon: custom }
+        { title: "Integrated Chip Design", desc: "Proven processes, advanced technologies, and deep expertise ensure reliable projects.", icon: fullvlsi },
+        { title: "Application-Specific IC Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: post },
+        { title: "Physical Design and Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: pnr },
+        { title: "FPGA Development", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: microsat },
+        { title: "Custom ASIC Solutions", desc: "We provide high-performance ASIC design solutions tailored to your needs.", icon: pcb }
       ].map((service, index) => (
         <div 
           key={index} 

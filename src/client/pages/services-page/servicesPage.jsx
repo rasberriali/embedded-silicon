@@ -55,7 +55,7 @@ function ServicesPage() {
 
     {/* Services */}
     <div className='w-full xl:text-start text-center bg-gray-100 mt-20'>
-    <div className=' max-w-screen-xl mx-auto  text-black  p-4  text-3xl font-bold font-inter'>
+    <div className=' max-w-screen-xl mx-auto  text-[#2D7BFD]  p-4  text-3xl font-extrabold font-inter'>
       Integrated Chip Design
     </div>
   </div>
@@ -207,7 +207,7 @@ function ServicesPage() {
 
           {/* Services */}
     <div className='w-full bg-gray-100 mt-20 xl:text-start text-center'>
-    <div className=' max-w-screen-xl mx-auto  text-black  p-4 text-3xl font-bold font-inter '>
+    <div className=' max-w-screen-xl mx-auto  text-[#2D7BFD]   p-4 text-3xl font-extrabold font-inter '>
     Application-Specific IC Verification
 
     </div>
@@ -337,7 +337,7 @@ function ServicesPage() {
 
           {/* Services */}
     <div className='w-full bg-gray-100 mt-20 xl:text-start text-center'>
-    <div className=' max-w-screen-xl mx-auto  text-black  p-4 text-3xl font-bold font-inter'>
+    <div className=' max-w-screen-xl mx-auto  text-[#2D7BFD]   p-4 text-3xl font-extrabold font-inter'>
     Physical Design and Verification
     </div>
   </div>
@@ -381,7 +381,7 @@ function ServicesPage() {
 
         <div className="flex flex-row gap-6">
           <div className="w-1/6 rounded-sm flex  ">
-            <img src={fpgatoasic} alt="" className='' />
+            <img src={fullcustom} alt="" className='' />
           </div>
           <div className="w-full text-xl font-bold">
           Full Custom Layout Proficiency
@@ -423,7 +423,7 @@ function ServicesPage() {
 
         <div className="flex flex-row gap-6">
           <div className="w-1/6 rounded-sm flex  ">
-            <img src={tailord} alt="" className='' />
+            <img src={standard} alt="" className='' />
           </div>
           <div className="w-full text-xl font-bold">
           Tailored Designs <br/>for Varied Industries
@@ -444,8 +444,96 @@ function ServicesPage() {
 
           {/* Services */}
     <div className='w-full bg-gray-100 mt-20 xl:text-start text-center'>
-    <div className=' max-w-screen-xl mx-auto  text-black  p-4 text-3xl font-bold font-inter'>
-    Custom ASIC Solutions
+    <div className=' max-w-screen-xl mx-auto  text-[#2D7BFD] p-4 text-3xl font-extrabold font-inter'>
+   FPGA Development
+    </div>
+  </div>
+  <div className='flex flex-col w-full justify-between max-w-screen-xl mx-auto mt-16 font-inter'>
+ 
+
+    <div className='grid xl:grid-cols-3 grid-cols-1 xl:grid-rows-1 grid-rows-1 gap-8 xl:p-0 p-8'>
+
+        <div className="flex flex-col p-6 gap-6 relative ">
+          <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+          <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+            <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+          </div>
+
+          <div className="flex flex-row gap-6">
+            <div className="w-1/6 rounded-sm flex  ">
+              <img src={fpgatoasic} alt="" className='' />
+            </div>
+            <div className="w-full text-xl font-bold">
+            FPGA to ASIC
+            </div>
+          </div>
+
+          
+          <div className=' flex flex-col gap-4'>
+          <div className='text-[#1E1E1E] text-base font-normal'>Embark on seamless FPGA to ASIC Development with our specialized services, facilitating a smooth transition from Field-Programmable Gate Array (FPGA) designs to Application-Specific Integrated Circuits (ASICs), optimizing performance and scalability.</div>
+          <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+        </div>
+      </div>
+
+
+
+
+      <div className="flex flex-col p-6 gap-6 relative ">
+        <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+        <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+          <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+        </div>
+
+        <div className="flex flex-row gap-6">
+          <div className="w-1/6 rounded-sm flex  ">
+            <img src={tailord} alt="" className='' />
+          </div>
+          <div className="w-full text-xl font-bold">
+          Test Development Platforms
+
+          </div>
+        </div>
+        <div className=' flex flex-col gap-4'>
+        <div className='text-[#1E1E1E] text-base font-normal'>Specializing in automated test solution design for customer circuit boards, cables, and system assemblies, our team excels in the development and documentation of integrated test tools for seamless incorporation into the manufacturing process.</div>
+        <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+      </div>
+      </div>
+
+      <div className="flex flex-col p-6 gap-6 relative">
+        <div className="absolute bottom-0 left-1 w-[90%] h-[2px] bg-gray-300 opacity-70"></div>
+        <div className="absolute top-0 right-0 h-[100%] w-[1px] bg-gray-300  opacity-80">
+
+          <span className='absolute top-4 right-0 h-[40%] w-[1px] bg-gray-900  opacity-80'></span>
+        </div>
+
+        <div className="flex flex-row gap-6">
+          <div className="w-1/6 rounded-sm flex  ">
+            <img src={microsat} alt="" className='' />
+          </div>
+          <div className="w-full text-xl font-bold">
+          Microsatellites
+          </div>
+        </div>
+        <div className=' flex flex-col gap-4'>
+        <div className='text-[#1E1E1E] text-base font-normal'>We specialize in developing and implementing advanced applications for microsatellites, ensuring precision and reliability for diverse mission requirements.</div>
+        <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+      </div>
+      </div>
+
+
+
+
+      
+      
+          </div>
+          </div>
+
+ {/* Services */}
+ <div className='w-full bg-gray-100 mt-20 xl:text-start text-center'>
+    <div className=' max-w-screen-xl mx-auto  text-[#2D7BFD] p-4 text-3xl font-extrabold font-inter'>
+    Embedded Systems Development
     </div>
   </div>
   <div className='flex flex-col w-full justify-between max-w-screen-xl mx-auto mt-16 font-inter'>
@@ -521,10 +609,16 @@ function ServicesPage() {
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
+
+
+
+
+      
       
           </div>
           </div>
 
+          
   </div>
   )
 }
