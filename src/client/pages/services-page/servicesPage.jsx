@@ -75,14 +75,14 @@ function ServicesPage() {
             <div className="w-1/6 rounded-sm flex  ">
               <img src={fullvlsi} alt="" className='' />
             </div>
-            <div className="w-full text-xl font-semibold ">
+            <div className="w-full text-xl font-bold">
             Full VLSI Design
             </div>
           </div>
 
           
           <div className=' flex flex-col gap-4'>
-          <div className='text-[#1E1E1E] text-base font-normal '>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+          <div className='text-[#1E1E1E] text-base font-normal '>Experience end-to-end VLSI Design Flow Services encompassing Functional Design, Floor Planning, Place and Route, chip implementation, and project tapeout – all streamlined for optimal efficiency.</div>
           <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
         </div>
       </div>
@@ -101,12 +101,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={fullchip} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Full-Chip Integration
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Experience seamless Full Chip Integration with services like Area Estimation, Floor Planning, Power Planning, and Macro Placement.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -122,12 +122,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={standard} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Standard Cells Development
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Tailor your industry's future with our versatile Standard Cells Development. Customized for sectors like Automotive, Industrial, Consumer Electronics, and more, based on your preferences.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -143,12 +143,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={designlibrary} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Design Library Creation 
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Optimize your semiconductor projects with our precise Design Library Creation service tailored to your unique needs.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -164,12 +164,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={analog} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Analog IP Blocks Development
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>For your Mixed Signal Applications, we provide specialized Analog IP Blocks, catering to both individual IP Block requirements and comprehensive Chip Level Integration needs.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -186,12 +186,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={fullcustom} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Full Custom Layout
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Explore our Full Custom Layout service, covering Standard Cells to Chip Level Integration. Benefit from our extensive experience across tech nodes, ranging from 180nm to 7nm.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -228,14 +228,14 @@ function ServicesPage() {
             <div className="w-1/6 rounded-sm flex  ">
               <img src={asic} alt="" className='' />
             </div>
-            <div className="w-full text-xl font-semibold">
+            <div className="w-full text-xl font-bold">
             ASIC Functional Verification
             </div>
           </div>
 
           
           <div className=' flex flex-col gap-4'>
-          <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+          <div className='text-[#1E1E1E] text-base font-normal'>We conduct a comprehensive process to test and validate application-specific integrated circuits (ASICs), ensuring adherence to specifications and correct functionality. Within this process, our focus on functional verification ensures that the digital logic design aligns precisely with its specifications.</div>
           <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
         </div>
       </div>
@@ -254,12 +254,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={post} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Post-PNR Regression
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Elevate your projects with our Post PNR Service featuring Regression Capability. Streamline and enhance your design process for optimal performance and reliability.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -275,12 +275,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={uvm} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           UVM Testbench Developement
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>We specialize in crafting robust and efficient testbenches for thorough verification of your designs, ensuring optimal performance and compliance with specifications.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -296,12 +296,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={rtl} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           RTL to Transistor Level Verification
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Proficient in RTL to Transistor Verification, we handle projects seamlessly with logic scales ranging from less than 100,000 up to 7,000,000 Gates and beyond.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -317,12 +317,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={analogmixed} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Analog Mixed Signal Verification
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>We excel in meticulous testing and validation of complex mixed-signal designs, ensuring precision and reliability throughout the verification process.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -357,14 +357,14 @@ function ServicesPage() {
             <div className="w-1/6 rounded-sm flex  ">
               <img src={pnr} alt="" className='' />
             </div>
-            <div className="w-full text-xl font-semibold">
+            <div className="w-full text-xl font-bold">
             Automated Place and Route
             </div>
           </div>
 
           
           <div className=' flex flex-col gap-4'>
-          <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+          <div className='text-[#1E1E1E] text-base font-normal'>Efficient automated Place and Route services covering Post-Synthesis to GDSII Clean Database. Expertise in 22nm to 40nm Tech nodes, with proficiency in Timing and Power Closures up to Physical Verification.</div>
           <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
         </div>
       </div>
@@ -383,12 +383,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={fpgatoasic} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Full Custom Layout Proficiency
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Explore our Full Custom Layout service, covering Standard Cells to Chip Level Integration. Benefit from our extensive experience across tech nodes, ranging from 180nm to 7nm.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -404,12 +404,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={microsat} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Proficiency across Technology<br/> Nodes (180nm to 7nm)
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>We specialize in developing and implementing advanced applications for microsatellites, ensuring precision and reliability for diverse mission requirements.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -425,13 +425,13 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={tailord} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Tailored Designs <br/>for Varied Industries
 
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Specializing in automated test solution design for customer circuit boards, cables, and system assemblies, our team excels in the development and documentation of integrated test tools for seamless incorporation into the manufacturing process.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -464,14 +464,14 @@ function ServicesPage() {
             <div className="w-1/6 rounded-sm flex  ">
               <img src={rapid} alt="" className='' />
             </div>
-            <div className="w-full text-xl font-semibold">
+            <div className="w-full text-xl font-bold">
             Rapid Prototyping
             </div>
           </div>
 
           
           <div className=' flex flex-col gap-4'>
-          <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+          <div className='text-[#1E1E1E] text-base font-normal'>Engage our rapid prototyping services encompassing PCB layout, assembly, cable assembly, and comprehensive Design for Manufacturing analysis.</div>
           <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
         </div>
       </div>
@@ -490,13 +490,13 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={pcb} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           PCB Layout and Design
 
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>Delivering extensive technical services in circuit board design, our engineers efficiently interpret design intent and regulatory requirements from customer schematics. We then craft layouts optimized for seamless functional application.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
@@ -512,12 +512,12 @@ function ServicesPage() {
           <div className="w-1/6 rounded-sm flex  ">
             <img src={firmware} alt="" className='' />
           </div>
-          <div className="w-full text-xl font-semibold">
+          <div className="w-full text-xl font-bold">
           Firmware Development
           </div>
         </div>
         <div className=' flex flex-col gap-4'>
-        <div className='text-[#1E1E1E] text-base font-normal'>Proven processes, advanced technologies, and deep expertise ensure reliable project.</div>
+        <div className='text-[#1E1E1E] text-base font-normal'>We specialize in crafting robust and efficient firmware solutions, ensuring optimal performance and seamless integration with your hardware.</div>
         <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
       </div>
       </div>
