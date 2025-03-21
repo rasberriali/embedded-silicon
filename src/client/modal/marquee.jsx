@@ -19,7 +19,7 @@ function Marquee() {
     <img src={bosch} alt="bosch" className='h-30' />,
     <img src={innovation} alt="innovation" className='h-30' />,
     <img src={bosch} alt="bosch" className='h-30' />,
-    <img src={innovation} alt="innovation" className='h-30' />,
+    <img src={total} alt="total" className='h-30' />,
   ];
 
   const lowerMarquee = [
@@ -32,7 +32,7 @@ function Marquee() {
     <img src={credit} alt="credit" className='h-30' />,
     <img src={siemens} alt="siemens" className='h-30' />,
     <img src={bosch} alt="bosch" className='h-30' />,
-    <img src={innovation} alt="innovation" className='h-30' />,
+    <img src={total} alt="total" className='h-30' />,
   ];
 
   return (

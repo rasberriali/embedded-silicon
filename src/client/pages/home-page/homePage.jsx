@@ -23,6 +23,7 @@ import pcb from "../../../assets/images/pcb.svg"
 import Marquee from '../../modal/Marquee';
 
 
+
 function HomePage() {
     useEffect(() => {
       window.scrollTo(0, 0);
