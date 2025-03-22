@@ -35,7 +35,7 @@ function CareersPage() {
           <div className="flex flex-col h-full justify-center">
             <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4">
               Shape Tomorrow with Your Talents
-              <div className="text-white text-lg lg:text-xl 2xl:text-2xl font-normal xl:mt-8 mt-6">
+              <div className="text-white text-sm lg:text-xl 2xl:text-2xl font-normal xl:mt-8 mt-6">
                 At Embedded Silicon, we don’t just design—we engineer the future.
                 Join a Filipino-owned global leader where innovation meets opportunity.
               </div>
@@ -47,7 +47,7 @@ function CareersPage() {
        <div className=' max-w-screen-xl mx-auto flex flex-row text-black justify-center items-center mt-20'>
             <div className='flex flex-col justify-center items-center gap-4 p-8'>
                 <div className='xl:text-4xl text-2xl font-bold'>Join a Culture of Excellence</div>
-                <div className='text-[#4A5565] text-xl'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
+                <div className='text-[#4A5565] text-xl text-center'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
 
             </div>
         </div>

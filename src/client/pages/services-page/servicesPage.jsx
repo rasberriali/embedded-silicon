@@ -44,7 +44,7 @@ function ServicesPage() {
         <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-17 2xl:leading-28 lg:w-1/2 2xl:w-3/4 ">
           Emebedded Silicon Tech Expertise
           
-          <div className="text-white text-lg lg:text-xl 2xl:text-2xl  font-normal xl:mt-8 mt-6">
+          <div className="text-white text-sm lg:text-xl 2xl:text-2xl  font-normal xl:mt-8 mt-6">
             We specialize in crafting tailored solutions that drive efficiency and accelerate growth.
           </div>
           </div>
