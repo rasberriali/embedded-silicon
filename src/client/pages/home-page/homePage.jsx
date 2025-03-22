@@ -19,6 +19,7 @@ import post from "../../../assets/images/post.svg"
 import pnr from "../../../assets/images/pnr.svg"
 import microsat from "../../../assets/images/microsat.svg"
 import pcb from "../../../assets/images/pcb.svg"
+import bg from "../../../assets/images/bg.svg"
 import MarqueeAnimation from '../../modal/marqueeAnimation';
 
 
@@ -187,14 +188,22 @@ function HomePage() {
                                                          <MarqueeAnimation/>
                                                         </div>
    
-   <div className='xl:mt-40 mt-30 bg-gray-100 py-10 '>
-    <div className="max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 z-10">
+                                                        <div className="xl:mt-40 mt-30 py-10 relative">
+  {/* Background Image and Overlay Wrapper */}
+  <div className="absolute top-0 left-0 w-full h-full">
+    {/* Black Overlay (Should be above the image) */}
+    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/10 via-black/20 to-black/70 z-10"></div>
+
+    {/* Background Image */}
+    <img src={bg} alt="" className="w-full h-full object-cover z-0 opacity-90" />
+  </div>
+    <div className="max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 z-20 relative">
    <div className='flex xl:flex-row flex-col font-inter'>
     <div className='xl:w-1/2 flex-flex-col space-y-6'>
-    <div className='text-5xl font-bold'>
+    <div className='text-5xl font-bold text-white '>
       What we do
     </div>
-    <div className='text-xl text-[#647185]'>
+    <div className='text-xl text-white'>
       Some of the businesses and startups we have worked with
     </div>
       
@@ -218,14 +227,14 @@ function HomePage() {
           ].map((service, index) => (
             <div 
               key={index} 
-              className="group border-[#2D7BFD] border-2 py-10 px-6 rounded-2xl shadow-lg  text-black text-xl w-72 transition-all duration-300 hover:shadow-xl hover:-translate-y-4 flex flex-col justify-between"
+              className="group border-[#2D7BFD] border-2 py-10 px-6 rounded-2xl shadow-lg bg-gray-900  text-white text-xl w-72 transition-all duration-300 hover:shadow-xl hover:-translate-y-4 flex flex-col justify-between"
             >
               <div className=" flex justify-start ">
                 <img src={service.icon} alt="icon" className="w-10 h-10" />
               </div>
               <div className="flex flex-col gap-3 mt-5 justify-between items-start h-34">
                 <div className="font-bold text-lg">{service.title}</div>
-                <div className="font-light text-sm text-black">
+                <div className="font-light text-sm text-white">
                   {service.desc}
                 </div>
               </div>
