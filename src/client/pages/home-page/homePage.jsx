@@ -66,7 +66,7 @@ function HomePage() {
                       </div>
 
 
-                                                    <div className='flex flex-row items-center justify-center w-3/5  xl:-mt-4 mt-4 bg-[#2D7BFD] hover:bg-[#1A57C2] cursor-pointer rounded-full text-white text-base'>
+                                                    <div className='flex flex-row items-center justify-center w-3/5  xl:-mt-4 mt-4 bg-[#2D7BFD] hover:bg-[#1A57C2] cursor-pointer rounded-full text-white text-base'onClick={() => navigate('/aboutPage')}>
                                                       <div className='p-2 font-medium'>Learn more</div></div>
             </div>
           
