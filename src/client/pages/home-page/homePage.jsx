@@ -174,7 +174,7 @@ function HomePage() {
                                                         {/* Our Clients */}
 
             
-                                                        <div className='flex flex-row xl:mt-30 xl:mt-40 mt-30 justify-center p-4  '>
+                                                        <div className='flex flex-row xl:mt-30 mt-30 justify-center p-4  '>
                                                           <div className='flex flex-col'>
                                                             <div className='text-black text-[50px] flex flex-col  justify-center items-center gap-2 font-bold '>
                                                               Our clients <span className='text-xl text-[#647185] font-normal text-center'>Some of the businesses and startups we have worked with</span>

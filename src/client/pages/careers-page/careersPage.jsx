@@ -45,27 +45,27 @@ function CareersPage() {
 
        </div>
        <div className=' max-w-screen-xl mx-auto flex flex-row text-black justify-center items-center mt-20'>
-            <div className='flex flex-col justify-center items-center gap-4'>
-                <div className='text-4xl font-bold'>Join a Culture of Excellence</div>
+            <div className='flex flex-col justify-center items-center gap-4 p-8'>
+                <div className='xl:text-4xl text-2xl font-bold'>Join a Culture of Excellence</div>
                 <div className='text-[#4A5565] text-xl'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
 
             </div>
         </div>
 
-        <div className=' max-w-screen-xl mx-auto flex flex-row text-black mt-20 justify-center '>
-          <div className="text-center py-10">
-      <h2 className="text-3xl font-bold text-gray-900">
+        <div className=' max-w-screen-xl mx-auto flex flex-col text-black mt-20 p-6  '>
+        <h2 className="text-5xl font-bold text-[#0B2B82]">
         Explore by <span className="text-blue-600">category</span>
       </h2>
-      <div className="mt-6 flex justify-center gap-6 flex-wrap">
+          <div className="py-10">
+      <div className="mt-4 flex  justify-center flex-wrap gap-6">
         {categories.map((category, index) => (
           <div
             key={index}
-            className="border border-blue-500 p-6 rounded-lg w-64 text-center hover:bg-blue-50 transition"
+            className="border border-blue-500 p-8 rounded-lg w-70 text-center hover:bg-blue-50 transition"
           >
             <div className="text-4xl mb-2">{category.icon}</div>
             <h3 className="text-xl font-semibold text-blue-600">{category.name}</h3>
-            <p className="text-gray-600">{category.jobs} Jobs Available</p>
+            <p className="text-gray-600 ">{category.jobs} Jobs Available</p>
           </div>
         ))}
       </div>
@@ -73,16 +73,16 @@ function CareersPage() {
         </div>
 
 
-        <div className=' max-w-screen-xl mx-auto flex flex-col text-black mt-20 justify-center '>
-        <h2 className="text-3xl font-bold text-gray-900 mt-12">
+        <div className=' max-w-screen-xl mx-auto flex flex-col text-black justify-center p-6'>
+        <h2 className="text-5xl font-bold text-[#0B2B82] mt-12">
         Featured <span className="text-blue-600">Jobs</span>
         <a href="#" className="text-sm text-blue-500 ml-4">Browse All →</a>
       </h2>
-      <div className="mt-6 flex justify-center gap-6 flex-wrap">
+      <div className="mt-14 flex justify-center gap-6 flex-wrap">
         {featuredJobs.map((job, index) => (
           <div
             key={index}
-            className="border p-6 rounded-lg w-64 text-left hover:bg-blue-50 transition"
+            className="border p-8 rounded-lg w-70 text-left hover:bg-blue-50 transition"
           >
             <div className="flex items-center gap-2 text-blue-600">
               <span className="text-2xl">{job.icon}</span>
