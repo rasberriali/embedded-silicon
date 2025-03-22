@@ -256,9 +256,9 @@ function HomePage() {
   <div className="w-full h-full relative group">
     <div className='absolute z-1 xl:text-4xl text-xl xl:w-2/3 font-bold text-white p-6  '>Full-stack technology development <br></br>partner</div>
     <img
-      src={backdropimage}
+      src={backdropimage2}
       alt="Featured News"
-      className="w-full h-full object-cover opacity-95 transition-transform duration-1000 ease-in-out hover:scale-120  hover:blur-sm "/>
+      className="w-full h-80 object-cover opacity-95 transition-transform duration-1000 ease-in-out hover:scale-120  hover:blur-sm "/>
        <span className="absolute right-6 bottom-6 text-white text-4xl opacity-0 transition-all duration-500 group-hover:opacity-100">
   <GoArrowRight className=" w-10 h-14 transition-all duration-500 group-hover:w-20 text-sky-50 "/>
 </span>
@@ -272,13 +272,13 @@ function HomePage() {
   <div className="relative group bg-gray-100 p-6 border-[#2D7BFD] border min-h-[100px] w-full flex flex-col justify-between overflow-hidden">
   {/* Backdrop Image (Initially Hidden) */}
   <img 
-    src={backdropimage2} 
+    src={backdropimage} 
     alt="Backdrop" 
     className="absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-1000 ease-in-out group-hover:opacity-100 group-hover:scale-110 group-hover:blur-sm"
   />
 
   {/* Content (Ensures text stays on top) */}
-  <div className="relative z-10  min-h-[100px] w-full flex flex-col justify-between">
+  <div className="relative z-10  min-h-[200px] w-full flex flex-col justify-between">
     <h3 className="text-xl font-bold group group-hover:text-white  text-[#040404]">
       Optimizing costs with data migration to the cloud for a leading stock photography platform
       <span>
