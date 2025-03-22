@@ -11,6 +11,7 @@ import ServicesPage from "./client/pages/services-page/servicesPage";
 import ServicesDropdown from "./client/modal/services-dropdown";
 import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
+import CareersPage from "./client/pages/careers-page/careersPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
+        <Route path="/careersPage" element={<CareersPage />}/>
       </Routes>
       <Footer/>
     </Router>

@@ -64,7 +64,7 @@ function Navbar() {
           <img src={dropdown} alt="dropdownIcon" className='h-3 w-3 mt-2' />
                       </div>
             
-            <div className='cursor-pointer py-3 md:py-0'>Careers</div>
+            <div className='cursor-pointer py-3 md:py-0'onClick={() => navigate('/careersPage')}>Careers</div>
             <div className='cursor-pointer py-3 md:py-0'>Success stories</div>
             <div className='cursor-pointer py-3 md:py-0 xl:hidden' onClick={() => navigate('/contactPage')}>Contact</div>
           </div>

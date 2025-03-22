@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../../navbar-footer/navbar'
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
@@ -175,9 +174,9 @@ function HomePage() {
                                                         {/* Our Clients */}
 
             
-                                                        <div className='flex flex-row xl:mt-30 mt-40 justify-center p-4  '>
+                                                        <div className='flex flex-row xl:mt-30 xl:mt-40 mt-30 justify-center p-4  '>
                                                           <div className='flex flex-col'>
-                                                            <div className='text-[#040404] text-[50px] flex flex-col  justify-center items-center gap-2 font-semibold'>
+                                                            <div className='text-black text-[50px] flex flex-col  justify-center items-center gap-2 font-bold '>
                                                               Our clients <span className='text-xl text-[#647185] font-normal text-center'>Some of the businesses and startups we have worked with</span>
                                                             </div>
                                                           </div>
@@ -188,65 +187,66 @@ function HomePage() {
                                                          <MarqueeAnimation/>
                                                         </div>
    
-    <div className="xl:mt-50 mt-30 font-inter  ">
-  <div className="flex flex-row relative animated-bg">
-    <img 
-        src={backdrop2}
-        alt="Footer Background" 
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
-      />
-    <div className="container mx-auto mt-10 mb-10 p-6 lg:p-6 2xl:p-32 z-10">
-      <div className="xl:p-2 p-1 bg-[#2D7BFD] hover:bg-blue-600 cursor-pointer xl:px-12 px-8 rounded-full w-fit text-white z-10 absolute "onClick={() => navigate('/ServicesPage')}>Services</div>
-      <div className="w-fit xl:text-5xl text-4xl font-semibold text-white mt-18 flex flex-col gap-3">What we do
-      <span className='xl:text-xl  text-sm text-[#b0b8c4] font-normal'>Some of the businesses and startups we have worked with</span>
-      </div>
-
-      {/* Scrollable Container */}
-      <div className="relative mt-8">
-  <div className="overflow-x-auto scrollbar-custom cursor-pointer mb-5">
-    <div className="grid grid-flow-col auto-cols-max gap-6 py-6 mb-6 cursor-grab ">
+   <div className='xl:mt-40 mt-30 bg-gray-100 py-10 '>
+    <div className="max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 z-10">
+   <div className='flex xl:flex-row flex-col font-inter'>
+    <div className='xl:w-1/2 flex-flex-col space-y-6'>
+    <div className='text-5xl font-bold'>
+      What we do
+    </div>
+    <div className='text-xl text-[#647185]'>
+      Some of the businesses and startups we have worked with
+    </div>
       
-      {/* Service Cards */}
-      {[
-        { title: "Integrated Chip Design", desc: "Proven processes, advanced technologies, and deep expertise ensure reliable projects.", icon: fullvlsi },
-        { title: "Application-Specific IC Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: post },
-        { title: "Physical Design and Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: pnr },
-        { title: "FPGA Development", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: microsat },
-        { title: "Custom ASIC Solutions", desc: "We provide high-performance ASIC design solutions tailored to your needs.", icon: pcb }
-      ].map((service, index) => (
-        <div 
-          key={index} 
-          className="group border-[#2D7BFD] border py-6 px-8 rounded-2xl shadow-lg text-white text-xl w-72 bg-gray-900 transition-all duration-300 hover:shadow-xl hover:-translate-y-4 flex flex-col justify-between"
-        >
-          <div className="p-3 bg-white w-16 flex justify-center rounded-xl shadow-md">
-            <img src={service.icon} alt="icon" className="w-10 h-10" />
-          </div>
-          <div className="flex flex-col gap-3 mt-5">
-            <div className="font-bold text-lg">{service.title}</div>
-            <div className="font-light text-sm text-gray-300">
-              {service.desc}
+    </div>
+    <div className='w-1/2 flex flex-row xl:justify-end items-end xl:mt:0 mt-6  '>
+      <div className="xl:py-2 py-1 bg-[#2D7BFD] hover:bg-[#2d3bfd] rounded-full xl:px-10 px-8 text-white cursor-pointer" onClick={() => navigate('/servicesPage')}>Services</div>
+    </div>
+
+   </div>
+
+      <div className="relative mt-4 w-full ">
+      <div className="overflow-x-auto scrollbar-custom cursor-pointer mb-5 ">
+        <div className="grid grid-flow-col auto-cols-max gap-6 py-6 mb-6 cursor-grab font-inter ">
+          
+          {[
+            { title: "Integrated Chip Design", desc: "Proven processes, advanced technologies, and deep expertise ensure reliable projects.", icon: fullvlsi },
+            { title: "Application-Specific IC Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: post },
+            { title: "Physical Design and Verification", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: pnr },
+            { title: "FPGA Development", desc: "From concept to launch, we create stunning, user-centric websites that elevate your brand.", icon: microsat },
+            { title: "Custom ASIC Solutions", desc: "We provide high-performance ASIC design solutions tailored to your needs.", icon: pcb }
+          ].map((service, index) => (
+            <div 
+              key={index} 
+              className="group border-[#2D7BFD] border-2 py-10 px-6 rounded-2xl shadow-lg  text-black text-xl w-72 transition-all duration-300 hover:shadow-xl hover:-translate-y-4 flex flex-col justify-between"
+            >
+              <div className=" flex justify-start ">
+                <img src={service.icon} alt="icon" className="w-10 h-10" />
+              </div>
+              <div className="flex flex-col gap-3 mt-5 justify-between items-start h-34">
+                <div className="font-bold text-lg">{service.title}</div>
+                <div className="font-light text-sm text-black">
+                  {service.desc}
+                </div>
+              </div>
             </div>
-            <div className="text-xs font-normal flex justify-end gap-1 mt-4 text-blue-400 hover:text-blue-300 transition-all cursor-pointer">
-              Learn more <img src={arrow} alt="arrow" className="w-4" />
-            </div>
-          </div>
-        </div>
-      ))}
+          ))}
 
     </div>
-  </div>
+    </div>
+    </div>
+    </div>
 </div>
-</div>
-</div>
-</div>
+
+
 
 {/* Latest New */}
 
-<div className="max-w-screen-xl mx-auto mt-20 font-inter lg:px-6 2xl:px-0 px-6">
-  <h2 className="flex flex-col text-[50px]  font-semibold text-center mb-12 gap-2 text-[#040404]">
+<div className="max-w-screen-xl mx-auto xl:mt-40 mt-30 font-inter lg:px-6 2xl:px-0 px-6">
+  <h2 className="flex flex-col  text-[50px]  font-semibold text-center mb-12 gap-2 text-black">
     Latest News 
     <span className="text-xl text-[#647185] font-normal">
-      Some of the businesses and startups we have worked with
+      Read more about our innovations and discoveries
     </span>
   </h2>
 
@@ -269,7 +269,7 @@ function HomePage() {
 
 
   {/* Small Card (Top Right) */}
-  <div className="relative group bg-gray-100 p-6 border-[#2D7BFD] border min-h-[300px] w-full flex flex-col justify-between overflow-hidden">
+  <div className="relative group bg-gray-100 p-6 border-[#2D7BFD] border min-h-[100px] w-full flex flex-col justify-between overflow-hidden">
   {/* Backdrop Image (Initially Hidden) */}
   <img 
     src={backdropimage2} 
@@ -278,7 +278,7 @@ function HomePage() {
   />
 
   {/* Content (Ensures text stays on top) */}
-  <div className="relative z-10  min-h-[300px] w-full flex flex-col justify-between">
+  <div className="relative z-10  min-h-[100px] w-full flex flex-col justify-between">
     <h3 className="text-xl font-bold group group-hover:text-white  text-[#040404]">
       Optimizing costs with data migration to the cloud for a leading stock photography platform
       <span>
@@ -299,7 +299,7 @@ function HomePage() {
 
 
   {/* Additional News Cards */}
-  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[100px] w-full flex flex-col justify-between">
     <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
@@ -311,7 +311,7 @@ function HomePage() {
     </button>
   </div>
 
-  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[100px] w-full flex flex-col justify-between">
     <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
@@ -323,7 +323,7 @@ function HomePage() {
     </button>
   </div>
 
-  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[300px] w-full flex flex-col justify-between">
+  <div className="bg-gray-100 p-6 border-[#2D7BFD] border-1 min-h-[100px] w-full flex flex-col justify-between">
     <h3 className="text-xl font-bold group group-hover:text-white text-[#040404]">
       From concept to launch, we create stunning, user-centric websites that elevate your brand 
       <span>
