@@ -70,7 +70,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             className="w-full rounded-2xl"
           />
           <h2 className="text-xl font-semibold mt-4 text-center text-blue-600 ">Functional Design</h2>
-          <p className="text-gray-600 mt-2 text-center ">
+          <p className="text-gray-600 mt-2 text-center xl:text-base text-sm ">
             We begin with a comprehensive functional design phase, ensuring
             accurate architecture and logic development. Our team leverages
             industry-standard methodologies to optimize design efficiency and
@@ -86,7 +86,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             <h2 className="text-xl font-semibold text-blue-600 ">Floor Planning</h2>
             </div>
             
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 mt-2 xl:text-base text-sm ">
               Strategic floor planning is essential to achieving optimal chip
               performance and minimizing area constraints. We carefully define
               layout structures, power distribution, and interconnect
@@ -97,7 +97,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
           <div className='flex flex-row gap-4'>
                 <img src={frame2} alt=""></img>
             <h2 className="text-xl font-semibold text-blue-600 ">Place and Route (PnR)</h2></div>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 mt-2 xl:text-base text-sm ">
               Our experts employ advanced placement and routing techniques to
               optimize timing, power consumption, and signal integrity. We use
               state-of-the-art tools to ensure smooth integration and high
@@ -112,7 +112,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             <div className='flex flex-row gap-4'>
                 <img src={frame3} alt=""></img>
             <h2 className="text-xl font-semibold text-blue-600 ">Chip Implementation</h2></div>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 mt-2 xl:text-base text-sm ">
               Strategic floor planning is essential to achieving optimal chip
               performance and minimizing area constraints. We carefully define
               layout structures, power distribution, and interconnect
@@ -123,7 +123,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             <div className='flex flex-row gap-4'>
                 <img src={frame4} alt=""></img>
             <h2 className="text-xl font-semibold text-blue-600 ">Project Tapeout</h2></div>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600 mt-2 xl:text-base text-sm ">
               Our experts employ advanced placement and routing techniques to
               optimize timing, power consumption, and signal integrity. We use
               state-of-the-art tools to ensure smooth integration and high
@@ -138,7 +138,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             className=" w-full rounded-lg "
           />
           <div className='absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer'onClick={() => navigate('/servicesPage')}> → Explore our services</div>
-          <p className='absolute inset-0 flex items-center justify-center p-16 text-white font-semibold pointer-events-none text-center  '>Partner with us for seamless VLSI design solutions that drive innovation and performance. Contact us today to discuss your project requirements!</p>
+          <p className='absolute inset-0 flex items-center justify-center p-16 text-white font-semibold pointer-events-none text-center xl:text-base text-sm  '>Partner with us for seamless VLSI design solutions that drive innovation and performance. Contact us today to discuss your project requirements!</p>
        
       </div>
       </div>
