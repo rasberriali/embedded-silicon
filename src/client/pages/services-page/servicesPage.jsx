@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 import servicesbg3 from "../../../assets/images/services-bg-3.jpg"
 import dot from "../../../assets/images/dotgrid.svg"
 import icon3 from "../../../assets/images/icon3.svg"
@@ -26,6 +27,7 @@ import tailord from "../../../assets/images/tailord.svg"
 
 
 function ServicesPage() {
+  const navigate = useNavigate();
    useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -83,7 +85,7 @@ function ServicesPage() {
           
           <div className=' flex flex-col gap-4'>
           <div className='text-[#1E1E1E] text-base font-normal '>Experience end-to-end VLSI Design Flow Services encompassing Functional Design, Floor Planning, Place and Route, chip implementation, and project tapeout – all streamlined for optimal efficiency.</div>
-          <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end '></img></div>
+          <div className='flex flex-row justify-end items-end px-4  '> <img src={arrow} alt="" className='h-6 text-end cursor-pointer 'onClick={() => navigate('/fullvlsi')}></img></div>
         </div>
       </div>
 

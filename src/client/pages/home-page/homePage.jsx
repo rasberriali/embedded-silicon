@@ -43,7 +43,7 @@ function HomePage() {
                   embedded systems, rapid prototyping, and ASIC conversion. </p>
 
                   <p className='text-[#040404] font-semibold text-[20px] xl:text-start text-center'>
-                    Trusted for years in providing reliable digital solutions.</p>
+                    Trusted for years in providing reliable tech solutions.</p>
                     <hr className='text-gray-200 w-2/3'></hr>
                       
                     <div className="flex flex-wrap xl:w-3/4 w-full xl:justify-start justify-center items-center xl:gap-12 gap-6">
