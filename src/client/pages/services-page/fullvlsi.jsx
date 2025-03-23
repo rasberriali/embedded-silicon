@@ -55,15 +55,15 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             </div>
             </div>
 
-            <div className='relative w-full '>
-                <img src={servicesBg} alt="" className='absolute inset-0 object-cover h-full w-full z-0 opacity-10'/>
+            <div className='relative w-full bg-black/90 '>
+                <img src={servicesBg} alt="" className='absolute inset-0 object-cover h-full w-full z-0 opacity-90'/>
 
            
 
             <div className=" relative z-10 max-w-screen-xl mx-auto xl:mt-40 mt-20 2xl:py-12 2xl:px-0 lg:py-12 lg:px-6 p-6 ">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Functional Design Section */}
-        <div className="bg-[#EBF1FF] p-12 rounded-2xl shadow-md ">
+        <div className="bg-[#EBF1FF] p-6 rounded-2xl shadow-md ">
           <img
             src={bentImg}
             alt="Functional Design"
@@ -137,7 +137,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             alt="Functional Design"
             className=" w-full rounded-lg "
           />
-          <div className='absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer'onClick={() => navigate('/servicesPage')}> → Explore our services</div>
+          <div className='absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer 'onClick={() => navigate('/servicesPage')}> → Explore our services</div>
           <p className='absolute inset-0 flex items-center justify-center p-16 text-white font-semibold pointer-events-none text-center xl:text-base text-sm  '>Partner with us for seamless VLSI design solutions that drive innovation and performance. Contact us today to discuss your project requirements!</p>
        
       </div>
