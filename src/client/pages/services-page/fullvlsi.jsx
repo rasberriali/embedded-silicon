@@ -60,7 +60,7 @@ delivering high-performance, cost-effective solutions tailored to your specific 
 
            
 
-            <div className=" relative z-10 max-w-screen-xl mx-auto mt-40 2xl:py-12 2xl:px-0 lg:py-12 lg:px-6 ">
+            <div className=" relative z-10 max-w-screen-xl mx-auto xl:mt-40 mt-20 2xl:py-12 2xl:px-0 lg:py-12 lg:px-6 p-6 ">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Functional Design Section */}
         <div className="bg-[#EBF1FF] p-12 rounded-2xl shadow-md ">
