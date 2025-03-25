@@ -5,7 +5,7 @@ import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
 import brain from "../../../assets/images/brain.svg";
 
-const Industry = () => {
+const industry = () => {
   return (
     <>
       {/* First Background Section */}
@@ -202,4 +202,4 @@ const Industry = () => {
   );
 };
 
-export default Industry;
+export default industry;

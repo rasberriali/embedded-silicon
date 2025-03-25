@@ -13,10 +13,9 @@ import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
 import Leadership from "./client/pages/about-page/Leadership";
 import Awards from "./client/pages/about-page/Awards";
-import Industry from "./client/pages/about-page/Industry";
-
-
-
+import Industry from "./client/pages/about-page/industry";
+import CareersPage from "./client/pages/careers-page/careersPage";
+import Fullvlsi from "./client/pages/services-page/fullvlsi";
 
 function App() {
   return (
@@ -26,13 +25,15 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/leadership" element={<Leadership />} />
-        <Route path="/Industry" element={<Industry />} />
+        <Route path="/industry" element={<industry />} />
         <Route path="/aboutPage" element={<AboutPage />}/>
         <Route path="/Awards" element={<Awards />} />
         <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
+        <Route path="/careersPage" element={<CareersPage />}/>
+        <Route path="/fullvlsi" element={<Fullvlsi />}/>
       </Routes>
       <Footer/>
     </Router>

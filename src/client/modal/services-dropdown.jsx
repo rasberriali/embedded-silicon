@@ -14,11 +14,12 @@ function ServicesDropdown() {
       <img 
   src={triangle} 
   alt="" 
-  className="absolute top-[-12px] left-1/2 -translate-x-1/2 z-50 h-3  hidden md:block"
+  className="absolute top-[-12px]  -translate-x-1/2 z-30 h-3  hidden md:block"
 />
 
     <div className='flex xl:flex-row flex-col p-6 max-w-screen-xl mx-auto '>
-      <div className='flex flex-col xl:w-1/2 gap-2 '>
+
+      <div className='flex flex-col xl:w-1/2 gap-2 mb-8 '>
       <h1 className='font-bold  cursor-pointer' onClick={() => navigate('/servicesPage')}>
       COMPANY OVERVIEW
       </h1>
@@ -72,7 +73,7 @@ function ServicesDropdown() {
       </p>
 </div>
 
-<div className='flex flex-row xl:full'>
+<div className='flex flex-row xl:full '>
       <div className='flex flex-col xl:p-6 p-4 xl:gap-6 gap-2 bg-blue-100  -my-6 xl:text-start text-center  '>
         <h2 className='font-semibold leading-5   '>Embedded Silicon achieves emerging semiconductor company</h2>
         <img src={dropdownimage} alt="" className='w-full'/>
