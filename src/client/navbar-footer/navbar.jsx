@@ -41,7 +41,7 @@ function Navbar() {
   return (
     <div className=" sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-300">
         <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6'>
-          <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}> 
+          <div className='flex items-center gap-2 cursor-pointer ' onClick={() => navigate('/')}> 
             <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
             <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold leading-5'>embedded<br/> silicon</div>
           </div>
@@ -77,7 +77,7 @@ function Navbar() {
 
                 {/* About Us Mega Menu */}
                 {isAboutOpen && (
-                  <div className="mega-menu absolute left-0 w-full bg-white mt-4 shadow-lg border-t border-gray-200 z-[90]">
+                  <div className="mega-menu absolute left-0 w-full bg-white shadow-lg border-t border-gray-200 z-[90]">
                     <div className="container max-w-screen-xl mx-auto py-8">
                       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-6'>
                         <div>
@@ -159,7 +159,7 @@ function Navbar() {
 
                 {/* Services Mega Menu */}
                 {isServicesOpen && (
-                  <div className="mega-menu absolute left-0 w-full bg-white xl:mt-4 mt-0  shadow-lg border-t border-gray-200 z-[90]">
+                  <div className="mega-menu absolute left-0 w-full bg-white shadow-lg border-t border-gray-200 z-[90]">
                     <div className="container max-w-screen-xl mx-auto py-8">
                       <div className='grid grid-cols-1 md:grid-cols-2 gap-8 px-6'>
                         <div>
