@@ -47,112 +47,100 @@ function AboutPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  // const acronym = [
-  //   { letter: "E", word: "Embedded", definition: "Specializing in IC design and firmware development." },
-  //   { letter: "S", word: "Systems", definition: "Delivering seamless integration in hardware and software." },
-  //   { letter: "I", word: "Innovation", definition: "Pioneering advancements in embedded technology." },
-  //   { letter: "L", word: "Logic", definition: "Building smart solutions with cutting-edge design." },
-  //   { letter: "I", word: "Integration", definition: "Ensuring efficiency across digital and analog systems." },
-  //   { letter: "C", word: "Connectivity", definition: "Enhancing communication between devices." },
-  //   { letter: "O", word: "Optimization", definition: "Maximizing performance in embedded applications." },
-  //   { letter: "N", word: "Networks", definition: "Expanding possibilities with connected solutions." }
-  // ];
+
   return (
     <>
 {/* Company Overview Section */}
-<div className="relative w-full min-h-[780px] flex items-center justify-start">
-  {/* Background Image */}
-  <img
-    src={companyOverview}
-    alt="Company Overview"
-    className="absolute inset-0 w-full h-full object-cover "
-  />
+<div className="relative w-full min-h-[600px] bg-[#000924]">
+  {/* Background Image with Overlay */}
+  <div className="absolute inset-0 w-full h-full">
+    <img
+      src={companyOverview}
+      alt="Company Overview"
+      className="w-full h-full object-cover object-center scale-100"
+      style={{ objectPosition: '50% 50%' }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#000924]/80 to-transparent"></div>
+  </div>
 
-  {/* Text Content */}
-  <div className="relative z-20 text-white max-w-3xl px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20 ml-20 mr-auto mb-20">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-      Company Overview
-    </h1>
-    <p className="text-lg sm:text-xl md:text-2xl mt-4">
-      Embedded Silicon is a leading development and consulting firm specializing
-      in IC design and embedded systems. We collaborate with industry partners
-      to deliver seamless integration of component design, embedded systems, and
-      firmware development.
-    </p>
+  {/* Content Container */}
+  <div className="relative h-full max-w-screen-xl mx-auto">
+    <div className="flex items-center h-full py-32">
+      <div className="max-w-2xl px-8 sm:px-12 lg:px-16">
+        <h1 className="whitespace-nowrap text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-8" style={{ width: 'fit-content' }}>Company Overview</h1>
+        <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
+          Embedded Silicon is a leading development and consulting firm specializing
+          in IC design and embedded systems. We collaborate with industry partners
+          to deliver seamless integration of component design, embedded systems, and
+          firmware development.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-
 {/* Key Facts Section */}
-<div className="flex flex-col lg:flex-row lg:mx-20 xl:mx-40 3xl:mx-80 justify-between gap-4 py-1 mt-20">
-  <p className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
-    Key Facts About Embedded Silicon
-  </p>
-</div>
+<div className="w-full max-w-screen-xl mx-auto py-16">
+  <div className="px-8 sm:px-12 lg:px-16">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
+      <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
+        Key Facts About Embedded Silicon
+      </h2>
+    </div>
 
-<div className="flex flex-col sm:flex-row flex-wrap justify-center w-full max-w-6xl mx-auto py-6 sm:py-10 border-b border-gray-200">
-  <div className="w-full max-w-6xl flex flex-col sm:flex-row justify-between px-4 gap-6 sm:gap-x-8 lg:gap-x-20">
-    {[
-      { label: "200+ yrs", description: "of combined experience" },
-      { label: "50+", description: "engineers and growing" },
-      { label: "Established in 2020", description: "with offices in Alabang and Rizal" },
-      { label: "30", description: "Partnerships" }
-    ].map((fact, index) => (
-      <div key={index} className="text-center min-w-[100px] sm:min-w-[150px]">
-        <p className="text-[#1A57C2] text-xl sm:text-2xl md:text-3xl font-bold">{fact.label}</p>
-        <p className="text-gray-600 text-xs sm:text-sm">{fact.description}</p>
-      </div>
-    ))}
+    <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 border-b border-gray-200 pb-8">
+      {[
+        { label: "200+ yrs", description: "of combined experience" },
+        { label: "50+", description: "engineers and growing" },
+        { label: "Established in 2020", description: "with offices in Alabang and Rizal" },
+        { label: "30", description: "Partnerships" }
+      ].map((fact, index) => (
+        <div key={index} className="flex-1 min-w-[180px] text-center flex flex-col items-center justify-center">
+          <p className="text-[#1A57C2] text-xl sm:text-2xl md:text-3xl font-bold mb-1">{fact.label}</p>
+          <p className="text-gray-600 text-xs sm:text-sm">{fact.description}</p>
+        </div>
+      ))}
+    </div>
   </div>
 </div>
 
 {/* Company History & Building Image */}
-<div className="flex justify-center items-center w-full py-10 px-4">
-  <div className="w-full max-w-6xl flex flex-col-reverse md:flex-row">
+<div className="w-full max-w-screen-xl mx-auto py-8">
+  <div className="px-8 sm:px-12 lg:px-16">
+    <div className="w-full flex flex-col-reverse md:flex-row">
+      <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-8 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Company History</h2>
+        <p className="text-sm text-gray-300 mb-4">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          In deleniti repellat eum harum quas ducimus aliquam tempore 
+          vel ad earum dolore consequatur labore eligendi dolores, 
+          molestias suscipit atque, dicta enim.
+        </p>
+        <p className="text-sm text-gray-300 mb-4">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          In deleniti repellat eum harum quas ducimus aliquam tempore 
+          vel ad earum dolore consequatur labore eligendi dolores, 
+          molestias suscipit atque, dicta enim.
+        </p>
+        <p className="text-sm text-gray-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error architecto ad tenetur dignissimos nihil culpa.
+        </p>
+      </div>
 
- 
-    <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-6 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white">Company History</h2>
-      <p className="text-lg sm:text-xl text-[#b0b8c4] font-normal mt-4"></p>
-      <p className="text-sm mt-8 text-gray-300">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        In deleniti repellat eum harum quas ducimus aliquam tempore 
-        vel ad earum dolore consequatur labore eligendi dolores, 
-        molestias suscipit atque, dicta enim.
-      </p>
-      <p className="text-sm mt-3 text-gray-300">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        In deleniti repellat eum harum quas ducimus aliquam tempore 
-        vel ad earum dolore consequatur labore eligendi dolores, 
-        molestias suscipit atque, dicta enim. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores eos inventore accusamus deserunt! 
-        Dolor quisquam eius temporibus architecto 
-        accusantium vero maxime necessitatibus delectus rerum dolorum, eligendi distinctio aperiam officiis iusto.
-      </p>
-
-      <p className="text-sm mt-3 text-gray-300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error architecto ad tenetur dignissimos nihil culpa, dolore assumenda nostrum 
-        autem veritatis obcaecati dolores quo deserunt nisi aperiam repellendus nam iusto.
-      </p>
+      {/* Right: Company Building Image */}
+      <div className="w-full md:w-2/3">
+        <img
+          src={companyBuilding}
+          alt="Company Building"
+          className="w-full h-64 md:h-full object-cover rounded-t-lg md:rounded-r-lg md:rounded-bl-none"
+        />
+      </div>
     </div>
-
-    {/* Right: Company Building Image */}
-    <div className="w-full md:w-2/3">
-      <img
-        src={companyBuilding}
-        alt="Company Building"
-        className="w-full h-64 md:h-full object-cover rounded-t-lg md:rounded-2xl md:rounded-l-lg md:rounded-bl-none"
-      />
-    </div>
-
   </div>
 </div>
 
-
-
 {/* Company Overview Sheet */}
-<div className="flex justify-center w-full mt-6 px-4 sm:px-6">
+<div className="flex justify-center w-full py-5 px-4 sm:px-6">
   <div className="w-full max-w-6xl">
     <div className="bg-[#043A65] text-white px-4 sm:px-6 lg:px-12 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
       <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left">
@@ -166,176 +154,130 @@ function AboutPage() {
 </div>
 
 
+{/* Company Values Section */}
+<div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+  {/* Heading and Intro Text */}
+  <div className="mb-6 sm:mb-8 max-w-3xl text-center sm:text-left">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+      Company Values
+    </h2>
+    <p className="text-base sm:text-lg font-semibold text-blue-700 mt-2">
+      Innovate. Build. Transform.
+    </p>
+    <p className="text-sm sm:text-base text-gray-700 mt-3 leading-relaxed">
+      At Embedded Silicon, we are dedicated to advancing technology and
+      creating a world-class R&D hub in the Philippines. Through innovation,
+      learning, and problem-solving, we develop next-generation embedded
+      solutions that shape the future.
+    </p>
+  </div>
 
-
-     {/* Company Values Section */}
-     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16">
-        {/* Heading and Intro Text */}
-        <div className="mb-8 sm:mb-12 lg:mb-16 max-w-3xl text-center sm:text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-            Company Values
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-semibold text-blue-700 mt-2">
-            Innovate. Build. Transform.
-          </p>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4 leading-relaxed">
-            At Embedded Silicon, we are dedicated to advancing technology and
-            creating a world-class R&D hub in the Philippines. Through innovation,
-            learning, and problem-solving, we develop next-generation embedded
-            solutions that shape the future.
-          </p>
+  {/* Mission, Vision, and Values Section */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch mt-12">
+    {[
+      {
+        title: "Mission",
+        text: "To be the preferred technology development partner, fostering world-class research and innovation in IC design and embedded systems. We drive progress through collaboration, continuous learning, and problem-solving.",
+        icon: missionIcon,
+      },
+      {
+        title: "Vision",
+        text: "To be the preferred technology development partner and solutions provider in the ASEAN region, delivering smart and reliable solutions for the future.",
+        icon: visionIcon,
+      },
+      {
+        title: "Values",
+        icon: valuesIcon,
+        values: [
+          "Teamwork – We collaborate to achieve great results.",
+          "Excellence – We strive for high-quality work.",
+          "Service – We focus on delivering real value to our customers.",
+        ],
+      },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="relative bg-gradient-to-r from-[#033F75] to-[#063241] text-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg flex flex-col h-full"
+      >
+        {/* Icon */}
+        <div className="absolute -top-10 sm:-top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center">
+          <img
+            src={item.icon}
+            alt={`${item.title} Icon`}
+            className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16"
+          />
         </div>
 
-        {/* Mission, Vision, and Values Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {[
-            {
-              title: "Mission",
-              text: "To be the preferred technology development partner, fostering world-class research and innovation in IC design and embedded systems. We drive progress through collaboration, continuous learning, and problem-solving.",
-              icon: missionIcon,
-            },
-            {
-              title: "Vision",
-              text: "To be the preferred technology development partner and solutions provider in the ASEAN region, delivering smart and reliable solutions for the future.",
-              icon: visionIcon,
-            },
-            {
-              title: "Values",
-              icon: valuesIcon,
-              values: [
-                "Teamwork – We collaborate to achieve great results.",
-                "Excellence – We strive for high-quality work.",
-                "Service – We focus on delivering real value to our customers.",
-              ],
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-gradient-to-r from-[#033F75] to-[#063241] text-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg flex flex-col h-full"
-            >
-              {/* Icon */}
-              <div className="absolute -top-10 sm:-top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center">
-                <img
-                  src={item.icon}
-                  alt={`${item.title} Icon`}
-                  className="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16"
-                />
-              </div>
+        {/* Text Content */}
+        <div className="flex flex-col flex-grow justify-start mt-8 sm:mt-12 lg:mt-16 px-4 text-left">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold uppercase text-center">
+            {item.title}
+          </h3>
 
-              {/* Text Content */}
-              <div className="flex flex-col flex-grow justify-between mt-14 sm:mt-16 lg:mt-16 px-4 text-center">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold uppercase">
-                  {item.title}
-                </h3>
-
-                <div className="flex-grow flex flex-col justify-center">
-                  {item.text ? (
-                    <p className="text-xs sm:text-sm lg:text-base mt-4 leading-relaxed text-justify">
-                      {item.text}
-                    </p>
-                  ) : (
-                    <div className="mt-4 space-y-2 text-left">
-                      {item.values?.map((value, idx) => (
-                        <p
-                          key={idx}
-                          className="text-xs sm:text-sm lg:text-base leading-relaxed"
-                        >
-                          <span className="font-bold">{value.split(" – ")[0]}</span> –{" "}
-                          {value.split(" – ")[1]}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-                </div>
+          <div className="flex-grow flex flex-col justify-start">
+            {item.text ? (
+              <p className="text-xs sm:text-sm lg:text-base mt-4 leading-relaxed">
+                {item.text}
+              </p>
+            ) : (
+              <div className="mt-4 space-y-2">
+                {item.values?.map((value, idx) => (
+                  <p
+                    key={idx}
+                    className="text-xs sm:text-sm lg:text-base leading-relaxed"
+                  >
+                    <span className="font-bold">{value.split(" – ")[0]}</span> –{" "}
+                    {value.split(" – ")[1]}
+                  </p>
+                ))}
               </div>
-            </div>
-          ))}
+            )}
+          </div>
         </div>
       </div>
-
-
-
+    ))}
+  </div>
+</div>
 
 {/* Our Clients */}
-<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4">
-  {/* Heading */}
-  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center">
+<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-8 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
+  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in">
     Our Clients 
     <span className="text-sm sm:text-base md:text-xl text-[#647185] font-normal">
       Some of the businesses and startups we have worked with
     </span>
   </div>
 
-  {/* Responsive Clients Grid */}
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 grid-auto-rows items-center justify-items-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-5 md:gap-6 w-full max-w-6xl">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 grid-auto-rows items-center justify-items-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-5 md:gap-6 w-full max-w-6xl py-4">
     {[bosch, innovation, credit, ebay, total, inditex, siemens, bosch, ebay, total].map((logo, index) => (
-      <div key={index} className="flex justify-center items-center p-2 sm:p-3 md:p-5">
-        <img src={logo} alt={`Client ${index + 1}`} className="w-14 sm:w-18 md:w-24 h-auto" />
+      <div key={index} className="flex justify-center items-center p-1 sm:p-2 md:p-3">
+        <img src={logo} alt={`Client ${index + 1}`} className="w-20 sm:w-24 md:w-32 h-auto transition-transform duration-300 hover:scale-105 hover:rotate-2 hover:shadow-lg image-effect" />
+      </div>
+    ))}
+  </div>
+
+  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in mt-12">
+    Industry Recognition
+  </div>
+
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 items-center mt-6 sm:mt-10 w-full max-w-5xl">
+    {[bosch, innovation, credit, total, siemens, siemens, siemens, siemens].map((logo, index) => (
+      <div key={index} className="flex justify-center p-4 sm:p-6 border-b border-gray-300 border border-blue-800 bg-blue-50">
+        <img src={logo} alt={`Award ${index + 1}`} className="w-20 sm:w-24 lg:w-28 h-20 sm:h-24 lg:h-28 filter grayscale hover:filter-none hover:scale-105 transition-transform duration-300 image-effect" />
       </div>
     ))}
   </div>
 </div>
 
-
-
-
-<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4">
-  {/* Heading */}
-  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center">
-    Industry Recognition
-  </div>
-
-  {/* 🔹 Icons Grid Display with Line Separators */}
-  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 grid-rows-2 items-center mt-6 sm:mt-10 w-full max-w-5xl">
-    
-    {/* 🔹 Row 1 */}
-    <div className="flex justify-center p-4 sm:p-6 border-b border-gray-300 border-r">
-      <img src={innovation} alt="Bosch Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6 border-b border-gray-300 border-r">
-      <img src={innovation} alt="Innovation Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6 border-b border-gray-300 border-r">
-      <img src={credit} alt="Credit Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6 border-b border-gray-300">
-      <img src={total} alt="Total Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale xs:border-b" />
-    </div>
-
-    {/* 🔹 Row 2 */}
-    <div className="flex justify-center p-4 sm:p-6 xl:border-r  border-gray-300 xs:border-b">
-      <img src={siemens} alt="Siemens Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6 border-r border-gray-300">
-      <img src={siemens} alt="Siemens Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6 border-r border-gray-300">
-      <img src={siemens} alt="Siemens Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-
-    <div className="flex justify-center p-4 sm:p-6">
-      <img src={siemens} alt="Siemens Award" className="w-14 sm:w-16 lg:w-20 h-14 sm:h-16 lg:h-20 filter grayscale" />
-    </div>
-    
-  </div>
-</div>
-
-
 {/* Leadership Section */}
 <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12">
-  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
+  <h2 className="text-[#040404] text-xl sm:text-2xl md:text-4xl font-semibold text-center mb-8 sm:mb-12">
     Our Experienced Management Team
   </h2>
 
   <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
-    
     {/* First Leader */}
-    <div className="text-center flex-1">
+    <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
       <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
         <img src="/your-svg-file.svg" alt="Profile Icon" className="w-20 sm:w-24 h-20 sm:h-24" />
       </div>
@@ -348,7 +290,7 @@ function AboutPage() {
     </div>
 
     {/* Second Leader */}
-    <div className="text-center flex-1">
+    <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100 slide-in">
       <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
         <img src="/your-svg-file.svg" alt="Profile Icon" className="w-20 sm:w-24 h-20 sm:h-24" />
       </div>
@@ -359,27 +301,17 @@ function AboutPage() {
         is a seasoned serial entrepreneur. As the founder and CEO of Magellan Solutions Outsourcing, Inc.
       </p>
     </div>
-
   </div>
 </div>
 
-
 {/* Map */}
-
-
-
-
-
-
-
-
-
 
     </>
   );
 }
 
 export default AboutPage;
+
 
 
 
