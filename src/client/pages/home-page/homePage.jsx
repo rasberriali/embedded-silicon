@@ -161,10 +161,10 @@ function HomePage() {
                                                           {/* Stats Container */}
                                                           <div className='flex flex-row w-4/5 sm:w-3/5 justify-between items-center text-white bg-[#2D7BFD] h-auto xl:p-8 p-6 rounded-[20px] -mt-14 opacity-95 shadow-xl text-center'>
                                                             <div className='flex flex-col w-full sm:w-1/2 items-center font-bold text-2xl'>
-                                                              99% <span className='text-sm font-semibold'>Client satisfaction</span>
+                                                              99% <span className='xl:text-sm text-xs font-semibold'>Client satisfaction</span>
                                                             </div>
                                                             <div className='flex flex-col w-full sm:w-1/2 items-center font-bold text-2xl '>
-                                                              100++ <span className='text-sm font-semibold'>Projects delivered</span>
+                                                              100++ <span className='xl:text-sm text-xs font-semibold'>Projects delivered</span>
                                                             </div>
                                                           </div>
                                                           </div>
