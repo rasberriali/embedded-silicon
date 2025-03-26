@@ -84,25 +84,25 @@ function Navbar() {
                           <h3 className='font-semibold text-[#162447] mb-4 text-lg'>Company Overview</h3>
                           <ul className="space-y-3">
                             <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage')}>
+                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/leadership')}>
                                 <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
                                 Leadership Team
                               </div>
                             </li>
                             <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#recognitions')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
+                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/Awards')}>
+                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full" ></div>
                                 Industry Recognitions
                               </div>
                             </li>
                             <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#partnerships')}>
+                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/Industry')}>
                                 <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
                                 Partnerships
                               </div>
                             </li>
                             <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#clients')}>
+                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/ourClients')}>
                                 <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
                                 Clients
                               </div>
