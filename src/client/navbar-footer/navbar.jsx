@@ -1,22 +1,325 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
-import dropdown from "../../assets/images/dropdown.svg";
-import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  Collapse,
+  Typography,
+  IconButton,
+  List,
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+import {
+  ChevronDownIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import {
+  Bars4Icon,
+  GlobeAmericasIcon,
+  NewspaperIcon,
+  PhoneIcon,
+  RectangleGroupIcon,
+  SquaresPlusIcon,
+  SunIcon,
+  TagIcon,
+  UserGroupIcon,
+  UserIcon,
+  TrophyIcon,
+  UsersIcon,
+  CalendarIcon,
+} from "@heroicons/react/24/solid";
+import { Menu as MenuIcon, X } from 'lucide-react';
+
+const aboutMenuItems = [
+  {
+    title: "Leadership Team",
+    description: "Meet our experienced leadership team",
+    icon: UserIcon,
+    path: '/aboutPage#leadership'
+  },
+  {
+    title: "Industry Recognitions",
+    description: "Awards and recognition for excellence",
+    icon: TrophyIcon,
+    path: '/aboutPage#recognitions'
+  },
+  {
+    title: "Partnerships",
+    description: "Our strategic partnerships",
+    icon: UserGroupIcon,
+    path: '/aboutPage#partnerships'
+  },
+  {
+    title: "Clients",
+    description: "Trusted by leading companies",
+    icon: UsersIcon,
+    path: '/aboutPage#clients'
+  },
+  {
+    title: "News",
+    description: "Latest company updates and news",
+    icon: NewspaperIcon,
+    path: '/aboutPage#news'
+  },
+  {
+    title: "Events",
+    description: "Upcoming and past events",
+    icon: CalendarIcon,
+    path: '/aboutPage#events'
+  },
+];
+
+const navListMenuItems = [
+  {
+    title: "IC Design",
+    description: "Advanced IC design solutions for your needs",
+    icon: SquaresPlusIcon,
+    path: '/servicesPage#ic-design'
+  },
+  {
+    title: "ASIC Verification",
+    description: "Comprehensive verification services",
+    icon: UserGroupIcon,
+    path: '/servicesPage#verification'
+  },
+  {
+    title: "Physical Design",
+    description: "Expert physical design implementation",
+    icon: Bars4Icon,
+    path: '/servicesPage#physical-design'
+  },
+  {
+    title: "FPGA Development",
+    description: "Custom FPGA solutions and prototyping",
+    icon: SunIcon,
+    path: '/servicesPage#fpga'
+  },
+  {
+    title: "Embedded Systems",
+    description: "Complete embedded system solutions",
+    icon: GlobeAmericasIcon,
+    path: '/servicesPage#embedded'
+  },
+  {
+    title: "Technical Support",
+    description: "24/7 technical assistance and consulting",
+    icon: PhoneIcon,
+    path: '/servicesPage#support'
+  },
+  {
+    title: "Documentation",
+    description: "Comprehensive technical documentation",
+    icon: NewspaperIcon,
+    path: '/servicesPage#docs'
+  },
+  {
+    title: "Custom Solutions",
+    description: "Tailored solutions for your needs",
+    icon: RectangleGroupIcon,
+    path: '/servicesPage#custom'
+  },
+  {
+    title: "Special Services",
+    description: "Specialized engineering services",
+    icon: TagIcon,
+    path: '/servicesPage#special'
+  },
+];
+
+function AboutUsMegaMenu() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const navigate = useNavigate();
+
+  const renderItems = aboutMenuItems.map(
+    ({ icon, title, description, path }, key) => (
+      <div key={key} onClick={() => navigate(path)}>
+        <MenuItem className="flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200">
+          <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
+            {React.createElement(icon, {
+              strokeWidth: 2,
+              className: "h-6 text-[#2D7BFD] w-6",
+            })}
+          </div>
+          <div>
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm font-bold font-inter"
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant="paragraph"
+              className="text-xs !font-medium text-blue-gray-500 font-inter"
+            >
+              {description}
+            </Typography>
+          </div>
+        </MenuItem>
+      </div>
+    ),
+  );
+
+  return (
+    <React.Fragment>
+      <Menu
+        open={isMenuOpen}
+        handler={setIsMenuOpen}
+        offset={{ mainAxis: 20 }}
+        placement="bottom"
+        allowHover={true}
+      >
+        <MenuHandler>
+          <Typography as="div" variant="small" className="font-medium">
+            <ListItem
+              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 "
+              selected={isMenuOpen || isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
+            >
+              About Us
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform lg:block ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform lg:hidden ${
+                  isMobileMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+        <MenuList className="hidden max-w-screen-lg rounded-xl lg:block border-1 border-gray-300 mt-4 ">
+          <div className="grid grid-cols-4 gap-4 p-4">
+            {/* Left column with image */}
+            <div className="col-span-1">
+              <div className="relative h-full rounded-lg overflow-hidden">
+                <img 
+                  src="https://placehold.co/400x600/2D7BFD/FFF" 
+                  alt="Latest Achievement" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent font-inter">
+                  <h4 className="text-white font-semibold mb-1">AWS Financial Services</h4>
+                  <p className="text-gray-300 text-sm">Embedded Silicon achieves AWS competency</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right columns with menu items */}
+            <div className="col-span-3">
+              <div className="grid grid-cols-2 gap-4">
+                {renderItems}
+              </div>
+            </div>
+          </div>
+        </MenuList>
+      </Menu>
+      <div className="block lg:hidden">
+        <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+      </div>
+    </React.Fragment>
+  );
+}
+
+function NavListMenu() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const navigate = useNavigate();
+
+  const renderItems = navListMenuItems.map(
+    ({ icon, title, description, path }, key) => (
+      <div key={key} onClick={() => navigate(path)}>
+        <MenuItem className="flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200">
+          <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
+            {React.createElement(icon, {
+              strokeWidth: 2,
+              className: "h-6 text-[#2D7BFD] w-6",
+            })}
+          </div>
+          <div>
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="flex items-center text-sm font-bold font-inter"
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant="paragraph"
+              className="text-xs !font-medium text-blue-gray-500 font-inter"
+            >
+              {description}
+            </Typography>
+          </div>
+        </MenuItem>
+      </div>
+    ),
+  );
+
+  return (
+    <React.Fragment>
+      <Menu
+        open={isMenuOpen}
+        handler={setIsMenuOpen}
+        offset={{ mainAxis: 20 }}
+        placement="bottom"
+        allowHover={true}
+      >
+        <MenuHandler>
+          <Typography as="div" variant="small" className="font-medium">
+            <ListItem
+              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter"
+              selected={isMenuOpen || isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
+            >
+              Services
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform lg:block ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform lg:hidden ${
+                  isMobileMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300 mt-4  p-4">
+          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
+            {renderItems}
+          </ul>
+        </MenuList>
+      </Menu>
+      <div className="block lg:hidden">
+        <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+      </div>
+    </React.Fragment>
+  );
+}
 
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest('.mega-menu-container')) {
         setIsAboutOpen(false);
-        setIsServicesOpen(false);
       }
     };
 
@@ -24,10 +327,8 @@ function Navbar() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  // Close dropdowns when route changes
   useEffect(() => {
     setIsAboutOpen(false);
-    setIsServicesOpen(false);
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
@@ -39,203 +340,89 @@ function Navbar() {
   const normalClass = "text-[#162447] hover:text-[#2D7BFD] transition-colors";
 
   return (
-    <div className=" sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-300">
-        <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6'>
-          <div className='flex items-center gap-2 cursor-pointer ' onClick={() => navigate('/')}> 
-            <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
-            <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold leading-5'>embedded<br/> silicon</div>
-          </div>
+    <div className="sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-300 font-inter">
+      <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6'>
+        <div className='flex items-center gap-2 cursor-pointer' onClick={() => navigate('/')}> 
+          <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
+          <div className='text-[#2D7BFD] text-xl md:text-xl font-semibold leading-5'>embedded<br/> silicon</div>
+        </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        <IconButton
+          variant="text"
+          color="blue-gray"
+          className="lg:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+          ) : (
+            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+          )}
+        </IconButton>
+
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden  xl:p-0 p-6
+          max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none 
+          transition-transform duration-300 bg-white md:bg-transparent ${isMobileMenuOpen ? 'block' : 'hidden md:flex'}`}>
+          <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+            <Typography
+              as="div"
+              variant="small"
+              color="blue-gray"
+              className="font-medium"
+            >
+              <ListItem 
+                className="flex items-center gap-2 py-2 pr-4"
+                selected={isActivePage('/')}
+                onClick={() => navigate('/')}
+              >
+                Home
+              </ListItem>
+            </Typography>
+
+            <AboutUsMegaMenu />
+            <NavListMenu />
+
+            <Typography
+              as="div"
+              variant="small"
+              color="blue-gray"
+              className="font-medium"
+            >
+              <ListItem 
+                className="flex items-center gap-2 py-2 pr-4"
+                selected={isActivePage('/careersPage')}
+                onClick={() => navigate('/careersPage')}
+              >
+                Careers
+              </ListItem>
+            </Typography>
+
+            <Typography
+              as="div"
+              variant="small"
+              color="blue-gray"
+              className="font-medium"
+            >
+              <ListItem 
+                className="flex items-center gap-2 py-2 pr-4"
+                selected={isActivePage('/success-stories')}
+                onClick={() => navigate('/success-stories')}
+              >
+                Success Stories
+              </ListItem>
+            </Typography>
+          </List>
+        </div>
+
+        <div className='hidden md:flex'>
+          <div 
+            className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 rounded-lg cursor-pointer ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`}
+            onClick={() => navigate('/contactPage')}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-          {/* Navigation Menu */}
-          <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none transition-transform duration-300 bg-white md:bg-transparent ${isMobileMenuOpen ? 'block' : 'hidden md:flex'}`}>
-            <div className='md:flex md:gap-10 text-center md:text-left text-base'>
-              <div className={`cursor-pointer py-3 md:py-0 ${isActivePage('/') ? activeClass : normalClass}`} onClick={() => navigate('/')}>Home</div>
-              
-              {/* About Us Dropdown */}
-              <div 
-                className="mega-menu-container"
-                onMouseEnter={() => window.innerWidth >= 768 && setIsAboutOpen(true)}
-                onMouseLeave={() => window.innerWidth >= 768 && setIsAboutOpen(false)}
-              >
-                <div className='relative py-3 md:py-0 group nav-dropdown'>
-                  <div 
-                    className={`cursor-pointer flex flex-row gap-2 justify-center items-center ${location.pathname.includes('/aboutPage') ? activeClass : normalClass}`}
-                    onClick={() => window.innerWidth < 768 && setIsAboutOpen(!isAboutOpen)}
-                  >
-                    <span>About us</span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />
-                  </div>
-                </div>
-
-                {/* About Us Mega Menu */}
-                {isAboutOpen && (
-                  <div className="mega-menu absolute left-0 w-full bg-white shadow-lg border-t border-gray-200 z-[90]">
-                    <div className="container max-w-screen-xl mx-auto py-8">
-                      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-6'>
-                        <div>
-                          <h3 className='font-semibold text-[#162447] mb-4 text-lg'>Company Overview</h3>
-                          <ul className="space-y-3">
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Leadership Team
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#recognitions')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Industry Recognitions
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#partnerships')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Partnerships
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/aboutPage#clients')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Clients
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 className='font-semibold text-[#162447] mb-4 text-lg'>Why Us</h3>
-                          <div className='bg-gray-50 p-6 rounded-lg'>
-                            <p className='text-[#162447] text-sm mb-4'>
-                              Embedded Silicon is a global software solutions and engineering services company that helps world's leading organizations turn challenges into lasting business value.
-                            </p>
-                            <div className='cursor-pointer text-[#2D7BFD] hover:text-blue-700 transition-colors text-sm font-medium' onClick={() => navigate('/aboutPage#story')}>
-                              Learn more →
-                            </div>
-                          </div>
-                        </div>
-                        <div className='hidden md:block'>
-                          <div className='w-full h-64'>
-                            <div className='relative w-full h-full overflow-hidden rounded-lg'>
-                              <img 
-                                src="https://placehold.co/400x300/2D7BFD/FFF" 
-                                alt="About Embedded Silicon" 
-                                className='w-full h-full object-cover'
-                              />
-                              <div className='absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent'>
-                                <h4 className='text-white font-semibold mb-1'>AWS Financial Services</h4>
-                                <p className='text-gray-300 text-sm'>Embedded Silicon achieves AWS competency</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Services Dropdown */}
-              <div 
-                className="mega-menu-container"
-                onMouseEnter={() => window.innerWidth >= 768 && setIsServicesOpen(true)}
-                onMouseLeave={() => window.innerWidth >= 768 && setIsServicesOpen(false)}
-              >
-                <div className='relative py-3 md:py-0 group nav-dropdown'>
-                  <div 
-                    className={`cursor-pointer flex flex-row gap-2 justify-center items-center ${location.pathname.includes('/servicesPage') ? activeClass : normalClass}`}
-                    onClick={() => window.innerWidth < 768 && setIsServicesOpen(!isServicesOpen)}
-                  >
-                    <span>Services</span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                  </div>
-                </div>
-
-                {/* Services Mega Menu */}
-                {isServicesOpen && (
-                  <div className="mega-menu absolute left-0 w-full bg-white shadow-lg border-t border-gray-200 z-[90]">
-                    <div className="container max-w-screen-xl mx-auto py-8">
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 px-6'>
-                        <div>
-                          <h3 className='font-semibold text-[#162447] mb-4 text-lg'>IC Design Services</h3>
-                          <ul className="space-y-3">
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#asic')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                ASIC Design
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#verification')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                ASIC Verification
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#physical')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Physical Design
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#fpga')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                FPGA Development
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h3 className='font-semibold text-[#162447] mb-4 text-lg'>Embedded Systems</h3>
-                          <ul className="space-y-3">
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#firmware')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Firmware Development
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#hardware')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Hardware Design
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#testing')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Testing & Validation
-                              </div>
-                            </li>
-                            <li>
-                              <div className='cursor-pointer text-[#162447] hover:text-[#2D7BFD] transition-colors flex items-center' onClick={() => navigate('/servicesPage#consulting')}>
-                                <div className="w-2 h-2 bg-[#FF5C00] mr-2 rounded-full"></div>
-                                Technical Consulting
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              <div className={`cursor-pointer py-3 md:py-0 ${isActivePage('/careersPage') ? activeClass : normalClass}`} onClick={() => navigate('/careersPage')}>Careers</div>
-              <div className={`cursor-pointer py-3 md:py-0 ${isActivePage('/success-stories') ? activeClass : normalClass}`} onClick={() => navigate('/success-stories')}>Success stories</div>
-              <div className={`cursor-pointer py-3 md:py-0 xl:hidden ${isActivePage('/contactPage') ? activeClass : normalClass}`} onClick={() => navigate('/contactPage')}>Contact</div>
-            </div>
-          </div>
-
-          <div className='hidden md:flex'>
-            <div className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 rounded-lg cursor-pointer ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`} onClick={() => navigate('/contactPage')}>Contact</div>
+            Contact
           </div>
         </div>
+      </div>
     </div>
   );
 }
