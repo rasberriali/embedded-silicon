@@ -195,24 +195,23 @@ function HomePage() {
                                                             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627,0.393 L59.95,5.716 L38.85,26.816 L45.374,33.34 L56.4,22.314 L54.627,20.541 L58.364,16.804 L47.861,6.301 L51.598,2.564 L49.673,0.639 L41.902,8.41 L40.015,6.525 L36.408,10.132 L39.122,12.846 L37.091,14.877 L39.887,17.673 L37.968,19.591 L40.764,22.387 L38.661,24.49 L40.675,26.504 L47.596,19.583 L54.627,26.614 L59.95,21.291 L54.627,15.968 L59.95,10.645 L54.627,5.322 L59.95,0 L54.627,0.393 L54.627,0.393 Z' fill='%232D7BFD' fill-rule='evenodd'/%3E%3C/svg%3E')" }}></div>
                                                             
                                                             {/* Decorative blurry circles */}
-                                                            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#2D7BFD]/20 rounded-full blur-[100px]"></div>
-                                                            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#2D7BFD]/20 rounded-full blur-[100px]"></div>
-                                                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2D7BFD]/15 rounded-full blur-[120px]"></div>
+                                                            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#2D7BFD]/25 rounded-full blur-[100px]"></div>
+                                                            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#2D7BFD]/30 rounded-full blur-[100px]"></div>
+                                                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2D7BFD]/20 rounded-full blur-[120px]"></div>
                                                             
                                                             {/* Grid pattern overlay */}
                                                             <div className="absolute inset-0 opacity-[0.05]" style={{ 
-                                                              backgroundImage: `linear-gradient(to right, #2D7BFD 1px, transparent 1px),
-                                                                               linear-gradient(to bottom, #2D7BFD 1px, transparent 1px)`,
+                                                              backgroundImage: `linear-gradient(to right, #2D7BFD 1px, transparent 1.2px),
+                                                                               linear-gradient(to bottom, #2D7BFD 1px, transparent 1.2px)`,
                                                               backgroundSize: '40px 40px'
                                                             }}></div>
                                                             
                                                             {/* Content container */}
                                                             <div className="max-w-screen-xl mx-auto px-6 2xl:px-0 relative">
                                                               {/* Section Header */}
-                                                              <div className="flex flex-col items-center text-center mb-16">
-                                                                <div className="w-24 h-1.5 bg-[#2D7BFD] mb-8"></div>
-                                                                <h2 className="text-5xl xl:text-6xl font-bold text-white mb-6 tracking-tight">What We Do</h2>
-                                                                <p className="text-gray-100 max-w-5xl xl:text-xl text-lg leading-relaxed font-normal">
+                                                              <div className="flex flex-col items-center text-center mb-16 font-inter">
+                                                                        <h2 className="text-5xl xl:text-5xl font-bold text-white mb-6 tracking-tight">What We Do</h2>
+                                                                <p className=" max-w-5xl xl:text-xl leading-relaxed font-normal text-xl text-[#647185] ">
                                                                   We deliver cutting-edge IC design and embedded solutions that drive innovation in the technology sector
                                                                 </p>
                                                               </div>
@@ -229,7 +228,7 @@ function HomePage() {
                                                                 ].map((service, index) => (
                                                                   <div 
                                                                     key={index} 
-                                                                    className="group bg-[#101010] border-2 border-[#333] rounded-xl shadow-lg hover:shadow-[#2D7BFD]/30 transition-all duration-300 overflow-hidden hover:border-[#2D7BFD]/50"
+                                                                    className="group bg-[#101010]/30 border-1 border-[#333] rounded-xl shadow-lg hover:shadow-[#2D7BFD]/30 transition-all duration-300 overflow-hidden hover:border-[#2D7BFD]/50"
                                                                     onClick={() => navigate('/servicesPage')}
                                                                   >
                                                                     <div className="border-t-4 border-[#2D7BFD] h-1 w-0 group-hover:w-full transition-all duration-500"></div>
@@ -238,7 +237,7 @@ function HomePage() {
                                                                         <div className="bg-[#2D7BFD]/20 w-16 h-16 rounded-full flex items-center justify-center mr-5 group-hover:bg-[#2D7BFD]/30 transition-colors duration-300">
                                                                           <img src={service.icon} alt={service.title} className="w-8 h-8 filter brightness-0 invert" />
                                                                         </div>
-                                                                        <h3 className="text-white text-xl font-bold tracking-tight font-inter">{service.title}</h3>
+                                                                        <h3 className="text-white text-xl font-semibold tracking-tight font-inter">{service.title}</h3>
                                                                       </div>
                                                                       
                                                                       <p className="text-gray-200 xl:text-base text-sm font-inter font-light leading-relaxed mb-8">{service.desc}</p>
@@ -260,7 +259,7 @@ function HomePage() {
                                                                   <div className="xl:w-2/3 xl:pr-10">
                                                                     <div className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6">15+ Years of Excellence</div>
                                                                     <h3 className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight">Ready to transform your technology vision?</h3>
-                                                                    <p className="text-gray-200 xl:text-xl text-sm mb-10 xl:pr-8 leading-relaxed">
+                                                                    <p className="text-[#647185] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
                                                                       Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
                                                                     </p>
                                                                     <div className="flex flex-row gap-4">
