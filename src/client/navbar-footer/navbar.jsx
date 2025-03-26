@@ -200,7 +200,7 @@ function AboutUsMegaMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-lg rounded-xl lg:block border-1 border-gray-300">
+        <MenuList className="hidden max-w-screen-lg rounded-xl lg:block border-1 border-gray-300 z-50">
           <div className="grid grid-cols-4 gap-4 p-4">
             {/* Left column with image */}
             <div className="col-span-1">
@@ -303,7 +303,7 @@ function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300 p-4">
+        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300  p-4 z-50">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
             {renderItems}
           </ul>
