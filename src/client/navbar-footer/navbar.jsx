@@ -173,7 +173,7 @@ function AboutUsMegaMenu() {
       <Menu
         open={isMenuOpen}
         handler={setIsMenuOpen}
-        offset={{ mainAxis: 20 }}
+        offset={{ mainAxis: 32 }}
         placement="bottom"
         allowHover={true}
       >
@@ -200,7 +200,7 @@ function AboutUsMegaMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-lg rounded-xl lg:block border-1 border-gray-300 mt-4">
+        <MenuList className="hidden max-w-screen-lg rounded-xl lg:block border-1 border-gray-300">
           <div className="grid grid-cols-4 gap-4 p-4">
             {/* Left column with image */}
             <div className="col-span-1">
@@ -276,7 +276,7 @@ function NavListMenu() {
       <Menu
         open={isMenuOpen}
         handler={setIsMenuOpen}
-        offset={{ mainAxis: 20 }}
+        offset={{ mainAxis: 32 }}
         placement="bottom"
         allowHover={true}
       >
@@ -303,7 +303,7 @@ function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300 mt-4  p-4">
+        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300 p-4">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
             {renderItems}
           </ul>
