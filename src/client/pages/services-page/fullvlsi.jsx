@@ -7,7 +7,7 @@ import frame1 from "../../../assets/images/frame1.svg";
 import frame2 from "../../../assets/images/frame2.svg";
 import frame3 from "../../../assets/images/frame3.svg";
 import frame4 from "../../../assets/images/frame4.svg";
-import servicesBg from "../../../assets/images/servicesBg.svg";
+import vlsiBGG from "../../../assets/images/vlsiBGG.svg";
 
 
 function Fullvlsi() {
@@ -48,24 +48,17 @@ function Fullvlsi() {
             <div className='flex flex-col justify-center items-center gap-4  w-3/4'>
                 <div className='xl:text-4xl text-2xl font-bold text-blue-600 ['>Full VLSI <span className="text-[#0B2B82]">Design Services</span></div>
                 <div className='text-[#4A5565] xl:text-lg text-sm text-center'>At Embedded Silicon we provide end-to-end VLSI Design Flow Services, ensuring a
- seamless and optimized approach to integrated chip development. 
-From concept to production, our expertise covers every stage of the design process, 
-delivering high-performance, cost-effective solutions tailored to your specific needs.</div>
-
+                  seamless and optimized approach to integrated chip development. 
+                  From concept to production, our expertise covers every stage of the design process, 
+                  delivering high-performance, cost-effective solutions tailored to your specific needs.</div>
             </div>
             </div>
-
-            <div className='relative w-full bg-black/90 '>
-                <img src={servicesBg} alt="" className='absolute inset-0 object-cover h-full w-full z-0 opacity-90'/>
-
-           
-
-            <div className=" relative z-10 max-w-screen-xl mx-auto xl:mt-40 mt-20 2xl:py-12 2xl:px-0 lg:py-12 lg:px-6 p-6 ">
+            <div className=" relative z-10 max-w-screen-xl mx-auto mt-20 2xl:py-12 2xl:px-0 lg:py-12 lg:px-6 p-6 ">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Functional Design Section */}
         <div className="bg-[#EBF1FF] p-6 rounded-2xl shadow-md ">
           <img
-            src={bentImg}
+            src={vlsiBGG}
             alt="Functional Design"
             className="w-full rounded-2xl"
           />
@@ -131,20 +124,27 @@ delivering high-performance, cost-effective solutions tailored to your specific 
             </p>
           </div>
         </div>
-        <div className="bg-[#EBF1FF] xl:p-8 p-4 rounded-2xl shadow-md  text-center relative">
-        <img
-            src={partnership}
-            alt="Functional Design"
-            className=" w-full rounded-lg "
-          />
-          <div className='absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer 'onClick={() => navigate('/servicesPage')}> → Explore our services</div>
-          <p className='absolute inset-0 flex items-center justify-center p-16 text-white font-semibold pointer-events-none text-center xl:text-base text-sm  '>Partner with us for seamless VLSI design solutions that drive innovation and performance. Contact us today to discuss your project requirements!</p>
-       
-      </div>
+        <div className="bg-[#EBF1FF] xl:p-8 p-4 rounded-2xl shadow-md text-center relative group">
+  <div className="overflow-hidden rounded-lg">
+    <img
+      src={partnership}
+      alt="Functional Design"
+      className="w-full rounded-lg object-cover transition-transform duration-700 group-hover:scale-110"
+    />
+  </div>
+  <div
+    className="absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer"
+    onClick={() => navigate('/servicesPage')}
+  >
+    → Explore our services
+  </div>
+  <p className="absolute inset-0 flex items-center justify-center p-16 text-white font-semibold pointer-events-none text-center xl:text-base text-sm">
+    Partner with us for seamless VLSI design solutions that drive innovation and performance. Contact us today to discuss your project requirements!
+  </p>
+</div>
+
       </div>
     </div>
-            </div>
-      
       
     </div>
   )
