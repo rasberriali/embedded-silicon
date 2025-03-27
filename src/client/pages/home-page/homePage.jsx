@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
@@ -19,10 +20,57 @@ import post from "../../../assets/images/post.svg"
 import pnr from "../../../assets/images/pnr.svg"
 import microsat from "../../../assets/images/microsat.svg"
 import pcb from "../../../assets/images/pcb.svg"
-import bg from "../../../assets/images/bg.svg"
+import routeImage from "../../../assets/images/routeImage.svg"
+import asicImage from "../../../assets/images/asicBg.svg"
+import analogImage2 from "../../../assets/images/analogImage2.svg"
+import radpidImage from "../../../assets/images/rapidImage.svg"
 import MarqueeAnimation from '../../modal/marqueeAnimation';
 
+// Animation variants
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1
+    }
+  }
+};
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { duration: 0.6 }
+  }
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+const fadeInDown = {
+  hidden: { opacity: 0, y: -30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+// const floatingAnimation = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { duration: 0.6 }
+//   }
+// };
 
 function HomePage() {
     useEffect(() => {
@@ -32,105 +80,207 @@ function HomePage() {
    
     return (
       <div>
-        <div className='relative overflow-hidden'>
-          {/* Background Pattern */}
+        {/* Hero Section */}
+        <div className='relative overflow-hidden'>          
           <div className="absolute inset-0 opacity-5" style={{ 
-            backgroundImage: `linear-gradient(to right, #2D7BFD 1px, transparent 1px),
-                             linear-gradient(to bottom, #2D7BFD 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}></div>
-          
-          {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2D7BFD]/10 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2D7BFD]/10 rounded-full blur-[100px]"></div>
+                backgroundImage: `linear-gradient(to right, #2D7BFD 1px, transparent 1.2px),
+                                 linear-gradient(to bottom, #2D7BFD 1px, transparent 1.2px)`,
+                backgroundSize: '40px 40px'
+              }}></div>
 
-          <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative   '>
-            <div className='flex flex-col md:flex-col xl:flex-row md-flex-row gap-8 mt-10 lg:mt-4 2xl:mt-20'>
-              {/* Left Content */}
-              <div className='relative flex xl:w-1/2 flex-col xl:gap-10 gap-6 2xl:justify-start 2xl:items-start lg:justify-start lg:items-start justify-center items-center'>
-               
-                
-                {/* Animated Text */}
-                <div className="relative">
-                  <h1 className='2xl:text-5xl text-3xl md:text-5xl xl:text-5xl text-center 2xl:text-start xl:text-start font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#040404] to-[#2D7BFD]'>
-                    A Full-stack technology development partner
-                  </h1>
-                  <div className="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#2D7BFD] rounded-full"></div>
-                </div>
-
-                <p className='text-[#4A5565] text-[14px] xl:text-[20px] xl:text-start text-center xl:p-0 p-2 leading-relaxed'>
-                  A leading Philippine tech firm specializing in IC Design,
-                  embedded systems, rapid prototyping, and ASIC conversion.
-                </p>
-
-                <p className='text-[#040404] font-semibold text-[20px] xl:text-start text-center'>
-                  Trusted for years in providing reliable tech solutions.
-                </p>
-
-                {/* Stats Section */}
-                <div className="grid grid-cols-2 gap-8 w-full max-w-md">
-                  <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl font-bold text-[#2D7BFD]">50+</div>
-                      <div className="text-sm text-gray-500">years</div>
-                    </div>
-                    <div className="text-[#647185] text-sm mt-2">of industry expertise</div>
-                  </div>
-                  <div className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center gap-2">
-                      <div className="text-3xl font-bold text-[#2D7BFD]">100+</div>
-                      <div className="text-sm text-gray-500">projects</div>
-                    </div>
-                    <div className="text-[#647185] text-sm mt-2">successfully delivered</div>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <div 
-                  className='group flex items-center justify-center w-48 h-12 bg-[#2D7BFD] hover:bg-[#1A57C2] rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl'
-                  onClick={() => navigate('/aboutPage')}
+          <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10 '>
+            {/* Hero Content */}
+            <div className='flex flex-col md:flex-col xl:flex-row py-4 lg:py-4 2xl:py-12 relative'>
+              {/* Circuit pattern overlay */}
+             
+              
+              {/* Left Side Content */}
+              <motion.div 
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className='relative flex xl:w-1/2 flex-col gap-4 z-10 justify-center items-center xl:items-start xl:justify-start '
+              >
+                <motion.div 
+                  variants={fadeInDown}
+                  className="bg-blue-500/10 text-blue-600 text-sm font-semibold py-1.5 px-5 rounded-full inline-block"
                 >
-                  <span className='text-white font-medium'>Learn more</span>
-                  <GoArrowRight className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-              </div>
+                  Philippine's Leading Tech Partner
+                </motion.div>
+                
+                <motion.h1 
+                  variants={fadeInUp}
+                  className='text-3xl md:text-4xl xl:text-5xl text-center xl:text-left font-inter font-bold tracking-tight mt-4 '
+                >
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1A57C2] to-[#2D7BFD]">
+                     A Full-stack
+                  </span> technology development partner
+                </motion.h1>
+                
+                <motion.p 
+                  variants={fadeIn}
+                  className='text-[#4A5565] text-base xl:text-lg xl:text-left text-center xl:p-0 p-2 mt-4 leading-relaxed max-w-xl'
+                >
+                  A leading Philippine tech firm specializing in <span className="font-medium">IC Design</span>,
+                  <span className="font-medium"> embedded systems</span>, rapid prototyping, and 
+                  <span className="font-medium"> ASIC conversion</span>.
+                </motion.p>
 
-              {/* Right Content - Image Stack */}
-              <div className='w-1/2 animate-floating hidden lg:block'>
-                <div className="relative mt-7">
-                  {/* Image Stack with Enhanced Effects */}
-                  <div className="relative">
-                    <img 
-                      src={image1} 
-                      alt="IC Design" 
-                      className="absolute top-0 left-0 2xl:w-[680px] 2xl:h-[350px] md:w-[540px] md:h-[300px] object-cover rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 z-10" 
-                    />
-                    <img 
-                      src={image2} 
-                      alt="Embedded Systems" 
-                      className="absolute top-8 left-6 2xl:w-[690px] 2xl:h-[360px] md:w-[550px] md:h-[300px] object-cover rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 z-20" 
-                    />
-                    <img 
-                      src={image3} 
-                      alt="ASIC Design" 
-                      className="absolute top-16 left-12 2xl:w-[700px] 2xl:h-[370px] md:w-[560px] md:h-[300px] object-cover rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 z-30" 
-                    />
-                  </div>
+                <motion.p 
+                  variants={fadeIn}
+                  className='text-[#040404] font-semibold text-lg xl:text-xl xl:text-left text-center mt-2'
+                >
+                  Trusted for years in providing reliable tech solutions.
+                </motion.p>
+                
+                <motion.div 
+                  variants={fadeIn}
+                  className="h-px w-full xl:w-2/3 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 my-6"
+                ></motion.div>
                   
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#2D7BFD]/20 rounded-full blur-xl"></div>
-                  <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#2D7BFD]/20 rounded-full blur-xl"></div>
-                </div>
+                <motion.div 
+                  variants={staggerContainer}
+                  className="flex flex-wrap w-full xl:justify-start justify-center items-center gap-8 xl:gap-12"
+                >
+                  <motion.div variants={fadeInUp} className="flex flex-col xl:items-start items-center text-center">
+                    <div className="flex flex-row items-center text-[#1A57C2] font-bold">
+                      <div className="text-3xl xl:text-4xl leading-none">50+</div>
+                    </div>
+                    <div className="text-[#647185] font-medium text-sm xl:text-base mt-1">engineers and growing</div>
+                  </motion.div>
+                  
+                  <motion.div variants={fadeInUp} className="flex flex-col xl:items-start items-center text-center">
+                    <div className="flex flex-row items-center text-[#1A57C2] font-bold">
+                      <div className="text-3xl xl:text-4xl leading-none">100+</div>
+                    </div>
+                    <div className="text-[#647185] font-medium text-sm xl:text-base mt-1">projects delivered</div>
+                  </motion.div>
+                </motion.div>
+
+                <motion.div 
+                  variants={fadeInUp}
+                  className="flex flex-row gap-4 mt-4"
+                >
+                  <button 
+                    onClick={() => navigate('/aboutPage')}
+                    className="group flex items-center gap-2 bg-[#2D7BFD] hover:bg-[#1A57C2] transition-all duration-300 py-1 px-6 rounded-full text-white font-medium shadow-lg hover:shadow-blue-500/30"
+                  >
+                    Learn more
+                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                      <GoArrowRight />
+                    </span>
+                  </button>
+                  
+                  <button
+                    onClick={() => navigate('/contactPage')}
+                    className="flex items-center gap-2 border-2 border-[#2D7BFD] text-[#2D7BFD] hover:bg-[#2D7BFD]/10 transition-all duration-300 py-1 px-6 rounded-full font-medium"
+                  >
+                    Contact us
+                  </button>
+                </motion.div>
+              </motion.div>
+            
+              {/* Right Side Images */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className='xl:w-1/2 hidden lg:block'
+              >
+                <motion.div
+                  initial={{ y: 0 }}
+                  animate={{ 
+                    y: [0, -15, 0],
+                    transition: {
+                      duration: 6,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }
+                  }}
+                  className="relative"
+                >
+                  {/* Glowing backdrop effect */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ 
+                      opacity: [0.6, 0.8, 0.6],
+                      scale: [0.9, 1, 0.9],
+                      transition: {
+                        duration: 5,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }
+                    }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2D7BFD]/10 rounded-full blur-[100px]">
+                  </motion.div>
+                  
+                  {/* Image stack with improved shadows and animation */}
+                  <motion.img 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                    src={image1} 
+                    alt="Integrated Circuit" 
+                    className="absolute top-0 left-0 w-[680px] h-[350px] object-cover rounded-2xl shadow-[0_10px_50px_rgba(8,112,184,0.2)] z-10" 
+                  />
+                  <motion.img 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                    src={image2} 
+                    alt="Integrated Circuit Design" 
+                    className="absolute top-8 left-6 w-[690px] h-[360px] object-cover rounded-2xl shadow-[0_10px_50px_rgba(8,112,184,0.3)] z-20" 
+                  />
+                  <motion.img 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                    src={image3} 
+                    alt="Integrated Circuit Close-up" 
+                    className="absolute top-16 left-12 w-[700px] h-[370px] object-cover rounded-2xl shadow-[0_10px_50px_rgba(8,112,184,0.4)] z-30" 
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
+            
+            {/* Mobile Image (only visible on small screens) */}
+            <div className="lg:hidden w-full flex justify-center mb-10">
+              <div className="relative w-full max-w-md">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: [0.5, 0.7, 0.5],
+                    scale: [0.9, 1, 0.9],
+                    transition: {
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }
+                  }}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#2D7BFD]/10 rounded-full blur-[50px]">
+                </motion.div>
+                <motion.img 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                  src={image3} 
+                  alt="Integrated Circuit Mobile View" 
+                  className="w-full h-auto rounded-2xl shadow-[0_10px_50px_rgba(8,112,184,0.3)] relative z-10 mt-4" 
+                />
               </div>
             </div>
           </div>
         </div>
 
-
         <div className='max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6'>
-        <div className="gap-4 mt-12 w-full flex flex-col xl:items-start items-center xl:justify-start justify-center text-center xl:text-start">
+        <div className="gap-4 mt-12 w-full flex flex-col items-center justify-start text-start ">
           <div className="w-full px-3 xl:px-0 mt-20">
-            <h1 className="text-[#040404] xl:text-4xl text-xl font-semibold">
+            <h1 className="text-[#040404] xl:text-4xl text-4xl font-semibold font-inter">
               Your <span className="text-[#2D7BFD] font-semibold">all-in-one</span> IC and embedded <br />
               solutions expert
             </h1>
@@ -141,56 +291,52 @@ function HomePage() {
         </div>
 
         <div className='flex xl:flex-row flex-col justify-between gap-4 mt-20'>
-          <div className='flex flex-row xl:w-2/5 w-full  '>
-            <div className='flex flex-col w-1/2  items-center gap-6 py-6'>
+          <div className='flex flex-row xl:w-2/5 w-full'>
+            <div className='flex flex-col w-1/2 items-center gap-6 py-6'>
               <div className='bg-[#2D7BFD] p-6 rounded-full'>
-                <img src={Icon1} alt="icons1" className='h-10 w-10'></img>
+                <img src={Icon1} alt="icons1" className='h-10 w-10' />
               </div>
               <div className=''>
                 <img src={line} alt="line" className='h-25'/>
               </div>
               <div className='bg-[#2D7BFD] p-6 rounded-full'>
-                <img src={icon2} alt="icons2" className='h-10 w-10'></img>
-                
+                <img src={icon2} alt="icons2" className='h-10 w-10' />
               </div>
               <div className=''>
                 <img src={line} alt="line" className='h-25'/>
               </div>
               <div className='bg-[#2D7BFD] p-6 rounded-full'>
-                <img src={icon3} alt="icons3" className='h-10 w-10'></img>
-                
+                <img src={icon3} alt="icons3" className='h-10 w-10' />
               </div>
             </div>
 
-            <div className='flex flex-col w-full   gap-32 px-2 xl:py-6 p-6'>
-
-              <div className='flex flex-col text-[#040404] text-xl font-medium gap-2 '> Innovative 
+            <div className='flex flex-col w-full gap-32 px-2 xl:py-6 p-6'>
+              <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Innovative 
                 <span className='text-[#647185] xl:text-base text-sm font-normal'>
-                      We push the boundaries of IC<br/>
-                      design and embedded systems<br/>
-                      to create forward-thinking solutions.
+                  We push the boundaries of IC<br/>
+                  design and embedded systems<br/>
+                  to create forward-thinking solutions.
                 </span>
               </div>
 
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Fast Delivery 
                 <span className='text-[#647185] xl:text-base text-sm font-normal'>
-                Our agile development approach<br/>
-                ensures rapid prototyping and efficient
-                execution to meet deadlines.
+                  Our agile development approach<br/>
+                  ensures rapid prototyping and efficient
+                  execution to meet deadlines.
                 </span>
               </div>
+              
               <div className='flex flex-col text-[#040404] text-xl font-medium gap-2'> Exceeding Market Expectations 
                 <span className='text-[#647185] xl:text-base text-sm font-normal'>
-                We don't just meet industry standards—we
-                surpass them, delivering high-performance, 
-                future-ready solutions.
+                  We don't just meet industry standards—we
+                  surpass them, delivering high-performance, 
+                  future-ready solutions.
                 </span>
               </div>
-
             </div>
           </div>
 
-          
           <div className='flex flex-col w-full sm:w-3/5 items-center mt-5 justify-start'>
             {/* Work Image */}
             <img src={work} alt="work" className='rounded-3xl w-full' />
@@ -206,21 +352,22 @@ function HomePage() {
             </div>
           </div>
         </div>
-
         </div>
 
-        <div className='flex flex-row xl:mt-30 mt-30 justify-center p-4  '>
+        {/* Our Clients */}
+        <div className='flex flex-row xl:mt-30 mt-30 justify-center p-4'>
           <div className='flex flex-col'>
-            <div className='text-black text-[50px] flex flex-col  justify-center items-center gap-2 font-bold '>
+            <div className='text-black text-[50px] flex flex-col justify-center items-center gap-2 font-bold'>
               Our clients <span className='text-xl text-[#647185] font-normal text-center'>Some of the businesses and startups we have worked with</span>
             </div>
           </div>
         </div>
 
-        <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-start  mt-20 overflow-hidden">
+        <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-start mt-20 overflow-hidden">
           <MarqueeAnimation/>
         </div>
 
+   
         {/* What We Do Section */}
         <div className="xl:mt-40 mt-30 py-16 relative bg-[#050505] overflow-hidden">
           {/* Circuit pattern overlay */}
@@ -313,7 +460,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-   
+              
 
       {/* Latest News Section */}
       <div className="max-w-screen-xl mx-auto xl:mt-40 mt-30 font-inter lg:px-6 2xl:px-0 px-6">
@@ -361,7 +508,7 @@ function HomePage() {
           <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative h-[200px] overflow-hidden">
               <img 
-                src={backdropimage} 
+                src={routeImage} 
                 alt="News" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -387,7 +534,7 @@ function HomePage() {
           <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative h-[200px] overflow-hidden">
               <img 
-                src={backdropimage} 
+                src={asicImage} 
                 alt="News" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -413,7 +560,7 @@ function HomePage() {
           <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative h-[200px] overflow-hidden">
               <img 
-                src={backdropimage} 
+                src={radpidImage} 
                 alt="News" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -439,7 +586,7 @@ function HomePage() {
           <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative h-[200px] overflow-hidden">
               <img 
-                src={backdropimage} 
+                src={analogImage2} 
                 alt="News" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -464,7 +611,6 @@ function HomePage() {
         </div>
       </div>
     </div>
-      
   )
 }
 
