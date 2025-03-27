@@ -16,7 +16,7 @@ import Awards from "./client/pages/about-page/Awards";
 import Industry from "./client/pages/about-page/Industry";
 import CareersPage from "./client/pages/careers-page/careersPage";
 import Fullvlsi from "./client/pages/services-page/fullvlsi";
-import OurClients from "./client/pages/about-page/ourClients";
+import OurClients from "./client/pages/about-page/ourclients";
 
 
 function App() {
@@ -30,13 +30,14 @@ function App() {
         <Route path="/Industry" element={<Industry />} />
         <Route path="/aboutPage" element={<AboutPage />}/>
         <Route path="/Awards" element={<Awards />} />
-        <Route path="/ourClients" element={<OurClients />}/>
+        <Route path="/ourclients" element={<OurClients />}/>
         <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
         <Route path="/careersPage" element={<CareersPage />}/>
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
+
       </Routes>
       <Footer/>
     </Router>
