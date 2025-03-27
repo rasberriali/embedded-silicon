@@ -1,204 +1,291 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import industrybg from "../../../assets/images/industrybg.svg";
 import total from "../../../assets/images/total.png";
 import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
 import brain from "../../../assets/images/brain.svg";
 
+const partnershipData = [
+  {
+    id: 1,
+    name: "Total Energy Solutions",
+    logo: total,
+    description: "Strategic partnership in developing energy-efficient semiconductor solutions for sustainable power systems and smart grid applications.",
+    achievements: [
+      "Developed high-performance chips reducing energy consumption by 40%",
+      "Joint research in renewable energy integration systems",
+      "Smart meter solutions deployed across 3 continents"
+    ],
+    collaboration: "Together, we're pioneering sustainable energy solutions through advanced semiconductor technology.",
+    stats: {
+      projects: "50+",
+      years: "10+",
+      countries: "25"
+    }
+  },
+  {
+    id: 2,
+    name: "Siemens Industrial Innovation",
+    logo: siemens,
+    description: "Collaborative partnership focusing on industrial automation and Industry 4.0 solutions through cutting-edge semiconductor technology.",
+    achievements: [
+      "Created next-gen industrial control systems",
+      "Implemented AI-powered predictive maintenance solutions",
+      "Developed custom IoT chips for smart factories"
+    ],
+    collaboration: "Driving the future of industrial automation with innovative silicon solutions.",
+    stats: {
+      projects: "75+",
+      years: "15+",
+      countries: "30"
+    }
+  },
+  {
+    id: 3,
+    name: "Inditex Tech Solutions",
+    logo: inditex,
+    description: "Strategic alliance in developing retail technology solutions and smart supply chain management systems.",
+    achievements: [
+      "Implemented RFID chip solutions across global retail chains",
+      "Developed smart inventory management systems",
+      "Created energy-efficient POS systems"
+    ],
+    collaboration: "Revolutionizing retail technology through innovative semiconductor solutions.",
+    stats: {
+      projects: "40+",
+      years: "8+",
+      countries: "20"
+    }
+  }
+];
+
 const Industry = () => {
+  const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState({
+    hero: false,
+    cards: false,
+    partners: false
+  });
+  const [selectedPartner, setSelectedPartner] = useState(null);
+  const [activePartnerIndex, setActivePartnerIndex] = useState(0);
+
+  useEffect(() => {
+    setIsVisible(prev => ({ ...prev, hero: true }));
+    
+    const cardsTimer = setTimeout(() => {
+      setIsVisible(prev => ({ ...prev, cards: true }));
+    }, 500);
+
+    const partnersTimer = setTimeout(() => {
+      setIsVisible(prev => ({ ...prev, partners: true }));
+    }, 1000);
+
+    return () => {
+      clearTimeout(cardsTimer);
+      clearTimeout(partnersTimer);
+    };
+  }, []);
+
+  const handleLearnMore = (partner) => {
+    setSelectedPartner(partner);
+  };
+
   return (
-    <>
-      {/* First Background Section */}
-      <div className="relative bg-gray-900 flex flex-col items-center justify-center p-6">
-        {/* Background Image */}
+    <div className="w-full">
+      {/* Hero Section */}
+      <div className="relative min-h-[80vh] bg-gray-900">
+        {/* Background Image with Parallax Effect */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${industrybg})`, height: "100%" }}
-        ></div>
+          className="absolute inset-0 bg-cover bg-center transform transition-transform duration-500 hover:scale-105"
+          style={{ backgroundImage: `url(${industrybg})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+        </div>
 
         {/* Content Wrapper */}
-        <div className="relative flex flex-col items-center space-y-10 w-full">
-          {/* First Card (Main Info) */}
-          <div
-            className="shadow-lg bg-[rgba(31,41,55,0.9)] text-white px-16 py-14 rounded-2xl w-[700px] flex flex-col justify-center"
+        <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center space-y-10">
+          {/* Main Info Card */}
+          <div 
+            className={`bg-[#1E293B]/90 backdrop-blur-sm shadow-xl rounded-xl max-w-3xl w-full p-8 transform transition-all duration-1000 ${
+              isVisible.hero ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'
+            }`}
           >
-            <h2 className="text-2xl font-bold text-white text-left leading-tight">
-              Pioneering the Future of <br />
-              <span className="text-white">Embedded Silicon</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Strategic Partnerships in<br />
+              Silicon Innovation
             </h2>
-            <p className="mt-4 text-gray-300 text-sm leading-relaxed text-left">
-              We develop smart and efficient silicon solutions that drive modern
-              technology forward. With strong industry partnerships and a
-              commitment to innovation, we create reliable and scalable solutions
-              for automotive, IoT, consumer electronics, and industrial
-              applications. Our goal is to make technology smarter, faster, and
-              more connected to shape a better future.
+            <p className="mt-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+              We forge powerful alliances with industry leaders to push the boundaries 
+              of embedded silicon technology. Our partnerships span across energy, 
+              industrial automation, retail, and more, creating innovative solutions 
+              that shape the future of technology.
             </p>
           </div>
 
-          {/* Second Card */}
-          <div
-            className="shadow-lg bg-[rgba(31,41,55,0.9)] text-white px-16 py-10 rounded-2xl w-[900px] flex flex-col justify-center mx-auto my-10"
+          {/* Stats Card */}
+          <div 
+            className={`bg-[#1E293B]/90 backdrop-blur-sm shadow-xl rounded-xl max-w-4xl w-full p-6 transform transition-all duration-1000 ${
+              isVisible.cards ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+            }`}
           >
-            <h3 className="text-lg font-bold text-left">Lorem</h3>
-            <p className="mt-2 text-gray-300 text-sm leading-relaxed text-left">
-              Repellat eum harum quas ducimus aliquam tempore vel ad earum dolore
-              consequatur labore eligendi.
-            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+              <div className="p-4 hover:bg-blue-900/30 rounded-lg transition-colors">
+                <h3 className="text-3xl font-bold text-blue-400">20+</h3>
+                <p className="text-gray-300 mt-2">Global Partners</p>
+              </div>
+              <div className="p-4 hover:bg-blue-900/30 rounded-lg transition-colors">
+                <h3 className="text-3xl font-bold text-purple-400">150+</h3>
+                <p className="text-gray-300 mt-2">Joint Projects</p>
+              </div>
+              <div className="p-4 hover:bg-blue-900/30 rounded-lg transition-colors">
+                <h3 className="text-3xl font-bold text-blue-400">30+</h3>
+                <p className="text-gray-300 mt-2">Countries Reached</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Industry Section - Background Image */}
-      <div
-        className="relative py-10 px-12 w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${brain})` }}
-      >
-        {/* Semi-Transparent Overlay */}
-        <div className="absolute inset-0 bg-white opacity-70"></div> {/* Adjust opacity as needed */}
-
-        <div className="max-w-6xl mx-auto space-y-4">
-          {/* First Section */}
-          <div
-            className="flex flex-col md:flex-row items-center p-6 relative"
-            style={{
-              borderBottom: "3px solid #2E3EFD", // Bottom line
-              width: "100%",
-              position: "relative",
-            }}
-          >
-            {/* Left Vertical Line - Aligned with the first paragraph */}
-            <div
-              className="absolute left-0"
-              style={{
-                width: "3px",
-                backgroundColor: "#2E3EFD",
-                top: "170px", // Adjust to align with first paragraph
-                bottom: "-3px", // Extends down to touch bottom border
-              }}
-            ></div>
-
-            {/* Left Content */}
-            <div className="md:w-1/2 text-left pl-10">
-              <h2 className="text-2xl font-bold text-black">ACS</h2>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-
-              {/* Updated Button Section */}
-              <div className="flex flex-col items-center text-center mb-0 pb-0">
-                <button
-                  className="mt-2 px-5 py-2 text-white rounded-md"
-                  style={{
-                    background: "linear-gradient(90deg, #AABEE2 1%, #5D93EC 19%, #537DE6 51%, #406AB5 75%, #3959A7 100%)",
-                  }}
-                >
-                  Learn more
-                </button>
-              </div>
-            </div>
-
-            {/* Right Section - Logo */}
-            <div className="md:w-1/2 flex justify-center">
-              <img src={total} alt="ACS Logo" className="w-120 h-98" />
-            </div>
-          </div>
-
-          {/* Second Section (Reversed Layout) */}
-          <div
-            className="flex flex-col md:flex-row-reverse items-center p-6 relative"
-            style={{
-              borderRight: "3px solid #2E3EFD",
-              borderBottom: "3px solid #2E3EFD",
-              width: "100%",
-            }}
-          >
-            {/* Text Section on the Right */}
-            <div className="md:w-1/2 text-left">
-              <h2 className="text-2xl font-bold text-black pl-10">ACS</h2>
-              <p className="text-gray-700 mt-2 pl-10 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              <p className="text-gray-700 pl-10 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-
-              {/* Updated Button Section */}
-              <div className="flex flex-col items-center text-center mt-4">
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend in libero nec ultrices.
+      {/* Partnership Showcase */}
+      <div className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Our Strategic Partners
+          </h2>
+          
+          {partnershipData.map((partner, index) => (
+            <div 
+              key={partner.id}
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 p-6 mb-12 rounded-xl hover:bg-gray-50 transition-all duration-300 transform ${
+                isVisible.partners ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
+              {/* Content */}
+              <div className="md:w-1/2 space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">{partner.name}</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  {partner.description}
                 </p>
-                <button
-                  className="mt-4 px-5 py-2 text-white rounded-md"
-                  style={{
-                    background: "linear-gradient(90deg, #AABEE2 1%, #5D93EC 19%, #537DE6 51%, #406AB5 75%, #3959A7 100%)",
-                  }}
+                
+                {/* Achievement List */}
+                <ul className="space-y-2">
+                  {partner.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-center text-sm text-gray-600">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Partnership Stats */}
+                <div className="grid grid-cols-3 gap-4 pt-4">
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-blue-600">{partner.stats.projects}</p>
+                    <p className="text-sm text-gray-500">Projects</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-blue-600">{partner.stats.years}</p>
+                    <p className="text-sm text-gray-500">Years</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-blue-600">{partner.stats.countries}</p>
+                    <p className="text-sm text-gray-500">Countries</p>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={() => handleLearnMore(partner)}
+                  className="mt-6 px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md hover:from-blue-600 hover:to-blue-800 transition-all transform hover:scale-105 active:scale-95"
                 >
                   Learn more
                 </button>
               </div>
-            </div>
 
-            {/* Left Section - Icon */}
-            <div className="md:w-1/2 flex justify-center">
-              <img src={siemens} alt="Innovation Group Logo" className="w-120 h-98" />
+              {/* Logo Section */}
+              <div className="md:w-1/2 flex justify-center">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-blue-500/10 rounded-xl transform transition-transform group-hover:scale-105"></div>
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} Logo`} 
+                    className="max-w-xs relative z-10 transform transition-transform group-hover:scale-110"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
 
-          {/* Third Section */}
-          <div
-            className="flex flex-col md:flex-row items-center p-6 relative"
-            style={{
-              borderBottom: "3px solid #2E3EFD", // Bottom border
-              width: "100%",
-              position: "relative",
-            }}
+      {/* Partnership Details Modal */}
+      {selectedPartner && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedPartner(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl p-6 max-w-3xl w-full mx-auto transform transition-all duration-300 max-h-[90vh] overflow-y-auto"
+            onClick={e => e.stopPropagation()}
           >
-            {/* Left Vertical Line - Aligned with the first paragraph */}
-            <div
-              className="absolute left-0"
-              style={{
-                width: "3px",
-                backgroundColor: "#2E3EFD",
-                top: "170px", // Adjust to align with first paragraph
-                bottom: "-3px", // Extends down to touch bottom border
-              }}
-            ></div>
-
-            {/* Left Content */}
-            <div className="md:w-1/2 text-left pl-10">
-              <h2 className="text-2xl font-bold text-black">ACS</h2>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-
-              {/* Updated Button Section */}
-              <div className="flex flex-col items-center text-center mt-4">
-                <button
-                  className="mt-4 px-5 py-2 text-white rounded-md"
-                  style={{
-                    background: "linear-gradient(90deg, #AABEE2 1%, #5D93EC 19%, #537DE6 51%, #406AB5 75%, #3959A7 100%)",
-                  }}
-                >
-                  Learn more
-                </button>
-              </div>
+            <div className="flex justify-between items-start mb-6">
+              <h3 className="text-2xl font-bold text-gray-900">{selectedPartner.name}</h3>
+              <button 
+                onClick={() => setSelectedPartner(null)}
+                className="text-gray-500 hover:text-gray-700 transition-colors p-2"
+              >
+                ✕
+              </button>
             </div>
 
-            {/* Right Section - Logo */}
-            <div className="md:w-1/2 flex justify-center">
-              <img src={siemens} alt="ACS Logo" className="w-120 h-98" />
+            <div className="space-y-6">
+              <img 
+                src={selectedPartner.logo} 
+                alt={selectedPartner.name} 
+                className="h-32 object-contain mx-auto"
+              />
+
+              <div className="prose max-w-none">
+                <p className="text-gray-600 leading-relaxed">
+                  {selectedPartner.description}
+                </p>
+
+                <h4 className="text-lg font-semibold text-gray-900 mt-6">Key Achievements</h4>
+                <ul className="space-y-2">
+                  {selectedPartner.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-center text-gray-600">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+
+                <h4 className="text-lg font-semibold text-gray-900 mt-6">Partnership Impact</h4>
+                <div className="grid grid-cols-3 gap-6 mt-4">
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="text-2xl font-bold text-blue-600">{selectedPartner.stats.projects}</p>
+                    <p className="text-sm text-gray-500">Joint Projects</p>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="text-2xl font-bold text-blue-600">{selectedPartner.stats.years}</p>
+                    <p className="text-sm text-gray-500">Years of Partnership</p>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="text-2xl font-bold text-blue-600">{selectedPartner.stats.countries}</p>
+                    <p className="text-sm text-gray-500">Countries Impacted</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 mt-6 italic">
+                  {selectedPartner.collaboration}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

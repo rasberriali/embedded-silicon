@@ -16,6 +16,8 @@ import Awards from "./client/pages/about-page/Awards";
 import Industry from "./client/pages/about-page/Industry";
 import CareersPage from "./client/pages/careers-page/careersPage";
 import Fullvlsi from "./client/pages/services-page/fullvlsi";
+import OurClients from "./client/pages/about-page/ourClients";
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
         <Route path="/Industry" element={<Industry />} />
         <Route path="/aboutPage" element={<AboutPage />}/>
         <Route path="/Awards" element={<Awards />} />
+        <Route path="/ourClients" element={<OurClients />}/>
         <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
         <Route path="/cookies" element={<Cookies />}/>

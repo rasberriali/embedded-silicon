@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useState, useEffect} from "react";
 import companyOverview from "../../../assets/images/companyOverview.svg";
 import companyBuilding from "../../../assets/images/companyBuilding.svg";
 import missionIcon from "../../../assets/images/missionIcon.svg";
@@ -26,6 +26,7 @@ import arrow from "../../../assets/images/arrow.svg"
 import acs from "../../../assets/images/acs.svg";
 import logokeyindustry from "../../../assets/images/logokeyindustry.svg";
 import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
+import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
 
 // import icImage from "../../../assets/images/ic-bg.svg"
 // import FaAward from "../../../assets/icons/fa-award.svg";
@@ -37,15 +38,29 @@ import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
-import { useEffect } from "react";
 import svgMap from "svgmap";
 // import "svgmap/dist/svgMap.css"; // Import styles
 
-
 import { GoArrowRight } from "react-icons/go";
+
 function AboutPage() {
+  const [isVisible, setIsVisible] = useState({
+    hero: false,
+    content: false
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Trigger hero section animation
+    setIsVisible(prev => ({ ...prev, hero: true }));
+    
+    // Trigger content animation after a delay
+    const contentTimer = setTimeout(() => {
+      setIsVisible(prev => ({ ...prev, content: true }));
+    }, 500);
+
+    return () => clearTimeout(contentTimer);
   }, []);
 
   return (
@@ -57,16 +72,22 @@ function AboutPage() {
     <img
       src={companyOverview}
       alt="Company Overview"
-      className="w-full h-full object-cover object-center scale-100"
+      className={`w-full h-full object-cover object-center transition-all duration-1000 ${
+        isVisible.hero ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+      }`}
       style={{ objectPosition: '50% 50%' }}
     />
-    <div className="absolute inset-0 bg-gradient-to-r from-[#000924]/80 to-transparent"></div>
+    <div className={`absolute inset-0 bg-gradient-to-r from-[#000924]/80 to-transparent transition-opacity duration-1000 ${
+      isVisible.hero ? 'opacity-100' : 'opacity-0'
+    }`}></div>
   </div>
 
   {/* Content Container */}
   <div className="relative h-full max-w-screen-xl mx-auto">
     <div className="flex items-center h-full py-32">
-      <div className="max-w-2xl px-8 sm:px-12 lg:px-16">
+      <div className={`max-w-2xl px-8 sm:px-12 lg:px-16 transform transition-all duration-1000 ${
+        isVisible.content ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+      }`}>
         <h1 className="whitespace-nowrap text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-8" style={{ width: 'fit-content' }}>Company Overview</h1>
         <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
           Embedded Silicon is a leading development and consulting firm specializing
@@ -146,9 +167,13 @@ function AboutPage() {
       <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left">
         Company Overview Sheet
       </h2>
-      <button className="bg-white text-[#0F4C81] px-3 sm:px-5 md:px-7 py-1 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm md:text-lg lg:text-xl hover:bg-gray-200 transition-all">
+      <a 
+        href={aboutUsPdf} 
+        download="Company_Overview.pdf"
+        className="bg-white text-[#0F4C81] px-3 sm:px-5 md:px-7 py-1 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm md:text-lg lg:text-xl hover:bg-gray-200 transition-all cursor-pointer"
+      >
         View PDF
-      </button>
+      </a>
     </div>
   </div>
 </div>

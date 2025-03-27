@@ -39,17 +39,17 @@ const aboutMenuItems = [
     title: "Leadership Team",
     description: "Meet our experienced leadership team",
     icon: UserIcon,
-    path: '/aboutPage#leadership'
+    path: '/Leadership'
   },
   {
     title: "Industry Recognitions",
     description: "Awards and recognition for excellence",
     icon: TrophyIcon,
-    path: '/aboutPage#recognitions'
+    path: '/Awards'
   },
   {
     title: "Partnerships",
-    description: "Our strategic partnerships",
+    description: "/Industry",
     icon: UserGroupIcon,
     path: '/aboutPage#partnerships'
   },
@@ -57,7 +57,7 @@ const aboutMenuItems = [
     title: "Clients",
     description: "Trusted by leading companies",
     icon: UsersIcon,
-    path: '/aboutPage#clients'
+    path: '/ourClients'
   },
   {
     title: "News",
