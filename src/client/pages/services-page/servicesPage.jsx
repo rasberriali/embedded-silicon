@@ -82,9 +82,9 @@ const ServiceCard = ({ icon, title, description, onClick }) => (
 
 function ServicesPage() {
   const navigate = useNavigate();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
@@ -122,7 +122,7 @@ function ServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className='flex flex-col h-full justify-center'>
+        <div className='flex flex-col h-full justify-center'>
             <motion.div 
               className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-17 2xl:leading-28 lg:w-1/2 2xl:w-3/4"
               initial={{ opacity: 0, y: 20 }}
@@ -136,7 +136,7 @@ function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                We specialize in crafting tailored solutions that drive efficiency and accelerate growth.
+            We specialize in crafting tailored solutions that drive efficiency and accelerate growth.
               </motion.div>
             </motion.div>
           </div>
@@ -356,7 +356,7 @@ function ServicesPage() {
           </div>
         </motion.div>
       </motion.div>
-    </div>
+  </div>
   )
 }
 

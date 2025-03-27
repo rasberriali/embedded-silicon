@@ -24,24 +24,54 @@ function CareersPage() {
     { title: "Senior DevOps Engineer", icon: "✍️", type: "FULL TIME" },
   ];
 
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const images = [
     servicesCarousel,
     servicesCarousel2,
     servicesCarousel3,
   ];
 
-  const [current, setCurrent] = useState(0);
-
   const nextSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
   const prevSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
-    return (
-        <div>
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000); // Auto-advance every 5 seconds
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const carouselContent = [
+    {
+      image: servicesCarousel,
+      title: "Commitment to a People-First Culture",
+      description: "At Embedded Silicon, our employees are our greatest asset. We foster a culture of challenge, respect, and recognition, prioritizing your well-being and growth with flexible working arrangements for a harmonious work-life balance."
+    },
+    {
+      image: servicesCarousel2,
+      title: "Opportunities for Advancement",
+      description: "At Embedded Silicon, we provide dynamic career growth opportunities. Our comprehensive training for fresh grads nurtures talents, promoting active engagement. Empowerment is key as we support team members in evolving into leaders in their roles."
+    },
+    {
+      image: servicesCarousel3,
+      title: "Rewarding Excellence Always",
+      description: "At Embedded Silicon, we prioritize our employees with a competitive compensation package, including bonuses, allowances, HMO coverage, and perks to recognize and reward exceptional contributions."
+    }
+  ];
+
+  return (
+    <div>
       <div className="relative font-inter xl:h-[60vh] h-[30vh]">
         {/* Background Image */}
         <img
@@ -59,7 +89,7 @@ function CareersPage() {
             <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4">
               Shape Tomorrow with Your Talents
               <div className="text-white text-sm lg:text-base 2xl:text-2xl font-normal xl:mt-8 mt-6">
-                At Embedded Silicon, we don’t just design—we engineer the future.
+                At Embedded Silicon, we don't just design—we engineer the future.
                 Join a Filipino-owned global leader where innovation meets opportunity.
               </div>
             </div>
@@ -71,23 +101,85 @@ function CareersPage() {
        <div className=' max-w-screen-xl mx-auto flex flex-col text-black justify-center items-center mt-20'>
             <div className='flex flex-col justify-center items-center gap-4 p-8'>
                 <div className='xl:text-4xl text-2xl font-bold text-[#0B2B82]'>Join a Culture of <span className="text-blue-600">Excellence</span></div>
-                <div className='text-[#4A5565] xl:text-xl text-base text-center'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
+                <div className='text-[#4A5565] xl:text-xl text-base text-center max-w-2xl'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
 
             </div>
-            <div className="relative w-full max-w-lg mx-auto overflow-hidden">
-      <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
-        {images.map((src, index) => (
-          <img key={index} src={src} alt={`Slide ${index}`} className="w-full flex-shrink-0" />
+            <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl group ">
+      <div 
+        className="flex transition-transform duration-700 ease-out" 
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {carouselContent.map((item, index) => (
+          <div key={index} className="w-full flex-shrink-0 relative group">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              className="w-full h-[500px] object-cover transform transition-transform duration-500 group-hover:scale-105"
+            />
+            {/* Enhanced gradient overlay */}
+            <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90 transition-opacity duration-500
+              md:opacity-0 md:group-hover:opacity-100 opacity-100`} 
+            />
+            {/* Improved content overlay */}
+            <div className={`absolute bottom-0 left-0 right-0 p-8 text-white transform transition-all duration-500
+              md:translate-y-8 md:group-hover:translate-y-0 md:opacity-0 md:group-hover:opacity-100 opacity-100`}
+            >
+              <h3 className="text-2xl font-bold mb-3 transform transition-all duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                {item.title}
+              </h3>
+              <p className="text-base text-gray-200 leading-relaxed max-w-3xl transform transition-all duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                {item.description}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      <button onClick={prevSlide} className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-        ◀
+      {/* Enhanced navigation buttons */}
+      <button 
+        onClick={prevSlide} 
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full 
+          flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10 opacity-0 group-hover:opacity-100
+          hover:shadow-2xl backdrop-blur-sm"
+        disabled={isAnimating}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
-      <button onClick={nextSlide} className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-        ▶
+      <button 
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full 
+          flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10 opacity-0 group-hover:opacity-100
+          hover:shadow-2xl backdrop-blur-sm"
+        disabled={isAnimating}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+        </svg>
       </button>
+
+      {/* Enhanced dots indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+        {carouselContent.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              if (!isAnimating) {
+                setIsAnimating(true);
+                setCurrent(index);
+                setTimeout(() => setIsAnimating(false), 500);
+              }
+            }}
+            className={`h-2 rounded-full transition-all duration-500 ${
+              current === index 
+                ? 'w-8 bg-white' 
+                : 'w-2 bg-white/60 hover:bg-white/80'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
         </div>
 

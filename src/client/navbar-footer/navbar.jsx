@@ -75,59 +75,61 @@ const aboutMenuItems = [
 
 const navListMenuItems = [
   {
-    title: "IC Design",
-    description: "Advanced IC design solutions for your needs",
+    title: "Integrated Chip Design",
+    description: "End-to-end VLSI Design Flow Services",
     icon: SquaresPlusIcon,
-    path: '/servicesPage#ic-design'
+    subItems: [
+      "Full VLSI Design",
+      "Full-Chip Integration",
+      "Standard Cells Development",
+      "Design Library Creation",
+      "Analog IP Blocks Development",
+      "Full Custom Layout"
+    ]
   },
   {
-    title: "ASIC Verification",
+    title: "Application-Specific IC Verification",
     description: "Comprehensive verification services",
     icon: UserGroupIcon,
-    path: '/servicesPage#verification'
+    subItems: [
+      "ASIC Functional Verification",
+      "Post-PNR Regression",
+      "UVM Testbench Development",
+      "RTL to Transistor Level Verification",
+      "Analog Mixed Signal Verification"
+    ]
   },
   {
-    title: "Physical Design",
+    title: "Physical Design and Verification",
     description: "Expert physical design implementation",
     icon: Bars4Icon,
-    path: '/servicesPage#physical-design'
+    subItems: [
+      "Automated Place and Route",
+      "Full Custom Layout Proficiency",
+      "Proficiency across Technology Nodes",
+      "Tailored Designs for Varied Industries"
+    ]
   },
   {
     title: "FPGA Development",
     description: "Custom FPGA solutions and prototyping",
     icon: SunIcon,
-    path: '/servicesPage#fpga'
+    subItems: [
+      "FPGA to ASIC",
+      "Test Development Platforms",
+      "Microsatellites"
+    ]
   },
   {
-    title: "Embedded Systems",
+    title: "Embedded Systems Development",
     description: "Complete embedded system solutions",
     icon: GlobeAmericasIcon,
-    path: '/servicesPage#embedded'
-  },
-  {
-    title: "Design Consoltancy",
-    description: "24/7 technical assistance and consulting",
-    icon: PhoneIcon,
-    path: '/servicesPage#support'
-  },
-  {
-    title: "Documentation",
-    description: "Comprehensive technical documentation",
-    icon: NewspaperIcon,
-    path: '/servicesPage#docs'
-  },
-  {
-    title: "Custom Solutions",
-    description: "Tailored solutions for your needs",
-    icon: RectangleGroupIcon,
-    path: '/servicesPage#custom'
-  },
-  {
-    title: "Special Services",
-    description: "Specialized engineering services",
-    icon: TagIcon,
-    path: '/servicesPage#special'
-  },
+    subItems: [
+      "Rapid Prototyping",
+      "PCB Layout and Design",
+      "Firmware Development"
+    ]
+  }
 ];
 
 function AboutUsMegaMenu() {
@@ -239,36 +241,58 @@ function NavListMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isActive = location.pathname.includes('/servicesPage');
+  const isActive = location.pathname === '/servicesPage';
 
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description, path }, key) => (
-      <div key={key} onClick={() => navigate(path)}>
-        <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.hash === path.split('#')[1] ? 'bg-gray-100' : ''}`}>
-          <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
-            {React.createElement(icon, {
-              strokeWidth: 2,
-              className: "h-6 text-[#2D7BFD] w-6",
-            })}
+    ({ icon, title, description, subItems }, key) => (
+      <div key={key} className="px-4">
+        <MenuItem className="flex flex-col gap-3 rounded-lg hover:bg-gray-200 p-2 ">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center rounded-lg bg-gray-100 p-3">
+              {React.createElement(icon, {
+                className: "h-6 w-6 text-[#2D7BFD]",
+              })}
+            </div>
+            <div>
+              <Typography
+                variant="h6"
+                color="blue-gray"
+                className="text-sm font-bold font-inter"
+              >
+                {title}
+              </Typography>
+              <Typography
+                variant="paragraph"
+                className="text-xs font-medium text-blue-gray-500 font-inter"
+              >
+                {description}
+              </Typography>
+            </div>
           </div>
-          <div>
-            <Typography
-              variant="h6"
-              color="blue-gray"
-              className={`flex items-center text-sm font-bold font-inter ${location.hash === path.split('#')[1] ? 'text-[#2D7BFD]' : ''}`}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="paragraph"
-              className="text-xs !font-medium text-blue-gray-500 font-inter"
-            >
-              {description}
-            </Typography>
+          <div className="pl-12">
+            <ul className="space-y-1">
+              {subItems.map((subItem, index) => (
+                <li 
+                  key={index}
+                  className="text-sm text-gray-600 hover:text-[#2D7BFD] cursor-pointer"
+                  onClick={() => {
+                    if (subItem === "Full VLSI Design") {
+                      navigate('/fullvlsi');
+                    } else if (subItem === "Full-Chip Integration") {
+                      navigate('/fullvlsi');
+                    } else {
+                      navigate('/servicesPage');
+                    }
+                  }}
+                >
+                  {subItem}
+                </li>
+              ))}
+            </ul>
           </div>
         </MenuItem>
       </div>
-    ),
+    )
   );
 
   return (
@@ -283,7 +307,9 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm ${isActive ? 'text-[#2D7BFD]' : ''}`}
+              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm ${
+                isActive ? 'text-[#2D7BFD]' : ''
+              }`}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -303,10 +329,40 @@ function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block border-1 border-gray-300  p-4 z-50">
-          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
+        <MenuList className="hidden max-w-[90vw] w-[1200px] rounded-xl lg:block border border-gray-200 p-6 z-50">
+          <div className="grid grid-cols-3 gap-6">
             {renderItems}
-          </ul>
+            {/* Design Consultancy Button Section */}
+            <div className="col-span-3 mt-2 border-t border-gray-200 pt-2">
+              <div className="flex items-center justify-between bg-gray-50 rounded-lg p-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-blue-50">
+                    <PhoneIcon className="h-6 w-6 text-[#2D7BFD]" />
+                  </div>
+                  <div>
+                    <Typography
+                      variant="h6"
+                      className="text-sm font-bold font-inter"
+                    >
+                      Need Design Consultancy?
+                    </Typography>
+                    <Typography
+                      variant="paragraph"
+                      className="text-xs text-gray-600"
+                    >
+                      Get expert advice for your silicon design needs
+                    </Typography>
+                  </div>
+                </div>
+                <button
+                  onClick={() => navigate('/contactPage')}
+                  className="bg-[#2D7BFD] hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
         </MenuList>
       </Menu>
       <div className="block lg:hidden">
