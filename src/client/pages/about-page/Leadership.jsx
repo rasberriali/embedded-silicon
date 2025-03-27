@@ -107,10 +107,11 @@ function Leadership() {
         <div className={`relative flex xl:w-1/2 w-full flex-col xl:gap-6 gap-4 justify-start items-start z-10 p-6 sm:p-10 lg:p-20 xl:p-28 2xl:p-32 transform transition-all duration-1000 ${
           isVisible.hero ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
         }`}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
             Embedded Silicon <br /> Leadership Team
           </h2>
-          <p className="text-[#D1D5DB] text-sm sm:text-base xl:text-lg">
+            <p className="text-[#D1D5DB] text-xs sm:text-sm xl:text-base">
+
             Our leadership team brings together decades of experience in semiconductor design, 
             embedded systems, and technological innovation. Each leader contributes unique expertise 
             to drive our mission of delivering cutting-edge silicon solutions.
@@ -137,7 +138,7 @@ function Leadership() {
 
           {/* Heading with responsive positioning */}
           <div className="absolute -top-3 sm:-top-4 left-6 sm:left-10 flex items-center px-2 sm:px-4 py-1 bg-white whitespace-nowrap">
-            <h2 className="text-lg sm:text-xl xl:text-2xl font-bold text-[#111827] px-2 sm:px-4">
+            <h2 className="text-base sm:text-lg xl:text-xl font-bold text-[#111827] px-2 sm:px-4">
               Meet Our Leaders
             </h2>
             <div className="w-full h-[2px] bg-[#2E7CFD]"></div>
@@ -145,7 +146,7 @@ function Leadership() {
 
           {/* Description with responsive text */}
           <div className="mt-6 ml-3 mr-3 sm:ml-5 sm:mr-5">
-            <p className="text-[#374151] text-sm sm:text-base xl:text-lg leading-relaxed">
+            <p className="text-[#374151] text-xs sm:text-sm xl:text-base leading-relaxed">
               With over two decades of experience since 2002, our leadership team has cultivated a culture 
               of excellence, innovation, and continuous growth. Each leader brings unique expertise and 
               vision to drive our company's success in the semiconductor industry.
@@ -179,10 +180,10 @@ function Leadership() {
 
                 {/* Content */}
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{leader.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3 text-sm sm:text-base">{leader.position}</p>
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{leader.name}</h3>
+                  <p className="text-blue-600 font-medium mb-3 text-xs sm:text-sm">{leader.position}</p>
                   <div className="space-y-2">
-                    <p className="text-gray-600 text-xs sm:text-sm">{leader.experience}</p>
+                    <p className="text-gray-600 text-xs">{leader.experience}</p>
                     <div className="flex flex-wrap gap-2">
                       {leader.expertise.slice(0, 2).map((skill, i) => (
                         <span key={i} className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full">
@@ -234,8 +235,8 @@ function Leadership() {
               
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h4 className="text-lg sm:text-xl font-semibold text-blue-600">{selectedLeader.position}</h4>
-                  <p className="text-gray-600 mt-2 text-sm sm:text-base">{selectedLeader.experience}</p>
+                  <h4 className="text-base sm:text-lg font-semibold text-blue-600">{selectedLeader.position}</h4>
+                  <p className="text-gray-600 mt-2 text-xs sm:text-sm">{selectedLeader.experience}</p>
                 </div>
 
                 <div>
@@ -271,7 +272,8 @@ function Leadership() {
         <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg bg-[#F4F7FE] p-6 sm:p-8 border border-[#2E7CFD] rounded-xl">
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
             <div className="w-full md:w-1/3">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 text-center md:text-left">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 text-center md:text-left">
+
                 Join Our <br />Leadership Team
               </h2>
             </div>
@@ -299,4 +301,3 @@ function Leadership() {
   );
 }
 
-export default Leadership;

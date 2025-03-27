@@ -4,16 +4,7 @@ import companyBuilding from "../../../assets/images/companyBuilding.svg";
 import missionIcon from "../../../assets/images/missionIcon.svg";
 import visionIcon from "../../../assets/images/visionIcon.svg";
 import valuesIcon from "../../../assets/images/valuesIcon.svg";
-import treeIcon from "../../../assets/images/treeIcon.svg";
 import Navbar from '../../navbar-footer/navbar'
-import image1 from "../../../assets/images/Integrated-circuit.jpg"
-import image2 from "../../../assets/images/ic.jpg"
-import image3 from "../../../assets/images/icc.webp"
-import work from "../../../assets/images/work.png"
-import Icon1 from "../../../assets/images/Icon1.svg"
-import icon2 from "../../../assets/images/icon2.svg"
-import icon3 from "../../../assets/images/icon3.svg"
-import line from "../../../assets/images/Line.svg"
 import bosch from "../../../assets/images/bosch.png"
 import innovation from "../../../assets/images/innovation.png"
 import credit from "../../../assets/images/credit.png"
@@ -21,19 +12,7 @@ import ebay from "../../../assets/images/ebay.png"
 import total from "../../../assets/images/total.png"
 import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
-import small_icons from "../../../assets/images/small-icons.svg"
-import arrow from "../../../assets/images/arrow.svg"
-import acs from "../../../assets/images/acs.svg";
-import logokeyindustry from "../../../assets/images/logokeyindustry.svg";
-import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
 import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
-
-// import icImage from "../../../assets/images/ic-bg.svg"
-// import FaAward from "../../../assets/icons/fa-award.svg";
-// import IoIosRibbon from "../../../assets/icons/io-ios-ribbon.svg";
-// import MdVerified from "../../../assets/icons/md-verified.svg";
-// import AiOutlineTrophy from "../../../assets/icons/ai-outline-trophy.svg";
-// import GiAchievement from "../../../assets/icons/gi-achievement.svg";
 
 // import { LuArrowRight } from "react-icons/lu";
 

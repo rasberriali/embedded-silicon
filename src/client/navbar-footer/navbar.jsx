@@ -49,9 +49,9 @@ const aboutMenuItems = [
   },
   {
     title: "Partnerships",
-    description: "/Industry",
+    description: "Our strategic partnerships",
     icon: UserGroupIcon,
-    path: '/aboutPage#partnerships'
+    path: '/Industry'
   },
   {
     title: "Clients",
