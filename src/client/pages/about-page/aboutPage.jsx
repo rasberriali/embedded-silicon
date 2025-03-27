@@ -26,6 +26,7 @@ import arrow from "../../../assets/images/arrow.svg"
 import acs from "../../../assets/images/acs.svg";
 import logokeyindustry from "../../../assets/images/logokeyindustry.svg";
 import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
+import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
 
 // import icImage from "../../../assets/images/ic-bg.svg"
 // import FaAward from "../../../assets/icons/fa-award.svg";
@@ -166,9 +167,13 @@ function AboutPage() {
       <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left">
         Company Overview Sheet
       </h2>
-      <button className="bg-white text-[#0F4C81] px-3 sm:px-5 md:px-7 py-1 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm md:text-lg lg:text-xl hover:bg-gray-200 transition-all">
+      <a 
+        href={aboutUsPdf} 
+        download="Company_Overview.pdf"
+        className="bg-white text-[#0F4C81] px-3 sm:px-5 md:px-7 py-1 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm md:text-lg lg:text-xl hover:bg-gray-200 transition-all cursor-pointer"
+      >
         View PDF
-      </button>
+      </a>
     </div>
   </div>
 </div>
