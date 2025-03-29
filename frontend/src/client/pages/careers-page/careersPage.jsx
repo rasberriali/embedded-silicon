@@ -13,17 +13,19 @@ function CareersPage() {
       }, []);
 
   const categories = [
-    { name: "Digital Design Engineer", icon: "📐", jobs: 5, path: '/jobCategories' },
-    { name: "Embedded System Engineer", icon: "📊", jobs: 5, path: null },
-    { name: "Layout Engineer", icon: "🔧", jobs: 5, path: null },
-    { name: "Finance", icon: "💳", jobs: 5, path: null },
+    { name: "Engineering & Technical Roles", jobs: 5, path: '/jobCategories' },
+    { name: "Software & IT", jobs: 5, path: null },
+    { name: "Business & Management", jobs: 5, path: null },
+    { name: "Manufacturing & Production", jobs: 5, path: null },
+    { name: "Research & Development", jobs: 5, path: null },
+   
   ];
 
   const featuredJobs = [
-    { title: "Digital Design Engineers", icon: "📱", type: "FULL TIME" },
-    { title: "Senior Design Engineer", icon: "🎨", type: "FULL TIME" },
-    { title: "Junior Accounting", icon: "📊", type: "FULL TIME" },
-    { title: "Senior DevOps Engineer", icon: "✍️", type: "FULL TIME" },
+    { title: "Digital Design Engineers",  type: "FULL TIME" },
+    { title: "Senior Design Engineer", type: "FULL TIME" },
+    { title: "Junior Accounting", type: "FULL TIME" },
+    { title: "Senior DevOps Engineer", type: "FULL TIME" },
   ];
 
   const [current, setCurrent] = useState(0);
@@ -218,14 +220,11 @@ function CareersPage() {
             key={index}
             className="border xl:p-8 p-4 rounded-lg xl:w-70 text-left hover:bg-blue-50 transition"
           >
-            <div className="flex items-center gap-2 text-blue-600">
+            <div className="flex items-center text-blue-600">
               <span className="xl:text-2xl text-lg">{job.icon}</span>
               <span className="xl:text-sm font-medium">{job.type}</span>
             </div>
             <h3 className="xl:text-lg text-base font-semibold mt-2">{job.title}</h3>
-            <p className="text-gray-600 text-sm mt-1 hidden md:block">
-              Join our team as an Email Marketing Specialist and lead our digital outreach efforts.
-            </p>
             <a href="#" className="text-blue-500 text-sm mt-2 inline-block">
               More Details →
             </a>

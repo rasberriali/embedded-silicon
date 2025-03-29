@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import madrigal from "../../../assets/images/madrigal.jpg"
 import dropdown from "../../../assets/images/dropdown.svg"
 import email from "../../../assets/images/email-icon.svg"
@@ -7,10 +7,46 @@ import phone from "../../../assets/images/phone-icon.svg"
 import building from "../../../assets/images/building.jpg"
 
 function ContactPage() {
+  const [showAllServices, setShowAllServices] = useState(false);
+  const [selectedServices, setSelectedServices] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleServiceClick = (service) => {
+    setSelectedServices(prev => {
+      if (prev.includes(service)) {
+        return prev.filter(s => s !== service);
+      } else {
+        return [...prev, service];
+      }
+    });
+  };
+
+  const allServices = [
+    "Full Custom Layout",
+    "Full Chip Integration",
+    "Analog IP Blocks",
+    "Full VLSI Design",
+    "Automated PnR",
+    "UVM Testbenches",
+    "Standard Cell Development",
+    "Design Library Creation",
+    "Post - PNR Regression",
+    "RTL -> Transistor",
+    "Verification",
+    "ASIC Functional Verification",
+    "Analog Mixed Signal Verification",
+    "FPGA to ASIC",
+    "Test Development Platforms",
+    "Microsatellites",
+    "PCB Layout",
+    "Rapid Prototyping",
+    "Firmware Development"
+  ];
+
+  const initialServices = allServices.slice(0, 6);
 
   return (
     <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter mt-6 lg:mt-10 2xl:mt-20'>
@@ -83,7 +119,7 @@ function ContactPage() {
               <div className='text-[#647185] text-base font-normal leading-5 mb-8'>Let us know about your project and we will get back to you with<br/> our
               proposal and timeline.</div>
 
-              <form className="space-y-6">
+              <form className="space-y-6 xl:p-0 p-4">
               <div className='space-y-2'>
                 <label className="block text-gray-700 font-medium">Name</label>
                 <input
@@ -122,16 +158,31 @@ function ContactPage() {
               <h3 className='font-semibold text-sm'>
                 Expected services
               </h3>
-              <div className='grid xl:grid-cols-3 grid-cols-2 grid-rows-2 gap-2 text-xs mt-6 '>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>Full Custom Layout</div>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>Full Chip Integration</div>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>Analog IP Blocks</div>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>Full VLSI Design</div>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>Automated PnR</div>
-                <div className='text-center  p-2 border rounded-sm border-[#E0E0E0]'>UVM Testbenches</div>
+              <div className='grid xl:grid-cols-3 grid-cols-2 gap-2 text-xs mt-6'>
+                {(showAllServices ? allServices : initialServices).map((service, index) => (
+                  <div 
+                    key={index} 
+                    className={`text-center p-2 border rounded-sm cursor-pointer transition-all duration-200 ${
+                      selectedServices.includes(service) 
+                        ? 'border-[#2d79fd] bg-[#2d79fd] text-white' 
+                        : 'border-[#E0E0E0] hover:border-[#2d79fd] hover:bg-[#2d79fd] hover:text-white'
+                    }`}
+                    onClick={() => handleServiceClick(service)}
+                  >
+                    {service}
+                  </div>
+                ))}
               </div>
-              <div className='flex flex-row justify-end gap-2 text-sm font-medium hover:text-gray-600 cursor-pointer'>See all
-                <img src={dropdown} alt="" className=''></img>
+              <div 
+                className='flex flex-row justify-end gap-2 text-sm font-medium hover:text-gray-600 cursor-pointer'
+                onClick={() => setShowAllServices(!showAllServices)}
+              >
+                {showAllServices ? 'Show less' : 'See all'}
+                <img 
+                  src={dropdown} 
+                  alt="" 
+                  className={`transform transition-transform ${showAllServices ? 'rotate-180' : ''}`}
+                />
               </div>
               <div className='flex flex-row justify-center items-center w-full p-2 bg-[#2d79fd] hover:bg-[#2d79fdb2] text-base font-semibold rounded-[10px] text-white mt-8'>Submit</div>
             </div>
