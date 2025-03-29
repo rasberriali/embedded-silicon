@@ -182,7 +182,7 @@ function AboutUsMegaMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm ${isActive ? 'text-[#2D7BFD]' : ''}`}
+              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -307,7 +307,7 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm ${
+              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm cursor-pointer ${
                 isActive ? 'text-[#2D7BFD]' : ''
               }`}
               selected={isMenuOpen || isMobileMenuOpen}
@@ -433,7 +433,7 @@ function Navbar() {
               className="font-medium"
             >
               <ListItem 
-                className={`flex items-center gap-2 py-2 pr-4 text-sm ${isActivePage('/') ? 'text-[#2D7BFD]' : ''}`}
+                className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer${isActivePage('/') ? 'text-[#2D7BFD]' : ''}`}
                 selected={isActivePage('/')}
                 onClick={() => navigate('/')}
               >
@@ -451,7 +451,7 @@ function Navbar() {
               className="font-medium"
             >
               <ListItem 
-                className={`flex items-center gap-2 py-2 pr-4 text-sm ${isActivePage('/careersPage') ? 'text-[#2D7BFD]' : ''}`}
+                className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/careersPage') ? 'text-[#2D7BFD]' : ''}`}
                 selected={isActivePage('/careersPage')}
                 onClick={() => navigate('/careersPage')}
               >
@@ -466,7 +466,7 @@ function Navbar() {
               className="font-medium"
             >
               <ListItem 
-                className={`flex items-center gap-2 py-2 pr-4 text-sm ${isActivePage('/success-stories') ? 'text-[#2D7BFD]' : ''}`}
+                className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/success-stories') ? 'text-[#2D7BFD]' : ''}`}
                 selected={isActivePage('/success-stories')}
                 onClick={() => navigate('/success-stories')}
               >

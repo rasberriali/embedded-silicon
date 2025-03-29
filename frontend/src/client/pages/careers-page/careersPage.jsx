@@ -1,20 +1,22 @@
 import {useEffect, useState} from 'react';
-import dot from "../../../assets/images/dotgrid.svg";
 import backdropimage2 from "../../../assets/images/backdropimage2.svg";
 import servicesCarousel from "../../../assets/images/servicesCarousel.svg";
 import servicesCarousel2 from "../../../assets/images/servicesCarousel2.svg";
 import servicesCarousel3 from "../../../assets/images/servicesCarousel3.svg";
+import { useNavigate } from 'react-router-dom';
 
 function CareersPage() {
+  const navigate = useNavigate();
+
   useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
 
   const categories = [
-    { name: " Digital Design Engineer", icon: "📐", jobs: 5 },
-    { name: "Embedded System Engineer", icon: "📊", jobs: 5 },
-    { name: "Layout Engineer", icon: "🔧", jobs: 5 },
-    { name: "Finance", icon: "💳", jobs: 5 },
+    { name: "Digital Design Engineer", icon: "📐", jobs: 5, path: '/jobCategories' },
+    { name: "Embedded System Engineer", icon: "📊", jobs: 5, path: null },
+    { name: "Layout Engineer", icon: "🔧", jobs: 5, path: null },
+    { name: "Finance", icon: "💳", jobs: 5, path: null },
   ];
 
   const featuredJobs = [
@@ -48,7 +50,7 @@ function CareersPage() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000); // Auto-advance every 5 seconds
+    const timer = setInterval(nextSlide, 5000); 
     return () => clearInterval(timer);
   }, [current]);
 
@@ -192,7 +194,8 @@ function CareersPage() {
         {categories.map((category, index) => (
           <div
             key={index}
-            className="border border-blue-500 xl:p-8 p-4 rounded-lg xl:w-70 xl:h-full h-30 text-center hover:bg-blue-50 transition"
+            className={`border border-blue-500 xl:p-8 p-4 rounded-lg xl:w-70 xl:h-full h-30 text-center hover:bg-blue-50 transition ${category.path ? 'cursor-pointer' : ''}`}
+            onClick={() => category.path && navigate(category.path)}
           >
             <div className="xl:text-4xl text-base mb-2">{category.icon}</div>
             <h3 className="xl:text-xl text-sm font-semibold text-blue-600">{category.name}</h3>
