@@ -4,21 +4,43 @@ import servicesCarousel from "../../../assets/images/servicesCarousel.svg";
 import servicesCarousel2 from "../../../assets/images/servicesCarousel2.svg";
 import servicesCarousel3 from "../../../assets/images/servicesCarousel3.svg";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function CareersPage() {
   const navigate = useNavigate();
+  const [jobCounts, setJobCounts] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-        window.scrollTo(0, 0);
-      }, []);
+    window.scrollTo(0, 0);
+    fetchJobCounts();
+  }, []);
+
+  const fetchJobCounts = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/jobs');
+      const jobs = response.data;
+      
+      // Count jobs per category
+      const counts = jobs.reduce((acc, job) => {
+        acc[job.category] = (acc[job.category] || 0) + 1;
+        return acc;
+      }, {});
+
+      setJobCounts(counts);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching job counts:', error);
+      setLoading(false);
+    }
+  };
 
   const categories = [
-    { name: "Engineering & Technical Roles", jobs: 5, path: '/jobCategories' },
-    { name: "Software & IT", jobs: 5, path: null },
-    { name: "Business & Management", jobs: 5, path: null },
-    { name: "Manufacturing & Production", jobs: 5, path: null },
-    { name: "Research & Development", jobs: 5, path: null },
-   
+    { name: "Engineering & Technical Roles", jobs: jobCounts["Engineering & Technical Roles"] || 0, path: '/jobCategories' },
+    { name: "Software & IT", jobs: jobCounts["Software & IT"] || 0, path: '/jobCategories' },
+    { name: "Business & Management", jobs: jobCounts["Business & Management"] || 0, path: '/jobCategories' },
+    { name: "Manufacturing & Production", jobs: jobCounts["Manufacturing & Production"] || 0, path: '/jobCategories' },
+    { name: "Research & Development", jobs: jobCounts["Research & Development"] || 0, path: '/jobCategories' },
   ];
 
   const featuredJobs = [
@@ -196,12 +218,14 @@ function CareersPage() {
         {categories.map((category, index) => (
           <div
             key={index}
-            className={`border border-blue-500 xl:p-8 p-4 rounded-lg xl:w-70 xl:h-full h-30 text-center hover:bg-blue-50 transition ${category.path ? 'cursor-pointer' : ''}`}
-            onClick={() => category.path && navigate(category.path)}
+            className={`border border-blue-500 xl:p-8 p-4 rounded-lg xl:w-70 xl:h-full h-30 text-center hover:bg-blue-50 transition cursor-pointer`}
+            onClick={() => navigate(category.path, { state: { category: category.name } })}
           >
             <div className="xl:text-4xl text-base mb-2">{category.icon}</div>
             <h3 className="xl:text-xl text-sm font-semibold text-blue-600">{category.name}</h3>
-            <p className="text-gray-600 xl:text-base text-xs ">{category.jobs} Jobs Available</p>
+            <p className="text-gray-600 xl:text-base text-xs">
+              {loading ? 'Loading...' : `${category.jobs} Jobs Available`}
+            </p>
           </div>
         ))}
       </div>

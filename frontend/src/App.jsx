@@ -17,6 +17,7 @@ import CareersPage from "./client/pages/careers-page/careersPage";
 import Fullvlsi from "./client/pages/services-page/fullvlsi";
 import OurClients from "./client/pages/about-page/ourclients";
 import CMS from "./client/pages/careers-page/cms";
+import JobList from "./client/pages/careers-page/jobList";
 import JobCategories from "./client/pages/careers-page/jobCategories";
 
 
@@ -39,8 +40,8 @@ function App() {
         <Route path="/careersPage" element={<CareersPage />}/>
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
         <Route path="/cms" element={<CMS/>}/>
+        <Route path="/jobs" element={<JobList/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
-
       </Routes>
       <Footer/>
     </Router>
