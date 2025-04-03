@@ -152,7 +152,7 @@ function ServicesPage() {
       >
         {/* Integrated Chip Design Section */}
         <motion.div 
-          className="max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10"
+          className="max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-6"
           variants={fadeInUp}
         >
           <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">

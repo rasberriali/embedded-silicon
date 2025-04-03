@@ -278,7 +278,7 @@ function HomePage() {
         </div>
 
         <div className='max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6'>
-        <div className="gap-4 mt-12 w-full flex flex-col items-center justify-start text-start ">
+        <div className="gap-4 xl:mt-12 mt-0 w-full flex flex-col items-center justify-start text-start ">
           <div className="w-full px-3 xl:px-0 mt-20">
             <h1 className="text-[#040404] xl:text-4xl text-4xl font-semibold font-inter">
               Your <span className="text-[#2D7BFD] font-semibold">all-in-one</span> IC and embedded <br />

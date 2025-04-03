@@ -130,7 +130,7 @@ function CareersPage() {
                 <div className='text-[#4A5565] xl:text-xl text-base text-center max-w-2xl'>We invest in people, celebrate achievements, and create endless opportunities for success</div>
 
             </div>
-            <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl group ">
+            <div className="relative w-full max-w-4xl mx-auto overflow-hidden  group   ">
       <div 
         className="flex transition-transform duration-700 ease-out" 
         style={{ transform: `translateX(-${current * 100}%)` }}
