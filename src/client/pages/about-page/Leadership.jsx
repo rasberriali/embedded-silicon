@@ -98,33 +98,30 @@ function Leadership() {
   };
 
   return (
-    <div className="w-full font-inter relative">
-      {/* Hero Section */}
-      <div className="relative min-h-[50vh] sm:min-h-[60vh] flex flex-col xl:flex-row md:flex-row gap-4 items-center px-4 sm:px-0">
-        <div className="absolute inset-0 bg-[linear-gradient(200deg,#162447_2%,#162447_31%,#113E61_50%,#080F14_80%,#1B394A_100%)] opacity-90 z-0"></div>
+<div className="w-full font-inter relative">
+  {/* Hero Section */}
+  <div className="relative min-h-[50vh] sm:min-h-[60vh] flex flex-col xl:flex-row md:flex-row gap-4 items-center px-4 sm:px-0">
+    <div className="absolute inset-0 bg-[linear-gradient(200deg,#162447_2%,#162447_31%,#113E61_50%,#080F14_80%,#1B394A_100%)] opacity-90 z-0"></div>
 
-        {/* Left Side - Text Content */}
-        <div className={`relative flex xl:w-1/2 w-full flex-col xl:gap-6 gap-4 justify-start items-start z-10 p-6 sm:p-10 lg:p-20 xl:p-28 2xl:p-32 transform transition-all duration-1000 ${
-          isVisible.hero ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
-        }`}>
-          <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
-            Embedded Silicon <br /> Leadership Team
-          </h2>
-            <p className="text-[#D1D5DB] text-xs sm:text-sm xl:text-base">
+    {/* Left Side - Text Content */}
+    <div className={`relative flex xl:w-1/2 w-full flex-col xl:gap-6 gap-4 justify-start items-start z-10 p-6 sm:p-10 lg:p-20 xl:p-28 2xl:p-32 animate-right-text`}>
+      <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
+        Embedded Silicon <br /> Leadership Team
+      </h2>
+      <p className="text-[#D1D5DB] text-xs sm:text-sm xl:text-base animate-opacity">
+        Our leadership team brings together decades of experience in semiconductor design, 
+        embedded systems, and technological innovation. Each leader contributes unique expertise 
+        to drive our mission of delivering cutting-edge silicon solutions.
+      </p>
+    </div>
 
-            Our leadership team brings together decades of experience in semiconductor design, 
-            embedded systems, and technological innovation. Each leader contributes unique expertise 
-            to drive our mission of delivering cutting-edge silicon solutions.
-          </p>
-        </div>
+    {/* Right Side - Image */}
+    <div className="relative xl:w-1/2 w-full flex justify-center z-10 animate-fade-in">
+      <img src={collaborateleadership} alt="Leadership Team" className="w-full h-full object-contain sm:object-cover" />
+    </div>
+  </div>
 
-        {/* Right Side - Image */}
-        <div className={`relative xl:w-1/2 w-full flex justify-center z-10 transform transition-all duration-1000 ${
-          isVisible.hero ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
-        }`}>
-          <img src={collaborateleadership} alt="Leadership Team" className="w-full h-full object-contain sm:object-cover" />
-        </div>
-      </div>
+
 
       {/* Our People Section */}
       <div className="w-full bg-white flex justify-center py-8 sm:py-16 px-4 sm:px-0">
@@ -301,3 +298,4 @@ function Leadership() {
   );
 }
 
+export default Leadership;

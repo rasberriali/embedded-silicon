@@ -92,45 +92,46 @@ const OurClients = () => {
   }, []);
 
   return (
-    <div className="w-full">
-      {/* Section 1: Background with Text and Image */}
-      <div className="relative w-full h-[587px] flex items-center justify-center text-white px-10">
-        {/* Background Image with Fade In */}
-        <img
-          src={clients}
-          alt="Background"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            isVisible.hero ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
+<div className="w-full">
+  {/* Section 1: Background with Text and Image */}
+  <div className="relative w-full h-[587px] flex items-center justify-center text-white px-10">
+    
+    {/* Background Image with Fade In */}
+    <img
+      src={clients}
+      alt="Background"
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 fade-in ${
+        isVisible.hero ? 'opacity-100' : 'opacity-0'
+      }`}
+    />
 
-        {/* Content Container with Slide Up */}
-        <div className={`relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center transform transition-all duration-1000 ${
-          isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          {/* Text Section */}
-          <div className="text-left">
-            <h2 className="text-4xl font-extrabold mb-4">Our Clients</h2>
-            <p className="text-lg italic text-gray-300 leading-relaxed">
-              "The list below ...Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. In deleniti repellat eum harum quas ducimus
-              aliquam tempore vel ad earum dolore consequatur labore eligendi
-              dolores, molestias suscipit atque, dicta enim."
-            </p>
-          </div>
-
-          {/* IC Image Section with Scale In */}
-          <div className={`bg-black p-4 rounded-lg shadow-lg transform transition-all duration-1000 ${
-            isVisible.hero ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-          }`}>
-            <img
-              src={icclient}
-              alt="IC Circuit"
-              className="w-full object-contain"
-            />
-          </div>
-        </div>
+    {/* Content Container with Slide Up */}
+    <div className={`relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center transition-effect ${
+      isVisible.hero ? 'fade-in-up' : 'fade-out-down'
+    }`}>
+      
+      {/* Text Section */}
+      <div className="text-left">
+        <h2 className="text-4xl font-extrabold mb-4">Our Clients</h2>
+        <p className="text-lg italic text-gray-300 leading-relaxed">
+          "The list below ...Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. In deleniti repellat eum harum quas ducimus
+          aliquam tempore vel ad earum dolore consequatur labore eligendi
+          dolores, molestias suscipit atque, dicta enim."
+        </p>
       </div>
+
+      {/* IC Image Section with Scale In */}
+      <div className={`bg-black p-4 rounded-lg shadow-lg transition-effect ${
+        isVisible.hero ? 'scale-in' : 'scale-out'
+      }`}>
+        <img src={icclient} alt="IC Circuit" className="w-full object-contain" />
+      </div>
+
+    </div>
+  </div>
+
+
 
       {/* Section 2: Clients We Serve */}
       <div className={`py-16 px-10 max-w-6xl mx-auto transform transition-all duration-1000 ${

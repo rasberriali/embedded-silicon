@@ -150,14 +150,14 @@ const Industry = () => {
       {/* Partnership Showcase */}
       <div className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
             Our Strategic Partners
           </h2>
           
           {partnershipData.map((partner, index) => (
             <div 
               key={partner.id}
-              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 p-6 mb-12 rounded-xl hover:bg-gray-50 transition-all duration-300 transform ${
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 p-6 mb-8 rounded-xl hover:bg-gray-50 transition-all duration-300 transform ${
                 isVisible.partners ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}

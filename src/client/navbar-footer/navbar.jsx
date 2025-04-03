@@ -136,37 +136,44 @@ function AboutUsMegaMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isActive = location.pathname.includes('/aboutPage');
+  const aboutPagePath = "/aboutPage"; // Main About Us page
 
-  const renderItems = aboutMenuItems.map(
-    ({ icon, title, description, path }, key) => (
-      <div key={key} onClick={() => navigate(path)}>
-        <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.hash === path.split('#')[1] ? 'bg-gray-100' : ''}`}>
-          <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
-            {React.createElement(icon, {
-              strokeWidth: 2,
-              className: "h-6 text-[#2D7BFD] w-6",
-            })}
-          </div>
-          <div>
-            <Typography
-              variant="h6"
-              color="blue-gray"
-              className={`flex items-center text-sm font-bold font-inter ${location.hash === path.split('#')[1] ? 'text-[#2D7BFD]' : ''}`}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="paragraph"
-              className="text-xs !font-medium text-blue-gray-500 font-inter"
-            >
-              {description}
-            </Typography>
-          </div>
-        </MenuItem>
-      </div>
-    ),
-  );
+  // Check if About Us is active (either submenu item or main page is active)
+  const isActive = 
+    location.pathname === aboutPagePath || 
+    aboutMenuItems.some(({ path }) => location.pathname === path || location.hash === `#${path.split('#')[1]}`);
+
+  const handleAboutUsClick = () => {
+    navigate(aboutPagePath); // Navigate to main About Us page
+  };
+
+  const renderItems = aboutMenuItems.map(({ icon, title, description, path }, key) => (
+    <div key={key} onClick={() => navigate(path)}>
+      <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.pathname === path ? 'bg-gray-100' : ''}`}>
+        <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
+          {React.createElement(icon, {
+            strokeWidth: 2,
+            className: "h-6 text-[#2D7BFD] w-6",
+          })}
+        </div>
+        <div>
+          <Typography
+            variant="h6"
+            color="blue-gray"
+            className={`flex items-center text-sm font-bold font-inter ${location.pathname === path ? 'text-[#2D7BFD]' : ''}`}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="paragraph"
+            className="text-xs !font-medium text-blue-gray-500 font-inter"
+          >
+            {description}
+          </Typography>
+        </div>
+      </MenuItem>
+    </div>
+  ));
 
   return (
     <React.Fragment>
@@ -182,20 +189,16 @@ function AboutUsMegaMenu() {
             <ListItem
               className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm ${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
+              onClick={handleAboutUsClick} // Navigate to About Page when clicked
             >
               About Us
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
+                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""}`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${
-                  isMobileMenuOpen ? "rotate-180" : ""
-                }`}
+                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""}`}
               />
             </ListItem>
           </Typography>
@@ -216,7 +219,6 @@ function AboutUsMegaMenu() {
                 </div>
               </div>
             </div>
-            
             {/* Right columns with menu items */}
             <div className="col-span-3">
               <div className="grid grid-cols-2 gap-4">
@@ -232,6 +234,8 @@ function AboutUsMegaMenu() {
     </React.Fragment>
   );
 }
+
+
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

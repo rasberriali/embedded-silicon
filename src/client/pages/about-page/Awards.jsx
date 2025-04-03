@@ -132,7 +132,7 @@ function Awards() {
     <div className="w-full">
       {/* Hero Section */}
       <div
-        className="w-full py-12 text-left relative overflow-hidden flex flex-col items-center"
+        className="w-full py-4 text-left relative overflow-hidden flex flex-col items-center"
         style={{
           background: "linear-gradient(to bottom, #093252 0%, #051a2b 100%)",
         }}
@@ -169,72 +169,78 @@ function Awards() {
             </p>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-4 gap-8 mt-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-white text-3xl font-bold mb-1">{stat.number}</div>
-                <div className="text-gray-300 text-sm">{stat.label}</div>
-              </div>
-            ))}
+{/* Stats Section */}
+<div className="grid grid-cols-4 gap-8 mt-6"> {/* Reduced mt from 8 to 6 */}
+  {stats.map((stat, index) => (
+    <div key={index} className="text-center transform hover:scale-105 transition-all duration-300">
+      <div className="text-4xl mb-2">{stat.icon}</div>
+      <div className="text-white text-3xl font-bold mb-1">{stat.number}</div>
+      <div className="text-gray-300 text-sm">{stat.label}</div>
+    </div>
+  ))}
+</div>
+</div>
+</div>
+
+{/* Most Awarded Section */}
+<div
+  className="w-full py-4 flex flex-col justify-center items-center relative overflow-hidden" 
+  /* Reduced py from 6 to 4 */
+  style={{
+    background: "linear-gradient(to bottom, #051a2b 0%, #000000 100%)",
+  }}
+>
+  <div className={`max-w-6xl w-full relative transform transition-all duration-1000 ${
+    isVisible.carousel ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+  }`}>
+<h3 className="text-white text-2xl font-semibold text-center mb-2">
+
+      {/* Reduced mb from 6 to 4 */}
+      Featured Partners & Certifications
+    </h3>
+    
+    {/* Award Logos Carousel */}
+    <div className="flex justify-center space-x-12 overflow-hidden"> 
+      {visibleAwards.map((award, index) => (
+        <div 
+          key={startIndex + index} 
+          className="group relative transform transition-all duration-500 hover:scale-105"
+          onMouseEnter={() => setHoveredIndex(startIndex + index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <div className="relative w-40 h-40 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden">
+            <img 
+              src={award.src} 
+              alt={award.alt} 
+              className="w-full h-full object-contain p-6" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#2D7BFD]/90 to-[#1a4d9c]/90 transform -translate-y-full transition-transform duration-300 group-hover:translate-y-0 flex flex-col items-center justify-center p-4 text-center">
+              <p className="text-white text-lg font-medium mb-2">{award.alt}</p>
+              <p className="text-white/80 text-sm">{award.desc}</p>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
 
-      {/* Most Awarded Section */}
-      <div
-        className="w-full py-10 flex flex-col justify-center items-center relative overflow-hidden"
-        style={{
-          background: "linear-gradient(to bottom, #051a2b 0%, #000000 100%)",
-        }}
+    {/* Navigation Controls */}
+    <div className="flex justify-center mt-4 space-x-4">
+      {/* Reduced mt from 6 to 4 */}
+      <button 
+        className="bg-white/10 backdrop-blur-sm text-white px-5 py-3 text-xl rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
       >
-        <div className={`max-w-6xl w-full relative transform transition-all duration-1000 ${
-          isVisible.carousel ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <h3 className="text-white text-2xl font-semibold text-center mb-8">Featured Partners & Certifications</h3>
-          
-          {/* Award Logos Carousel */}
-          <div className="flex justify-center space-x-16 overflow-hidden">
-            {visibleAwards.map((award, index) => (
-              <div 
-                key={startIndex + index} 
-                className="group relative transform transition-all duration-500 hover:scale-105"
-                onMouseEnter={() => setHoveredIndex(startIndex + index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className="relative w-40 h-40 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden">
-                  <img 
-                    src={award.src} 
-                    alt={award.alt} 
-                    className="w-full h-full object-contain p-6" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#2D7BFD]/90 to-[#1a4d9c]/90 transform -translate-y-full transition-transform duration-300 group-hover:translate-y-0 flex flex-col items-center justify-center p-4 text-center">
-                    <p className="text-white text-lg font-medium mb-2">{award.alt}</p>
-                    <p className="text-white/80 text-sm">{award.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        ‹
+      </button>
+      <button 
+        onClick={handleNextClick}
+        className="bg-white/10 backdrop-blur-sm text-white px-5 py-3 text-xl rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</div>
 
-          {/* Navigation Controls */}
-          <div className="flex justify-center mt-8 space-x-4">
-            <button 
-              onClick={handlePrevClick}
-              className="bg-white/10 backdrop-blur-sm text-white px-5 py-3 text-xl rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
-            >
-              ‹
-            </button>
-            <button 
-              onClick={handleNextClick}
-              className="bg-white/10 backdrop-blur-sm text-white px-5 py-3 text-xl rounded-full shadow-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Award and Industry Tab */}
       <div className="flex justify-center mt-12 space-x-4">
