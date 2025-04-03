@@ -4,16 +4,7 @@ import companyBuilding from "../../../assets/images/companyBuilding.svg";
 import missionIcon from "../../../assets/images/missionIcon.svg";
 import visionIcon from "../../../assets/images/visionIcon.svg";
 import valuesIcon from "../../../assets/images/valuesIcon.svg";
-import treeIcon from "../../../assets/images/treeIcon.svg";
 import Navbar from '../../navbar-footer/navbar'
-import image1 from "../../../assets/images/Integrated-circuit.jpg"
-import image2 from "../../../assets/images/ic.jpg"
-import image3 from "../../../assets/images/icc.webp"
-import work from "../../../assets/images/work.png"
-import Icon1 from "../../../assets/images/Icon1.svg"
-import icon2 from "../../../assets/images/icon2.svg"
-import icon3 from "../../../assets/images/icon3.svg"
-import line from "../../../assets/images/Line.svg"
 import bosch from "../../../assets/images/bosch.png"
 import innovation from "../../../assets/images/innovation.png"
 import credit from "../../../assets/images/credit.png"
@@ -21,25 +12,13 @@ import ebay from "../../../assets/images/ebay.png"
 import total from "../../../assets/images/total.png"
 import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
-import small_icons from "../../../assets/images/small-icons.svg"
-import arrow from "../../../assets/images/arrow.svg"
-import acs from "../../../assets/images/acs.svg";
-import logokeyindustry from "../../../assets/images/logokeyindustry.svg";
-import synopsysCoverr from "../../../assets/images/synopsysCoverr.svg";
 import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
-
-// import icImage from "../../../assets/images/ic-bg.svg"
-// import FaAward from "../../../assets/icons/fa-award.svg";
-// import IoIosRibbon from "../../../assets/icons/io-ios-ribbon.svg";
-// import MdVerified from "../../../assets/icons/md-verified.svg";
-// import AiOutlineTrophy from "../../../assets/icons/ai-outline-trophy.svg";
-// import GiAchievement from "../../../assets/icons/gi-achievement.svg";
-
+import location from "../../../assets/images/location.png";
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
+import "svgmap/dist/svgMap.css";
 import svgMap from "svgmap";
-// import "svgmap/dist/svgMap.css"; // Import styles
 
 import { GoArrowRight } from "react-icons/go";
 
@@ -62,6 +41,78 @@ function AboutPage() {
 
     return () => clearTimeout(contentTimer);
   }, []);
+// Maps section
+useEffect(() => {
+  // Remove existing map if it exists to prevent duplicates
+  const existingMapContainer = document.getElementById("svgMapContainer");
+  if (existingMapContainer) {
+    existingMapContainer.innerHTML = ""; // Clear any existing map
+  }
+
+  const map = new svgMap({
+    targetElementID: "svgMapContainer",
+    colorNoData: "#969595",
+    colorMax: "#2d7bfd",
+    showZoomReset: true,
+    mouseWheelZoomEnabled: false,
+    initialZoom: 0.9, // Slight zoom out
+    initialPan: { x: 80, y: 0 }, // Move map slightly to the right
+    data: {
+      data: {
+        activities: { format: "{0}" },
+      },
+      applyData: "activities",
+      values: {
+        PH: { activities: "Multiple ongoing activities + growing partnerships", name: "Philippines", color: "#4caf50" },
+        IN: { activities: "Potential partnerships", name: "India", color: "#7eaefc" },
+        SG: { activities: "Ongoing activities", name: "Singapore", color: "#2d7bfd" },
+        JP: { activities: "Ongoing activities", name: "Japan", color: "#2d7bfd" },
+        US: { activities: "Ongoing activities + potential partnerships", name: "United States", color: "#2d7bfd" },
+        MY: { activities: "Multiple ongoing activities", name: "Malaysia", color: "#4caf50" },
+        CA: { activities: "Potential partnerships", name: "Canada", color: "#7eaefc" },
+      },
+    },
+  });
+
+  // Tooltip event handlers
+  const tooltip = document.getElementById("tooltip");
+
+  const countryHover = (event) => {
+    const country = event.target?.getAttribute("data-code");
+
+    // Only show tooltip if country has valid activities
+    if (country && map.data.values[country] && map.data.values[country].activities) {
+      tooltip.innerHTML = map.data.values[country].name; // Show only the country name
+      tooltip.style.display = "block";
+      tooltip.style.left = event.pageX + "px";
+      tooltip.style.top = event.pageY - 30 + "px";
+      event.target.style.fill = map.data.values[country].color || "#FFCC00"; // Highlight color
+    } else {
+      tooltip.innerHTML = ""; // Empty tooltip content for countries with no activities
+      tooltip.style.display = "none"; // Hide tooltip completely
+    }
+  };
+
+  const countryLeave = (event) => {
+    tooltip.style.display = "none";
+    event.target.style.fill = ""; // Reset color
+  };
+
+  const countries = document.querySelectorAll(".svgMap-country");
+  countries.forEach((country) => {
+    country.addEventListener("mouseenter", countryHover);
+    country.addEventListener("mouseleave", countryLeave);
+  });
+
+  return () => {
+    countries.forEach((country) => {
+      country.removeEventListener("mouseenter", countryHover);
+      country.removeEventListener("mouseleave", countryLeave);
+    });
+  };
+}, []);
+
+
 
   return (
     <>
@@ -101,9 +152,9 @@ function AboutPage() {
 </div>
 
 {/* Key Facts Section */}
-<div className="w-full max-w-screen-xl mx-auto py-16">
+<div className="w-full max-w-screen-xl mx-auto py-12">
   <div className="px-8 sm:px-12 lg:px-16">
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
       <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
         Key Facts About Embedded Silicon
       </h2>
@@ -126,7 +177,7 @@ function AboutPage() {
 </div>
 
 {/* Company History & Building Image */}
-<div className="w-full max-w-screen-xl mx-auto py-8">
+<div className="w-full max-w-screen-xl mx-auto py-4">
   <div className="px-8 sm:px-12 lg:px-16">
     <div className="w-full flex flex-col-reverse md:flex-row">
       <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-8 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
@@ -265,7 +316,7 @@ function AboutPage() {
 </div>
 
 {/* Our Clients */}
-<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-8 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
+<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
   <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in">
     Our Clients 
     <span className="text-sm sm:text-base md:text-xl text-[#647185] font-normal">
@@ -273,27 +324,78 @@ function AboutPage() {
     </span>
   </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 grid-auto-rows items-center justify-items-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-5 md:gap-6 w-full max-w-6xl py-4">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 items-center justify-items-center mt-4 sm:mt-6 md:mt-8 gap-2 sm:gap-3 md:gap-4 w-full max-w-6xl py-2">
     {[bosch, innovation, credit, ebay, total, inditex, siemens, bosch, ebay, total].map((logo, index) => (
-      <div key={index} className="flex justify-center items-center p-1 sm:p-2 md:p-3">
-        <img src={logo} alt={`Client ${index + 1}`} className="w-20 sm:w-24 md:w-32 h-auto transition-transform duration-300 hover:scale-105 hover:rotate-2 hover:shadow-lg image-effect" />
+      <div key={index} className="flex justify-center items-center p-1 sm:p-1.5 md:p-2">
+        <img src={logo} alt={`Client ${index + 1}`} className="w-24 sm:w-28 md:w-36 h-24 sm:h-28 md:h-36 transition-transform duration-300 hover:scale-105 hover:rotate-2 hover:shadow-lg image-effect" />
       </div>
     ))}
   </div>
 
-  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in mt-12">
+  <div className="text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in mt-6">
     Industry Recognition
   </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 items-center mt-6 sm:mt-10 w-full max-w-5xl">
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 items-center mt-4 sm:mt-6 w-full max-w-5xl">
     {[bosch, innovation, credit, total, siemens, siemens, siemens, siemens].map((logo, index) => (
-      <div key={index} className="flex justify-center p-4 sm:p-6 border-b border-gray-300 border border-blue-800 bg-blue-50">
-        <img src={logo} alt={`Award ${index + 1}`} className="w-20 sm:w-24 lg:w-28 h-20 sm:h-24 lg:h-28 filter grayscale hover:filter-none hover:scale-105 transition-transform duration-300 image-effect" />
+      <div key={index} className="flex justify-center p-2 sm:p-3 border-b border-gray-300 border border-blue-800 bg-blue-50">
+        <img src={logo} alt={`Award ${index + 1}`} className="w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32 filter grayscale hover:filter-none hover:scale-105 transition-transform duration-300 image-effect" />
       </div>
     ))}
   </div>
 </div>
 
+{/* Map */}
+{/* Global Activity Footprint Section */}
+<div className="w-full max-w-screen-xl mx-auto py-12">
+  <div className="px-8 sm:px-12 lg:px-16">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
+      <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
+        Global Activity Footprint
+      </h2>
+    </div>
+    <p className="text-[#555] text-base sm:text-lg text-center lg:text-left">
+      We collaborate with industry leaders, forming partnerships with top semiconductor and electronics corporations worldwide.
+    </p>
+  </div>
+</div>
+
+{/* Map Section */}
+      {/* Map Section */}
+      <div style={{ position: "relative", width: "100%", height: "600px", marginBottom: "40px" }}>
+        {/* Map Container */}
+        <div id="svgMapContainer" style={{ width: "100%", height: "100%" }}></div>
+
+        {/* "Our Offices" Title */}
+        <div className="absolute top-4 left-30 text-[#201d1d] text-xl sm:text-2xl font-bold">
+          Our Offices
+        </div>
+
+        {/* Legend Box */}
+        <div className="map-legend">
+          <div>
+            <span className="legend-color" style={{ backgroundColor: "#4caf50" }}></span>
+            Multiple ongoing activities + growing partnerships
+          </div>
+          <div>
+            <span className="legend-color" style={{ backgroundColor: "#2d7bfd" }}></span>
+            Ongoing activities
+          </div>
+          <div>
+            <span className="legend-color" style={{ backgroundColor: "#7eaefc" }}></span>
+            Potential partnerships
+          </div>
+        </div>
+
+        {/* Tooltip */}
+        <div id="tooltip" className="map-tooltip"></div>
+      </div>
+
+
+
+
+{/* White Space Before Leadership Section */}
+<div style={{ height: "300px" }}></div> {/* This creates the white space */}
 {/* Leadership Section */}
 <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12">
   <h2 className="text-[#040404] text-xl sm:text-2xl md:text-4xl font-semibold text-center mb-8 sm:mb-12">
@@ -329,16 +431,10 @@ function AboutPage() {
   </div>
 </div>
 
-{/* Map */}
+
 
     </>
   );
 }
 
 export default AboutPage;
-
-
-
-
-
-

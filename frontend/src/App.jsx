@@ -28,7 +28,7 @@ function App() {
       <Cookies/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/leadership" element={<Leadership />} />
+        <Route path="/Leadership" element={<Leadership />} />
         <Route path="/Industry" element={<Industry />} />
         <Route path="/aboutPage" element={<AboutPage />}/>
         <Route path="/Awards" element={<Awards />} />
