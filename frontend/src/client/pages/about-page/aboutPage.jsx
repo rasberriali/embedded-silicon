@@ -17,7 +17,7 @@ import pin from "../../../assets/images/pin.svg";
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
-// import "svgmap/dist/svgMap.css";
+import "svgmap/dist/svgMap.css";
 import svgMap from "svgmap";
 
 import { GoArrowRight } from "react-icons/go";
@@ -274,9 +274,9 @@ useEffect(() => {
   </div>
 
   {/* Content Container */}
-  <div className="relative h-full max-w-screen-xl mx-auto font-inter">
+  <div className="relative h-full max-w-screen-xl mx-auto">
     <div className="flex items-center h-full py-32">
-      <div className={`max-w-2xl px-6 2xl:px-0 transform transition-all duration-1000 ${
+      <div className={`max-w-2xl transform transition-all duration-1000 ${
         isVisible.content ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
       }`}>
         <h1 className="whitespace-nowrap text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-8" style={{ width: 'fit-content' }}>Company Overview</h1>
@@ -292,8 +292,8 @@ useEffect(() => {
 </div>
 
 {/* Key Facts Section */}
-<div className="w-full max-w-screen-xl mx-auto py-12 font-inter">
-  <div className="px-6 2xl:px-0">
+<div className="w-full max-w-screen-xl mx-auto py-12">
+  <div>
     <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
       <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
         Key Facts About Embedded Silicon
@@ -352,9 +352,10 @@ useEffect(() => {
 
 
 {/* Company Overview Sheet */}
-<div className="w-full max-w-screen-xl mx-auto py-4 px-6 2xl:px-0">
-    <div className="bg-[#043A65] text-white px-6 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
-      <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left">
+<div className="w-full max-w-screen-xl mx-auto py-5">
+  <div className="w-full">
+    <div className="bg-[#043A65] text-white px-4 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
+      <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-8">
         Company Overview Sheet
       </h2>
       <a 
@@ -364,6 +365,7 @@ useEffect(() => {
       >
         View PDF
       </a>
+    </div>
   </div>
 </div>
 
@@ -374,7 +376,7 @@ useEffect(() => {
 
 
 {/* Company Values Section */}
-<div className="w-full max-w-screen-xl mx-auto px-6 2xl:px-0 py-6 sm:py-8">
+<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8">
   {/* Heading and Intro Text */}
   <div className="max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10">
     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -491,7 +493,6 @@ useEffect(() => {
   </div>
 </div>
 
-{/* Map */}
 {/* Global Activity Footprint Section */}
 <div className="w-full bg-[#ECECEC] py-12">
   <div className='max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10'>
@@ -506,96 +507,46 @@ useEffect(() => {
   </div>
 </div>
 
-
 {/* Map Section */}
-<div className="w-full">
-  {/* Partner Countries List - Above Map */}
+<div className="relative w-full">
+  {/* Partner Countries List */}
   <div className="w-full bg-[#ECECEC]">
     <div className="flex flex-wrap justify-center items-center gap-6 py-2">
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/us.png"
-          width="32"
-          height="24"
-          alt="United States"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">United States</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/ca.png"
-          width="32"
-          height="24"
-          alt="Canada"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">Canada</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/in.png"
-          width="32"
-          height="24"
-          alt="India"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">India</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/jp.png"
-          width="32"
-          height="24"
-          alt="Japan"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">Japan</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/my.png"
-          width="32"
-          height="24"
-          alt="Malaysia"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">Malaysia</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/id.png"
-          width="32"
-          height="24"
-          alt="Indonesia"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">Indonesia</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <img 
-          src="https://flagcdn.com/w40/ph.png"
-          width="32"
-          height="24"
-          alt="Philippines"
-          className="border border-gray-100"
-        />
-        <span className="text-sm font-medium">Philippines</span>
-      </div>
+      {/* Country Flags */}
+      {[
+        { src: "us", name: "United States" },
+        { src: "ca", name: "Canada" },
+        { src: "in", name: "India" },
+        { src: "jp", name: "Japan" },
+        { src: "my", name: "Malaysia" },
+        { src: "id", name: "Indonesia" },
+        { src: "ph", name: "Philippines" },
+      ].map((country, index) => (
+        <div key={index} className="flex items-center gap-2">
+          <img 
+            src={`https://flagcdn.com/w40/${country.src}.png`} 
+            width="32" 
+            height="24" 
+            alt={country.name} 
+            className="border border-gray-100"
+          />
+          <span className="text-sm font-medium">{country.name}</span>
+        </div>
+      ))}
     </div>
   </div>
 
-  {/* Map Container - Adjusted height and added bottom padding */}
-  <div className="relative w-full mb-16" style={{ height: "600px", marginTop: "-1px" }}>
-    <div id="svgMapContainer" className="absolute inset-0"></div>
+  {/* Map Container */}
+  <div className="relative w-full  "> {/* Adjusted map height */}
+    <div id="svgMapContainer" className="bottom-0"></div>
 
     {/* "Our Offices" Title */}
-    <div className="absolute top-1 left-40 text-[#201d1d] text-xl sm:text-2xl p-6 font-bold">
+    <div className="absolute top-1 left-40 text-[#201d1d] text-xl sm:text-2xl p-6 font-bold z-20">
       Our Offices
     </div>
 
     {/* Legend Box */}
-    <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md">
+    <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md z-20">
       <div className="flex flex-col gap-3">
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
@@ -633,11 +584,9 @@ useEffect(() => {
   </div>
 </div>
 
-
-
-{/* Leadership Section - Adjusted top padding */}
-<div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-32 bg-white">
-  <div className="ml-10">
+{/* Leadership Section - Placed Below Map */}
+<div className="bg-white">
+  <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 p-6">
     <h2 className="text-[#040404] text-xl sm:text-2xl md:text-4xl font-semibold text-center mb-8 sm:mb-12">
       Our Experienced Management Team
     </h2>
@@ -657,7 +606,7 @@ useEffect(() => {
       </div>
 
       {/* Second Leader */}
-      <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100 slide-in">
+      <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
         <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
           <img src="/your-svg-file.svg" alt="Profile Icon" className="w-20 sm:w-24 h-20 sm:h-24" />
         </div>
@@ -671,6 +620,10 @@ useEffect(() => {
     </div>
   </div>
 </div>
+
+
+
+
 
 
 
