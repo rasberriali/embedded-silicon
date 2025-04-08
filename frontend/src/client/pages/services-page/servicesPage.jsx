@@ -25,6 +25,7 @@ import pcb from "../../../assets/images/pcb.svg"
 import rapid from "../../../assets/images/rapid.svg"
 import firmware from "../../../assets/images/firmware.svg"
 import tailord from "../../../assets/images/tailord.svg"
+import servicebg from "../../../assets/images/serviceBg.svg"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -96,11 +97,17 @@ function ServicesPage() {
         transition={{ duration: 0.8 }}
       >
         <motion.div 
-          className="w-full xl:h-[80vh] h-[30vh] bg-gradient-to-tl from-[#000] via-[#2D7BFD] to-[#000]"
+          className="w-full xl:h-[80vh] h-[30vh] relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
+          <img 
+            src={servicebg}
+            alt="Services background"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" />
           <motion.img 
             src={dot} 
             alt="" 

@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import vlsiBg from "../../../assets/images/vlsiBg.svg";
-import bentImg from "../../../assets/images/bentImg.svg";
 import partnership from "../../../assets/images/partnership.svg";
 import frame1 from "../../../assets/images/frame1.svg";
 import frame2 from "../../../assets/images/frame2.svg";
@@ -20,20 +19,17 @@ function Fullvlsi() {
   return (
     <div className='font-inter'>
           <div className="relative font-inter xl:h-[70vh] h-[30vh] ">
-            {/* Background Image */}
             <img
               src={vlsiBg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover -z-10"
             />
-      
-            {/* Faded Overlay using Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-blue-400/10 to-black/30 -z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/0 -z-10"></div>
       
             {/* Content */}
             <div className="absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10">
-              <div className="flex flex-col h-full justify-center">
-                <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4">
+              <div className="flex flex-col h-full justify-center ">
+                <div className="w-1/2 text-white  text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4">
                 Smarter Design, Embedded
                 in Silicon
                   <div className="text-white text-sm lg:text-base 2xl:text-2xl font-normal xl:mt-8 mt-6">

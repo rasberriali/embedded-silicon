@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
+import success from "../../assets/images/buildingSuccess.svg"
 import {
   Collapse,
   Typography,
@@ -187,9 +188,9 @@ function AboutUsMegaMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
+          <Typography as="div" variant="small" className="font-medium font-inter">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
+              className={`flex items-center gap-2 xl:py-2 py-0 pr-4 font-medium font-inter text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={handleAboutUsClick} // Navigate to About Page when clicked
             >
@@ -211,7 +212,7 @@ function AboutUsMegaMenu() {
             <div className="col-span-1">
               <div className="relative h-full rounded-lg overflow-hidden">
                 <img 
-                  src="https://placehold.co/400x600/2D7BFD/FFF" 
+                  src={success}
                   alt="Latest Achievement" 
                   className="w-full h-full object-cover"
                 />
@@ -309,9 +310,9 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
+          <Typography as="div" variant="small" className="font-medium font-inter">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm cursor-pointer ${
+              className={`flex items-center gap-2 xl:py-2 py-0 pr-4 font-medium text-gray-900 font-inter text-sm cursor-pointer font-inter ${
                 isActive ? 'text-[#2D7BFD]' : ''
               }`}
               selected={isMenuOpen || isMobileMenuOpen}
@@ -333,7 +334,7 @@ function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-[90vw] w-[1200px] rounded-xl lg:block border border-gray-200 p-6 z-50">
+        <MenuList className="hidden max-w-[90vw] w-[1200px] rounded-xl lg:block border border-gray-200 p-6 z-50 font-inter">
           <div className="grid grid-cols-3 gap-6">
             {renderItems}
             {/* Design Consultancy Button Section */}
@@ -426,15 +427,15 @@ function Navbar() {
           )}
         </IconButton>
 
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden  xl:p-0 p-6
-          max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none 
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden xl:p-0 p-6
+          max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none font-inter
           transition-transform duration-300 bg-white md:bg-transparent ${isMobileMenuOpen ? 'block' : 'hidden md:flex'}`}>
           <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 gap-4 ">
             <Typography
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer${isActivePage('/') ? 'text-[#2D7BFD]' : ''}`}
@@ -452,7 +453,7 @@ function Navbar() {
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/careersPage') ? 'text-[#2D7BFD]' : ''}`}
@@ -467,7 +468,7 @@ function Navbar() {
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/successStories') ? 'text-[#2D7BFD]' : ''}`}
@@ -482,7 +483,7 @@ function Navbar() {
 
         <div className='hidden md:flex'>
           <div 
-            className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 text-sm rounded-lg cursor-pointer ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`}
+            className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 text-sm rounded-lg cursor-pointer font-inter ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`}
             onClick={() => navigate('/contactPage')}
           >
             Contact
