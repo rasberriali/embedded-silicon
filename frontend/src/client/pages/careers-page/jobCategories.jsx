@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import backdropimage2 from "../../../assets/images/backdropimage2.svg";
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function JobCategories() {
   const [jobs, setJobs] = useState([]);
@@ -9,6 +9,7 @@ function JobCategories() {
   const [error, setError] = useState(null);
   const [sortBy, setSortBy] = useState('latest');
   const location = useLocation();
+  const navigate = useNavigate();
   const category = location.state?.category || "Engineering & Technical Roles";
 
   useEffect(() => {
@@ -116,7 +117,11 @@ function JobCategories() {
             <div className="text-gray-500 text-center py-8">No jobs available in this category</div>
           ) : (
             jobs.map((job, index) => (
-              <div key={index} className='flex flex-col w-full border-2 p-4 mt-8 border-[#3B82F6] hover:bg-blue-50 transition-colors cursor-pointer'>
+              <div 
+                key={index} 
+                className='flex flex-col w-full border-2 p-4 mt-8 border-[#3B82F6] hover:bg-blue-50 transition-colors cursor-pointer'
+                onClick={() => navigate(`/careers/job/${job._id}`)}
+              >
                 <div className='mb-2 text-2xl text-[#0325CE] font-medium font-inter'>
                   {job.title}
                 </div>

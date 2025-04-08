@@ -17,7 +17,7 @@ import pin from "../../../assets/images/pin.svg";
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
-import "svgmap/dist/svgMap.css";
+// import "svgmap/dist/svgMap.css";
 import svgMap from "svgmap";
 
 import { GoArrowRight } from "react-icons/go";
@@ -274,9 +274,9 @@ useEffect(() => {
   </div>
 
   {/* Content Container */}
-  <div className="relative h-full max-w-screen-xl mx-auto">
+  <div className="relative h-full max-w-screen-xl mx-auto font-inter">
     <div className="flex items-center h-full py-32">
-      <div className={`max-w-2xl transform transition-all duration-1000 ${
+      <div className={`max-w-2xl px-6 2xl:px-0 transform transition-all duration-1000 ${
         isVisible.content ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
       }`}>
         <h1 className="whitespace-nowrap text-4xl sm:text-5xl lg:text-6xl text-white font-bold mb-8" style={{ width: 'fit-content' }}>Company Overview</h1>
@@ -292,8 +292,8 @@ useEffect(() => {
 </div>
 
 {/* Key Facts Section */}
-<div className="w-full max-w-screen-xl mx-auto py-12">
-  <div>
+<div className="w-full max-w-screen-xl mx-auto py-12 font-inter">
+  <div className="px-6 2xl:px-0">
     <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
       <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
         Key Facts About Embedded Silicon
@@ -352,10 +352,9 @@ useEffect(() => {
 
 
 {/* Company Overview Sheet */}
-<div className="w-full max-w-screen-xl mx-auto py-5">
-  <div className="w-full">
-    <div className="bg-[#043A65] text-white px-4 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
-      <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-8">
+<div className="w-full max-w-screen-xl mx-auto py-4 px-6 2xl:px-0">
+    <div className="bg-[#043A65] text-white px-6 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
+      <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left">
         Company Overview Sheet
       </h2>
       <a 
@@ -365,7 +364,6 @@ useEffect(() => {
       >
         View PDF
       </a>
-    </div>
   </div>
 </div>
 
@@ -376,7 +374,7 @@ useEffect(() => {
 
 
 {/* Company Values Section */}
-<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8">
+<div className="w-full max-w-screen-xl mx-auto px-6 2xl:px-0 py-6 sm:py-8">
   {/* Heading and Intro Text */}
   <div className="max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10">
     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
