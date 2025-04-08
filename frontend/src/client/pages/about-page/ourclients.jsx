@@ -105,31 +105,40 @@ const OurClients = () => {
       }`}
     />
 
-    {/* Content Container with Slide Up */}
-    <div className={`relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center transition-effect ${
-      isVisible.hero ? 'fade-in-up' : 'fade-out-down'
-    }`}>
-      
-      {/* Text Section */}
-      <div className="text-left">
-        <h2 className="text-4xl font-extrabold mb-4">Our Clients</h2>
-        <p className="text-lg italic text-gray-300 leading-relaxed">
-          "The list below ...Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. In deleniti repellat eum harum quas ducimus
-          aliquam tempore vel ad earum dolore consequatur labore eligendi
-          dolores, molestias suscipit atque, dicta enim."
-        </p>
-      </div>
-
-      {/* IC Image Section with Scale In */}
-      <div className={`bg-black p-4 rounded-lg shadow-lg transition-effect ${
-        isVisible.hero ? 'scale-in' : 'scale-out'
+    {/* Main Content Container aligned with logo */}
+    <div className="max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10 w-full">
+      <div className={`grid md:grid-cols-2 gap-8 items-center transition-effect ${
+        isVisible.hero ? 'fade-in-up' : 'fade-out-down'
       }`}>
-        <img src={icclient} alt="IC Circuit" className="w-full object-contain" />
-      </div>
+        
+        {/* Text Section */}
+        <div className="text-left">
+          <h2 className="text-4xl font-extrabold mb-4">Our Clients</h2>
+          <p className="text-lg italic text-gray-300 leading-relaxed">
+            "The list below ...Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. In deleniti repellat eum harum quas ducimus
+            aliquam tempore vel ad earum dolore consequatur labore eligendi
+            dolores, molestias suscipit atque, dicta enim."
+          </p>
+        </div>
 
+        <div className={`bg-black p-4 rounded-lg shadow-lg transition-effect ${
+  isVisible.hero ? 'scale-in' : 'scale-out'
+}`}>
+  <div className="w-[300px] h-[200px] md:w-[350px] md:h-[480px] mx-auto">
+    <img
+      src={icclient}
+      alt="IC Circuit"
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
+
+      </div>
     </div>
   </div>
+
+
 
 
 

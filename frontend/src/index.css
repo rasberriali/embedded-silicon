@@ -471,3 +471,6 @@ html, body {
 .svgMap-country[data-code="IN"] {
   fill: #7eaefc !important;
 }
+#svgMapContainer {
+  margin-bottom: 2rem; /* Or use Tailwind: mb-8 */
+}
