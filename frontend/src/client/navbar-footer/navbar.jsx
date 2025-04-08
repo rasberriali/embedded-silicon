@@ -470,9 +470,9 @@ function Navbar() {
               className="font-medium"
             >
               <ListItem 
-                className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/success-stories') ? 'text-[#2D7BFD]' : ''}`}
-                selected={isActivePage('/success-stories')}
-                onClick={() => navigate('/success-stories')}
+                className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/successStories') ? 'text-[#2D7BFD]' : ''}`}
+                selected={isActivePage('/successStories')}
+                onClick={() => navigate('/successStories')}
               >
                 Success Stories
               </ListItem>

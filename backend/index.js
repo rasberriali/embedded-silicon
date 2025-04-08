@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const projectRoutes = require('./model/projectRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,55 +26,11 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
 
-// Job Schema
-const jobSchema = new mongoose.Schema({
-  title: String,
-  category: String,
-  description: String,
-  location: String,
-  postDate: Date,
-  jobType: String,
-  schedule: String,
-  benefits: String,
-  experienceRequired: String,
-  qualifications: String,
-});
+// Use project routes
+app.use('/', projectRoutes);
 
-const Job = mongoose.model('Job', jobSchema);
-
-// Job Routes
-app.post('/jobs', async (req, res) => {
-  try {
-    console.log('Received job posting request:', req.body);
-    const { title, category, description, location, postDate, jobType } = req.body;
-
-    if (!title || !category || !description || !location || !postDate || !jobType) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
-
-    const job = new Job(req.body);
-    await job.save();
-    console.log('Job saved successfully:', job);
-    res.status(201).json(job);
-  } catch (error) {
-    console.error('Error saving job:', error);
-    res.status(400).json({ error: error.message });
-  }
-});
-
-app.get('/jobs', async (req, res) => {
-  try {
-    const jobs = await Job.find();
-    res.json(jobs);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Sample Route
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Start Server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

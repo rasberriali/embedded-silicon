@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./client/navbar-footer/navbar";
 import HomePage from "./client/pages/home-page/homePage";
@@ -19,9 +19,14 @@ import OurClients from "./client/pages/about-page/ourclients";
 import CMS from "./client/pages/careers-page/cms";
 import JobList from "./client/pages/careers-page/jobList";
 import JobCategories from "./client/pages/careers-page/jobCategories";
-
+import JobDetails from "./client/pages/careers-page/jobDetails";
+import SuccessStories from "./client/pages/success-page/successStories";
+import Stories from "./client/pages/success-page/stories";
 
 function App() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <Router>
       <Navbar />
@@ -35,13 +40,16 @@ function App() {
         <Route path="/ourclients" element={<OurClients />}/>
         <Route path="/servicesPage" element={<ServicesPage />}/>
         <Route path="/contactPage" element={<ContactPage />}/>
+        <Route path="/stories" element={<Stories />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
         <Route path="/careersPage" element={<CareersPage />}/>
+        <Route path="/successStories" element={<SuccessStories />}/>
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
         <Route path="/cms" element={<CMS/>}/>
         <Route path="/jobs" element={<JobList/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
+        <Route path="/careers/job/:id" element={<JobDetails/>}/>
       </Routes>
       <Footer/>
     </Router>

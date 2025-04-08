@@ -144,7 +144,35 @@ function Fullvlsi() {
 </div>
 
       </div>
-    </div>
+   
+
+    {/* Call to Action Section */}
+    <div className="  mt-20 bg-[#0a0a0af8] border border-[#333] rounded-xl p-10 shadow-lg">
+              <div className="flex flex-col xl:flex-row items-center justify-between">
+                <div className="xl:w-2/3 xl:pr-10">
+                  <div className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6">15+ Years of Excellence</div>
+                  <h3 className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight">Ready to transform your technology vision?</h3>
+                  <p className="text-[#647185] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
+                    Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
+                  </p>
+                  <div className="flex flex-row gap-4">
+                    <div 
+                      onClick={() => navigate('/contactPage')}
+                      className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-full shadow-sm transition-colors text-xs sm:text-sm font-semibold cursor-pointer"
+                    >
+                      Book a consultation
+                    </div>
+                    <div 
+                      onClick={() => navigate('/servicesPage')}
+                      className="border-2 border-[#2D7BFD] text-[#2D7BFD] hover:bg-[#2D7BFD]/10 py-1.5 sm:py-2 px-3 sm:px-4 rounded-full transition-colors text-xs sm:text-sm font-semibold cursor-pointer"
+                    >
+                      Browse services
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
       
     </div>
   )
