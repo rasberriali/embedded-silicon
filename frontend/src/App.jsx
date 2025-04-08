@@ -27,6 +27,7 @@ function App() {
    useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+    
   return (
     <Router>
       <Navbar />
@@ -50,6 +51,7 @@ function App() {
         <Route path="/jobs" element={<JobList/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
         <Route path="/careers/job/:id" element={<JobDetails/>}/>
+        <Route path="/successStories" element={<SuccessStories/>}/>
       </Routes>
       <Footer/>
     </Router>

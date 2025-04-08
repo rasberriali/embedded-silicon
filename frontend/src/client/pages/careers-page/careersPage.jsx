@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import backdropimage2 from "../../../assets/images/backdropimage2.svg";
+import successStory from "../../../assets/images/buildingSuccess.svg";
 import servicesCarousel from "../../../assets/images/servicesCarousel.svg";
 import servicesCarousel2 from "../../../assets/images/servicesCarousel2.svg";
 import servicesCarousel3 from "../../../assets/images/servicesCarousel3.svg";
@@ -101,13 +101,13 @@ function CareersPage() {
       <div className="relative font-inter xl:h-[60vh] h-[30vh]">
         {/* Background Image */}
         <img
-          src={backdropimage2}
+          src={successStory}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
   
         {/* Faded Overlay using Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/70 to-black/30 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent -z-10"></div>
   
         {/* Content */}
         <div className="absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10">

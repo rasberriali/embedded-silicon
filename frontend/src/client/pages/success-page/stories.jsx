@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import cpu from "../../../assets/images/cpu.png";
 import siemens from "../../../assets/images/siemens.png";
 import successStory from "../../../assets/images/buildingSuccess.svg";
@@ -7,6 +7,10 @@ import { FaGlobeAmericas, FaHandshake, FaIndustry, FaCalendarAlt, FaUsers, FaBui
 
 
 function Stories() {
+
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
  const navigate =useNavigate();
   const storiesData = [

@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect} from 'react'
 import successStory from "../../../assets/images/buildingSuccess2.svg";
 import handshake from "../../../assets/images/handshake.png";
 import automotive from "../../../assets/images/automotive.svg"
@@ -7,6 +7,11 @@ import semicon from "../../../assets/images/semicon.svg";
 import { useNavigate, useLocation  } from 'react-router-dom';
 
 function SuccessStories() {
+
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
       const navigate = useNavigate();
   const successStoriesData = [
     {
