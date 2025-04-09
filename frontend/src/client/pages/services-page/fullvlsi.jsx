@@ -52,15 +52,15 @@ function Fullvlsi() {
                         initial="hidden"
                         animate={isVisible ? "visible" : "hidden"}
                         variants={staggerChildren}
-                        className="flex flex-row h-full justify-start items-center gap-2"
+                        className="flex flex-row h-full justify-start items-center gap-4"
                     >
                         <motion.div 
                             variants={fadeIn}
-                            className='w-2 h-1/2 bg-orange-500'
+                            className='w-2 xl:h-2/5 h-3/5 bg-orange-500'
                         ></motion.div>
                         <motion.div 
                             variants={fadeIn}
-                            className="w-1/2 text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4"
+                            className="xl:w-1/2 w-full text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4"
                         >
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
                                 Smarter Design, Embedded
@@ -213,7 +213,7 @@ function Fullvlsi() {
                             />
                         </div>
                         <div
-                            className="absolute inset-0 flex items-end justify-end p-16 text-blue-600 font-semibold text-sm cursor-pointer hover:text-blue-800 transition-colors"
+                            className=" absolute inset-0 flex items-end justify-end p-6 text-blue-600 font-semibold text-sm cursor-pointer hover:text-blue-800 transition-colors"
                             onClick={() => navigate('/servicesPage')}
                         >
                             → Explore our services
@@ -229,7 +229,7 @@ function Fullvlsi() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.7 }}
-                    className="mt-20"
+                    className="mt-30"
                 >
                     <h2 className="text-3xl font-bold text-center text-blue-600 mb-10">What Our Clients Say</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -271,7 +271,7 @@ function Fullvlsi() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.7 }}
-                    className="mt-20 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl p-10 shadow-lg"
+                    className="mt-40 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl p-10 shadow-lg"
                 >
                     <div className="flex flex-col xl:flex-row items-center justify-between">
                         <div className="xl:w-2/3 xl:pr-10">
@@ -285,7 +285,7 @@ function Fullvlsi() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => navigate('/contactPage')}
-                                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-2 px-6 rounded-full shadow-sm transition-colors text-sm font-semibold cursor-pointer"
+                                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-2 xl:px-6 px-4 rounded-full shadow-sm transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
                                 >
                                     Book a consultation
                                 </motion.div>
@@ -293,7 +293,7 @@ function Fullvlsi() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => navigate('/servicesPage')}
-                                    className="border-2 border-white text-white hover:bg-white/10 py-2 px-6 rounded-full transition-colors text-sm font-semibold cursor-pointer"
+                                    className="border-2 border-white text-white hover:bg-white/10 py-2 xl:px-6 px-4 rounded-full transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
                                 >
                                     Browse services
                                 </motion.div>

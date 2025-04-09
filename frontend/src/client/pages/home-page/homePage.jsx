@@ -579,7 +579,7 @@ function HomePage() {
               
 
       {/* Latest News Section */}
-      <div className="max-w-screen-xl mx-auto mt-40 font-inter lg:px-6 2xl:px-0 px-6">
+      <div className="max-w-screen-xl mx-auto mt-50 font-inter lg:px-6 2xl:px-0 px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl xl:text-5xl font-bold text-[#040404] mb-4">
             Latest News
