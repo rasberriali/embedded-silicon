@@ -530,7 +530,7 @@ function HomePage() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => navigate('/contactPage')}
-                                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white xl:py-1 xl:px-6 py-2 px-4 rounded-full shadow-sm transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
+                                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-1 xl:px-6  px-4 rounded-full shadow-sm transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
                                 >
                                     Book a consultation
                                 </motion.div>
@@ -538,7 +538,7 @@ function HomePage() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => navigate('/servicesPage')}
-                                    className="border-2 border-white text-white hover:bg-white/10 xl:py-1 xl:px-6 py-2 px-4 rounded-full transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
+                                    className="border-2 border-white text-white hover:bg-white/10 py-1 xl:px-6 px-4 rounded-full transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
                                 >
                                     Browse services
                                 </motion.div>
