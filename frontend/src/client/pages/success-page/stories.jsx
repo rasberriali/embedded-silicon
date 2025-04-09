@@ -41,7 +41,6 @@ function Stories() {
     <div className="font-inter">
       {storiesData.map((story) => (
         <div key={story.id} className="mb-20 bg-white ">
-          {/* Story Header */}
           <div className="relative font-inter xl:h-[60vh] h-[30vh]">
             <img 
               src={successStory} 

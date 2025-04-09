@@ -430,40 +430,156 @@ function HomePage() {
                   </div>
                 </div>
               ))}
-            </div>
-            
-            {/* Call to Action Section */}
-            <div className="mt-20 bg-[#0A0A0A] border border-[#333] rounded-xl p-10 shadow-lg">
-              <div className="flex flex-col xl:flex-row items-center justify-between">
-                <div className="xl:w-2/3 xl:pr-10">
-                  <div className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6">15+ Years of Excellence</div>
-                  <h3 className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight">Ready to transform your technology vision?</h3>
-                  <p className="text-[#647185] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
-                    Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
-                  </p>
-                  <div className="flex flex-row gap-4">
-                    <div 
-                      onClick={() => navigate('/contactPage')}
-                      className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-1.5 sm:py-2 px-3 sm:px-4 rounded-full shadow-sm transition-colors text-xs sm:text-sm font-semibold cursor-pointer"
-                    >
-                      Book a consultation
-                    </div>
-                    <div 
-                      onClick={() => navigate('/servicesPage')}
-                      className="border-2 border-[#2D7BFD] text-[#2D7BFD] hover:bg-[#2D7BFD]/10 py-1.5 sm:py-2 px-3 sm:px-4 rounded-full transition-colors text-xs sm:text-sm font-semibold cursor-pointer"
-                    >
-                      Browse services
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div>  
           </div>
         </div>
+
+        <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
+        {/* Testimonials Section */}
+        <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.7 }}
+                    className="mt-40"
+                >
+                    <h2 className="text-4xl font-bold text-center text-blue-600 mb-10 font-inter">What Our Clients Say</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">JD</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">John Doe</h3>
+                                    <p className="text-sm text-gray-500">CTO, Tech Innovations</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">AS</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">Alice Smith</h3>
+                                    <p className="text-sm text-gray-500">VP Engineering, MicroTech</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"The expertise and professionalism of the Embedded Silicon team made our complex VLSI project a success. Their attention to detail and commitment to quality is unmatched."</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">RJ</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">Robert Johnson</h3>
+                                    <p className="text-sm text-gray-500">Director, Semiconductor Solutions</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"Working with Embedded Silicon has been transformative for our product development. Their VLSI design services helped us bring our innovative ideas to market faster than ever before."</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">JD</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">John Doe</h3>
+                                    <p className="text-sm text-gray-500">CTO, Tech Innovations</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">AS</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">Alice Smith</h3>
+                                    <p className="text-sm text-gray-500">VP Engineering, MicroTech</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"The expertise and professionalism of the Embedded Silicon team made our complex VLSI project a success. Their attention to detail and commitment to quality is unmatched."</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md">
+                            <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">RJ</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold">Robert Johnson</h3>
+                                    <p className="text-sm text-gray-500">Director, Semiconductor Solutions</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 italic">"Working with Embedded Silicon has been transformative for our product development. Their VLSI design services helped us bring our innovative ideas to market faster than ever before."</p>
+                        </div>
+                    </div>
+                </motion.div>
+                </div>
+
+<div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
+
+
+         {/* Call to Action Section */}
+         <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7, duration: 0.7 }}
+                    className="mt-20 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl p-10 shadow-lg"
+                >
+                    <div className="flex flex-col xl:flex-row items-center justify-between">
+                        <div className="xl:w-2/3 xl:pr-10">
+                            <div className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6">15+ Years of Excellence</div>
+                            <h3 className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight">Ready to transform your technology vision?</h3>
+                            <p className="text-[#E0E0E0] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
+                                Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
+                            </p>
+                            <div className="flex flex-row gap-4">
+                                <motion.div 
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => navigate('/contactPage')}
+                                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white xl:py-1 xl:px-6 py-2 px-4 rounded-full shadow-sm transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
+                                >
+                                    Book a consultation
+                                </motion.div>
+                                <motion.div 
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => navigate('/servicesPage')}
+                                    className="border-2 border-white text-white hover:bg-white/10 xl:py-1 xl:px-6 py-2 px-4 rounded-full transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
+                                >
+                                    Browse services
+                                </motion.div>
+                            </div>
+                        </div>
+                        <div className="xl:w-1/3 mt-10 xl:mt-0">
+                            <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                                <h4 className="text-white font-semibold mb-4">Why Choose Us?</h4>
+                                <ul className="text-white/80 space-y-2">
+                                    <li className="flex items-center">
+                                        <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        Industry-leading expertise
+                                    </li>
+                                    <li className="flex items-center">
+                                        <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        Proven track record
+                                    </li>
+                                    <li className="flex items-center">
+                                        <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        End-to-end solutions
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+
+
+
+
               
 
       {/* Latest News Section */}
-      <div className="max-w-screen-xl mx-auto xl:mt-40 mt-30 font-inter lg:px-6 2xl:px-0 px-6">
+      <div className="max-w-screen-xl mx-auto mt-40 font-inter lg:px-6 2xl:px-0 px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl xl:text-5xl font-bold text-[#040404] mb-4">
             Latest News

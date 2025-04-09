@@ -127,7 +127,6 @@ function CMS() {
           </nav>
         </div>
 
-        {/* Job Posting Form - Only shown when activeSection is 'post' */}
         {activeSection === 'post' && (
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Post New Job</h2>

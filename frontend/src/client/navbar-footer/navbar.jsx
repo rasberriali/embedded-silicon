@@ -139,18 +139,10 @@ function AboutUsMegaMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const aboutPagePath = "/aboutPage"; // Main About Us page
+ const isActive = location.pathname ==='/aboutPage';
 
-  // Check if About Us is active (either submenu item or main page is active)
-  const isActive = 
-    location.pathname === aboutPagePath || 
-    aboutMenuItems.some(({ path }) => location.pathname === path || location.hash === `#${path.split('#')[1]}`);
-
-  const handleAboutUsClick = () => {
-    navigate(aboutPagePath); // Navigate to main About Us page
-  };
-
-  const renderItems = aboutMenuItems.map(({ icon, title, description, path }, key) => (
+  const renderItems = aboutMenuItems.map(
+    ({ icon, title, description, path }, key) => (
     <div key={key} onClick={() => navigate(path)}>
       <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.pathname === path ? 'bg-gray-100' : ''}`}>
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
@@ -192,16 +184,20 @@ function AboutUsMegaMenu() {
             <ListItem
               className={`flex items-center gap-2 xl:py-2 py-0 pr-4 font-medium font-inter text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
-              onClick={handleAboutUsClick} // Navigate to About Page when clicked
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
               About Us
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""}`}
+                className={`hidden h-3 w-3 transition-transform lg:block ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""}`}
+                className={`block h-3 w-3 transition-transform lg:hidden ${
+                  isMobileMenuOpen ? "rotate-180" : ""
+                }`}
               />
             </ListItem>
           </Typography>
@@ -353,7 +349,7 @@ function NavListMenu() {
                     </Typography>
                     <Typography
                       variant="paragraph"
-                      className="text-xs text-gray-600"
+                      className="text-xs font-normal text-gray-600"
                     >
                       Get expert advice for your silicon design needs
                     </Typography>
@@ -361,7 +357,7 @@ function NavListMenu() {
                 </div>
                 <button
                   onClick={() => navigate('/contactPage')}
-                  className="bg-[#2D7BFD] hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                  className="bg-[#2D7BFD] hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-normal transition-colors duration-200"
                 >
                   Contact Us
                 </button>
