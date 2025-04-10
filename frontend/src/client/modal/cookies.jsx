@@ -3,27 +3,16 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 
 const Cookies = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
 
-//   useEffect(() => {
-//     const consent = localStorage.getItem("cookieConsent");
-//     if (!consent) {
-//       setIsVisible(true);
-//     }
-//   }, []);
-
   useEffect(() => {
-    // Check if we're on the Privacy Policy or Cookie Policy pages
-    const currentPath = location.pathname;
-    if (currentPath === '/privacyPolicy' || currentPath === '/cookiePolicy') {
+    // Hide cookie notice on policy pages
+    if (location.pathname === '/privacyPolicy' || location.pathname === '/cookiePolicy') {
       setIsVisible(false);
-    } else {
-      // Always show the cookie notice on other pages
-      setIsVisible(true);
     }
-  }, [location]);
+  }, [location.pathname]);
 
   const handleAcceptAll = () => {
     localStorage.setItem("cookieConsent", "accepted_all");
@@ -43,31 +32,14 @@ const Cookies = () => {
     setIsVisible(false);
   };
 
-  const handlePreferences = () => {
+  const handlePrivacyPolicyClick = () => {
     navigate('/privacyPolicy');
   };
 
-  const handleCookiePolicy = () => {
-    // Create a temporary link element
-    const link = document.createElement('a');
-    link.href = window.location.origin + '/cookiePolicy?hideCookies=true';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleCookiePolicyClick = () => {
+    navigate('/cookiePolicy');
   };
 
-  const handlePrivacyPolicy = () => {
-    // Create a temporary link element
-    const link = document.createElement('a');
-    link.href = window.location.origin + '/privacyPolicy?hideCookies=true';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     isVisible && (
@@ -82,15 +54,25 @@ const Cookies = () => {
             <p className="text-white mb-4">
               We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
               By clicking "Accept All Cookies", you consent to our use of cookies. 
-              <button onClick={handleCookiePolicy} className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0">
+              <a 
+                href="/cookiePolicy" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
+              >
                 Read Cookie Policy
-              </button>
+              </a>
              <span className="font-extralight ml-1"> 
                 &
               </span>
-              <button onClick={handlePrivacyPolicy} className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0">
+              <a 
+                href="/privacyPolicy" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
+              >
                 Privacy Policy 
-              </button>
+              </a>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
