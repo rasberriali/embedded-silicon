@@ -508,7 +508,7 @@ function HomePage() {
                 </motion.div>
                 </div>
 
-<div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
+<div className="mx-auto max-w-screen-xl 2xl:p-0 p-6 ">
 
 
          {/* Call to Action Section */}
@@ -516,7 +516,7 @@ function HomePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.7 }}
-                    className="mt-20 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl p-10 shadow-lg"
+                    className="mt-20 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl xl:p-10 p-6 shadow-lg"
                 >
                     <div className="flex flex-col xl:flex-row items-center justify-between">
                         <div className="xl:w-2/3 xl:pr-10">
