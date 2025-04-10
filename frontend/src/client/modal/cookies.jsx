@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 const Cookies = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
 //   useEffect(() => {
 //     const consent = localStorage.getItem("cookieConsent");
@@ -14,9 +15,15 @@ const Cookies = () => {
 //   }, []);
 
   useEffect(() => {
-    // Always show the cookie notice on page load
-    setIsVisible(true);
-  }, []);
+    // Check if we're on the Privacy Policy or Cookie Policy pages
+    const currentPath = location.pathname;
+    if (currentPath === '/privacyPolicy' || currentPath === '/cookiePolicy') {
+      setIsVisible(false);
+    } else {
+      // Always show the cookie notice on other pages
+      setIsVisible(true);
+    }
+  }, [location]);
 
   const handleAcceptAll = () => {
     localStorage.setItem("cookieConsent", "accepted_all");
@@ -37,7 +44,15 @@ const Cookies = () => {
   };
 
   const handlePreferences = () => {
-    navigate('/PrivacyPolicy');
+    navigate('/privacyPolicy');
+  };
+
+  const handleCookiePolicy = () => {
+    window.open('/cookiePolicy?hideCookies=true', '_blank');
+  };
+
+  const handlePrivacyPolicy = () => {
+    window.open('/privacyPolicy?hideCookies=true', '_blank');
   };
 
   return (
@@ -53,15 +68,15 @@ const Cookies = () => {
             <p className="text-white mb-4">
               We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
               By clicking "Accept All Cookies", you consent to our use of cookies. 
-              <a href="/cookiePolicy?hideCookies=true" className="text-black font-semibold hover:underline ml-1" target="_blank" rel="noopener noreferrer">
+              <button onClick={handleCookiePolicy} className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0">
                 Read Cookie Policy
-              </a>
+              </button>
              <span className="font-extralight ml-1"> 
                 &
               </span>
-              <a href="/privacyPolicy?hideCookies=true" className="text-black font-semibold hover:underline ml-1" target="_blank" rel="noopener noreferrer">
+              <button onClick={handlePrivacyPolicy} className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0">
                 Privacy Policy 
-              </a>
+              </button>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
