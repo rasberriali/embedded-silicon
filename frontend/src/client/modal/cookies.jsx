@@ -8,11 +8,9 @@ const Cookies = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Hide cookie notice on policy pages
-    if (location.pathname === '/privacyPolicy' || location.pathname === '/cookiePolicy') {
-      setIsVisible(false);
-    }
-  }, [location.pathname]);
+    // Always show the cookie notice on page load/refresh
+    setIsVisible(true);
+  }, []);
 
   const handleAcceptAll = () => {
     localStorage.setItem("cookieConsent", "accepted_all");
@@ -44,9 +42,8 @@ const Cookies = () => {
   return (
     isVisible && (
       <>
-        <div className="fixed inset-0 bg-black/5 backdrop-blur-xs z-40"></div>
-        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-          <div className="bg-blue-600/95 max-w-xl p-6 shadow-xl border border-blue-700 mx-10 font-inter">
+        <div className="fixed bottom-4 right-4 z-50">
+          <div className="bg-blue-600/95 max-w-xl p-6 shadow-xl border border-blue-700 font-inter rounded-lg">
             <div className="flex items-center mb-3">
               <span className="text-2xl mr-2">🍪</span>
               <h3 className="font-bold text-xl text-white">Cookie Notice</h3>
@@ -56,8 +53,6 @@ const Cookies = () => {
               By clicking "Accept All Cookies", you consent to our use of cookies. 
               <a 
                 href="/cookiePolicy" 
-                target="_blank" 
-                rel="noopener noreferrer" 
                 className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
               >
                 Read Cookie Policy
@@ -67,8 +62,6 @@ const Cookies = () => {
               </span>
               <a 
                 href="/privacyPolicy" 
-                target="_blank" 
-                rel="noopener noreferrer" 
                 className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
               >
                 Privacy Policy 
