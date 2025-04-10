@@ -48,11 +48,25 @@ const Cookies = () => {
   };
 
   const handleCookiePolicy = () => {
-    window.open('/cookiePolicy?hideCookies=true', '_blank');
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = window.location.origin + '/cookiePolicy?hideCookies=true';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handlePrivacyPolicy = () => {
-    window.open('/privacyPolicy?hideCookies=true', '_blank');
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = window.location.origin + '/privacyPolicy?hideCookies=true';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
