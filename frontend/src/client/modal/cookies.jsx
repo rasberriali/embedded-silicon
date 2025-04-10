@@ -52,7 +52,7 @@ const Cookies = () => {
               We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
               By clicking "Accept All Cookies", you consent to our use of cookies. 
               <a 
-                href="/cookiePolicy" 
+                onClick={handleCookiePolicyClick}
                 className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
               >
                 Read Cookie Policy
@@ -61,7 +61,7 @@ const Cookies = () => {
                 &
               </span>
               <a 
-                href="/privacyPolicy" 
+                onClick={handlePrivacyPolicyClick}
                 className="text-black font-semibold hover:underline ml-1 cursor-pointer bg-transparent border-none p-0"
               >
                 Privacy Policy 
