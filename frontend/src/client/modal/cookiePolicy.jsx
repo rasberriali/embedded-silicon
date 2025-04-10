@@ -22,7 +22,7 @@ function CookiePolicy() {
     <div className='font-inter'>
       <div className='max-w-screen-sm mx-auto p-6 2xl:p-0 mt-6 lg:mt-10 2xl:mt-20'>
         <div className='flex flex-col justify-center items-start leading-9'>
-          <h1 className='text-5xl font-bold text-center mb-8'>🍪 Cookie Policy</h1>
+          <h1 className='xl:text-5xl text-4xl font-bold text-center mb-8'>🍪 Cookie Policy</h1>
           <p className='text-start mt-4'><strong>Effective Date:</strong> [Insert Date]</p>
           
           <p>

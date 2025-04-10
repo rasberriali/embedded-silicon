@@ -42,7 +42,7 @@ const Cookies = () => {
   return (
     isVisible && (
       <>
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="fixed bottom-4 right-4 left-4 z-50">
           <div className="bg-blue-600/95 max-w-xl p-6 shadow-xl border border-blue-700 font-inter rounded-lg">
             <div className="flex items-center mb-3">
               <span className="text-2xl mr-2">🍪</span>
