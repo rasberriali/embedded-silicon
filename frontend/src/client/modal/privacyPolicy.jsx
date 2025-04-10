@@ -1,9 +1,11 @@
 import {useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function PrivacyPolicy() {
     const location = useLocation();
+    const navigate = useNavigate();
     
     useEffect(() => {
       window.scrollTo(0, 0);

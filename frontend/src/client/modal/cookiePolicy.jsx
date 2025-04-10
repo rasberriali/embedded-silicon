@@ -23,7 +23,7 @@ function CookiePolicy() {
       <div className='max-w-screen-sm mx-auto p-6 2xl:p-0 mt-6 lg:mt-10 2xl:mt-20'>
         <div className='flex flex-col justify-center items-start leading-9'>
           <h1 className='xl:text-5xl text-4xl font-bold text-center mb-8'>🍪 Cookie Policy</h1>
-          <p className='text-start mt-4'><strong>Effective Date:</strong> [Insert Date]</p>
+          <p className='text-start mt-4'><strong>Effective Date:</strong> 10/04/2025</p>
           
           <p>
             This Cookie Policy explains how we use cookies and similar technologies on our website. By using our site, you agree to the use of cookies as outlined in this policy.
@@ -100,7 +100,7 @@ function CookiePolicy() {
       </div>
       
       {/* Call to Action Section - Full Width */}
-      <div className="w-full mt-20">
+      <div className="w-full mt-20 -mb-80">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,17 +120,9 @@ function CookiePolicy() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => navigate('/contactPage')}
-                    className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-1 xl:px-6 px-4 rounded-full shadow-sm transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
+                    className="bg-blue-600 hover:bg-blue-700 py-3 px-10 text-white transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
                   >
-                    Book a consultation
-                  </motion.div>
-                  <motion.div 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => navigate('/servicesPage')}
-                    className="border-2 border-white text-white hover:bg-white/10 py-1 xl:px-6 px-4 rounded-full transition-colors xl:text-sm text-xs font-semibold cursor-pointer"
-                  >
-                    Browse services
+                    GET IN TOUCH
                   </motion.div>
                 </div>
               </div>
