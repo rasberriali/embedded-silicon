@@ -525,7 +525,7 @@ function HomePage() {
                             <p className="text-[#E0E0E0] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
                                 Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
                             </p>
-                            <div className="flex flex-row gap-4">
+                            <div className="flex flex-row gap-4 justify-center items-center">
                                 <motion.div 
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
