@@ -89,6 +89,7 @@ function NewsDetails() {
               <p className="text-sm text-gray-500 mt-2 text-center">
                 Pushing the boundaries of embedded systems innovation
               </p>
+
             </div>
           </div>
 
