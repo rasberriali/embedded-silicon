@@ -4,6 +4,10 @@ import { useNavigate, useLocation  } from 'react-router-dom';
 
 function NewsPage() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsVisible(true);
+}, []);
 
   return (
     <div className='font-inter'>
