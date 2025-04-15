@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
+import success from "../../assets/images/buildingSuccess.svg"
 import {
   Collapse,
   Typography,
@@ -63,7 +64,7 @@ const aboutMenuItems = [
     title: "News",
     description: "Latest company updates and news",
     icon: NewspaperIcon,
-    path: '/aboutPage#news'
+    path: '/newsPage'
   },
   {
     title: "Events",
@@ -78,56 +79,61 @@ const navListMenuItems = [
     title: "Integrated Chip Design",
     description: "End-to-end VLSI Design Flow Services",
     icon: SquaresPlusIcon,
+    path: '/integrated-chip-design',
     subItems: [
-      "Full VLSI Design",
-      "Full-Chip Integration",
-      "Standard Cells Development",
-      "Design Library Creation",
-      "Analog IP Blocks Development",
-      "Full Custom Layout"
+      {name: "Full VLSI Design", path: '/fullvlsi'},
+      {name: "Full-Chip Integration", path: '/fullvlsi'},
+      {name: "Standard Cells Development", path: '/standard-cells'},
+      {name: "Design Library Creation", path: '/design-library'},
+      {name: "Analog IP Blocks Development", path: '/analog-ip-blocks'},
+      {name: "Full Custom Layout", path: '/custom-layout'}
     ]
   },
   {
     title: "Application-Specific IC Verification",
     description: "Comprehensive verification services",
     icon: UserGroupIcon,
+    path: '/asic-verification',
     subItems: [
-      "ASIC Functional Verification",
-      "Post-PNR Regression",
-      "UVM Testbench Development",
-      "RTL to Transistor Level Verification",
-      "Analog Mixed Signal Verification"
+      {name: "ASIC Functional Verification", path: '/asic-functional-verification'},
+      {name: "Post-PNR Regression", path: '/post-pnr-regression'},
+      {name: "UVM Testbench Development", path: '/uvm-testbench'},
+      {name: "RTL to Transistor Level Verification", path: '/rtl-transistor-verification'},
+      {name: "Analog Mixed Signal Verification", path: '/analog-mixed-signal'}
     ]
   },
   {
     title: "Physical Design and Verification",
     description: "Expert physical design implementation",
     icon: Bars4Icon,
+    path: '/physical-design',
     subItems: [
-      "Automated Place and Route",
-      "Full Custom Layout Proficiency",
-      "Proficiency across Technology Nodes",
-      "Tailored Designs for Varied Industries"
+      {name: "Automated Place and Route", path: '/place-and-route'},
+      {name: "Full Custom Layout Proficiency", path: '/custom-layout-proficiency'},
+      {name: "Proficiency across Technology Nodes", path: '/technology-nodes'},
+      {name: "Tailored Designs for Varied Industries", path: '/industry-designs'}
     ]
   },
   {
     title: "FPGA Development",
     description: "Custom FPGA solutions and prototyping",
     icon: SunIcon,
+    path: '/fpga-development',
     subItems: [
-      "FPGA to ASIC",
-      "Test Development Platforms",
-      "Microsatellites"
+      {name: "FPGA to ASIC", path: '/fpga-to-asic'},
+      {name: "Test Development Platforms", path: '/test-platforms'},
+      {name: "Microsatellites", path: '/microsatellites'}
     ]
   },
   {
     title: "Embedded Systems Development",
     description: "Complete embedded system solutions",
     icon: GlobeAmericasIcon,
+    path: '/embedded-systems',
     subItems: [
-      "Rapid Prototyping",
-      "PCB Layout and Design",
-      "Firmware Development"
+      {name: "Rapid Prototyping", path: '/rapid-prototyping'},
+      {name: "PCB Layout and Design", path: '/pcb-design'},
+      {name: "Firmware Development", path: '/firmware-development'}
     ]
   }
 ];
@@ -138,30 +144,11 @@ function AboutUsMegaMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const aboutPagePath = "/aboutPage";
-
-  const isActive = 
-    location.pathname === aboutPagePath || 
-    aboutMenuItems.some(({ path }) => location.pathname === path || location.hash === `#${path.split('#')[1]}`);
-
-  const handleAboutUsClick = (e) => {
-    e.preventDefault();
-    if (window.innerWidth < 1024) { // lg breakpoint
-      setIsMobileMenuOpen(!isMobileMenuOpen);
-    } else {
-      setIsMenuOpen(!isMenuOpen);
-    }
-  };
-
-  const handleMenuItemClick = (path) => {
-    navigate(path);
-    setIsMobileMenuOpen(false);
-    setIsMenuOpen(false);
-  };
+ const isActive = location.pathname ==='/aboutPage';
 
   const renderItems = aboutMenuItems.map(({ icon, title, description, path }, key) => (
-    <div key={key} onClick={() => handleMenuItemClick(path)}>
-      <MenuItem className="flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200">
+    <div key={key} onClick={() => navigate(path)}>
+      <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.pathname === path ? 'bg-gray-100' : ''}`}>
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
           {React.createElement(icon, {
             strokeWidth: 2,
@@ -197,20 +184,24 @@ function AboutUsMegaMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
+          <Typography as="div" variant="small" className="font-medium font-inter">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm cursor-pointer ${isActive ? 'text-[#2D7BFD]' : ''}`}
+              className={`flex items-center gap-2 xl:py-2 py-0 pr-4 font-medium font-inter text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
-              onClick={handleAboutUsClick}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
               About Us
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""}`}
+                className={`hidden h-3 w-3 transition-transform lg:block ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""}`}
+                className={`block h-3 w-3 transition-transform lg:hidden ${
+                  isMobileMenuOpen ? "rotate-180" : ""
+                }`}
               />
             </ListItem>
           </Typography>
@@ -221,7 +212,7 @@ function AboutUsMegaMenu() {
             <div className="col-span-1">
               <div className="relative h-full rounded-lg overflow-hidden">
                 <img 
-                  src="https://placehold.co/400x600/2D7BFD/FFF" 
+                  src={success}
                   alt="Latest Achievement" 
                   className="w-full h-full object-cover"
                 />
@@ -260,9 +251,12 @@ function NavListMenu() {
   const isActive = location.pathname === '/servicesPage';
 
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description, subItems }, key) => (
+    ({ icon, title, description, subItems, path }, key) => (
       <div key={key} className="px-4">
-        <MenuItem className="flex flex-col gap-3 rounded-lg hover:bg-gray-200 p-2 ">
+        <MenuItem 
+          className="flex flex-col gap-3 rounded-lg hover:bg-gray-200 p-2"
+          onClick={() => path && navigate(path)}
+        >
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center rounded-lg bg-gray-100 p-3">
               {React.createElement(icon, {
@@ -291,17 +285,12 @@ function NavListMenu() {
                 <li 
                   key={index}
                   className="text-sm text-gray-600 hover:text-[#2D7BFD] cursor-pointer"
-                  onClick={() => {
-                    if (subItem === "Full VLSI Design") {
-                      navigate('/fullvlsi');
-                    } else if (subItem === "Full-Chip Integration") {
-                      navigate('/fullvlsi');
-                    } else {
-                      navigate('/servicesPage');
-                    }
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(subItem.path);
                   }}
                 >
-                  {subItem}
+                  {subItem.name}
                 </li>
               ))}
             </ul>
@@ -321,9 +310,9 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
+          <Typography as="div" variant="small" className="font-medium font-inter">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-inter text-sm cursor-pointer ${
+              className={`flex items-center gap-2 xl:py-2 py-0 pr-4 font-medium text-gray-900 font-inter text-sm cursor-pointer font-inter ${
                 isActive ? 'text-[#2D7BFD]' : ''
               }`}
               selected={isMenuOpen || isMobileMenuOpen}
@@ -345,7 +334,7 @@ function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-[90vw] w-[1200px] rounded-xl lg:block border border-gray-200 p-6 z-50">
+        <MenuList className="hidden max-w-[90vw] w-[1200px] rounded-xl lg:block border border-gray-200 p-6 z-50 font-inter">
           <div className="grid grid-cols-3 gap-6">
             {renderItems}
             {/* Design Consultancy Button Section */}
@@ -364,7 +353,7 @@ function NavListMenu() {
                     </Typography>
                     <Typography
                       variant="paragraph"
-                      className="text-xs text-gray-600"
+                      className="text-xs font-normal text-gray-600"
                     >
                       Get expert advice for your silicon design needs
                     </Typography>
@@ -372,7 +361,7 @@ function NavListMenu() {
                 </div>
                 <button
                   onClick={() => navigate('/contactPage')}
-                  className="bg-[#2D7BFD] hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                  className="bg-[#2D7BFD] hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-normal transition-colors duration-200"
                 >
                   Contact Us
                 </button>
@@ -418,7 +407,7 @@ function Navbar() {
   const normalClass = "text-[#162447] hover:text-[#2D7BFD] transition-colors";
 
   return (
-    <div className="sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-300 font-inter">
+    <div className="sticky top-0 z-30 bg-white/85 backdrop-blur-sm border-b border-gray-200 font-inter">
       <div className='max-w-screen-xl mx-auto flex justify-between items-center py-3 2xl:py-4 2xl:p-0 p-6 '>
         <div className='flex items-center gap-2 cursor-pointer ' onClick={() => navigate('/')}> 
           <img src={embedded} alt="logo" className='h-12 w-12 md:h-16 md:w-16'/>
@@ -438,15 +427,15 @@ function Navbar() {
           )}
         </IconButton>
 
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden  xl:p-0 p-6
-          max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none 
+        <div className={`absolute md:static top-16 left-0 w-full md:w-auto overflow-y-scroll xl:overflow-y-hidden xl:p-0 p-6
+          max-h-[500px] md:flex md:items-center md:gap-10 md:text-base text-lg font-medium shadow-md md:shadow-none font-inter
           transition-transform duration-300 bg-white md:bg-transparent ${isMobileMenuOpen ? 'block' : 'hidden md:flex'}`}>
           <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 gap-4 ">
             <Typography
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer${isActivePage('/') ? 'text-[#2D7BFD]' : ''}`}
@@ -464,7 +453,7 @@ function Navbar() {
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/careersPage') ? 'text-[#2D7BFD]' : ''}`}
@@ -479,7 +468,7 @@ function Navbar() {
               as="div"
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-medium font-inter"
             >
               <ListItem 
                 className={`flex items-center gap-2 py-2 pr-4 text-sm cursor-pointer ${isActivePage('/successStories') ? 'text-[#2D7BFD]' : ''}`}
@@ -494,7 +483,7 @@ function Navbar() {
 
         <div className='hidden md:flex'>
           <div 
-            className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 text-sm rounded-lg cursor-pointer ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`}
+            className={`bg-[#2E7CFD] hover:bg-blue-600 text-[#FFFFFF] py-2 px-6 text-sm rounded-lg cursor-pointer font-inter ${isActivePage('/contactPage') ? 'ring-2 ring-blue-300' : ''}`}
             onClick={() => navigate('/contactPage')}
           >
             Contact

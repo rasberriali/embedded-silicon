@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import backdropimage2 from "../../../assets/images/backdropimage2.svg";
+import successStory from "../../../assets/images/buildingSuccess.svg";
 
 function JobDetails() {
   const { id } = useParams();
@@ -60,7 +60,7 @@ function JobDetails() {
     <div className=''>
       <div className="relative font-inter xl:h-[60vh] h-[30vh]">
         <img
-          src={backdropimage2}
+          src={successStory}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />

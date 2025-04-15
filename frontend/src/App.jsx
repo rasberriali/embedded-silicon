@@ -10,6 +10,7 @@ import ContactPage from "./client/pages/contact-page/contactPage";
 import ServicesPage from "./client/pages/services-page/servicesPage";
 import Cookies from "./client/modal/cookies";
 import PrivacyPolicy from "./client/modal/privacyPolicy";
+import CookiePolicy from "./client/modal/cookiePolicy";
 import Leadership from "./client/pages/about-page/Leadership";
 import Awards from "./client/pages/about-page/Awards";
 import Industry from "./client/pages/about-page/Industry";
@@ -22,11 +23,16 @@ import JobCategories from "./client/pages/careers-page/jobCategories";
 import JobDetails from "./client/pages/careers-page/jobDetails";
 import SuccessStories from "./client/pages/success-page/successStories";
 import Stories from "./client/pages/success-page/stories";
+import SuccessStoriesCMS from "./client/pages/success-page/successStoriesCMS";
+import IntegratedChipDesign from "./client/pages/integrated-chip-design/integrated-chip-design";
+import NewsPage from "./client/pages/news-page/newsPage";
+import NewsDetails from "./client/pages/news-page/newsDetails";
 
 function App() {
    useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+    
   return (
     <Router>
       <Navbar />
@@ -43,13 +49,18 @@ function App() {
         <Route path="/stories" element={<Stories />}/>
         <Route path="/cookies" element={<Cookies />}/>
         <Route path="/privacyPolicy" element={<PrivacyPolicy />}/>
+        <Route path="/cookiePolicy" element={<CookiePolicy />}/>
         <Route path="/careersPage" element={<CareersPage />}/>
         <Route path="/successStories" element={<SuccessStories />}/>
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
         <Route path="/cms" element={<CMS/>}/>
         <Route path="/jobs" element={<JobList/>}/>
+        <Route path="/newsPage" element={<NewsPage/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
         <Route path="/careers/job/:id" element={<JobDetails/>}/>
+        <Route path="/newsDetails" element={<NewsDetails/>}/>
+        <Route path="/success-stories-cms" element={<SuccessStoriesCMS/>}/>
+        <Route path="/integrated-chip-design" element={<IntegratedChipDesign/>}/>
       </Routes>
       <Footer/>
     </Router>

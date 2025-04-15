@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import backdropimage2 from "../../../assets/images/backdropimage2.svg";
+import successStory from "../../../assets/images/buildingSuccess.svg";
 import servicesCarousel from "../../../assets/images/servicesCarousel.svg";
 import servicesCarousel2 from "../../../assets/images/servicesCarousel2.svg";
 import servicesCarousel3 from "../../../assets/images/servicesCarousel3.svg";
@@ -21,7 +21,6 @@ function CareersPage() {
       const response = await axios.get('http://localhost:5000/jobs');
       const jobs = response.data;
       
-      // Count jobs per category
       const counts = jobs.reduce((acc, job) => {
         acc[job.category] = (acc[job.category] || 0) + 1;
         return acc;
@@ -99,17 +98,13 @@ function CareersPage() {
   return (
     <div>
       <div className="relative font-inter xl:h-[60vh] h-[30vh]">
-        {/* Background Image */}
         <img
-          src={backdropimage2}
+          src={successStory}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent -z-10"></div>
   
-        {/* Faded Overlay using Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/70 to-black/30 -z-10"></div>
-  
-        {/* Content */}
         <div className="absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10">
           <div className="flex flex-col h-full justify-center">
             <div className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-[4.25rem] 2xl:leading-[7rem] lg:w-1/2 2xl:w-3/4">
@@ -142,11 +137,9 @@ function CareersPage() {
               alt={item.title} 
               className="w-full h-[500px] object-cover transform transition-transform duration-500 group-hover:scale-105"
             />
-            {/* Enhanced gradient overlay */}
             <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90 transition-opacity duration-500
               md:opacity-0 md:group-hover:opacity-100 opacity-100`} 
             />
-            {/* Improved content overlay */}
             <div className={`absolute bottom-0 left-0 right-0 p-8 text-white transform transition-all duration-500
               md:translate-y-8 md:group-hover:translate-y-0 md:opacity-0 md:group-hover:opacity-100 opacity-100`}
             >
@@ -161,7 +154,6 @@ function CareersPage() {
         ))}
       </div>
 
-      {/* Enhanced navigation buttons */}
       <button 
         onClick={prevSlide} 
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-12 h-12 rounded-full 
@@ -185,7 +177,6 @@ function CareersPage() {
         </svg>
       </button>
 
-      {/* Enhanced dots indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
         {carouselContent.map((_, index) => (
           <button

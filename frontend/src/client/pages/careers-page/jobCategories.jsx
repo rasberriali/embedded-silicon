@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import backdropimage2 from "../../../assets/images/backdropimage2.svg";
+import successStory from "../../../assets/images/buildingSuccess.svg";
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -57,13 +57,13 @@ function JobCategories() {
       <div className="relative font-inter xl:h-[60vh] h-[30vh]">
         {/* Background Image */}
         <img
-          src={backdropimage2}
+          src={successStory}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
     
         {/* Faded Overlay using Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/70 to-black/30 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent -z-10"></div>
     
         {/* Content */}
         <div className="absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10">
@@ -119,7 +119,7 @@ function JobCategories() {
             jobs.map((job, index) => (
               <div 
                 key={index} 
-                className='flex flex-col w-full border-2 p-4 mt-8 border-[#3B82F6] hover:bg-blue-50 transition-colors cursor-pointer'
+                className='flex flex-col w-full border-2 p-4 mt-8 border-[#3B82F6] hover:bg-blue-50 transition-colors cursor-pointer rounded-2xl'
                 onClick={() => navigate(`/careers/job/${job._id}`)}
               >
                 <div className='mb-2 text-2xl text-[#0325CE] font-medium font-inter'>

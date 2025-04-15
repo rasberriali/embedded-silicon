@@ -25,6 +25,7 @@ import pcb from "../../../assets/images/pcb.svg"
 import rapid from "../../../assets/images/rapid.svg"
 import firmware from "../../../assets/images/firmware.svg"
 import tailord from "../../../assets/images/tailord.svg"
+import servicebg from "../../../assets/images/services.svg"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -96,25 +97,18 @@ function ServicesPage() {
         transition={{ duration: 0.8 }}
       >
         <motion.div 
-          className="w-full xl:h-[80vh] h-[30vh] bg-gradient-to-tl from-[#000] via-[#2D7BFD] to-[#000]"
+          className="w-full 2xl:h-[70vh] lg:h-[90vh] h-[30vh] relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <motion.img 
-            src={dot} 
-            alt="" 
-            className="absolute top-0 left-0 xl:w-80 xl:h-80 w-40 h-40 opacity-5"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          <img 
+            src={servicebg}
+            alt="Services background"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <motion.img 
-            src={dot} 
-            alt="" 
-            className="absolute bottom-0 right-0 xl:w-80 xl:h-80 w-40 h-40 opacity-8"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          />
+          <div className="absolute inset-0" />
+          
         </motion.div>
         <motion.div 
           className='absolute inset-0 max-w-screen-xl mx-auto 2xl:p-0 xl:p-6 p-10'
@@ -122,16 +116,16 @@ function ServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-        <div className='flex flex-col h-full justify-center'>
+        <div className='flex flex-col h-full justify-start items-start xl:items-center xl:text-center 2xl:mt-15 lg:mt-10 mt-0'>
             <motion.div 
-              className="text-white text-[30px] lg:text-[60px] 2xl:text-8xl font-semibold leading-10 lg:leading-17 2xl:leading-28 lg:w-1/2 2xl:w-3/4"
+              className="text-white text-[30px] lg:text-[60px] 2xl:text-7xl font-semibold leading-8 lg:leading-17 2xl:leading-28 "
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               Embedded Silicon Tech Expertise
               <motion.div 
-                className="text-white text-sm lg:text-xl 2xl:text-2xl font-normal xl:mt-8 mt-6"
+                className="text-white text-xs lg:text-xl 2xl:text-2xl font-normal mt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}

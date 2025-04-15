@@ -473,4 +473,71 @@ html, body {
 }
 #svgMapContainer {
   margin-bottom: 2rem; /* Or use Tailwind: mb-8 */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the SVG map is visible */
+.svgMap-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Improve country visibility */
+.svgMap-country {
+  stroke: #ffffff;
+  stroke-width: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.svgMap-country:hover {
+  filter: brightness(1.1);
+  stroke-width: 2px;
+}
+
+/* Tooltip styling */
+#tooltip {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+/* Legend styling */
+.map-legend {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+}
+
+/* Fix for map container positioning */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure map is visible on mobile */
+@media (max-width: 768px) {
+  .map-container {
+    height: 400px;
+  }
+  
+  #svgMapContainer {
+    height: 100% !important;
+  }
 }
