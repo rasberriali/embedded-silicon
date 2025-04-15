@@ -23,6 +23,10 @@ import JobCategories from "./client/pages/careers-page/jobCategories";
 import JobDetails from "./client/pages/careers-page/jobDetails";
 import SuccessStories from "./client/pages/success-page/successStories";
 import Stories from "./client/pages/success-page/stories";
+import SuccessStoriesCMS from "./client/pages/success-page/successStoriesCMS";
+import IntegratedChipDesign from "./client/pages/integrated-chip-design/integrated-chip-design";
+import NewsPage from "./client/pages/news-page/newsPage";
+import NewsDetails from "./client/pages/news-page/newsDetails";
 
 function App() {
    useEffect(() => {
@@ -51,9 +55,12 @@ function App() {
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
         <Route path="/cms" element={<CMS/>}/>
         <Route path="/jobs" element={<JobList/>}/>
+        <Route path="/newsPage" element={<NewsPage/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
         <Route path="/careers/job/:id" element={<JobDetails/>}/>
-        <Route path="/successStories" element={<SuccessStories/>}/>
+        <Route path="/newsDetails" element={<NewsDetails/>}/>
+        <Route path="/success-stories-cms" element={<SuccessStoriesCMS/>}/>
+        <Route path="/integrated-chip-design" element={<IntegratedChipDesign/>}/>
       </Routes>
       <Footer/>
     </Router>

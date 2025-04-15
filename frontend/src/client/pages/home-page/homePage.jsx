@@ -436,7 +436,7 @@ function HomePage() {
             {/* Services Grid */}
             <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {[
-                { title: "Integrated Chip Design", desc: "Advanced IC design with proven processes and deep expertise for reliable project delivery.", icon: fullvlsi },
+                { title: "Integrated Chip Design", desc: "Advanced IC design with proven processes and deep expertise for reliable project delivery.", icon: fullvlsi},
                 { title: "ASIC Verification", desc: "Comprehensive verification ensuring functionality, performance, and reliability of custom chips.", icon: post },
                 { title: "Physical Design", desc: "Optimizing layout and implementing physical constraints for manufacturability and performance.", icon: pnr },
                 { title: "FPGA Development", desc: "Rapid prototyping and hardware implementation using programmable logic solutions.", icon: microsat },
@@ -446,8 +446,8 @@ function HomePage() {
                 <motion.div 
                   key={index}
                   variants={scaleIn}
-                  className="group bg-[#101010]/30 border-1 border-[#333] rounded-xl shadow-lg hover:shadow-[#2D7BFD]/30 transition-all duration-300 overflow-hidden hover:border-[#2D7BFD]/50"
-                  onClick={() => navigate('/servicesPage')}
+                  className="group bg-[#101010]/30 border-1 border-[#333] rounded-xl shadow-lg hover:shadow-[#2D7BFD]/30 transition-all duration-300 overflow-hidden hover:border-[#2D7BFD]/50 cursor-pointer"
+                  onClick={() => navigate(service.link || `/${service.title.toLowerCase().replace(/\s+/g, '-')}`)}
                 >
                   <div className="border-t-4 border-[#2D7BFD] h-1 w-0 group-hover:w-full transition-all duration-500"></div>
                   <div className="p-8">
@@ -475,115 +475,197 @@ function HomePage() {
 
         <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
           {/* Testimonials Section */}
+          {/* Testimonials Section */}
           <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="mt-40"
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl font-bold text-center text-blue-600 mb-10 font-inter">
-              What Our Clients Say
-            </motion.h2>
-            <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">JD</div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold">John Doe</h3>
-                    <p className="text-sm text-gray-500">CTO, Tech Innovations</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">AS</div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold">Alice Smith</h3>
-                    <p className="text-sm text-gray-500">VP Engineering, MicroTech</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"The expertise and professionalism of the Embedded Silicon team made our complex VLSI project a success. Their attention to detail and commitment to quality is unmatched."</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">RJ</div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold">Robert Johnson</h3>
-                    <p className="text-sm text-gray-500">Director, Semiconductor Solutions</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"Working with Embedded Silicon has been transformative for our product development. Their VLSI design services helped us bring our innovative ideas to market faster than ever before."</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        <div className="mx-auto max-w-screen-xl 2xl:p-0 p-6 ">
-
-
-         {/* Call to Action Section */}
-         <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          className="mt-20 bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-xl xl:p-10 p-6 shadow-lg"
-        >
-          <div className="flex flex-col xl:flex-row items-center justify-between">
-            <div className="xl:w-2/3 xl:pr-10">
-              <div className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6">15+ Years of Excellence</div>
-              <h3 className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight">Ready to transform your technology vision?</h3>
-              <p className="text-[#E0E0E0] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed">
-                Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services.
-              </p>
-              <div className="flex flex-row gap-4 xl:justify-start justify-center ">
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/contactPage')}
-                  className="bg-[#2D7BFD] flex items-center hover:bg-[#1A57C2] text-white py-1  px-6 xl:text-sm text-sm rounded-full shadow-sm transition-colors  font-medium cursor-pointer"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.7 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="mt-40 mb-20"
                 >
-                  Book a call
+                    <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+                        <h2 className="text-3xl font-bold text-blue-600 mb-4 md:mb-0">What Our Clients Say</h2>
+                        <div className="bg-blue-50 rounded-full py-2 px-6 flex items-center">
+                            <span className="text-blue-600 font-medium mr-2">★★★★★</span>
+                            <span className="text-gray-600">4.9/5 average rating</span>
+                        </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative"
+                        >
+                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
+                            <div className="flex items-center mb-6 mt-2">
+                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">JD</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold text-lg">John Doe</h3>
+                                    <p className="text-sm text-blue-600">CTO, Tech Innovations</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-700 italic mb-4">"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."</p>
+                            <div className="text-yellow-400">★★★★★</div>
+                        </motion.div>
+                        
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative md:mt-10"
+                        >
+                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
+                            <div className="flex items-center mb-6 mt-2">
+                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">AS</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold text-lg">Alice Smith</h3>
+                                    <p className="text-sm text-blue-600">VP Engineering, MicroTech</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-700 italic mb-4">"The expertise and professionalism of the Embedded Silicon team made our complex VLSI project a success. Their attention to detail and commitment to quality is unmatched."</p>
+                            <div className="text-yellow-400">★★★★★</div>
+                        </motion.div>
+                        
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative"
+                        >
+                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
+                            <div className="flex items-center mb-6 mt-2">
+                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">RJ</div>
+                                <div className="ml-4">
+                                    <h3 className="font-semibold text-lg">Robert Johnson</h3>
+                                    <p className="text-sm text-blue-600">Director, Semiconductor Solutions</p>
+                                </div>
+                            </div>
+                            <p className="text-gray-700 italic mb-4">"Working with Embedded Silicon has been transformative for our product development. Their VLSI design services helped us bring our innovative ideas to market faster than ever before."</p>
+                            <div className="text-yellow-400">★★★★★</div>
+                        </motion.div>
+                    </div>
                 </motion.div>
+
+                {/* Call to Action Section */}
                 <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/servicesPage')}
-                  className="border flex border-white items-center text-white hover:bg-white/10  py-1 px-6 xl:text-sm text-sm rounded-full transition-colors font-medium cursor-pointer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="mt-50 mb-20 relative overflow-hidden"
                 >
-                  Browse services
+                    <div className="absolute inset-0 bg-[url('../../../assets/images/circuit-pattern.png')] opacity-5"></div>
+                    <div className="bg-gradient-to-r from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-2xl p-10 md:p-12 shadow-2xl relative z-10">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full filter blur-3xl opacity-20 -mr-20 -mt-20"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-700 rounded-full filter blur-3xl opacity-20 -ml-20 -mb-20"></div>
+                        
+                        <div className="flex flex-col xl:flex-row items-center justify-between relative z-10">
+                            <div className="xl:w-2/3 xl:pr-10">
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                    className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6"
+                                >
+                                    15+ Years of Excellence
+                                </motion.div>
+                                <motion.h3 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight"
+                                >
+                                    Ready to transform your technology vision?
+                                </motion.h3>
+                                <motion.p 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                    viewport={{ once: true }}
+                                    className="text-[#E0E0E0] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed"
+                                >
+                                    Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services. Let's create the future together.
+                                </motion.p>
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                    viewport={{ once: true }}
+                                    className="flex flex-row gap-4"
+                                >
+                                    <motion.button 
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => navigate('/contactPage')}
+                                        className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-2 xl:px-8 px-6 rounded-full shadow-lg transition-all xl:text-base text-xs font-semibold"
+                                    >
+                                        Book a call
+                                    </motion.button>
+                                    <motion.button 
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => navigate('/servicesPage')}
+                                        className="border-2 border-white text-white hover:bg-white/10 py-2 xl:px-8 px-6 rounded-full transition-all xl:text-base text-xs font-semibold"
+                                    >
+                                        Browse services
+                                    </motion.button>
+                                </motion.div>
+                            </div>
+                            <motion.div 
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.7, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="xl:w-1/3 mt-12 xl:mt-0"
+                            >
+                                <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
+                                    <h4 className="text-white font-semibold text-lg mb-6">Why Choose Us?</h4>
+                                    <ul className="text-white/90 space-y-4">
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Industry-leading expertise</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Proven track record</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>End-to-end solutions</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Customer-centric approach</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
                 </motion.div>
-              </div>
-            </div>
-            <div className="xl:w-1/3 mt-10 xl:mt-0">
-              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-                <h4 className="text-white font-semibold mb-4">Why Choose Us?</h4>
-                <ul className="text-white/80 space-y-2">
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Industry-leading expertise
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Proven track record
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    End-to-end solutions
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
 

@@ -64,7 +64,7 @@ const aboutMenuItems = [
     title: "News",
     description: "Latest company updates and news",
     icon: NewspaperIcon,
-    path: '/aboutPage#news'
+    path: '/newsPage'
   },
   {
     title: "Events",
@@ -79,56 +79,61 @@ const navListMenuItems = [
     title: "Integrated Chip Design",
     description: "End-to-end VLSI Design Flow Services",
     icon: SquaresPlusIcon,
+    path: '/integrated-chip-design',
     subItems: [
-      "Full VLSI Design",
-      "Full-Chip Integration",
-      "Standard Cells Development",
-      "Design Library Creation",
-      "Analog IP Blocks Development",
-      "Full Custom Layout"
+      {name: "Full VLSI Design", path: '/fullvlsi'},
+      {name: "Full-Chip Integration", path: '/fullvlsi'},
+      {name: "Standard Cells Development", path: '/standard-cells'},
+      {name: "Design Library Creation", path: '/design-library'},
+      {name: "Analog IP Blocks Development", path: '/analog-ip-blocks'},
+      {name: "Full Custom Layout", path: '/custom-layout'}
     ]
   },
   {
     title: "Application-Specific IC Verification",
     description: "Comprehensive verification services",
     icon: UserGroupIcon,
+    path: '/asic-verification',
     subItems: [
-      "ASIC Functional Verification",
-      "Post-PNR Regression",
-      "UVM Testbench Development",
-      "RTL to Transistor Level Verification",
-      "Analog Mixed Signal Verification"
+      {name: "ASIC Functional Verification", path: '/asic-functional-verification'},
+      {name: "Post-PNR Regression", path: '/post-pnr-regression'},
+      {name: "UVM Testbench Development", path: '/uvm-testbench'},
+      {name: "RTL to Transistor Level Verification", path: '/rtl-transistor-verification'},
+      {name: "Analog Mixed Signal Verification", path: '/analog-mixed-signal'}
     ]
   },
   {
     title: "Physical Design and Verification",
     description: "Expert physical design implementation",
     icon: Bars4Icon,
+    path: '/physical-design',
     subItems: [
-      "Automated Place and Route",
-      "Full Custom Layout Proficiency",
-      "Proficiency across Technology Nodes",
-      "Tailored Designs for Varied Industries"
+      {name: "Automated Place and Route", path: '/place-and-route'},
+      {name: "Full Custom Layout Proficiency", path: '/custom-layout-proficiency'},
+      {name: "Proficiency across Technology Nodes", path: '/technology-nodes'},
+      {name: "Tailored Designs for Varied Industries", path: '/industry-designs'}
     ]
   },
   {
     title: "FPGA Development",
     description: "Custom FPGA solutions and prototyping",
     icon: SunIcon,
+    path: '/fpga-development',
     subItems: [
-      "FPGA to ASIC",
-      "Test Development Platforms",
-      "Microsatellites"
+      {name: "FPGA to ASIC", path: '/fpga-to-asic'},
+      {name: "Test Development Platforms", path: '/test-platforms'},
+      {name: "Microsatellites", path: '/microsatellites'}
     ]
   },
   {
     title: "Embedded Systems Development",
     description: "Complete embedded system solutions",
     icon: GlobeAmericasIcon,
+    path: '/embedded-systems',
     subItems: [
-      "Rapid Prototyping",
-      "PCB Layout and Design",
-      "Firmware Development"
+      {name: "Rapid Prototyping", path: '/rapid-prototyping'},
+      {name: "PCB Layout and Design", path: '/pcb-design'},
+      {name: "Firmware Development", path: '/firmware-development'}
     ]
   }
 ];
@@ -245,9 +250,12 @@ function NavListMenu() {
   const isActive = location.pathname === '/servicesPage';
 
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description, subItems }, key) => (
+    ({ icon, title, description, subItems, path }, key) => (
       <div key={key} className="px-4">
-        <MenuItem className="flex flex-col gap-3 rounded-lg hover:bg-gray-200 p-2 ">
+        <MenuItem 
+          className="flex flex-col gap-3 rounded-lg hover:bg-gray-200 p-2"
+          onClick={() => path && navigate(path)}
+        >
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center rounded-lg bg-gray-100 p-3">
               {React.createElement(icon, {
@@ -276,17 +284,12 @@ function NavListMenu() {
                 <li 
                   key={index}
                   className="text-sm text-gray-600 hover:text-[#2D7BFD] cursor-pointer"
-                  onClick={() => {
-                    if (subItem === "Full VLSI Design") {
-                      navigate('/fullvlsi');
-                    } else if (subItem === "Full-Chip Integration") {
-                      navigate('/fullvlsi');
-                    } else {
-                      navigate('/servicesPage');
-                    }
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(subItem.path);
                   }}
                 >
-                  {subItem}
+                  {subItem.name}
                 </li>
               ))}
             </ul>

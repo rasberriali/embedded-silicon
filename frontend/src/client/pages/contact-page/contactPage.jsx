@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import emailjs from '@emailjs/browser';
 import madrigal from "../../../assets/images/madrigal.jpg"
 import dropdown from "../../../assets/images/dropdown.svg"
 import email from "../../../assets/images/email-icon.svg"
@@ -9,6 +10,14 @@ import building from "../../../assets/images/building.jpg"
 function ContactPage() {
   const [showAllServices, setShowAllServices] = useState(false);
   const [selectedServices, setSelectedServices] = useState([]);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,6 +31,48 @@ function ContactPage() {
         return [...prev, service];
       }
     });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const templateParams = {
+        ...formData,
+        services: selectedServices.join(', ')
+      };
+
+      await emailjs.send(
+        'service_0bthrcy', 
+        'template_y7hs94r', 
+        templateParams,
+        'ITmUKPndfKZTeDw4i' 
+      );
+
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setSelectedServices([]);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const allServices = [
@@ -119,11 +170,15 @@ function ContactPage() {
               <div className='text-[#647185] text-base font-normal leading-5 mb-8'>Let us know about your project and we will get back to you with<br/> our
               proposal and timeline.</div>
 
-              <form className="space-y-6 xl:p-0 p-4">
+              <form className="space-y-6 xl:p-0 p-4" onSubmit={handleSubmit}>
               <div className='space-y-2'>
                 <label className="block text-gray-700 font-medium">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
                   className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -132,6 +187,10 @@ function ContactPage() {
                 <label className="block text-gray-700 font-medium">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                   className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -140,6 +199,10 @@ function ContactPage() {
                 <label className="block text-gray-700 font-medium">Phone</label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
                   className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -147,10 +210,29 @@ function ContactPage() {
               <div className='space-y-2'>
                 <label className="block text-gray-700 font-medium">How can we help you?</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   rows="4"
                 ></textarea>
               </div>
+
+              {submitStatus === 'success' && (
+                <div className="text-green-600 text-sm">Message sent successfully!</div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="text-red-600 text-sm">Failed to send message. Please try again.</div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className='flex flex-row justify-center items-center w-full p-2 bg-[#2d79fd] hover:bg-[#2d79fdb2] text-base font-semibold rounded-[10px] text-white mt-8 disabled:opacity-50'
+              >
+                {isSubmitting ? 'Sending...' : 'Submit'}
+              </button>
             </form>
             
 
@@ -184,7 +266,6 @@ function ContactPage() {
                   className={`transform transition-transform ${showAllServices ? 'rotate-180' : ''}`}
                 />
               </div>
-              <div className='flex flex-row justify-center items-center w-full p-2 bg-[#2d79fd] hover:bg-[#2d79fdb2] text-base font-semibold rounded-[10px] text-white mt-8'>Submit</div>
             </div>
             </div>
         </div>

@@ -88,14 +88,6 @@ function CookiePolicy() {
           <p>
             We may update this Cookie Policy occasionally to reflect changes in technology, law, or our services. Please revisit this page periodically.
           </p>
-
-          <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>5. Contact Us</h2>
-          <p>
-            If you have any questions about our use of cookies, feel free to contact us:
-          </p>
-          <p>
-            📧 Email: info@esilicontech.com
-          </p>
         </div>
       </div>
       
