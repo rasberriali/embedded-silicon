@@ -5,6 +5,9 @@ import total from "../../../assets/images/total.png";
 import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
 import brain from "../../../assets/images/brain.svg";
+import synopsisViolet from "../../../assets/images/synopsisViolet.jpg";
+import acs from "../../../assets/images/acs.png";
+import camp from "../../../assets/images/camp.svg";
 
 const partnershipData = [
   {
@@ -27,7 +30,7 @@ const partnershipData = [
   {
     id: 2,
     name: "Siemens Industrial Innovation",
-    logo: siemens,
+    logo: acs,
     description: "Collaborative partnership focusing on industrial automation and Industry 4.0 solutions through cutting-edge semiconductor technology.",
     achievements: [
       "Created next-gen industrial control systems",
@@ -43,8 +46,8 @@ const partnershipData = [
   },
   {
     id: 3,
-    name: "Inditex Tech Solutions",
-    logo: inditex,
+    name: "Synopsis Tech Solutions",
+    logo: synopsisViolet,
     description: "Strategic alliance in developing retail technology solutions and smart supply chain management systems.",
     achievements: [
       "Implemented RFID chip solutions across global retail chains",
@@ -149,7 +152,7 @@ const Industry = () => {
 
       {/* Partnership Showcase */}
       <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-screen-xl mx-auto px-6 2xl:p-0">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
             Our Strategic Partners
           </h2>

@@ -8,6 +8,7 @@ import awardsSetting2 from "../../../assets/images/awardsSetting2.svg";
 import total from "../../../assets/images/total.png";
 import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
+import awsAdvanceTier from "../../../assets/images/awsAdvanceTier.png";
 
 // Award Data
 const awardsData_tab = [
@@ -20,7 +21,7 @@ const awardsData_tab = [
     impact: "Reduced power consumption by 40%"
   },
   { 
-    image: inditex, 
+    image: awsAdvanceTier, 
     text: "Industry Leadership Award for pioneering advancements in embedded systems.",
     year: "2023",
     category: "Design Excellence",

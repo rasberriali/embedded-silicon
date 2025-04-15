@@ -2,68 +2,67 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import collaborateleadership from "../../../assets/images/collaborateleadership.svg";
 
-import innovation from "../../../assets/images/innovation.png"
-import credit from "../../../assets/images/credit.png"
-import ebay from "../../../assets/images/ebay.png"
-import total from "../../../assets/images/total.png"
-import inditex from "../../../assets/images/inditex.png"
-import siemens from "../../../assets/images/siemens.png"
-import spongebobbb from "../../../assets/images/spongebobbb.jpg"
+import person1 from "../../../assets/images/person1.png"
+import person2 from "../../../assets/images/person2.png"
+import person3 from "../../../assets/images/person3.png"
+import person4 from "../../../assets/images/person4.jpg"
+import person5 from "../../../assets/images/person5.jpg"
+import person6 from "../../../assets/images/person6.png"
 
 const leadershipData = [
   { 
     name: "Person Name 1", 
-    position: "Associate Engagement Director", 
-    image: spongebobbb,
-    expertise: ["Semiconductor Design", "Team Leadership", "Strategic Planning"],
+    position: "Head of Embedded Development Group", 
+    image: person1,
+    expertise: ["Semiconductor Design", "Team Leadership", "Strategic Planning", "FPGA Design","Firmware Development"],
     experience: "15+ years in semiconductor industry",
     achievements: "Led 20+ successful chip design projects",
     education: "Ph.D. in Electrical Engineering"
   },
   { 
     name: "Person Name 2", 
-    position: "Associate Engagement Director", 
-    image: credit,
-    expertise: ["Product Development", "Innovation Management", "R&D"],
-    experience: "12+ years in embedded systems",
+    position: "RTL and Firmware Team Lead", 
+    image: person2,
+    expertise: ["RTL Coding", " Firmware Architecture", "Embedded Systems"],
+    experience: "14+ years in digital system design",
     achievements: "Holds 8 patents in silicon technology",
     education: "M.S. in Computer Engineering"
   },
   { 
     name: "Person Name 3", 
-    position: "Associate Engagement Director", 
-    image: ebay,
-    expertise: ["Quality Assurance", "Process Optimization", "Team Management"],
-    experience: "10+ years in semiconductor manufacturing",
-    achievements: "Reduced production costs by 30%",
+    position: "Lead Physical Design Engineer", 
+    image: person3,
+    expertise: ["Clock Tree Synthesis", "Process Optimization", "STA Closure"],
+    experience: "10+ years in layout and implementation",
+    achievements: "Led power and timing closure on high-complexity SoCs",
     education: "B.S. in Electronics Engineering"
   },
   { 
     name: "Person Name 4", 
-    position: "Associate Engagement Director", 
-    image: total,
+    position: "Director of R&D and Functional Verification", 
+    image: person4,
     expertise: ["Project Management", "Client Relations", "Strategy"],
     experience: "18+ years in tech industry",
-    achievements: "Managed $100M+ projects",
-    education: "MBA, Technical Management"
+    achievements: "Holds multiple patents in functional validation techniques",
+    education: "Ph.D. in Electrical Engineering"
   },
   { 
     name: "Person Name 5", 
-    position: "Chief Strategy Officer", 
-    image: inditex,
-    expertise: ["Business Strategy", "Market Analysis", "Innovation"],
-    experience: "20+ years in leadership roles",
-    achievements: "Drove 40% company growth",
-    education: "MBA, Harvard Business School"
+    position: "Senior Layout and Integration Lead", 
+    image: person5,
+    expertise: ["Analog Layout", "Top Block Integration ", "FinFET Technologies"],
+    experience: "11+ years in full custom layout",
+    achievements: "Led layout projects for analog IPs and chip-level integration across FinFET technologies",
+    education: "Ph.D. in Electronics Engineering"
   },
   { 
     name: "Person Name 6", 
-    position: "Chief Technology Officer", 
-    image: siemens,
-    expertise: ["Technology Strategy", "R&D Leadership", "Innovation"],
-    experience: "25+ years in semiconductor industry",
-    achievements: "Pioneer in AI chip design",
-    education: "Ph.D. in Computer Science"
+    position: "Program Director for R&D and Analog IP Development", 
+    image: person6,
+    expertise: [" Power Management Circuits Strategy", "Analog IPs ", "Mixed-Signal Integration"],
+    experience: "16+ years in semiconductor research and analog design",
+    achievements: "Developed analog building blocks such as POR, voltage regulators, and clock generators",
+    education: "Ph.D. in Electronics Engineering"
   }
 ];
 
@@ -124,8 +123,8 @@ function Leadership() {
 
 
       {/* Our People Section */}
-      <div className="w-full bg-white flex justify-center py-8 sm:py-16 px-4 sm:px-0">
-        <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg bg-white p-4 sm:p-8 xl:p-10 shadow-sm">
+      <div className="w-full bg-white flex justify-center py-4 sm:py-8 px-4 sm:px-0 mt-8">
+        <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg bg-white p-4 sm:p-6 xl:p-8 shadow-sm">
           {/* Borders with responsive widths */}
           <div className="absolute top-0 left-0 w-[30px] sm:w-[50px] h-[1px] bg-[#2E7CFD]"></div>
           <div className="absolute top-0 right-0 w-[calc(100%-80px)] sm:w-[calc(100%-120px)] h-[1px] bg-[#2E7CFD]"></div>
@@ -134,7 +133,7 @@ function Leadership() {
           <div className="absolute bottom-0 left-0 w-full h-[2px] sm:h-[3px] bg-[#2E7CFD]"></div>
 
           {/* Heading with responsive positioning */}
-          <div className="absolute -top-3 sm:-top-4 left-6 sm:left-10 flex items-center px-2 sm:px-4 py-1 bg-white whitespace-nowrap">
+          <div className="absolute -top-4 sm:-top-5 left-6 sm:left-10 flex items-center px-2 sm:px-4 py-1 bg-white whitespace-nowrap">
             <h2 className="text-base sm:text-lg xl:text-xl font-bold text-[#111827] px-2 sm:px-4">
               Meet Our Leaders
             </h2>
@@ -142,11 +141,11 @@ function Leadership() {
           </div>
 
           {/* Description with responsive text */}
-          <div className="mt-6 ml-3 mr-3 sm:ml-5 sm:mr-5">
+          <div className="mt-4 ml-3 mr-3 sm:ml-5 sm:mr-5">
             <p className="text-[#374151] text-xs sm:text-sm xl:text-base leading-relaxed">
-              With over two decades of experience since 2002, our leadership team has cultivated a culture 
-              of excellence, innovation, and continuous growth. Each leader brings unique expertise and 
-              vision to drive our company's success in the semiconductor industry.
+            Guided by decades of engineering excellence, our leadership team empowers innovation across IC design and embedded systems.
+            With deep expertise and global project experience, they drive our mission to deliver world-class semiconductor solutions 
+            designed, verified, and built in the Philippines.
             </p>
           </div>
         </div>
@@ -154,7 +153,7 @@ function Leadership() {
 
       {/* Leadership Team Grid */}
       <div className="w-full flex justify-center py-2 bg-white relative px-4 sm:px-0">
-        <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg p-4 sm:p-8 xl:p-10">
+        <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg p-4 sm:p-6 xl:p-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 relative z-12">
             {leadershipData.map((leader, index) => (
               <div 
@@ -166,11 +165,11 @@ function Leadership() {
                 onClick={() => setSelectedLeader(leader)}
               >
                 {/* Image Container */}
-                <div className="w-full h-[200px] sm:h-[250px] relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="w-full h-[200px] sm:h-[250px] relative overflow-hidden group-hover:scale-105 transition-transform duration-500 flex items-center justify-center bg-gray-100">
                   <img 
                     src={leader.image} 
                     alt={leader.name} 
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full w-auto h-auto object-contain p-2"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -222,11 +221,11 @@ function Leadership() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-              <div>
+              <div className="flex items-center justify-center bg-gray-100 rounded-lg p-2">
                 <img 
                   src={selectedLeader.image} 
                   alt={selectedLeader.name} 
-                  className="w-full h-[200px] sm:h-[300px] object-cover rounded-lg shadow-lg"
+                  className="max-w-full max-h-[300px] w-auto h-auto object-contain"
                 />
               </div>
               

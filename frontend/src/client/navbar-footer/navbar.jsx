@@ -138,20 +138,30 @@ function AboutUsMegaMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const aboutPagePath = "/aboutPage"; // Main About Us page
+  const aboutPagePath = "/aboutPage";
 
-  // Check if About Us is active (either submenu item or main page is active)
   const isActive = 
     location.pathname === aboutPagePath || 
     aboutMenuItems.some(({ path }) => location.pathname === path || location.hash === `#${path.split('#')[1]}`);
 
-  const handleAboutUsClick = () => {
-    navigate(aboutPagePath); // Navigate to main About Us page
+  const handleAboutUsClick = (e) => {
+    e.preventDefault();
+    if (window.innerWidth < 1024) { // lg breakpoint
+      setIsMobileMenuOpen(!isMobileMenuOpen);
+    } else {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
+
+  const handleMenuItemClick = (path) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+    setIsMenuOpen(false);
   };
 
   const renderItems = aboutMenuItems.map(({ icon, title, description, path }, key) => (
-    <div key={key} onClick={() => navigate(path)}>
-      <MenuItem className={`flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200 ${location.pathname === path ? 'bg-gray-100' : ''}`}>
+    <div key={key} onClick={() => handleMenuItemClick(path)}>
+      <MenuItem className="flex items-center gap-3 rounded-lg p-4 hover:bg-gray-200">
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-4 bg-gray-200">
           {React.createElement(icon, {
             strokeWidth: 2,
@@ -162,7 +172,7 @@ function AboutUsMegaMenu() {
           <Typography
             variant="h6"
             color="blue-gray"
-            className={`flex items-center text-sm font-bold font-inter ${location.pathname === path ? 'text-[#2D7BFD]' : ''}`}
+            className="flex items-center text-sm font-bold font-inter"
           >
             {title}
           </Typography>
@@ -189,9 +199,9 @@ function AboutUsMegaMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm cursor-pointer${isActive ? 'text-[#2D7BFD]' : ''}`}
+              className={`flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 text-sm cursor-pointer ${isActive ? 'text-[#2D7BFD]' : ''}`}
               selected={isMenuOpen || isMobileMenuOpen}
-              onClick={handleAboutUsClick} // Navigate to About Page when clicked
+              onClick={handleAboutUsClick}
             >
               About Us
               <ChevronDownIcon
@@ -231,13 +241,15 @@ function AboutUsMegaMenu() {
         </MenuList>
       </Menu>
       <div className="block lg:hidden">
-        <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+        <Collapse open={isMobileMenuOpen}>
+          <div className="bg-white p-4 rounded-lg shadow-lg">
+            {renderItems}
+          </div>
+        </Collapse>
       </div>
     </React.Fragment>
   );
 }
-
-
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

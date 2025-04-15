@@ -13,7 +13,7 @@ import total from "../../../assets/images/total.png"
 import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
 import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
-import pin from "../../../assets/images/pin.svg";
+import person6 from "../../../assets/images/person6.png"
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
@@ -198,7 +198,7 @@ useEffect(() => {
       `;
       tooltip.style.display = "block";
       tooltip.style.left = event.pageX + 10 + "px";
-      tooltip.style.top = event.pageY - 30 + "px";
+      tooltip.style.top = event.pageY - 6 + "px";
       event.target.style.fill = countryData.color;
       event.target.style.stroke = "#ffffff";
       event.target.style.strokeWidth = "1px";
@@ -305,7 +305,7 @@ useEffect(() => {
         { label: "200+ yrs", description: "of combined experience" },
         { label: "50+", description: "engineers and growing" },
         { label: "Established in 2020", description: "with offices in Alabang and Rizal" },
-        { label: "30", description: "Partnerships" }
+        { label: "6+", description: "Partnerships" }
       ].map((fact, index) => (
         <div key={index} className="flex-1 min-w-[180px] text-center flex flex-col items-center justify-center">
           <p className="text-[#1A57C2] text-xl sm:text-2xl md:text-3xl font-bold mb-1">{fact.label}</p>
@@ -323,19 +323,21 @@ useEffect(() => {
     <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-8 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
       <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Company History</h2>
       <p className="text-sm text-gray-300 mb-4">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        In deleniti repellat eum harum quas ducimus aliquam tempore 
-        vel ad earum dolore consequatur labore eligendi dolores, 
-        molestias suscipit atque, dicta enim.
+      Embedded Silicon Technology Solutions Corp. (ESI) was founded in 2020 with a clear purpose: to build a Filipino-owned center of excellence 
+      in IC design and embedded systems. With its main office located in Ayala Alabang, Muntinlupa City, and a second site in Taytay, Province of Rizal, 
+      ESI was established under the leadership of Robert Minguez, a visionary who believed in the power of local talent. What began as a small team with a 
+      big dream has grown into a skilled and passionate group of over 50 engineers, offering complete solutions ranging from chip design and analog/mixed-signal 
+      integration to embedded software development.
       </p>
       <p className="text-sm text-gray-300 mb-4">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-        In deleniti repellat eum harum quas ducimus aliquam tempore 
-        vel ad earum dolore consequatur labore eligendi dolores, 
-        molestias suscipit atque, dicta enim.
-      </p>
+      Through consistent progress and a strong commitment to quality, ESI has built strong and enduring partnerships with clients in the United States, Singapore, Japan, and Malaysia. 
+      These relationships are rooted not only in deep technical expertise but also in trust, adaptability, and a genuine drive to deliver results that meet real-world needs. Whether 
+      working onsite or remotely, ESI continues to provide reliable and efficient services, earning repeat projects and recognition for its consistent performance.
+       </p>
       <p className="text-sm text-gray-300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error architecto ad tenetur dignissimos nihil culpa.
+      At the core of ESI is a stable and dedicated team that upholds a culture of collaboration and excellence. This unity has played a key role in the company's long-term success and smooth 
+      coordination with global partners. More than just a technology provider, ESI stands as a reflection of Filipino innovation and determination. As the company continues to grow, it remains 
+      committed to its values of leading through innovation, inspiring excellence, and proudly demonstrating that world-class engineering can thrive in the Philippines.  
       </p>
     </div>
 
@@ -400,7 +402,7 @@ useEffect(() => {
     {[ 
       {
         title: "Mission",
-        text: "To be the preferred technology development partner, fostering world-class research and innovation in IC design and embedded systems. We drive progress through collaboration, continuous learning, and problem-solving.",
+        text: "To provide top-notch IC and embedded system design services powered by Filipino talent, passion, and precision.",
         icon: missionIcon,
       },
       {
@@ -594,8 +596,8 @@ useEffect(() => {
     <div className="flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
       {/* First Leader */}
       <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
-        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
-          <img src="/your-svg-file.svg" alt="Profile Icon" className="w-20 sm:w-24 h-20 sm:h-24" />
+        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+          <img src={person6} alt="Mr. Robert O. Minguez II" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-4 sm:mt-6">Mr. Robert O. Minguez II</h3>
         <p className="text-blue-600 font-semibold text-sm sm:text-base">CEO & President</p>
@@ -607,8 +609,8 @@ useEffect(() => {
 
       {/* Second Leader */}
       <div className="text-center flex-1 transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
-        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
-          <img src="/your-svg-file.svg" alt="Profile Icon" className="w-20 sm:w-24 h-20 sm:h-24" />
+        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-auto bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+          <img src={person6} alt="Mr. Fred Chua" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-lg sm:text-xl md:text-2xl font-bold mt-4 sm:mt-6">Mr. Fred Chua</h3>
         <p className="text-blue-600 font-semibold text-sm sm:text-base">Director</p>
@@ -632,5 +634,7 @@ useEffect(() => {
 }
 
 export default AboutPage;
+
+
 
 
