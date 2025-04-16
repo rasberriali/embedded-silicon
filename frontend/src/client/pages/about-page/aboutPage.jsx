@@ -49,15 +49,19 @@ useEffect(() => {
     existingMapContainer.innerHTML = ""; // Clear any existing map
   }
 
+  // Get the container width to determine screen size
+  const containerWidth = existingMapContainer?.offsetWidth || 0;
+  const isSmallScreen = containerWidth < 640; // sm breakpoint
+
   const map = new svgMap({
     targetElementID: "svgMapContainer",
-    colorNoData: "#BFB9B9", // Lighter gray that won't show tooltip
+    colorNoData: "#BFB9B9",
     colorMax: "#2d7bfd",
     showZoomReset: true,
     mouseWheelZoomEnabled: false,
-    initialZoom: 0.9,
-    initialPan: { x: 80, y: 0 },
-    noDataText: "", // Remove "no data available" text
+    initialZoom: isSmallScreen ? 0.6 : 0.9,
+    initialPan: isSmallScreen ? { x: 0, y: 0 } : { x: 80, y: 0 },
+    noDataText: "",
     data: {
       data: {
         activities: { format: "{0}" },
@@ -92,7 +96,7 @@ useEffect(() => {
 
   // Add contact information
   const contactInfo = `
-    <div style="display: flex; align-items: center; width: 100%; background-color: #ECECEC;">
+    <div style="display: flex; align-items: center; width: 100%; background-color: #ECECEC font-inter;">
       <div style="display: flex; align-items: center; justify-content: center; width: 100%; color: #666; font-size: 14px; padding: 4px 0;">
         <div style="display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 1200px;">
           <div style="display: flex; align-items: center; gap: 8px;">
@@ -274,7 +278,7 @@ useEffect(() => {
   </div>
 
   {/* Content Container */}
-  <div className="relative h-full max-w-screen-xl mx-auto">
+  <div className="relative h-full max-w-screen-xl mx-auto font-inter">
     <div className="flex items-center h-full py-32">
       <div className={`max-w-2xl transform transition-all duration-1000 ${
         isVisible.content ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
@@ -292,7 +296,7 @@ useEffect(() => {
 </div>
 
 {/* Key Facts Section */}
-<div className="w-full max-w-screen-xl mx-auto py-12">
+<div className="w-full max-w-screen-xl mx-auto py-12 font-inter">
   <div>
     <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
       <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
@@ -318,7 +322,7 @@ useEffect(() => {
 
 
 {/* Company History & Building Image */}
-<div className="w-full max-w-screen-xl mx-auto py-4">
+<div className="w-full max-w-screen-xl mx-auto py-4 font-inter">
   <div className="w-full flex flex-col-reverse md:flex-row">
     <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-8 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
       <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Company History</h2>
@@ -354,7 +358,7 @@ useEffect(() => {
 
 
 {/* Company Overview Sheet */}
-<div className="w-full max-w-screen-xl mx-auto py-5">
+<div className="w-full max-w-screen-xl mx-auto py-5 font-inter">
   <div className="w-full">
     <div className="bg-[#043A65] text-white px-4 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
       <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-8">
@@ -378,7 +382,7 @@ useEffect(() => {
 
 
 {/* Company Values Section */}
-<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8">
+<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8 font-inter">
   {/* Heading and Intro Text */}
   <div className="max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10">
     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -466,7 +470,7 @@ useEffect(() => {
 
 
 {/* Our Clients */}
-<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
+<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-6 font-inter bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
   <div className="ml-10 text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in">
     Our Clients 
     <span className="text-sm sm:text-base md:text-xl text-[#647185] font-normal">
@@ -513,7 +517,7 @@ useEffect(() => {
 <div className="relative w-full">
   {/* Partner Countries List */}
   <div className="w-full bg-[#ECECEC]">
-    <div className="flex flex-wrap justify-center items-center gap-6 py-2">
+    <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-6 py-2 px-2">
       {/* Country Flags */}
       {[
         { src: "us", name: "United States" },
@@ -524,62 +528,63 @@ useEffect(() => {
         { src: "id", name: "Indonesia" },
         { src: "ph", name: "Philippines" },
       ].map((country, index) => (
-        <div key={index} className="flex items-center gap-2">
+        <div key={index} className="flex items-center gap-1 sm:gap-2">
           <img 
             src={`https://flagcdn.com/w40/${country.src}.png`} 
-            width="32" 
-            height="24" 
+            width="24" 
+            height="18" 
             alt={country.name} 
             className="border border-gray-100"
           />
-          <span className="text-sm font-medium">{country.name}</span>
+          <span className="text-xs sm:text-sm font-medium">{country.name}</span>
         </div>
       ))}
     </div>
   </div>
 
   {/* Map Container */}
-  <div className="relative w-full  "> {/* Adjusted map height */}
-    <div id="svgMapContainer" className="bottom-0"></div>
+  <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+    <div id="svgMapContainer" className="w-full h-full"></div>
 
     {/* "Our Offices" Title */}
-    <div className="absolute top-1 left-40 text-[#201d1d] text-xl sm:text-2xl p-6 font-bold z-20">
+    <div className="absolute top-1 left-4 sm:left-40 text-[#201d1d] text-lg sm:text-xl md:text-2xl p-4 sm:p-6 font-bold z-20">
       Our Offices
     </div>
 
     {/* Legend Box */}
-    <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md z-20">
-      <div className="flex flex-col gap-3">
+    <div className="absolute top-4 right-2 sm:right-4 bg-white/90 p-2 sm:p-4 rounded-lg shadow-md z-20 max-w-[200px] sm:max-w-none">
+      <div className="flex flex-col gap-2 sm:gap-3">
         <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
-          <span className="text-sm">Multiple ongoing activities + growing partnerships</span>
+          <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
+          <span className="text-xs sm:text-sm">Multiple ongoing activities + growing partnerships</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#2d7bfd" }}></span>
-          <span className="text-sm">Ongoing activities</span>
+          <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full" style={{ backgroundColor: "#2d7bfd" }}></span>
+          <span className="text-xs sm:text-sm">Ongoing activities</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#7eaefc" }}></span>
-          <span className="text-sm">Potential partnerships</span>
+          <span className="w-3 h-3 sm:w-4 sm:h-4 rounded-full" style={{ backgroundColor: "#7eaefc" }}></span>
+          <span className="text-xs sm:text-sm">Potential partnerships</span>
         </div>
       </div>
     </div>
 
     {/* Tooltip */}
-    <div id="tooltip" className="fixed hidden bg-white/95 p-3 rounded-lg shadow-lg border border-gray-200 max-w-[250px] z-50">
+    <div id="tooltip" className="fixed hidden bg-white/95 p-2 sm:p-3 rounded-lg shadow-lg border border-gray-200 max-w-[200px] sm:max-w-[250px] z-50">
       <style jsx>{`
         .tooltip-content {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
         }
         .tooltip-content h3 {
           font-weight: 600;
           color: #1a57c2;
           margin-bottom: 4px;
+          font-size: 0.875rem;
         }
         .tooltip-content p {
           color: #4a5568;
           margin: 0;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
         }
       `}</style>
     </div>
@@ -587,7 +592,7 @@ useEffect(() => {
 </div>
 
 {/* Leadership Section - Placed Below Map */}
-<div className="bg-white">
+<div className="bg-white font-inter">
   <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 p-6">
     <h2 className="text-[#040404] text-xl sm:text-2xl md:text-4xl font-semibold text-center mb-8 sm:mb-12">
       Our Experienced Management Team
