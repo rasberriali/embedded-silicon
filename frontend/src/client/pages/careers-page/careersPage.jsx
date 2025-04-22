@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function CareersPage() {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
   const navigate = useNavigate();
   const [jobCounts, setJobCounts] = useState({});
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ function CareersPage() {
 
   const fetchJobCounts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/jobs');
+      const response = await axios.get(`${apiUrl}/jobs`);
       const jobs = response.data;
       
       const counts = jobs.reduce((acc, job) => {

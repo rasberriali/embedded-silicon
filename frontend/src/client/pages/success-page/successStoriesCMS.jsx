@@ -25,6 +25,8 @@ function SuccessStoriesCMS({ initialSection }) {
     }
   });
 
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+
   const [successStories, setSuccessStories] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
@@ -56,7 +58,7 @@ function SuccessStoriesCMS({ initialSection }) {
 
   const fetchSuccessStories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/success-stories');
+      const response = await axios.get(`${apiUrl}/success-stories`);
       setSuccessStories(response.data);
     } catch (error) {
       console.error('Error fetching success stories:', error);
@@ -118,11 +120,11 @@ function SuccessStoriesCMS({ initialSection }) {
       let response;
       if (selectedStory) {
         // Update existing story
-        response = await axios.put(`http://localhost:5000/success-stories/${selectedStory._id}`, formattedStoryData);
+        response = await axios.put(`${apiUrl}/success-stories/${selectedStory._id}`, formattedStoryData);
         alert('Success story updated!');
       } else {
         // Create new story
-        response = await axios.post('http://localhost:5000/success-stories', formattedStoryData);
+        response = await axios.post(`${apiUrl}/success-stories`, formattedStoryData);
         alert('Success story posted successfully!');
       }
       
@@ -154,7 +156,7 @@ function SuccessStoriesCMS({ initialSection }) {
     if (!storyToDelete) return;
     
     try {
-      await axios.delete(`http://localhost:5000/success-stories/${storyToDelete._id}`);
+      await axios.delete(`${apiUrl}/success-stories/${storyToDelete._id}`);
       setDeleteConfirmOpen(false);
       setStoryToDelete(null);
       alert('Success story deleted successfully!');

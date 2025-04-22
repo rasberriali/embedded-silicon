@@ -78,6 +78,7 @@ function CMS() {
     jobLink: ''
   });
 
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [activeSection, setActiveSection] = useState('post'); // 'post' or 'manage'
@@ -192,14 +193,14 @@ function CMS() {
       
       if (editingJob) {
         // Update existing job
-        response = await axios.put(`http://localhost:5000/jobs/${editingJob._id}`, formattedJobData);
+        response = await axios.put(`${apiUrl}/jobs/${editingJob._id}`, formattedJobData);
         if (response.status === 200) {
           alert('Job updated successfully!');
           resetJobForm();
         }
       } else {
         // Create new job
-        response = await axios.post('http://localhost:5000/jobs', formattedJobData);
+        response = await axios.post(`${apiUrl}/jobs`, formattedJobData);
         if (response.status === 201) {
           alert('Job posted successfully!');
           resetJobForm();

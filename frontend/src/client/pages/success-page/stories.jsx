@@ -7,13 +7,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FaGlobeAmericas, FaHandshake, FaIndustry, FaCalendarAlt, FaUsers, FaBuilding } from 'react-icons/fa';
 
 function Stories() {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   
-  // Default image mapping based on category
   const categoryImageMap = {
     'ASIC Design': cpu,
     'Verification': cpu,
@@ -36,11 +37,11 @@ function Stories() {
       
       if (storyId) {
         // Fetch specific story by ID
-        const response = await axios.get(`http://localhost:5000/success-stories/${storyId}`);
+        const response = await axios.get(`${apiUrl}/success-stories/${storyId}`);
         setStory(response.data);
       } else {
         // If no ID provided, fetch the first story
-        const response = await axios.get('http://localhost:5000/success-stories');
+        const response = await axios.get(`${apiUrl}/success-stories`);
         if (response.data && response.data.length > 0) {
           setStory(response.data[0]);
         } else {
