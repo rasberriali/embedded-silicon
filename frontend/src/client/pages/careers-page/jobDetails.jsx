@@ -123,7 +123,8 @@ function JobDetails() {
               </a>
             ) : (
               <button 
-                className='px-6 py-2 bg-[#002D9E] text-white rounded hover:bg-[#002080] transition-colors'
+                onClick={() => alert('Please contact our HR department for application details.')}
+                className='px-6 py-2 bg-[#002D9E] text-white rounded hover:bg-[#002080] transition-colors cursor-pointer'
               >
                 Apply Now
               </button>

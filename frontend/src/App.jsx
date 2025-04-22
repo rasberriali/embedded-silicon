@@ -27,6 +27,22 @@ import SuccessStoriesCMS from "./client/pages/success-page/successStoriesCMS";
 import IntegratedChipDesign from "./client/pages/integrated-chip-design/integrated-chip-design";
 import NewsPage from "./client/pages/news-page/newsPage";
 import NewsDetails from "./client/pages/news-page/newsDetails";
+import AdminLogin from "./client/pages/docs/admin";
+import { useNavigate } from "react-router-dom";
+
+// Add this function to check authentication
+const ProtectedRoute = ({ children }) => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('adminToken');
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/docs/admin');
+    }
+  }, [token, navigate]);
+
+  return token ? children : null;
+};
 
 function App() {
    useEffect(() => {
@@ -53,7 +69,7 @@ function App() {
         <Route path="/careersPage" element={<CareersPage />}/>
         <Route path="/successStories" element={<SuccessStories />}/>
         <Route path="/fullvlsi" element={<Fullvlsi />}/>
-        <Route path="/cms" element={<CMS/>}/>
+        <Route path="/docs/admin" element={<AdminLogin />}/>
         <Route path="/jobs" element={<JobList/>}/>
         <Route path="/newsPage" element={<NewsPage/>}/>
         <Route path="/jobCategories" element={<JobCategories/>}/>
@@ -61,6 +77,11 @@ function App() {
         <Route path="/newsDetails" element={<NewsDetails/>}/>
         <Route path="/success-stories-cms" element={<SuccessStoriesCMS/>}/>
         <Route path="/integrated-chip-design" element={<IntegratedChipDesign/>}/>
+        <Route path="/cms" element={
+          <ProtectedRoute>
+            <CMS />
+          </ProtectedRoute>
+        }/>
       </Routes>
       <Footer/>
     </Router>

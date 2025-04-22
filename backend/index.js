@@ -20,18 +20,39 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors(corsOptions));
 
+// Use project routes
+app.use('/', projectRoutes);
+
+// Admin login route
+app.post('/api/admin/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    // Hardcoded admin credentials (change these in production)
+    const ADMIN_USERNAME = 'admin';
+    const ADMIN_PASSWORD = 'embedded123';
+    
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      // Generate a simple token (in production, use JWT or similar)
+      const token = 'admin-token-' + Date.now();
+      res.json({ success: true, token });
+    } else {
+      res.status(401).json({ error: 'Invalid credentials' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 }).then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
-
-// Use project routes
-app.use('/', projectRoutes);
-
-app.get('/', (req, res) => {
-    res.send('API is running...');
-});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
