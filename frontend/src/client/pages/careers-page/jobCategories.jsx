@@ -80,16 +80,18 @@ function JobCategories() {
       </div>
 
       <div className='max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 mt-20'>
-        <div className='flex flex-row justify-between items-center font-inter'>
+        <div className='flex xl:flex-row flex-col justify-between xl:items-center items-start font-inter '>
           <div className='text-3xl font-semibold text-[#0B2B82]'>
             {category}
           </div>
-          <div className='flex flex-row w-1/4  justify-between items-center text-[#0B2B82]'>
+          <div className='flex flex-row xl:w-1/4 w-full justify-between items-center text-[#0B2B82] xl:mt-0 mt-10'>
             <div>
               Sort Jobs:
             </div>
+
+            <div className='flex flex-row gap-2'>
             <div 
-              className={`py-2 px-8 text-white cursor-pointer transition-colors ${
+              className={`xl:py-2 py-1 xl:px-8 px-6 text-white cursor-pointer transition-colors ${
                 sortBy === 'latest' ? 'bg-[#002D9E]' : 'bg-gray-500 hover:bg-gray-600'
               }`}
               onClick={() => handleSortChange('latest')}
@@ -97,12 +99,13 @@ function JobCategories() {
               Latest
             </div>
             <div 
-              className={`py-2 px-8 text-white cursor-pointer transition-colors ${
+              className={`xl:py-2 py-1 xl:px-8 px-6 text-white cursor-pointer transition-colors ${
                 sortBy === 'oldest' ? 'bg-[#002D9E]' : 'bg-gray-500 hover:bg-gray-600'
               }`}
               onClick={() => handleSortChange('oldest')}
             >
               Oldest
+            </div>
             </div>
           </div>
         </div>

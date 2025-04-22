@@ -1,6 +1,11 @@
 import {useEffect, useState} from 'react'
 import newsBg from "../../../assets/images/newsBg.svg";
 import { useNavigate, useLocation  } from 'react-router-dom';
+import asicImage from "../../../assets/images/asicBg.svg"
+import analogImage2 from "../../../assets/images/analogImage2.svg"
+import radpidImage from "../../../assets/images/rapidImage.svg"
+
+
 
 function NewsPage() {
   const navigate = useNavigate();
@@ -36,7 +41,7 @@ function NewsPage() {
         <div className='flex flex-row max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 xl:mt-30 mt-6'>
           <div className='grid xl:grid-cols-3 grid-cols-1  xl:grid-rows-1 gap-8'>
             <div className=' flex flex-col gap-4 p-6 bg-gray-100 shadow-2xl cursor-pointer' onClick={() => navigate('/newsDetails')}>
-              <img src={newsBg} alt="" className=''>
+              <img src={radpidImage} alt="" className=''>
               </img>
               <h5 className=" text-xs font-medium text-gray-500">April 15, 2025</h5>
               <h3 className='font-bold text-lg'>
@@ -47,7 +52,7 @@ function NewsPage() {
               </p>
             </div>
             <div className=' flex flex-col gap-4 p-6 bg-gray-100 shadow-2xl'>
-              <img src={newsBg} alt="" className=''>
+              <img src={asicImage} alt="" className=''>
               </img>
               <h5 className=" text-xs font-medium text-gray-500">April 15, 2025</h5>
               <h3 className='font-bold text-lg'>
@@ -58,7 +63,7 @@ function NewsPage() {
               </p>
             </div>
             <div className=' flex flex-col gap-4 p-6 bg-gray-100 shadow-2xl'>
-              <img src={newsBg} alt="" className=''>
+              <img src={analogImage2} alt="" className=''>
               </img>
               <h5 className=" text-xs font-medium text-gray-500">April 15, 2025</h5>
               <h3 className='font-bold text-lg'>

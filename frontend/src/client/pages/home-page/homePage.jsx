@@ -474,8 +474,6 @@ function HomePage() {
         </motion.div>
 
         <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
-          {/* Testimonials Section */}
-          {/* Testimonials Section */}
           <motion.div 
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -600,22 +598,22 @@ function HomePage() {
                                     viewport={{ once: true }}
                                     className="flex flex-row gap-4"
                                 >
-                                    <motion.button 
+                                    <motion.div 
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={() => navigate('/contactPage')}
-                                        className="bg-[#2D7BFD] hover:bg-[#1A57C2] text-white py-2 xl:px-8 px-6 rounded-full shadow-lg transition-all xl:text-base text-xs font-semibold"
+                                        className="bg-[#2D7BFD] hover:bg-[#1A57C2] flex flex-col justify-center text-white py-1 xl:px-8 px-6 rounded-full shadow-lg transition-all xl:text-base text-xs font-normal"
                                     >
                                         Book a call
-                                    </motion.button>
-                                    <motion.button 
+                                    </motion.div>
+                                    <motion.div 
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={() => navigate('/servicesPage')}
-                                        className="border-2 border-white text-white hover:bg-white/10 py-2 xl:px-8 px-6 rounded-full transition-all xl:text-base text-xs font-semibold"
+                                        className="border-2 border-white text-white  flex flex-col justify-center hover:bg-white/10 py-1  xl:px-8 px-6 rounded-full transition-all xl:text-base text-xs font-normal"
                                     >
                                         Browse services
-                                    </motion.button>
+                                    </motion.div>
                                 </motion.div>
                             </div>
                             <motion.div 
