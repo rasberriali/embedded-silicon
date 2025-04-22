@@ -4,6 +4,12 @@ import { useNavigate, useLocation  } from 'react-router-dom';
 
 function NewsPage() {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsVisible(true);
+}, []);
 
   return (
     <div className='font-inter'>
@@ -27,7 +33,7 @@ function NewsPage() {
                 </div>
         </div>
 
-        <div className='flex flex-row max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 mt-30'>
+        <div className='flex flex-row max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6 xl:mt-30 mt-6'>
           <div className='grid xl:grid-cols-3 grid-cols-1  xl:grid-rows-1 gap-8'>
             <div className=' flex flex-col gap-4 p-6 bg-gray-100 shadow-2xl cursor-pointer' onClick={() => navigate('/newsDetails')}>
               <img src={newsBg} alt="" className=''>

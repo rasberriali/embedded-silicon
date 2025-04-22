@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function JobList({ onEditJob }) {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ function JobList({ onEditJob }) {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/jobs');
+      const response = await axios.get(`${apiUrl}/jobs`);
       // Sort jobs by category
       const sortedJobs = response.data.sort((a, b) => a.category.localeCompare(b.category));
       setJobs(sortedJobs);
@@ -42,7 +43,7 @@ function JobList({ onEditJob }) {
     if (!jobToDelete) return;
     
     try {
-      await axios.delete(`http://localhost:5000/jobs/${jobToDelete._id}`);
+      await axios.delete(`${apiUrl}/jobs/${jobToDelete._id}`);
       setDeleteConfirmOpen(false);
       setJobToDelete(null);
       fetchJobs(); // Refresh the job list

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function JobCategories() {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,7 +20,7 @@ function JobCategories() {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/jobs');
+      const response = await axios.get(`${apiUrl}/jobs`);
       // Filter jobs by category and sort by date
       const filteredJobs = response.data
         .filter(job => job.category === category)

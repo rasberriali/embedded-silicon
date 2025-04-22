@@ -4,6 +4,7 @@ import axios from 'axios';
 import successStory from "../../../assets/images/buildingSuccess.svg";
 
 function JobDetails() {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
   const { id } = useParams();
   const navigate = useNavigate();
   const [job, setJob] = useState(null);
@@ -17,7 +18,7 @@ function JobDetails() {
 
   const fetchJobDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/jobs/${id}`);
+      const response = await axios.get(`${apiUrl}/jobs/${id}`);
       setJob(response.data);
       setLoading(false);
     } catch (error) {
@@ -122,7 +123,8 @@ function JobDetails() {
               </a>
             ) : (
               <button 
-                className='px-6 py-2 bg-[#002D9E] text-white rounded hover:bg-[#002080] transition-colors'
+                onClick={() => alert('Please contact our HR department for application details.')}
+                className='px-6 py-2 bg-[#002D9E] text-white rounded hover:bg-[#002080] transition-colors cursor-pointer'
               >
                 Apply Now
               </button>

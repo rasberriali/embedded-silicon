@@ -1,5 +1,6 @@
 import React from 'react'
 import newsBg from "../../../assets/images/newsBg.svg";
+import { useNavigate} from 'react-router-dom'; 
 
 function NewsDetails() {
   return (
@@ -25,7 +26,7 @@ function NewsDetails() {
       </div>
 
       {/* Main Content with CTA */}
-      <div className="max-w-screen-xl mx-auto mt-20">
+      <div className="max-w-screen-xl mx-auto xl:mt-20 mt-6 2xl:p-0 lg:p-6 p-8">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Main Content */}
           <div className='lg:w-2/3'>
@@ -88,6 +89,7 @@ function NewsDetails() {
               <p className="text-sm text-gray-500 mt-2 text-center">
                 Pushing the boundaries of embedded systems innovation
               </p>
+
             </div>
           </div>
 

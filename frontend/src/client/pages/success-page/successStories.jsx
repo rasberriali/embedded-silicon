@@ -8,6 +8,8 @@ import semicon from "../../../assets/images/semicon.svg";
 import { useNavigate, useLocation  } from 'react-router-dom';
 
 function SuccessStories() {
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+
   const [successStoriesData, setSuccessStoriesData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,7 +34,7 @@ function SuccessStories() {
   const fetchSuccessStories = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/success-stories');
+      const response = await axios.get(`${apiUrl}/success-stories`);
       if (response.data && response.data.length > 0) {
         setSuccessStoriesData(response.data);
       } else {
@@ -90,8 +92,8 @@ function SuccessStories() {
 
   // Helper function to determine image for a story
   const getStoryImage = (story) => {
-    if (story.image && !story.image.includes('undefined')) {
-      return story.image;
+    if (story.image) {
+      return story.image; // This will be the base64 string
     }
     
     return categoryImageMap[story.category] || medDevices;

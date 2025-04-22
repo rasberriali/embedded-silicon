@@ -14,7 +14,7 @@ import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
 import adverty from "../../../assets/images/adverty.png";
 import avl from "../../../assets/images/avl.png";
-import aws from "../../../assets/images/aws.png";
+import aws from "../../../assets/images/Aws.png";
 import delaware from "../../../assets/images/delaware.png";
 import gorillas from "../../../assets/images/gorillas.png";
 import ktc from "../../../assets/images/ktc.png";

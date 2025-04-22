@@ -25,6 +25,8 @@ function SuccessStoriesCMS({ initialSection }) {
     }
   });
 
+  const apiUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+
   const [successStories, setSuccessStories] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
@@ -56,7 +58,7 @@ function SuccessStoriesCMS({ initialSection }) {
 
   const fetchSuccessStories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/success-stories');
+      const response = await axios.get(`${apiUrl}/success-stories`);
       setSuccessStories(response.data);
     } catch (error) {
       console.error('Error fetching success stories:', error);
@@ -118,11 +120,11 @@ function SuccessStoriesCMS({ initialSection }) {
       let response;
       if (selectedStory) {
         // Update existing story
-        response = await axios.put(`http://localhost:5000/success-stories/${selectedStory._id}`, formattedStoryData);
+        response = await axios.put(`${apiUrl}/success-stories/${selectedStory._id}`, formattedStoryData);
         alert('Success story updated!');
       } else {
         // Create new story
-        response = await axios.post('http://localhost:5000/success-stories', formattedStoryData);
+        response = await axios.post(`${apiUrl}/success-stories`, formattedStoryData);
         alert('Success story posted successfully!');
       }
       
@@ -154,7 +156,7 @@ function SuccessStoriesCMS({ initialSection }) {
     if (!storyToDelete) return;
     
     try {
-      await axios.delete(`http://localhost:5000/success-stories/${storyToDelete._id}`);
+      await axios.delete(`${apiUrl}/success-stories/${storyToDelete._id}`);
       setDeleteConfirmOpen(false);
       setStoryToDelete(null);
       alert('Success story deleted successfully!');
@@ -168,6 +170,20 @@ function SuccessStoriesCMS({ initialSection }) {
   const handleDeleteCancel = () => {
     setDeleteConfirmOpen(false);
     setStoryToDelete(null);
+  };
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setStoryData({
+          ...storyData,
+          image: reader.result // This will be the base64 string
+        });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -233,14 +249,27 @@ function SuccessStoriesCMS({ initialSection }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                <label className="block text-sm font-medium text-gray-700">Image Upload</label>
                 <input
-                  type="text"
-                  value={storyData.image}
-                  onChange={(e) => setStoryData({...storyData, image: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  placeholder="URL to image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="mt-1 block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-md file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-blue-50 file:text-blue-700
+                    hover:file:bg-blue-100"
                 />
+                {storyData.image && (
+                  <div className="mt-2">
+                    <img 
+                      src={storyData.image} 
+                      alt="Preview" 
+                      className="h-32 w-32 object-cover rounded"
+                    />
+                  </div>
+                )}
               </div>
 
               <div>

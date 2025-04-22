@@ -24,7 +24,7 @@ const successStorySchema = new mongoose.Schema({
   excerpt: String,
   content: String,
   category: String,
-  image: String, // URL to the image
+  image: String, // Will store base64 image data
   author: String,
   date: Date,
   background: String,
