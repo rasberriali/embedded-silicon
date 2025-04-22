@@ -14,6 +14,7 @@ import inditex from "../../../assets/images/inditex.png"
 import siemens from "../../../assets/images/siemens.png"
 import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
 import person6 from "../../../assets/images/person6.png"
+
 // import { LuArrowRight } from "react-icons/lu";
 
 // map
@@ -77,110 +78,6 @@ useEffect(() => {
 
   // Add contact information container below the map
   const mapContainer = document.getElementById("svgMapContainer");
-  const contactContainer = document.createElement("div");
-  contactContainer.className = "contact-info-container";
-  contactContainer.style.cssText = `
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: transparent;
-  `;
-
-  // Add contact information
-  const contactInfo = `
-    <div style="display: flex; align-items: center; width: 100%; background-color: #ECECEC;">
-      <div style="display: flex; align-items: center; justify-content: center; width: 100%; color: #666; font-size: 14px; padding: 4px 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 1200px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM19.6 8.25L12.53 12.67C12.21 12.87 11.79 12.87 11.47 12.67L4.4 8.25C4.15 8.09 4 7.82 4 7.53C4 6.86 4.73 6.46 5.3 6.81L12 11L18.7 6.81C19.27 6.46 20 6.86 20 7.53C20 7.82 19.85 8.09 19.6 8.25Z"/>
-            </svg>
-            <span style="font-weight: 600;">Email:</span>
-            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=info@esilicontech.com" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none;">info@esilicontech.com</a>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.3 14.9 16.2 14.9 16.1 14.9C15.8 14.9 15.6 15 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5Z"/>
-            </svg>
-            <span style="font-weight: 600;">Contact:</span>
-            <span style="color: #2d7bfd; cursor: pointer; position: relative;" 
-                  onclick="navigator.clipboard.writeText('+63 (02) 8660-4748'); this.setAttribute('data-tooltip', 'Number copied!');"
-                  onmouseover="this.setAttribute('data-tooltip', 'Click to copy number');"
-                  onmouseout="this.setAttribute('data-tooltip', '');"
-                  data-tooltip="">
-              +63 (02) 8660-4748
-            </span>
-            <span>|</span>
-            <span style="color: #2d7bfd; cursor: pointer; position: relative;" 
-                  onclick="navigator.clipboard.writeText('+63 920-9110801'); this.setAttribute('data-tooltip', 'Number copied!');"
-                  onmouseover="this.setAttribute('data-tooltip', 'Click to copy number');"
-                  onmouseout="this.setAttribute('data-tooltip', '');"
-                  data-tooltip="">
-              +63 920-9110801
-            </span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            <span style="font-weight: 600;">Offices:</span>
-            <a href="https://www.google.com/maps/place/Richville+Corporate+Tower/@14.426674,121.0253703,937m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397d1ce490a4ac3:0xc8e733a24739e87!8m2!3d14.426674!4d121.0253703!16s%2Fg%2F11gxw2h7cz?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none; position: relative;"
-               onmouseover="this.setAttribute('data-tooltip', 'Click to view location');"
-               onmouseout="this.setAttribute('data-tooltip', '');"
-               data-tooltip="">
-              Ayala Alabang, Muntinlupa City 1780 PH
-            </a>
-            <span>|</span>
-            <a href="https://www.google.com/maps/place/Golden+City+Subdivision/@14.566938,121.1413669,59m/data=!3m1!1e3!4m6!3m5!1s0x3397c76cb086a2bb:0x4439d42bb32bb041!8m2!3d14.5670274!4d121.1414972!16s%2Fg%2F11g9qf6l9z?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none; position: relative;"
-               onmouseover="this.setAttribute('data-tooltip', 'Click to view location');"
-               onmouseout="this.setAttribute('data-tooltip', '');"
-               data-tooltip="">
-              Taytay, Province of Rizal 1920 PH
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <style>
-      [data-tooltip]:before {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 4px 8px;
-        background: rgba(0,0,0,0.8);
-        color: white;
-        font-size: 12px;
-        white-space: nowrap;
-        border-radius: 4px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.2s;
-        z-index: 1000;
-      }
-      [data-tooltip]:hover:before {
-        visibility: visible;
-        opacity: 1;
-      }
-      [data-tooltip][data-tooltip=""]:before {
-        display: none;
-      }
-    </style>
-  `;
-
-  contactContainer.innerHTML = contactInfo;
-  mapContainer.appendChild(contactContainer);
 
   // Tooltip event handlers
   const tooltip = document.getElementById("tooltip");
@@ -509,83 +406,157 @@ useEffect(() => {
   </div>
 </div>
 
-{/* Map Section */}
-<div className="relative w-full">
-  {/* Partner Countries List */}
-  <div className="w-full bg-[#ECECEC]">
-    <div className="flex flex-wrap justify-center items-center gap-6 py-2">
-      {/* Country Flags */}
-      {[
-        { src: "us", name: "United States" },
-        { src: "ca", name: "Canada" },
-        { src: "in", name: "India" },
-        { src: "jp", name: "Japan" },
-        { src: "my", name: "Malaysia" },
-        { src: "id", name: "Indonesia" },
-        { src: "ph", name: "Philippines" },
-      ].map((country, index) => (
-        <div key={index} className="flex items-center gap-2">
-          <img 
-            src={`https://flagcdn.com/w40/${country.src}.png`} 
-            width="32" 
-            height="24" 
-            alt={country.name} 
-            className="border border-gray-100"
-          />
-          <span className="text-sm font-medium">{country.name}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Map Container */}
-  <div className="relative w-full  "> {/* Adjusted map height */}
-    <div id="svgMapContainer" className="bottom-0"></div>
-
-    {/* "Our Offices" Title */}
-    <div className="absolute top-1 left-40 text-[#201d1d] text-xl sm:text-2xl p-6 font-bold z-20">
-      Our Offices
-    </div>
-
-    {/* Legend Box */}
-    <div className="absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md z-20">
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
-          <span className="text-sm">Multiple ongoing activities + growing partnerships</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#2d7bfd" }}></span>
-          <span className="text-sm">Ongoing activities</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#7eaefc" }}></span>
-          <span className="text-sm">Potential partnerships</span>
-        </div>
+{/* Partner Countries List */}
+<div className="w-full bg-[#ECECEC]">
+  <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 py-2 px-4">
+    {/* Country Flags */}
+    {[
+      { src: "us", name: "United States" },
+      { src: "ca", name: "Canada" },
+      { src: "in", name: "India" },
+      { src: "jp", name: "Japan" },
+      { src: "my", name: "Malaysia" },
+      { src: "id", name: "Indonesia" },
+      { src: "ph", name: "Philippines" },
+    ].map((country, index) => (
+      <div key={index} className="flex items-center gap-2">
+        <img 
+          src={`https://flagcdn.com/w40/${country.src}.png`} 
+          width="32" 
+          height="24" 
+          alt={country.name} 
+          className="border border-gray-100"
+        />
+        <span className="text-xs sm:text-sm font-medium">{country.name}</span>
       </div>
-    </div>
-
-    {/* Tooltip */}
-    <div id="tooltip" className="fixed hidden bg-white/95 p-3 rounded-lg shadow-lg border border-gray-200 max-w-[250px] z-50">
-      <style jsx>{`
-        .tooltip-content {
-          font-size: 0.875rem;
-        }
-        .tooltip-content h3 {
-          font-weight: 600;
-          color: #1a57c2;
-          margin-bottom: 4px;
-        }
-        .tooltip-content p {
-          color: #4a5568;
-          margin: 0;
-          font-size: 0.8rem;
-        }
-      `}</style>
-    </div>
+    ))}
   </div>
 </div>
 
+{/* Map Container */}
+<div className="relative w-full h-[230px] sm:h-[320px] md:h-[480px] lg:h-[550px] xl:h-[760px] mb-0">
+  <div id="svgMapContainer" className="w-full h-full"></div>
+
+  {/* "Our Offices" Title */}
+  <div className="absolute top-1 left-4 sm:left-40 text-[#201d1d] text-base sm:text-lg md:text-xl lg:text-2xl p-4 sm:p-6 font-bold z-20">
+    Our Offices
+  </div>
+
+  {/* Legend Box - Desktop only */}
+  <div className="hidden sm:block absolute top-4 right-4 bg-white/90 p-4 rounded-lg shadow-md z-20">
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
+        <span className="text-xs sm:text-sm">Multiple ongoing activities + growing partnerships</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#2d7bfd" }}></span>
+        <span className="text-xs sm:text-sm">Ongoing activities</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="w-4 h-4 rounded-full" style={{ backgroundColor: "#7eaefc" }}></span>
+        <span className="text-xs sm:text-sm">Potential partnerships</span>
+      </div>
+    </div>
+  </div>
+
+  {/* Tooltip */}
+  <div id="tooltip" className="fixed hidden bg-white/95 p-3 rounded-lg shadow-lg border border-gray-200 max-w-[250px] z-50">
+    <style jsx>{`
+      .tooltip-content {
+        font-size: 0.875rem;
+      }
+      .tooltip-content h3 {
+        font-weight: 600;
+        color: #1a57c2;
+        margin-bottom: 4px;
+      }
+      .tooltip-content p {
+        color: #4a5568;
+        margin: 0;
+        font-size: 0.8rem;
+      }
+    `}</style>
+  </div>
+</div>
+
+{/* Contact Information with Legend for Mobile */}
+<div className="w-full bg-[#ECECEC] -mt-1">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center w-full text-[#666] text-sm sm:text-base p-2">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full max-w-8xl gap-2 lg:ml-25">
+      {/* Contact Information */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-8 w-full">
+        {/* Email */}
+        <div className="flex items-center gap-2">
+          <svg className="w-4 h-4 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM19.6 8.25L12.53 12.67C12.21 12.87 11.79 12.87 11.47 12.67L4.4 8.25C4.15 8.09 4 7.82 4 7.53C4 6.86 4.73 6.46 5.3 6.81L12 11L18.7 6.81C19.27 6.46 20 6.86 20 7.53C20 7.82 19.85 8.09 19.6 8.25Z"/>
+          </svg>
+          <span className="font-semibold whitespace-nowrap">Email:</span>
+          <a href="mailto:info@esilicontech.com" className="text-blue-600 hover:underline break-all">
+            info@esilicontech.com
+          </a>
+        </div>
+
+        {/* Contact Numbers */}
+        <div className="flex items-center gap-2">
+          <svg className="w-4 h-4 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.3 14.9 16.2 14.9 16.1 14.9C15.8 14.9 15.6 15 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5Z"/>
+          </svg>
+          <span className="font-semibold whitespace-nowrap">Contact:</span>
+          <div className="flex flex-col sm:flex-row gap-0 sm:gap-2">
+            <span className="text-blue-600 cursor-pointer whitespace-nowrap" onClick={() => navigator.clipboard.writeText('+63 (02) 8660-4748')}>
+              +63 (02) 8660-4748
+            </span>
+            <span className="hidden sm:inline">|</span>
+            <span className="text-blue-600 cursor-pointer whitespace-nowrap" onClick={() => navigator.clipboard.writeText('+63 920-9110801')}>
+              +63 920-9110801
+            </span>
+          </div>
+        </div>
+
+        {/* Office Locations */}
+        <div className="flex items-start sm:items-center gap-2">
+          <svg className="w-4 h-4 text-blue-600 shrink-0 mt-1 sm:mt-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <span className="font-semibold whitespace-nowrap">Offices:</span>
+          <div className="flex flex-col sm:flex-row gap-0 sm:gap-2">
+            <a href="https://www.google.com/maps/place/Richville+Corporate+Tower/@14.426674,121.0253703,937m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397d1ce490a4ac3:0xc8e733a24739e87!8m2!3d14.426674!4d121.0253703!16s%2Fg%2F11gxw2h7cz?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" 
+               className="text-blue-600 hover:underline">
+              Ayala Alabang, Muntinlupa City 1780 PH
+            </a>
+            <span className="hidden sm:inline">|</span>
+            <a href="https://www.google.com/maps/place/Golden+City+Subdivision/@14.566938,121.1413669,59m/data=!3m1!1e3!4m6!3m5!1s0x3397c76cb086a2bb:0x4439d42bb32bb041!8m2!3d14.5670274!4d121.1414972!16s%2Fg%2F11g9qf6l9z?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" 
+               className="text-blue-600 hover:underline">
+              Taytay, Province of Rizal 1920 PH
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Legend for Mobile */}
+      <div className="sm:hidden w-full mt-2 bg-white/90 p-2 rounded-lg shadow-md">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#4caf50" }}></span>
+            <span className="text-xs">Multiple ongoing activities + growing partnerships</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#2d7bfd" }}></span>
+            <span className="text-xs">Ongoing activities</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#7eaefc" }}></span>
+            <span className="text-xs">Potential partnerships</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 {/* Leadership Section - Placed Below Map */}
 <div className="bg-white">
   <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 p-6">
@@ -634,6 +605,7 @@ useEffect(() => {
 }
 
 export default AboutPage;
+
 
 
 

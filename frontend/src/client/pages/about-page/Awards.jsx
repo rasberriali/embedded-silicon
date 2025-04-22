@@ -9,12 +9,26 @@ import total from "../../../assets/images/total.png";
 import inditex from "../../../assets/images/inditex.png";
 import siemens from "../../../assets/images/siemens.png";
 import awsAdvanceTier from "../../../assets/images/awsAdvanceTier.png";
-
+import microsoft from "../../../assets/images/microsoft.png";
+import googlecloud from "../../../assets/images/googlecloud.png";
+import iso27001 from "../../../assets/images/iso27001.png";
+import awspremierTier from "../../../assets/images/awspremierTier.png";
+import m3connect from "../../../assets/images/m3connect.png";
+import sinense from "../../../assets/images/sinense.png";
+import gogo from "../../../assets/images/gogo.png";
+import spotzer from "../../../assets/images/spotzer.png";
+import mendix from "../../../assets/images/mendix.png";
+import trifecta from "../../../assets/images/trifecta.png";
+import record from "../../../assets/images/record.png";
+import ktc from "../../../assets/images/ktc.png";
+import gorillas from "../../../assets/images/gorillas.png";
+import adverty from "../../../assets/images/adverty.png";
+import bitlog from "../../../assets/images/bitlog.png";
 // Award Data
 const awardsData_tab = [
   { 
-    image: total, 
-    text: "Excellence in Semiconductor Design Award for groundbreaking innovations in chip architecture.",
+    image: sinense, 
+    text: "Honored with the Excellence in Semiconductor Design Award for revolutionizing chip performance through innovative architecture.",
     year: "2023",
     category: "Technology Innovation",
     achievement: "Best-in-Class Design",
@@ -22,50 +36,123 @@ const awardsData_tab = [
   },
   { 
     image: awsAdvanceTier, 
-    text: "Industry Leadership Award for pioneering advancements in embedded systems.",
+    text: "Recognized with the Industry Leadership Award by AWS for trailblazing efforts in embedded systems innovation.",
     year: "2023",
     category: "Design Excellence",
     achievement: "Market Leader",
     impact: "30% faster time-to-market"
   },
   { 
-    image: siemens, 
-    text: "Quality Excellence Award for maintaining exceptional standards in silicon production.",
+    image: gogo, 
+    text: "Awarded the Quality Excellence Award by GoGoTech for setting a gold standard in silicon wafer production.",
     year: "2023",
+    category: "Quality Assurance",
+    achievement: "Zero Defect Rate",
+    impact: "99.9% reliability rate"
+  },
+  { 
+    image: awspremierTier, 
+    text: "Premier Partner Recognition from AWS for consistent excellence and unmatched silicon reliability.",
+    year: "2023",
+    category: "Quality Assurance",
+    achievement: "Zero Defect Rate",
+    impact: "99.9% reliability rate"
+  },
+  { 
+    image: googlecloud, 
+    text: "Google Cloud Quality Excellence Award for maintaining consistent, scalable production standards.",
+    year: "2023",
+    category: "Quality Assurance",
+    achievement: "Zero Defect Rate",
+    impact: "99.9% reliability rate"
+  },
+  { 
+    image: m3connect, 
+    text: "Commended by M3Connect for maintaining high-quality benchmarks in semiconductor production cycles.",
+    year: "2023",
+    category: "Quality Assurance",
+    achievement: "Zero Defect Rate",
+    impact: "99.9% reliability rate"
+  },
+  { 
+    image: googlecloud, 
+    text: "Google Cloud's 2021 commendation for consistent delivery and quality assurance in semiconductor solutions.",
+    year: "2021",
     category: "Quality Assurance",
     achievement: "Zero Defect Rate",
     impact: "99.9% reliability rate"
   },
 ];
 
+
 const industryRecognitionData_tab = [
   { 
-    image: siemens, 
-    text: "Strategic Partnership Excellence with leading semiconductor manufacturers.",
+    image: mendix, 
+    text: "Recognized by Mendix for seamless integration of low-code solutions into chip design processes.",
     year: "2023",
     category: "Industry Partnership",
     achievement: "Preferred Partner",
     impact: "20+ Global Partners"
   },
   { 
-    image: inditex, 
-    text: "Innovation Hub Recognition for cutting-edge research in silicon technology.",
+    image: spotzer, 
+    text: "Spotzer Innovation Hub Award for pushing the boundaries of advanced silicon R&D.",
     year: "2023",
     category: "Research Excellence",
     achievement: "Top Innovator",
     impact: "15 Patents Filed"
   },
   { 
-    image: siemens, 
-    text: "Sustainability Champion for eco-friendly semiconductor manufacturing.",
+    image: record, 
+    text: "Named a Sustainability Champion by RecordTech for eco-friendly chip manufacturing solutions.",
     year: "2023",
     category: "Sustainability",
     achievement: "Green Tech Leader",
     impact: "50% Carbon Reduction"
   },
   { 
+    image: trifecta, 
+    text: "Trifecta Digital Excellence Recognition for leading the charge in Industry 4.0 transitions.",
+    year: "2023",
+    category: "Digital Excellence",
+    achievement: "Industry 4.0 Pioneer",
+    impact: "100% Digital Integration"
+  },
+  { 
     image: total, 
-    text: "Digital Transformation Leader in semiconductor industry practices.",
+    text: "TotalTech honored our team for transformative digital practices in semiconductor workflows.",
+    year: "2023",
+    category: "Digital Excellence",
+    achievement: "Industry 4.0 Pioneer",
+    impact: "100% Digital Integration"
+  },
+  { 
+    image: ktc, 
+    text: "KTC Group celebrated our innovation in implementing fully digital semiconductor ecosystems.",
+    year: "2023",
+    category: "Digital Excellence",
+    achievement: "Industry 4.0 Pioneer",
+    impact: "100% Digital Integration"
+  },
+  { 
+    image: gorillas, 
+    text: "Gorillas Tech awarded us for agile digital transformation and high-speed silicon delivery systems.",
+    year: "2023",
+    category: "Digital Excellence",
+    achievement: "Industry 4.0 Pioneer",
+    impact: "100% Digital Integration"
+  },  
+  { 
+    image: adverty, 
+    text: "Adverty Award for excellence in digital infrastructure within high-tech semiconductor fabs.",
+    year: "2023",
+    category: "Digital Excellence",
+    achievement: "Industry 4.0 Pioneer",
+    impact: "100% Digital Integration"
+  },
+  { 
+    image: bitlog, 
+    text: "Bitlog’s Digital Excellence Recognition for automated smart-factory deployments.",
     year: "2023",
     category: "Digital Excellence",
     achievement: "Industry 4.0 Pioneer",
@@ -73,11 +160,12 @@ const industryRecognitionData_tab = [
   },
 ];
 
+
 const stats = [
   { number: "25+", label: "Industry Awards", icon: "🏆" },
   { number: "50+", label: "Global Partners", icon: "🤝" },
   { number: "100%", label: "Client Satisfaction", icon: "⭐" },
-  { number: "30+", label: "Countries Served", icon: "🌍" },
+  { number: "6+", label: "Countries Served", icon: "🌍" },
 ];
 
 function Awards() {
@@ -93,14 +181,15 @@ function Awards() {
   });
 
   const awards = [
-    { src: total, alt: "Microsoft", desc: "Excellence in Technology" },
-    { src: siemens, alt: "EDA Playground", desc: "Design Innovation" },
-    { src: total, alt: "ISO Certification", desc: "Quality Standards" },
-    { src: total, alt: "EDA Playground", desc: "Tool Innovation" },
-    { src: siemens, alt: "Microsoft", desc: "Partnership Excellence" },
-    { src: siemens, alt: "EDA Playground", desc: "Design Leadership" },
-    { src: total, alt: "ISO Certification", desc: "Industry Standard" },
+    { src: microsoft, alt: "Microsoft", desc: "Recognized by Microsoft"  },
+    { src: googlecloud, alt: "Google Cloud", desc: "Cloud Innovation Award" },
+    { src: iso27001, alt: "ISO Certification", desc: "Certified for ISO 27001" },
+    { src: awspremierTier, alt: "AWS recognition", desc: "AWS Premier Tier Award" },
+    { src: siemens, alt: "Siemens", desc: "Siemens Partner of Excellence"  },
+    { src: gorillas, alt: " Gorillas", desc: "EDA Verified Leader" },
+    { src: total, alt: "Industry Standard", desc: "Global Standard Compliant" },
   ];
+  
 
   const visibleAwards = awards.slice(startIndex, startIndex + 4);
 
