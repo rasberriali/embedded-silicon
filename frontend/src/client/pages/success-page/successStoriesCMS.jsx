@@ -172,6 +172,20 @@ function SuccessStoriesCMS({ initialSection }) {
     setStoryToDelete(null);
   };
 
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setStoryData({
+          ...storyData,
+          image: reader.result // This will be the base64 string
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div>
       {activeSection === 'post' && (
@@ -235,14 +249,27 @@ function SuccessStoriesCMS({ initialSection }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                <label className="block text-sm font-medium text-gray-700">Image Upload</label>
                 <input
-                  type="text"
-                  value={storyData.image}
-                  onChange={(e) => setStoryData({...storyData, image: e.target.value})}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  placeholder="URL to image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="mt-1 block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-md file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-blue-50 file:text-blue-700
+                    hover:file:bg-blue-100"
                 />
+                {storyData.image && (
+                  <div className="mt-2">
+                    <img 
+                      src={storyData.image} 
+                      alt="Preview" 
+                      className="h-32 w-32 object-cover rounded"
+                    />
+                  </div>
+                )}
               </div>
 
               <div>

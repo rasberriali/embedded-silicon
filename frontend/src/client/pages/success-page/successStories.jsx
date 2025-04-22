@@ -92,8 +92,8 @@ function SuccessStories() {
 
   // Helper function to determine image for a story
   const getStoryImage = (story) => {
-    if (story.image && !story.image.includes('undefined')) {
-      return story.image;
+    if (story.image) {
+      return story.image; // This will be the base64 string
     }
     
     return categoryImageMap[story.category] || medDevices;
