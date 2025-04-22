@@ -50,19 +50,15 @@ useEffect(() => {
     existingMapContainer.innerHTML = ""; // Clear any existing map
   }
 
-  // Get the container width to determine screen size
-  const containerWidth = existingMapContainer?.offsetWidth || 0;
-  const isSmallScreen = containerWidth < 640; // sm breakpoint
-
   const map = new svgMap({
     targetElementID: "svgMapContainer",
-    colorNoData: "#BFB9B9",
+    colorNoData: "#BFB9B9", // Lighter gray that won't show tooltip
     colorMax: "#2d7bfd",
     showZoomReset: true,
     mouseWheelZoomEnabled: false,
-    initialZoom: isSmallScreen ? 0.6 : 0.9,
-    initialPan: isSmallScreen ? { x: 0, y: 0 } : { x: 80, y: 0 },
-    noDataText: "",
+    initialZoom: 0.9,
+    initialPan: { x: 80, y: 0 },
+    noDataText: "", // Remove "no data available" text
     data: {
       data: {
         activities: { format: "{0}" },
@@ -82,110 +78,6 @@ useEffect(() => {
 
   // Add contact information container below the map
   const mapContainer = document.getElementById("svgMapContainer");
-  const contactContainer = document.createElement("div");
-  contactContainer.className = "contact-info-container";
-  contactContainer.style.cssText = `
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: transparent;
-  `;
-
-  // Add contact information
-  const contactInfo = `
-    <div style="display: flex; align-items: center; width: 100%; background-color: #ECECEC font-inter;">
-      <div style="display: flex; align-items: center; justify-content: center; width: 100%; color: #666; font-size: 14px; padding: 4px 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 1200px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM19.6 8.25L12.53 12.67C12.21 12.87 11.79 12.87 11.47 12.67L4.4 8.25C4.15 8.09 4 7.82 4 7.53C4 6.86 4.73 6.46 5.3 6.81L12 11L18.7 6.81C19.27 6.46 20 6.86 20 7.53C20 7.82 19.85 8.09 19.6 8.25Z"/>
-            </svg>
-            <span style="font-weight: 600;">Email:</span>
-            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=info@esilicontech.com" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none;">info@esilicontech.com</a>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.3 14.9 16.2 14.9 16.1 14.9C15.8 14.9 15.6 15 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 13.4 10.6 21 20 21C20.5 21 21 20.5 21 20V16.5C21 16 20.5 15.5 20 15.5Z"/>
-            </svg>
-            <span style="font-weight: 600;">Contact:</span>
-            <span style="color: #2d7bfd; cursor: pointer; position: relative;" 
-                  onclick="navigator.clipboard.writeText('+63 (02) 8660-4748'); this.setAttribute('data-tooltip', 'Number copied!');"
-                  onmouseover="this.setAttribute('data-tooltip', 'Click to copy number');"
-                  onmouseout="this.setAttribute('data-tooltip', '');"
-                  data-tooltip="">
-              +63 (02) 8660-4748
-            </span>
-            <span>|</span>
-            <span style="color: #2d7bfd; cursor: pointer; position: relative;" 
-                  onclick="navigator.clipboard.writeText('+63 920-9110801'); this.setAttribute('data-tooltip', 'Number copied!');"
-                  onmouseover="this.setAttribute('data-tooltip', 'Click to copy number');"
-                  onmouseout="this.setAttribute('data-tooltip', '');"
-                  data-tooltip="">
-              +63 920-9110801
-            </span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg style="width: 16px; height: 16px; color: #2d7bfd;" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            <span style="font-weight: 600;">Offices:</span>
-            <a href="https://www.google.com/maps/place/Richville+Corporate+Tower/@14.426674,121.0253703,937m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397d1ce490a4ac3:0xc8e733a24739e87!8m2!3d14.426674!4d121.0253703!16s%2Fg%2F11gxw2h7cz?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none; position: relative;"
-               onmouseover="this.setAttribute('data-tooltip', 'Click to view location');"
-               onmouseout="this.setAttribute('data-tooltip', '');"
-               data-tooltip="">
-              Ayala Alabang, Muntinlupa City 1780 PH
-            </a>
-            <span>|</span>
-            <a href="https://www.google.com/maps/place/Golden+City+Subdivision/@14.566938,121.1413669,59m/data=!3m1!1e3!4m6!3m5!1s0x3397c76cb086a2bb:0x4439d42bb32bb041!8m2!3d14.5670274!4d121.1414972!16s%2Fg%2F11g9qf6l9z?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" 
-               target="_blank" 
-               style="color: #2d7bfd; text-decoration: none; position: relative;"
-               onmouseover="this.setAttribute('data-tooltip', 'Click to view location');"
-               onmouseout="this.setAttribute('data-tooltip', '');"
-               data-tooltip="">
-              Taytay, Province of Rizal 1920 PH
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <style>
-      [data-tooltip]:before {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 4px 8px;
-        background: rgba(0,0,0,0.8);
-        color: white;
-        font-size: 12px;
-        white-space: nowrap;
-        border-radius: 4px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.2s;
-        z-index: 1000;
-      }
-      [data-tooltip]:hover:before {
-        visibility: visible;
-        opacity: 1;
-      }
-      [data-tooltip][data-tooltip=""]:before {
-        display: none;
-      }
-    </style>
-  `;
-
-  contactContainer.innerHTML = contactInfo;
-  mapContainer.appendChild(contactContainer);
 
   // Tooltip event handlers
   const tooltip = document.getElementById("tooltip");
@@ -279,7 +171,7 @@ useEffect(() => {
   </div>
 
   {/* Content Container */}
-  <div className="relative h-full max-w-screen-xl mx-auto font-inter">
+  <div className="relative h-full max-w-screen-xl mx-auto">
     <div className="flex items-center h-full py-32">
       <div className={`max-w-2xl transform transition-all duration-1000 ${
         isVisible.content ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
@@ -297,7 +189,7 @@ useEffect(() => {
 </div>
 
 {/* Key Facts Section */}
-<div className="w-full max-w-screen-xl mx-auto py-12 font-inter">
+<div className="w-full max-w-screen-xl mx-auto py-12">
   <div>
     <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
       <h2 className="text-[#201d1d] text-2xl sm:text-3xl font-bold text-center lg:text-left">
@@ -323,7 +215,7 @@ useEffect(() => {
 
 
 {/* Company History & Building Image */}
-<div className="w-full max-w-screen-xl mx-auto py-4 font-inter">
+<div className="w-full max-w-screen-xl mx-auto py-4">
   <div className="w-full flex flex-col-reverse md:flex-row">
     <div className="w-full md:w-1/3 bg-[#121c2e] text-[#ced3dc] p-8 rounded-b-lg md:rounded-l-lg md:rounded-bl-lg md:rounded-br-none">
       <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Company History</h2>
@@ -359,7 +251,7 @@ useEffect(() => {
 
 
 {/* Company Overview Sheet */}
-<div className="w-full max-w-screen-xl mx-auto py-5 font-inter">
+<div className="w-full max-w-screen-xl mx-auto py-5">
   <div className="w-full">
     <div className="bg-[#043A65] text-white px-4 py-4 sm:py-6 lg:py-8 rounded-lg flex flex-row items-center justify-between gap-2 sm:gap-4">
       <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold text-left pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-8">
@@ -383,7 +275,7 @@ useEffect(() => {
 
 
 {/* Company Values Section */}
-<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8 font-inter">
+<div className="w-full max-w-screen-xl mx-auto px-0 sm:px-6 py-6 sm:py-8">
   {/* Heading and Intro Text */}
   <div className="max-w-screen-xl mx-auto 2xl:p-0 p-6 font-inter relative z-10">
     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -471,7 +363,7 @@ useEffect(() => {
 
 
 {/* Our Clients */}
-<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-6 font-inter bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
+<div className="flex flex-col items-center mt-6 sm:mt-8 md:mt-12 px-4 py-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200">
   <div className="ml-10 text-[#040404] text-xl sm:text-2xl md:text-4xl flex flex-col items-center gap-1 sm:gap-2 font-semibold text-center slide-in">
     Our Clients 
     <span className="text-sm sm:text-base md:text-xl text-[#647185] font-normal">
@@ -514,34 +406,32 @@ useEffect(() => {
   </div>
 </div>
 
-{/* Map Section */}
-<div className="relative w-full">
-  {/* Partner Countries List */}
-  <div className="w-full bg-[#ECECEC]">
-    <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-6 py-2 px-2">
-      {/* Country Flags */}
-      {[
-        { src: "us", name: "United States" },
-        { src: "ca", name: "Canada" },
-        { src: "in", name: "India" },
-        { src: "jp", name: "Japan" },
-        { src: "my", name: "Malaysia" },
-        { src: "id", name: "Indonesia" },
-        { src: "ph", name: "Philippines" },
-      ].map((country, index) => (
-        <div key={index} className="flex items-center gap-1 sm:gap-2">
-          <img 
-            src={`https://flagcdn.com/w40/${country.src}.png`} 
-            width="24" 
-            height="18" 
-            alt={country.name} 
-            className="border border-gray-100"
-          />
-          <span className="text-xs sm:text-sm font-medium">{country.name}</span>
-        </div>
-      ))}
-    </div>
+{/* Partner Countries List */}
+<div className="w-full bg-[#ECECEC]">
+  <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 py-2 px-4">
+    {/* Country Flags */}
+    {[
+      { src: "us", name: "United States" },
+      { src: "ca", name: "Canada" },
+      { src: "in", name: "India" },
+      { src: "jp", name: "Japan" },
+      { src: "my", name: "Malaysia" },
+      { src: "id", name: "Indonesia" },
+      { src: "ph", name: "Philippines" },
+    ].map((country, index) => (
+      <div key={index} className="flex items-center gap-2">
+        <img 
+          src={`https://flagcdn.com/w40/${country.src}.png`} 
+          width="32" 
+          height="24" 
+          alt={country.name} 
+          className="border border-gray-100"
+        />
+        <span className="text-xs sm:text-sm font-medium">{country.name}</span>
+      </div>
+    ))}
   </div>
+</div>
 
 {/* Map Container */}
 <div className="relative w-full h-[230px] sm:h-[320px] md:h-[480px] lg:h-[550px] xl:h-[760px] mb-0">
@@ -668,7 +558,7 @@ useEffect(() => {
 </div>
  
 {/* Leadership Section - Placed Below Map */}
-<div className="bg-white font-inter">
+<div className="bg-white">
   <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 p-6">
     <h2 className="text-[#040404] text-xl sm:text-2xl md:text-4xl font-semibold text-center mb-8 sm:mb-12">
       Our Experienced Management Team
@@ -715,6 +605,8 @@ useEffect(() => {
 }
 
 export default AboutPage;
+
+
 
 
 
