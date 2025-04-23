@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import embedded from "../../assets/images/embedded-logo.svg";
-import success from "../../assets/images/buildingSuccess.svg"
+import ieee from "../../assets/images/ieee.svg"
+
 import {
   Collapse,
   Typography,
@@ -212,13 +213,13 @@ function AboutUsMegaMenu() {
             <div className="col-span-1">
               <div className="relative h-full rounded-lg overflow-hidden">
                 <img 
-                  src={success}
+                  src={ieee}
                   alt="Latest Achievement" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent font-inter">
-                  <h4 className="text-white font-semibold mb-1">AWS Financial Services</h4>
-                  <p className="text-gray-300 text-sm">Embedded Silicon achieves AWS competency</p>
+                  <h4 className="text-white font-semibold mb-1">IEEE Corporate Innovation Award</h4>
+                  <p className="text-gray-300 text-sm">ESI Labs achieves outstanding Contributions to technology</p>
                 </div>
               </div>
             </div>

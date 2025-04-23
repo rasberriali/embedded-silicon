@@ -169,6 +169,11 @@ const stats = [
 ];
 
 function Awards() {
+
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+      
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [activeTab, setActiveTab] = useState("awards");
   const [startIndex, setStartIndex] = useState(0);

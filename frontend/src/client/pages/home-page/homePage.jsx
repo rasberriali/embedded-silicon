@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import image1 from "../../../assets/images/Integrated-circuit.jpg"
 import image2 from "../../../assets/images/ic.jpg"
 import image3 from "../../../assets/images/icc.webp"
@@ -9,10 +9,6 @@ import Icon1 from "../../../assets/images/Icon1.svg"
 import icon2 from "../../../assets/images/icon2.svg"
 import icon3 from "../../../assets/images/icon3.svg"
 import line from "../../../assets/images/Line.svg"
-import arrow from "../../../assets/images/arrow.svg"
-import backdrop2 from "../../../assets/images/backdrop2.jpg";
-import logobackdrop from "../../../assets/images/logobackdrop.svg"
-import backdropimage from "../../../assets/images/backdropimage.png"
 import backdropimage2 from "../../../assets/images/backdropimage2.svg"
 import { GoArrowRight } from "react-icons/go";
 import fullvlsi from "../../../assets/images/fullvlsi.svg"
@@ -73,19 +69,64 @@ const scaleIn = {
   }
 };
 
-// const floatingAnimation = {
-//   hidden: { opacity: 0 },
-//   visible: {
-//     opacity: 1,
-//     transition: { duration: 0.6 }
-//   }
-// };
+const testimonials = [
+  {
+    name: "John Doe",
+    role: "CTO, Tech Innovations",
+    initials: "JD",
+    rating: "★★★★★",
+    text: `"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."`,
+  },
+  {
+    name: "Emily Davis",
+    role: "Project Lead, Smart Devices Co.",
+    initials: "ED",
+    rating: "★★★★★",
+    text: `"The team's innovative solutions and attention to detail have significantly improved our product development cycle."`,
+  },
+  {
+    name: "Michael Brown",
+    role: "VP Engineering, FutureTech",
+    initials: "MB",
+    rating: "★★★★★",
+    text: `"Embedded Silicon's commitment to excellence and timely delivery has made them an invaluable partner."`,
+  },
+  {
+    name: "Sarah Lee",
+    role: "CEO, AI Ventures",
+    initials: "SL",
+    rating: "★★★★★",
+    text: `"They demonstrated incredible technical expertise and an impressive turnaround time. Highly recommended!"`,
+  },
+  {
+    name: "Daniel Kim",
+    role: "Product Manager, SmartSoft",
+    initials: "DK",
+    rating: "★★★★★",
+    text: `"The quality of service and consistent communication made a big difference for our product launch."`,
+  },
+  {
+    name: "Anna Zhang",
+    role: "Director of R&D, BioSys",
+    initials: "AZ",
+    rating: "★★★★★",
+    text: `"They adapted to our needs and delivered outstanding results on our embedded software integration project."`,
+  },
+];
 
 function HomePage() {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
     const navigate = useNavigate();
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+      const autoplay = setInterval(() => {
+        setActiveIndex((prev) => (prev + 3 >= testimonials.length ? 0 : prev + 3));
+      }, 5000);
+      return () => clearInterval(autoplay);
+    }, []);
    
     return (
       <div>
@@ -114,7 +155,7 @@ function HomePage() {
                   variants={fadeInDown}
                   className="bg-blue-500/10 text-blue-600 text-sm font-semibold py-1.5 px-5 rounded-full inline-block"
                 >
-                  Philippine's Leading Tech Partner
+                  We are ESI Labs
                 </motion.div>
                 
                 <motion.h1 
@@ -473,81 +514,64 @@ function HomePage() {
           </div>
         </motion.div>
 
-        <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 ">
-          <motion.div 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.7 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="mt-40 mb-20"
-                >
-                    <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-                        <h2 className="text-3xl font-bold text-blue-600 mb-4 md:mb-0">What Our Clients Say</h2>
-                        <div className="bg-blue-50 rounded-full py-2 px-6 flex items-center">
-                            <span className="text-blue-600 font-medium mr-2">★★★★★</span>
-                            <span className="text-gray-600">4.9/5 average rating</span>
-                        </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-inter">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative"
-                        >
-                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
-                            <div className="flex items-center mb-6 mt-2">
-                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">JD</div>
-                                <div className="ml-4">
-                                    <h3 className="font-semibold text-lg">John Doe</h3>
-                                    <p className="text-sm text-blue-600">CTO, Tech Innovations</p>
-                                </div>
-                            </div>
-                            <p className="text-gray-700 italic mb-4">"Embedded Silicon's VLSI design services exceeded our expectations. Their team delivered a high-performance chip that met all our requirements and was ready for production ahead of schedule."</p>
-                            <div className="text-yellow-400">★★★★★</div>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative md:mt-10"
-                        >
-                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
-                            <div className="flex items-center mb-6 mt-2">
-                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">AS</div>
-                                <div className="ml-4">
-                                    <h3 className="font-semibold text-lg">Alice Smith</h3>
-                                    <p className="text-sm text-blue-600">VP Engineering, MicroTech</p>
-                                </div>
-                            </div>
-                            <p className="text-gray-700 italic mb-4">"The expertise and professionalism of the Embedded Silicon team made our complex VLSI project a success. Their attention to detail and commitment to quality is unmatched."</p>
-                            <div className="text-yellow-400">★★★★★</div>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            viewport={{ once: true }}
-                            className="bg-white p-8 rounded-xl shadow-md border border-gray-100 relative"
-                        >
-                            <div className="text-blue-500 text-4xl absolute -top-5 -left-2">❝</div>
-                            <div className="flex items-center mb-6 mt-2">
-                                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">RJ</div>
-                                <div className="ml-4">
-                                    <h3 className="font-semibold text-lg">Robert Johnson</h3>
-                                    <p className="text-sm text-blue-600">Director, Semiconductor Solutions</p>
-                                </div>
-                            </div>
-                            <p className="text-gray-700 italic mb-4">"Working with Embedded Silicon has been transformative for our product development. Their VLSI design services helped us bring our innovative ideas to market faster than ever before."</p>
-                            <div className="text-yellow-400">★★★★★</div>
-                        </motion.div>
-                    </div>
-                </motion.div>
+        <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 font-inter mt-20">
+         <motion.div
+                   initial={{ opacity: 0 }}
+                   whileInView={{ opacity: 1 }}
+                   transition={{ duration: 0.7 }}
+                   viewport={{ once: true, margin: "-100px" }}
+                   className="mt-10 mb-20"
+                 >
+                   <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+                     <h2 className="text-3xl font-bold text-blue-600 mb-4 md:mb-0">
+                       What Our Clients Say
+                     </h2>
+                     <div className="bg-blue-50 rounded-full py-2 px-6 flex items-center">
+                       <span className="text-blue-600 font-medium mr-2">★★★★★</span>
+                       <span className="text-gray-600">4.9/5 average rating</span>
+                     </div>
+                   </div>
+         
+                   <AnimatePresence mode="wait">
+                     <motion.div
+                       key={activeIndex}
+                       initial={{ opacity: 0, x: 50 }}
+                       animate={{ opacity: 1, x: 0 }}
+                       exit={{ opacity: 0, x: -50 }}
+                       transition={{ duration: 0.6 }}
+                       className="flex justify-center items-start gap-6"
+                     >
+                       {testimonials.slice(activeIndex, activeIndex + 3).map((t, idx) => {
+                         const isMiddle = idx === 1;
+                         return (
+                           <div
+                             key={idx}
+                             className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 relative flex flex-col justify-between ${
+                               isMiddle
+                                 ? "w-[405px] h-[290px] mt-10"
+                                 : "w-[405px] h-[330px]"
+                             }`}
+                           >
+                             <div className="text-blue-500 text-4xl absolute -top-5 -left-2">
+                               ❝
+                             </div>
+                             <div className="flex items-center mb-6 mt-2">
+                               <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+                                 {t.initials}
+                               </div>
+                               <div className="ml-4">
+                                 <h3 className="font-semibold text-lg">{t.name}</h3>
+                                 <p className="text-sm text-blue-600">{t.role}</p>
+                               </div>
+                             </div>
+                             <p className="text-gray-700 italic mb-4">{t.text}</p>
+                             <div className="text-yellow-400">{t.rating}</div>
+                           </div>
+                         );
+                       })}
+                     </motion.div>
+                   </AnimatePresence>
+                 </motion.div>
 
                 {/* Call to Action Section */}
                 <motion.div 

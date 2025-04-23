@@ -73,6 +73,9 @@ const testimonials = [
 ];
 
 const OurClients = () => {
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   const logos = [
     [aws, innovation, avl, credit],
     [ebay, questtrade, record, utilitycloud],

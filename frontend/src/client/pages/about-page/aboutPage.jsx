@@ -385,7 +385,7 @@ useEffect(() => {
 
   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 items-center mt-4 sm:mt-6 w-full max-w-5xl">
     {[bosch, innovation, credit, total, siemens, siemens, siemens, siemens].map((logo, index) => (
-      <div key={index} className="flex justify-center p-2 sm:p-3 border-b border-gray-300 border border-blue-800 bg-blue-50">
+      <div key={index} className="flex justify-center p-2 sm:p-3 border-b border-gray-300 border  bg-blue-50">
         <img src={logo} alt={`Award ${index + 1}`} className="w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32 filter grayscale hover:filter-none hover:scale-105 transition-transform duration-300 image-effect" />
       </div>
     ))}

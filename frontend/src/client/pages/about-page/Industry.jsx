@@ -64,6 +64,10 @@ const partnershipData = [
 ];
 
 const Industry = () => {
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+      
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState({
     hero: false,

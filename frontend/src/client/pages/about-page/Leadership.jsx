@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import collaborateleadership from "../../../assets/images/collaborateleadership.svg";
-
-import person1 from "../../../assets/images/person1.png"
-import person2 from "../../../assets/images/person2.png"
-import person3 from "../../../assets/images/person3.png"
-import person4 from "../../../assets/images/person4.jpg"
-import person5 from "../../../assets/images/person5.jpg"
-import person6 from "../../../assets/images/person6.png"
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import person1 from "../../../assets/images/person1.svg"
+import person2 from "../../../assets/images/person2.svg"
+import person3 from "../../../assets/images/person3.svg"
 
 const leadershipData = [
   { 
@@ -40,7 +37,7 @@ const leadershipData = [
   { 
     name: "Person Name 4", 
     position: "Director of R&D and Functional Verification", 
-    image: person4,
+    image: person1,
     expertise: ["Project Management", "Client Relations", "Strategy"],
     experience: "18+ years in tech industry",
     achievements: "Holds multiple patents in functional validation techniques",
@@ -49,7 +46,7 @@ const leadershipData = [
   { 
     name: "Person Name 5", 
     position: "Senior Layout and Integration Lead", 
-    image: person5,
+    image: person2,
     expertise: ["Analog Layout", "Top Block Integration ", "FinFET Technologies"],
     experience: "11+ years in full custom layout",
     achievements: "Led layout projects for analog IPs and chip-level integration across FinFET technologies",
@@ -58,7 +55,7 @@ const leadershipData = [
   { 
     name: "Person Name 6", 
     position: "Program Director for R&D and Analog IP Development", 
-    image: person6,
+    image: person3,
     expertise: [" Power Management Circuits Strategy", "Analog IPs ", "Mixed-Signal Integration"],
     experience: "16+ years in semiconductor research and analog design",
     achievements: "Developed analog building blocks such as POR, voltage regulators, and clock generators",
@@ -67,6 +64,9 @@ const leadershipData = [
 ];
 
 function Leadership() {
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   const navigate = useNavigate();
   const [selectedLeader, setSelectedLeader] = useState(null);
   const [isVisible, setIsVisible] = useState({
@@ -97,13 +97,13 @@ function Leadership() {
   };
 
   return (
-<div className="w-full font-inter relative">
+<div className="w-full font-inter relative ">
   {/* Hero Section */}
   <div className="relative min-h-[50vh] sm:min-h-[60vh] flex flex-col xl:flex-row md:flex-row gap-4 items-center px-4 sm:px-0">
     <div className="absolute inset-0 bg-[linear-gradient(200deg,#162447_2%,#162447_31%,#113E61_50%,#080F14_80%,#1B394A_100%)] opacity-90 z-0"></div>
 
     {/* Left Side - Text Content */}
-    <div className={`relative flex xl:w-1/2 w-full flex-col xl:gap-6 gap-4 justify-start items-start z-10 p-6 sm:p-10 lg:p-20 xl:p-28 2xl:p-32 animate-right-text`}>
+    <div className={`relative flex xl:w-1/2 w-full flex-col xl:gap-6 gap-4 justify-start  items-start z-10 p-6 sm:p-10 lg:p-20 xl:p-35 2xl:p-32 animate-right-text`}>
       <h2 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
         Embedded Silicon <br /> Leadership Team
       </h2>
@@ -169,7 +169,7 @@ function Leadership() {
                   <img 
                     src={leader.image} 
                     alt={leader.name} 
-                    className="max-w-full max-h-full w-auto h-auto object-contain p-2"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -261,38 +261,127 @@ function Leadership() {
         </div>
       )}
 
-      {/* Contact Section - Enhanced responsiveness */}
-      <div className={`w-full flex justify-center py-6 sm:py-10 px-4 sm:px-0 transform transition-all duration-1000 ${
-        isVisible.stats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-      }`}>
-        <div className="relative w-full sm:w-[90%] lg:w-[80%] max-w-screen-lg bg-[#F4F7FE] p-6 sm:p-8 border border-[#2E7CFD] rounded-xl">
-          <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
-            <div className="w-full md:w-1/3">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 text-center md:text-left">
+<div className="max-w-screen-xl mx-auto 2xl:p-0 lg:p-6 p-6">
 
-                Join Our <br />Leadership Team
-              </h2>
-            </div>
 
-            <div className="w-full md:w-2/3 space-y-4">
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base text-center md:text-left">
-                We're always looking for talented individuals who share our passion for innovation 
-                and excellence in semiconductor technology. Join us in shaping the future of 
-                embedded systems and silicon design.
-              </p>
-              
-              <div className="flex justify-center md:justify-start">
-                <button 
-                  onClick={handleContactClick}
-                  className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base active:scale-95"
+      {/* Call to Action Section */}
+      <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="mt-40  relative overflow-hidden"
                 >
-                  Explore Opportunities
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                    <div className="absolute inset-0 bg-[url('../../../assets/images/circuit-pattern.png')] opacity-5"></div>
+                    <div className="bg-gradient-to-r font-inter from-[#0a0a0af8] to-[#0B2B82] border border-[#333] rounded-2xl p-10 md:p-12 shadow-2xl relative z-10">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full filter blur-3xl opacity-20 -mr-20 -mt-20"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-700 rounded-full filter blur-3xl opacity-20 -ml-20 -mb-20"></div>
+                        
+                        <div className="flex flex-col xl:flex-row items-center justify-between relative z-10">
+                            <div className="xl:w-2/3 xl:pr-10">
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    viewport={{ once: true }}
+                                    className="bg-[#2D7BFD]/10 text-[#2D7BFD] text-sm font-semibold py-1.5 px-5 rounded-full inline-block mb-6"
+                                >
+                                    15+ Years of Excellence
+                                </motion.div>
+                                <motion.h3 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="text-3xl xl:text-4xl font-bold text-white mb-5 tracking-tight"
+                                >
+                                    Ready to transform your technology vision?
+                                </motion.h3>
+                                <motion.p 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                    viewport={{ once: true }}
+                                    className="text-[#E0E0E0] xl:text-base text-sm mb-10 xl:pr-8 leading-relaxed"
+                                >
+                                    Our team of experienced engineers can bring your innovative ideas to life with our comprehensive suite of IC design and embedded systems services. Let's create the future together.
+                                </motion.p>
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                    viewport={{ once: true }}
+                                    className="flex flex-row gap-4"
+                                >
+                                    <motion.div 
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => navigate('/contactPage')}
+                                        className="bg-[#2D7BFD] hover:bg-[#1A57C2] flex flex-col justify-center text-white py-1 xl:px-8 px-6 rounded-full shadow-lg transition-all xl:text-base text-xs font-normal"
+                                    >
+                                        Book a call
+                                    </motion.div>
+                                    <motion.div 
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => navigate('/servicesPage')}
+                                        className="border-2 border-white text-white  flex flex-col justify-center hover:bg-white/10 py-1  xl:px-8 px-6 rounded-full transition-all xl:text-base text-xs font-normal"
+                                    >
+                                        Browse services
+                                    </motion.div>
+                                </motion.div>
+                            </div>
+
+                            
+                            <motion.div 
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.7, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="xl:w-1/3 mt-12 xl:mt-0"
+                            >
+                                <div className="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/20">
+                                    <h4 className="text-white font-semibold text-lg mb-6">Why Choose Us?</h4>
+                                    <ul className="text-white/90 space-y-4">
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Industry-leading expertise</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Proven track record</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>End-to-end solutions</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <div className="bg-blue-600/20 rounded-full p-2 mr-4">
+                                                <svg className="w-5 h-5 text-[#2D7BFD]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <span>Customer-centric approach</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
+                </div>
     </div>
   );
 }

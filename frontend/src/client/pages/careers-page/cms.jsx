@@ -6,6 +6,9 @@ import SuccessStoriesCMS from '../success-page/successStoriesCMS'
 
 // Breadcrumb component for better organization and reusability
 const Breadcrumb = ({ items, activeSection, setActiveSection }) => {
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <nav className="mb-8" aria-label="Breadcrumb">
       <ol className="flex flex-wrap items-center space-x-2 text-sm">

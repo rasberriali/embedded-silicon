@@ -300,7 +300,8 @@ function Fullvlsi() {
                     <motion.div 
                         variants={scaleUp}
                         whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                        className="bg-gradient-to-br from-[#0b2b82] to-[#1a57c2] xl:p-8 p-6 rounded-2xl shadow-xl text-center relative group overflow-hidden"
+                        className="bg-gradient-to-br from-[#0b2b82] to-[#1a57c2] xl:p-8 p-6 cursor-pointer rounded-2xl shadow-xl text-center relative group overflow-hidden"
+                        onClick={() => navigate('/servicesPage')}
                     >
                         <div className="absolute inset-0 bg-[url('../../../assets/images/circuit-pattern.png')] opacity-10 mix-blend-overlay"></div>
                         <div className="overflow-hidden rounded-xl mb-6">
@@ -317,8 +318,9 @@ function Fullvlsi() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => navigate('/servicesPage')}
+                            
                             className="bg-white text-blue-700 hover:bg-blue-50 py-2 px-6 rounded-full shadow-lg transition-all font-medium text-sm"
+                           
                         >
                             Explore our services →
                         </motion.button>
