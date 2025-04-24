@@ -539,19 +539,17 @@ function HomePage() {
                        animate={{ opacity: 1, x: 0 }}
                        exit={{ opacity: 0, x: -50 }}
                        transition={{ duration: 0.6 }}
-                       className="flex justify-center items-start gap-6"
+                         className="flex flex-col md:flex-row justify-center items-stretch gap-6"
                      >
                        {testimonials.slice(activeIndex, activeIndex + 3).map((t, idx) => {
                          const isMiddle = idx === 1;
                          return (
                            <div
-                             key={idx}
-                             className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 relative flex flex-col justify-between ${
-                               isMiddle
-                                 ? "w-[405px] h-[290px] mt-10"
-                                 : "w-[405px] h-[330px]"
-                             }`}
-                           >
+                           key={idx}
+                           className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 relative flex flex-col justify-between xl:w-full w-[350px] ${
+                             isMiddle ? "md:mt-10" : ""
+                           }`}
+                         >
                              <div className="text-blue-500 text-4xl absolute -top-5 -left-2">
                                ❝
                              </div>

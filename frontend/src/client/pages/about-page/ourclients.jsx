@@ -145,7 +145,7 @@ const OurClients = () => {
         <h2 className="text-xl md:text-2xl font-semibold mb-4 text-left mt-20">
           All of the businesses and startups we have worked with
         </h2>
-        <div className="grid grid-cols-4 gap-y-12 gap-x-10 justify-items-center">
+        <div className="grid xl:grid-cols-4 grid-cols-2 p-6 gap-10 justify-items-center">
           {logos.map((row, rowIndex) =>
             row.map((logo, colIndex) => (
               <div
@@ -164,64 +164,62 @@ const OurClients = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="mx-auto max-w-screen-xl px-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mt-10 mb-20"
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-            <h2 className="text-3xl font-bold text-blue-600 mb-4 md:mb-0">
-              What Our Clients Say
-            </h2>
-            <div className="bg-blue-50 rounded-full py-2 px-6 flex items-center">
-              <span className="text-blue-600 font-medium mr-2">★★★★★</span>
-              <span className="text-gray-600">4.9/5 average rating</span>
-            </div>
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.6 }}
-              className="flex justify-center items-start gap-6"
-            >
-              {testimonials.slice(activeIndex, activeIndex + 3).map((t, idx) => {
-                const isMiddle = idx === 1;
-                return (
-                  <div
-                    key={idx}
-                    className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 relative flex flex-col justify-between ${
-                      isMiddle
-                        ? "w-[405px] h-[290px] mt-10"
-                        : "w-[405px] h-[330px]"
-                    }`}
-                  >
-                    <div className="text-blue-500 text-4xl absolute -top-5 -left-2">
-                      ❝
-                    </div>
-                    <div className="flex items-center mb-6 mt-2">
-                      <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
-                        {t.initials}
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="font-semibold text-lg">{t.name}</h3>
-                        <p className="text-sm text-blue-600">{t.role}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 italic mb-4">{t.text}</p>
-                    <div className="text-yellow-400">{t.rating}</div>
-                  </div>
-                );
-              })}
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+      <div className="mx-auto max-w-screen-xl 2xl:p-0  p-6 font-inter mt-20">
+               <motion.div
+                         initial={{ opacity: 0 }}
+                         whileInView={{ opacity: 1 }}
+                         transition={{ duration: 0.7 }}
+                         viewport={{ once: true, margin: "-100px" }}
+                         className="mt-10 mb-20"
+                       >
+                         <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+                           <h2 className="text-3xl font-bold text-blue-600 mb-4 md:mb-0">
+                             What Our Clients Say
+                           </h2>
+                           <div className="bg-blue-50 rounded-full py-2 px-6 flex items-center">
+                             <span className="text-blue-600 font-medium mr-2">★★★★★</span>
+                             <span className="text-gray-600">4.9/5 average rating</span>
+                           </div>
+                         </div>
+               
+                         <AnimatePresence mode="wait">
+                           <motion.div
+                             key={activeIndex}
+                             initial={{ opacity: 0, x: 50 }}
+                             animate={{ opacity: 1, x: 0 }}
+                             exit={{ opacity: 0, x: -50 }}
+                             transition={{ duration: 0.6 }}
+                               className="flex flex-col md:flex-row justify-center items-stretch gap-6"
+                           >
+                             {testimonials.slice(activeIndex, activeIndex + 3).map((t, idx) => {
+                               const isMiddle = idx === 1;
+                               return (
+                                 <div
+                                 key={idx}
+                                 className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 relative flex flex-col justify-between xl:w-full w-[350px] ${
+                                   isMiddle ? "md:mt-10" : ""
+                                 }`}
+                               >
+                                   <div className="text-blue-500 text-4xl absolute -top-5 -left-2">
+                                     ❝
+                                   </div>
+                                   <div className="flex items-center mb-6 mt-2">
+                                     <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+                                       {t.initials}
+                                     </div>
+                                     <div className="ml-4">
+                                       <h3 className="font-semibold text-lg">{t.name}</h3>
+                                       <p className="text-sm text-blue-600">{t.role}</p>
+                                     </div>
+                                   </div>
+                                   <p className="text-gray-700 italic mb-4">{t.text}</p>
+                                   <div className="text-yellow-400">{t.rating}</div>
+                                 </div>
+                               );
+                             })}
+                           </motion.div>
+                         </AnimatePresence>
+                       </motion.div>
       </div>
     </div>
   );
