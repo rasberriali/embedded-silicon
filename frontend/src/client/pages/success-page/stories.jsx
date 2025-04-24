@@ -140,7 +140,7 @@ function Stories() {
             </div>
             <div className="relative">
               <div className="absolute top-0 bottom-0 w-2 bg-orange-500"></div>
-              <h2 className="text-white text-[30px] lg:text-[48px] 2xl:text-8xl font-bold leading-tight pl-6">
+              <h2 className="text-white text-[30px] lg:text-[48px] 2xl:text-[72px] font-bold leading-tight pl-6">
                 {story.title}
               </h2>
             </div>
