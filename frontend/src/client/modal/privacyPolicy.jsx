@@ -20,73 +20,153 @@ function PrivacyPolicy() {
     
   return (
     <div>
-    <div className='max-w-screen-sm mx-auto p-6 2xl:p-0 font-inter mt-6 lg:mt-10 2xl:mt-20'>
+    <div className='max-w-screen-lg mx-auto p-6 2xl:p-0 font-inter mt-6 lg:mt-10 2xl:mt-20'>
       <div className='flex flex-col justify-center items-start leading-9'>
         <h1 className='xl:text-5xl text-4xl font-bold text-center mb-8'>🔐 Privacy Policy</h1>
-        <p className='text-start mt-4'><strong>Effective Date:</strong> 10/04/2025</p>
+        <p className='text-start mt-4'><strong>Effective Date:</strong> 05/20/2024</p>
         
         <p>
           Thank you for visiting our website. We value your privacy and are committed to protecting any personal information you provide to us.
         </p>
+
+
+       <p>
+         <h1 className='mt-6 mb-4 text-xl font-bold'>
+          Objective
+        </h1>
+        <ul className='list-disc pl-6 mb-4'>
+          <li>To comply with the requirements of Data Privacy Act of 2012 </li>
+          <li>To set guidelines on the processing of personal information</li>
+          <li>To adhere to the principles of personal data privacy - transparency, legitimate purpose, and propotionality</li>
+          <li>This guideline covers the policy for collection, storage, and processing of personal information in the area of resposibility of the company</li>
+        </ul>
+       </p>
         
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>1. Information We Collect</h2>
-        <p>
-          When you use our contact form, we may collect:
-        </p>
+        <h1 className='mt-6 mb-4 text-xl font-bold'>
+          Scope
+        </h1>
         <ul className='list-disc pl-6 mb-4'>
-          <li>Your name</li>
-          <li>Your email address</li>
-          <li>Any other information you choose to provide in your message</li>
+          <li>To comply with the requirements of Data Privacy Act of 2012 </li>
+          <li>To set guidelines on the processing of personal information</li>
+          <li>To adhere to the principles of personal data privacy - transparency, legitimate purpose, and propotionality</li>
         </ul>
-        <p>
-          We do not collect any data for account creation, login, or user registration.
-        </p>
 
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>2. How We Use Your Information</h2>
-        <p>
-          We use the information you submit through the contact form solely for the purpose of responding to your inquiry or message.
-        </p>
-        <p>
-          We do not use this information for marketing purposes unless you explicitly request or consent to it.
-        </p>
+      <p className='mt-10 mb-10'>
+      Embedded Silicon Technology Solutions Corp. (ESI; the company) collects and processes personal information while
+       adhering to the principles of transparency, legitimate purpose, and proportionality, and subject to the 
+       compliance with Republic Act 10173 or the Data Privacy Act of 2012 and its Implementing Rules and Regulations.
+        Personal information is hereby defined as any information that identifies or can identify an individual
+      </p>
 
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>3. How We Protect Your Information</h2>
+        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>1. Collection and Processing of Personal Information</h2>
         <p>
-          We take reasonable steps to protect your information from unauthorized access, loss, or misuse. However, no method of transmission over the internet is 100% secure.
+        ESI collects, stores, and processes personal information from: 
         </p>
-
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>4. Third-Party Services</h2>
-        <p>
-          We do not share your personal information with third parties, except where required by law.
+        <p className='ml-4'>
+        a.	former, current, and prospective employees. Personal data may be 
+        collected as part of sourcing and selection during recruitment, and in
+         the course of employment of an individual. The data collected are processed
+          for the purposes of hiring, delivering salaries and wages, and for workforce learning and development. These data include: 
         </p>
-        <p>
-          Our website may use analytics or other third-party tools that may collect anonymized data (see our Cookie Policy).
-        </p>
-
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>5. Your Rights</h2>
-        <p>
-          You have the right to:
-        </p>
-        <ul className='list-disc pl-6 mb-4'>
-          <li>Request access to the personal information we hold about you</li>
-          <li>Ask us to correct or delete that information</li>
-          <li>Withdraw consent at any time</li>
+        <ul className='list-disc pl-6 mb-4 m-8'>
+          <li>name and signature </li>
+          <li>contact information such as address, mobile number, landline number, and email address </li>
+          <li>date and place of birth, nationality, religion, civil status </li>
+          <li>educational background and work experience </li>
+          <li>name of spouse, children, parents, and siblings, if necessary </li>
+          <li>professional licenses and certifications </li>
+          <li>health information  </li>
+          <li>background information such as police, barangay, and NBI clearances and records </li>
+          <li>performance rating, salaries and benefits, career movements of current employees </li>
+          <li>bank account information for administering payroll  </li>
+          <li>name and contact details of references and contact persons  </li>
         </ul>
-        <p>
-          To exercise any of these rights, please contact us using the information below.
+       
+
+
+      
+      
+        <p className='ml-4'>
+       b.	direct and indirect clients. Personal information is collected to
+         be used for deliveries, addressing concerns, and feedback.
+          These data gathered through online portals and forwarded to ESI for processing include: 
+        </p>
+        <ul className='list-disc pl-6 mb-4 m-8'>
+          <li>name</li>
+          <li>contact information such as address and email address  </li>
+          <li>date and place of birth, nationality, religion, civil status </li>
+          <li>bank account information  </li>
+          <li>signature, if possible  </li>
+        </ul>
+
+
+        <p className='ml-4'>
+       c. individuals with business transactions with ESI such as external providers. 
+       Collected personal information may be used for establishing open communication, 
+       facilitating transactions, and for performing accreditation activities in the case of external providers. These may include: 
+        </p>
+        <ul className='list-disc pl-6 mb-4 m-8'>
+          <li>name and signature</li>
+          <li>contact information such as address, mobile number, landline number, and email address  </li>
+          <li>bank account information of individual external providers  </li>
+        </ul>
+       
+        <p className='ml-4'>
+        d.	other interested parties initiating contact with ESI through 
+        inquiry portals such as, e-mail, other online platforms, and phone. 
+        The personal information gathered will be used solely for addressing
+         the concern and is shared only with concerned and authorized personnel of ESI. 
         </p>
 
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>6. Contact Us</h2>
-        <p>
-          If you have any questions about this Privacy Policy, feel free to contact us at:
+        
+        <p className='mt-6'>
+        ESI retains personal information only for a period necessary
+         to fulfill the purposes outlined in this Privacy Policy and 
+         according to the retention policies set by the company. 
+         Disposal of personal information is done in a secure manner to prevent unintended disclosure and further processing. 
         </p>
-        <p>
-          📧 Email: info@esilicontech.com<br />
-          📍 Address: <br/>- Unit 601 Richville Corporate Tower,
-          Alabang - Zapote Road, Madrigal Business Park, Ayala Alabang, Muntinlupa City 1780 PH <br/> - B21 L9 Brazilianite St.,
-Golden City Subdivision,
-Taytay, Province of Rizal 1920 PH
+
+        <p className='mt-6'>
+        The personal information under the custody of ESI is 
+        only shared with concerned personnel such as the data 
+        processors for the Human Resource Development and Procurement processes,
+         and other authorized recipients of such data. ESI may disclose personal
+          information with any of its third parties who need access to such 
+          information to carry out work on behalf of ESI, provided that similar 
+          levels of security measures are in place. If and when necessary, data
+           sharing or nondisclosure agreements (NDA) are accomplished to cover
+            terms and policies on the personal information shared between ESI and its third parties. 
         </p>
+
+        <p className='mt-6 mb-10'>
+          ESI reserves the right to disclose any personal information under its custody if the company is compelled to do so in compliance with applicable laws and obligations.
+        </p>
+
+
+        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>Information Sharing</h2>
+        <h2 className='text-xl font-bold mt-6 mb-3 text-blue-600 underline'>Security of Personal Infromation</h2>
+       <p>
+        ESI implements policies and procedures intended to ensure that perosnal information in the
+         custody of the company is sufficiently protected. These include organizational, admistrative,
+          technical and physical security measures to safegurad the confidentiality, integrity,
+           and avalilability of the personal information. Additionally, an information security
+            management system is being implemented by the company with extensive contrls uncluding protection of personal information.
+       </p>
+
+       <h2 className='text-xl font-bold mt-6 mb-3 text-blue-600 underline'>Your Rights as a Data Subject</h2>
+       <p>
+        ESI implements policies and procedures intended to ensure that perosnal information in the
+         custody of the company is sufficiently protected. These include organizational, admistrative,
+          technical and physical security measures to safegurad the confidentiality, integrity,
+           and avalilability of the personal information. Additionally, an information security
+            management system is being implemented by the company with extensive contrls uncluding protection of personal information.
+       </p>
+
+       <h2 className='text-xl font-bold mt-6 mb-3 text-blue-600 underline'>Contact Us</h2>
+       <p>
+       Should you have any concerns or queries regarding our Privacy Policy and your tights as a data subject please contact our Data Protection Officer at [...].
+       </p>
+
       </div>
       </div>
       {/* Call to Action Section - Full Width */}
