@@ -32,7 +32,7 @@ const IntegratedChipDesign = () => {
               <h1 className="font-bold text-white text-[35px] lg:text-[65px] 2xl:text-7xl leading-tight lg:leading-[4.25rem] 2xl:leading-[5rem] lg:w-3/5 2xl:w-3/4">
             Advanced Integrated Chip Design Solutions
           </h1>
-              <p className="text-white text-sm lg:text-xl 2xl:text-2xl font-normal max-w-3xl leading-relaxed ">
+              <p className="text-white text-sm lg:text-base 2xl:text-xl font-normal max-w-3xl leading-relaxed ">
             Transform your ideas into reality with our Advanced Integrated Chip (IC) Design services. 
             We specialize in providing cutting-edge, customized IC solutions using proven processes, 
             ensuring reliable and high-performance results for your next big project.
