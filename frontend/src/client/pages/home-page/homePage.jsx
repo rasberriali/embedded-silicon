@@ -539,7 +539,7 @@ function HomePage() {
                        animate={{ opacity: 1, x: 0 }}
                        exit={{ opacity: 0, x: -50 }}
                        transition={{ duration: 0.6 }}
-                         className="flex flex-col md:flex-row justify-center items-stretch gap-6"
+                         className="flex flex-col md:flex-row justify-center xl:items-stretch items-center gap-6"
                      >
                        {testimonials.slice(activeIndex, activeIndex + 3).map((t, idx) => {
                          const isMiddle = idx === 1;
