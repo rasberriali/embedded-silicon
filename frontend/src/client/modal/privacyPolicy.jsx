@@ -58,7 +58,7 @@ function PrivacyPolicy() {
         Personal information is hereby defined as any information that identifies or can identify an individual
       </p>
 
-        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>1. Collection and Processing of Personal Information</h2>
+        <h2 className='text-2xl font-bold mt-6 mb-3 text-blue-600'>Collection and Processing of Personal Information</h2>
         <p>
         ESI collects, stores, and processes personal information from: 
         </p>
