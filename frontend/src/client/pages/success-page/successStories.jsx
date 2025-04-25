@@ -1,7 +1,14 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import successStory from "../../../assets/images/buildingSuccess2.svg";
-import handshake from "../../../assets/images/handshake.png";
 import automotive from "../../../assets/images/automotive.svg"
 import medDevices from "../../../assets/images/medDevice.svg"
 import semicon from "../../../assets/images/semicon.svg";

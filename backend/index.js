@@ -1,3 +1,13 @@
+
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -9,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS Configuration
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://embedded-silicon-backend.vercel.app','https://embedded-silicon.vercel.app'], // Allow both Vite and React default ports
+  origin: ['http://localhost:5173', 'https://embedded-silicon-backend.vercel.app','https://embedded-silicon.vercel.app'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

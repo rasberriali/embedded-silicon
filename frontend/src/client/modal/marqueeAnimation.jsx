@@ -1,3 +1,12 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
+
 import React from 'react'
 import MarqueeItem from './marqueeitem'
 import innovation from "../../assets/images/innovation.png"

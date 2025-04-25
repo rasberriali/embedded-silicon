@@ -1,3 +1,9 @@
+// ***************************************************************************** ::
+
+// CODED BY:  VENUS ANGEL BRIONES
+
+// ***************************************************************************** ::
+
 import {React, useState, useEffect} from "react";
 import companyOverview from "../../../assets/images/companyOverview.svg";
 import companyBuilding from "../../../assets/images/companyBuilding.svg";
@@ -15,13 +21,9 @@ import siemens from "../../../assets/images/siemens.png"
 import aboutUsPdf from "../../../assets/files/aboutuspager.pdf";
 import person6 from "../../../assets/images/person6.png"
 
-// import { LuArrowRight } from "react-icons/lu";
-
 // map
 import "svgmap/dist/svgMap.css";
 import svgMap from "svgmap";
-
-import { GoArrowRight } from "react-icons/go";
 
 function AboutPage() {
   const [isVisible, setIsVisible] = useState({

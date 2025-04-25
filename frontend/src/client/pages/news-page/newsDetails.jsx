@@ -1,3 +1,11 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import React from 'react'
 import newsBg from "../../../assets/images/newsBg.svg";
 import { useNavigate} from 'react-router-dom'; 

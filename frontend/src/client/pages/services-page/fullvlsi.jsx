@@ -1,3 +1,11 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import {useEffect, useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom';
 import vlsiBg from "../../../assets/images/vlsiBg.svg";

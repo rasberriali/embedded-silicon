@@ -1,11 +1,16 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
+
 import {useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import servicesbg3 from "../../../assets/images/services-bg-3.jpg"
-import dot from "../../../assets/images/dotgrid.svg"
-import icon3 from "../../../assets/images/icon3.svg"
 import arrow from "../../../assets/images/arrow-blue.svg"
-import iconservices1 from "../../../assets/images/icon-services1.svg"
 import asic from "../../../assets/images/asic.svg"
 import post from "../../../assets/images/post.svg"
 import standard from "../../../assets/images/standard.svg"

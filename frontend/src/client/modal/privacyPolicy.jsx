@@ -1,3 +1,12 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
+
 import {useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';

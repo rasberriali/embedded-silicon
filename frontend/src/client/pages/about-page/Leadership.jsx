@@ -1,3 +1,10 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  VENUS ANGEL BRIONES
+
+// ***************************************************************************** ::
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import collaborateleadership from "../../../assets/images/collaborateleadership.svg";

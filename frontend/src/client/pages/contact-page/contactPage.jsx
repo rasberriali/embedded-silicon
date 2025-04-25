@@ -1,3 +1,11 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import {useEffect, useState} from 'react'
 import emailjs from '@emailjs/browser';
 import madrigal from "../../../assets/images/madrigal.jpg"

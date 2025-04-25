@@ -1,7 +1,15 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
+
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import cpu from "../../../assets/images/cpu.png";
-import siemens from "../../../assets/images/siemens.png";
 import successStory from "../../../assets/images/buildingSuccess.svg";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaGlobeAmericas, FaHandshake, FaIndustry, FaCalendarAlt, FaUsers, FaBuilding } from 'react-icons/fa';
@@ -148,10 +156,9 @@ function Stories() {
         </div>
       </div>
       
-      {/* Story Content */}
+     
       <div className="max-w-screen-xl mx-auto p-6 lg:p-6 md:p-8 2xl:p-0 mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Column */}
           <div>
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Background</h3>

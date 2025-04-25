@@ -1,3 +1,12 @@
+
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 

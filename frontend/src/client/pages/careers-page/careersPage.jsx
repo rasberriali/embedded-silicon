@@ -1,3 +1,12 @@
+
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import {useEffect, useState} from 'react';
 import successStory from "../../../assets/images/buildingSuccess.svg";
 import servicesCarousel from "../../../assets/images/servicesCarousel.svg";

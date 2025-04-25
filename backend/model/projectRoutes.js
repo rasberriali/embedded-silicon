@@ -1,3 +1,12 @@
+
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
@@ -24,7 +33,7 @@ const successStorySchema = new mongoose.Schema({
   excerpt: String,
   content: String,
   category: String,
-  image: String, // Will store base64 image data
+  image: String,
   author: String,
   date: Date,
   background: String,

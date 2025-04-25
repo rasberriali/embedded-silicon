@@ -1,3 +1,11 @@
+
+// ***************************************************************************** ::
+
+// CODED BY:  ALYSA JULIANA M. EMILIO
+// GITHUB:    RASBERRIALI / ALI-MANGO
+
+// ***************************************************************************** ::
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import embedded from "../../assets/images/embedded-logo.svg";
