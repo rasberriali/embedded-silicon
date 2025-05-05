@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore Vercel deployment files
+.vercel
+
+# Miscellaneous
+*.local
+
+# Ignore environment files in both frontend and backend
+/frontend/.env
+/backend/.env
+.env
+.env.local
+.env.production
+.env.development
