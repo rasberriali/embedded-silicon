@@ -6,6 +6,8 @@
 
 // ***************************************************************************** ::
 
+// Used emailjs to send contact form 
+
 import {useEffect, useState} from 'react'
 import emailjs from '@emailjs/browser';
 import madrigal from "../../../assets/images/madrigal.jpg"

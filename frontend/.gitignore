@@ -31,7 +31,6 @@ dist-ssr
 
 # Ignore environment files in both frontend and backend
 /frontend/.env
-/backend/.env
 .env
 .env.local
 .env.production
