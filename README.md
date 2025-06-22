@@ -1,13 +1,37 @@
-<p>Coded by: Alysa Juliana M. Emilio & Venus Angel Briones</p>
-<p>Duration: 14/03/2025 – 24/04/2025</p>
+# 🌐 Embedded Silicon Website Revamp
 
-<p>TechStack:</p>
-<ul style="list-style: none; padding: 0;">
-  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="24" style="vertical-align: middle;"> MongoDB</li>
-  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" width="24" style="vertical-align: middle;"> Express.js</li>
-  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="24" style="vertical-align: middle;"> React</li>
-  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="24" style="vertical-align: middle;"> Node.js</li>
-  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" width="24" style="vertical-align: middle;"> Tailwind CSS</li>
-  <li><img src="https://vitejs.dev/logo.svg" alt="Vite" width="24" style="vertical-align: middle;"> Vite</li>
-  <li><img src="https://www.svgrepo.com/show/354420/vercel-icon.svg" alt="Vercel" width="24" style="vertical-align: middle;"> Vercel</li>
-</ul>
+A complete redesign and redevelopment of Embedded Silicon’s official website, built using the MERN stack. The project aimed to modernize the company’s digital presence, streamline content management, and deliver a responsive user experience across devices.
+
+## 🧑‍💻 Project Role
+
+Led the development as part of a two-person on-the-job training (OJT) team. Took charge of both frontend and backend development, including custom CMS integration.
+
+## 🔧 Tech Stack
+
+- **Frontend**: React.js, Tailwind CSS, DaisyUI
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Content Management**: Custom-built CMS for job listings & success stories
+- **Deployment**: Vercel / Render (update with your actual host)
+
+## 🚀 Key Features
+
+- 🖥️ **Responsive Design** – Optimized for desktop, tablet, and mobile
+- 🧑‍💼 **Dynamic Job Listings** – Easily updatable via the CMS
+- 📚 **Success Stories Section** – Showcasing client and team achievements
+- 🧠 **CMS Dashboard** – Built-in admin tools for non-tech staff to manage content
+- ⚙️ **Scalable MERN Architecture** – Ready for future updates and expansion
+
+## 📸 Screenshots
+
+| Home Page | CMS Admin | Job Listings |
+|-----------|------------|---------------|
+| ![](./screenshots/home.png) | ![](./screenshots/admin.png) | ![](./screenshots/jobs.png) |
+
+## 🛠️ Local Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/embedded-silicon-website.git
+cd embedded-silicon-website
