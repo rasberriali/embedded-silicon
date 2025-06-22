@@ -24,9 +24,10 @@ Led the development as part of a two-person on-the-job training (OJT) team. Took
 
 ## 📸 Screenshots
 
-| Home Page | CMS Admin | Job Listings |
-|-----------|------------|---------------|
-| ![](./screenshots/main.png) | ![](./screenshots/cms.png) | ![](./screenshots/jobs.png) |
+| Home Page | Admin CMS | Job Listings |
+|-----------|-----------|--------------|
+| ![](./screenshots/main.png) | ![](./screenshots/cms.png) | ![](./screenshots/jobss.png) |
+| ![](./screenshots/footer-2.png) | ![](./screenshots/cmss-2.png) | ![](./screenshots/jobss-2.png) |
 
 ## 🛠️ Local Setup
 
