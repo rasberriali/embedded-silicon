@@ -1,6 +1,6 @@
 # 🌐 Embedded Silicon Website Revamp
 
-A complete redesign and redevelopment of Embedded Silicon’s official website, built using the MERN stack. The project aimed to modernize the company’s digital presence, streamline content management, and deliver a responsive user experience across devices.
+We undertook a complete revamp of Embedded Silicon’s old website using the MERN stack, following the Software Development Life Cycle (SDLC) process. While the updated version brings a more modern look and improved responsiveness across devices, there are still enhancements to be made and additional features planned for future development.
 
 ## 🧑‍💻 Project Role
 
@@ -8,7 +8,7 @@ Led the development as part of a two-person on-the-job training (OJT) team. Took
 
 ## 🔧 Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, DaisyUI
+- **Frontend**: React.js, Tailwind CSS, DaisyUI, Framer Motion
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Content Management**: Custom-built CMS for job listings & success stories
@@ -16,11 +16,10 @@ Led the development as part of a two-person on-the-job training (OJT) team. Took
 
 ## 🚀 Key Features
 
-- 🖥️ **Responsive Design** – Optimized for desktop, tablet, and mobile
+- 🖥️ **Responsive Design** – Optimized for desktop, and mobile
 - 🧑‍💼 **Dynamic Job Listings** – Easily updatable via the CMS
 - 📚 **Success Stories Section** – Showcasing client and team achievements
 - 🧠 **CMS Dashboard** – Built-in admin tools for non-tech staff to manage content
-- ⚙️ **Scalable MERN Architecture** – Ready for future updates and expansion
 
 ## 📸 Screenshots
 
